@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { Icon } from '@/components/ui/Icon'
-import type { DashboardStatCard } from '@/mocks/fixtures/dashboard'
+import type { DashboardStatCard } from '@/types'
 
 interface StatTileProps {
   stat: DashboardStatCard
@@ -17,7 +17,7 @@ function StatTile({ stat }: StatTileProps) {
       </div>
       <div className="flex items-end justify-between mt-auto">
         <div className="font-display-lg text-display-lg text-on-surface">{stat.value}</div>
-        <div className="text-[10px] font-bold text-secondary-fixed flex items-center mt-1">
+        <div className={`text-[10px] font-bold flex items-center mt-1 ${stat.trendPositive ? 'text-secondary-fixed' : 'text-error'}`}>
           <Icon name="trending_up" className="text-[12px] mr-0.5" />
           {stat.trend}
         </div>
@@ -49,7 +49,7 @@ export function ResultsSummaryCard({ stats }: ResultsSummaryCardProps) {
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md">
         {stats.map((stat) => (
-          <StatTile key={stat.icon} stat={stat} />
+          <StatTile key={stat.label} stat={stat} />
         ))}
       </div>
     </section>

@@ -52,5 +52,6 @@
     "telegram": "Telegram"
   },
   "loading": "Carregando...",
+  "errorState": "Não foi possível carregar os dados. Tente novamente.",
   "emptyState": "Nenhum item encontrado"
 }

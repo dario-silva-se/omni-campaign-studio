@@ -3,7 +3,7 @@ import { Icon } from '@/components/ui/Icon'
 import { useDashboard } from '../hooks/useDashboard'
 import { ResultsSummaryCard } from '../components/ResultsSummaryCard'
 import { SignalSourceCard } from '../components/SignalSourceCard'
-import type { DashboardSignal, DashboardSignalSource } from '@/mocks/fixtures/dashboard'
+import type { DashboardSignal, DashboardSignalSource } from '@/types'
 
 function groupSignalsBySource(
   signals: DashboardSignal[],
@@ -17,15 +17,10 @@ function groupSignalsBySource(
 
 export default function DashboardPage() {
   const { t } = useTranslation(['dashboard', 'common'])
-  const { data, isLoading } = useDashboard()
+  const { data, isLoading, isError } = useDashboard()
 
-  if (isLoading || !data) {
-    return (
-      <div className="p-lg text-on-surface-variant" role="status" aria-live="polite">
-        {t('common:loading')}
-      </div>
-    )
-  }
+  if (isError) return <div role="alert" className="p-lg text-error">{t('common:errorState')}</div>
+  if (isLoading || !data) return <div className="p-lg text-on-surface-variant">{t('common:loading')}</div>
 
   const signalsBySource = groupSignalsBySource(data.signals)
 

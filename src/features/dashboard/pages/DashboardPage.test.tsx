@@ -3,6 +3,11 @@ import { renderWithProviders } from '@/test/renderWithProviders'
 import DashboardPage from './DashboardPage'
 
 describe('DashboardPage', () => {
+  it('shows loading state synchronously on first render', () => {
+    renderWithProviders(<DashboardPage />)
+    expect(screen.getByText('Carregando...')).toBeInTheDocument()
+  })
+
   it('renders greeting and summary stats from the service', async () => {
     renderWithProviders(<DashboardPage />)
     expect(await screen.findByText(/Bom dia, Matheus/)).toBeInTheDocument()
