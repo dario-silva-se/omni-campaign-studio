@@ -22,6 +22,10 @@ const TemplateLibraryPage = lazy(() => import('@/features/templates/pages/Templa
 const TemplateDetailPage = lazy(() => import('@/features/templates/pages/TemplateDetailPage'))
 const CreativeLabPage = lazy(() => import('@/features/creative-lab/pages/CreativeLabPage'))
 const ContentGenerationPage = lazy(() => import('@/features/content-generation/pages/ContentGenerationPage'))
+const CampaignsPage = lazy(() => import('@/features/campaigns/pages/CampaignsPage'))
+const NewCampaignWizard = lazy(() => import('@/features/campaigns/pages/NewCampaignWizard'))
+const LaunchProgressPage = lazy(() => import('@/features/campaigns/pages/LaunchProgressPage'))
+const LaunchSuccessPage = lazy(() => import('@/features/campaigns/pages/LaunchSuccessPage'))
 
 export function AppRoutes() {
   return (
@@ -39,14 +43,14 @@ export function AppRoutes() {
           <Route path="templates/:id" element={<TemplateDetailPage />} />
           <Route path="creative-lab" element={<CreativeLabPage />} />
           <Route path="content-generation" element={<ContentGenerationPage />} />
-          <Route path="campaigns" element={<PagePlaceholder />} />
-          <Route path="campaigns/new/step-1" element={<PagePlaceholder />} />
-          <Route path="campaigns/new/step-2" element={<PagePlaceholder />} />
-          <Route path="campaigns/new/step-3" element={<PagePlaceholder />} />
-          <Route path="campaigns/new/step-4" element={<PagePlaceholder />} />
-          <Route path="campaigns/new/step-5" element={<PagePlaceholder />} />
-          <Route path="campaigns/launching" element={<PagePlaceholder />} />
-          <Route path="campaigns/launched" element={<PagePlaceholder />} />
+          <Route path="campaigns" element={<CampaignsPage />} />
+          <Route path="campaigns/new/step-1" element={<NewCampaignWizard />} />
+          <Route path="campaigns/new/step-2" element={<NewCampaignWizard />} />
+          <Route path="campaigns/new/step-3" element={<NewCampaignWizard />} />
+          <Route path="campaigns/new/step-4" element={<NewCampaignWizard />} />
+          <Route path="campaigns/new/step-5" element={<NewCampaignWizard />} />
+          <Route path="campaigns/launching" element={<LaunchProgressPage />} />
+          <Route path="campaigns/launched" element={<LaunchSuccessPage />} />
           <Route path="posts" element={<PagePlaceholder />} />
           <Route path="posts/new" element={<PagePlaceholder />} />
           <Route path="posts/schedule/:channel" element={<PagePlaceholder />} />

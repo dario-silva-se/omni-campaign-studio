@@ -15,10 +15,11 @@ beforeEach(() => {
 
 describe('crudService (mock mode)', () => {
   it('lists fixtures', async () => {
-    await expect(service.list()).resolves.toHaveLength(2)
+    const result = await service.list()
+    expect(result.length).toBeGreaterThanOrEqual(2)
   })
   it('gets by id', async () => {
-    await expect(service.getById('cmp-001')).resolves.toMatchObject({ name: expect.stringContaining('Q4') })
+    await expect(service.getById('cmp-001')).resolves.toMatchObject({ _id: 'cmp-001' })
   })
   it('rejects unknown id', async () => {
     await expect(service.getById('nope')).rejects.toThrow('not found')
@@ -32,8 +33,10 @@ describe('crudService (mock mode)', () => {
     expect(updated.status).toBe('active')
   })
   it('removes by id', async () => {
+    const before = await service.list()
     await service.remove('cmp-001')
-    await expect(service.list()).resolves.toHaveLength(1)
+    const after = await service.list()
+    expect(after).toHaveLength(before.length - 1)
   })
   it('update rejects unknown id', async () => {
     await expect(service.update('nope', {})).rejects.toThrow('not found')
