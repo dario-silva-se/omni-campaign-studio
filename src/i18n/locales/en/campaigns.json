@@ -1,0 +1,181 @@
+{
+  "control": {
+    "title": "Campaigns",
+    "subtitle": "Control Panel for your multichannel campaigns. Manage comment and message automations for Instagram, YouTube and Telegram.",
+    "newCampaign": "New Campaign",
+    "searchPlaceholder": "Search campaigns...",
+    "tabs": {
+      "all": "All",
+      "active": "Active",
+      "paused": "Paused",
+      "completed": "Completed"
+    },
+    "filter": "FILTER:",
+    "table": {
+      "status": "STATUS",
+      "routine": "ROUTINE",
+      "platform": "PLATFORM",
+      "targetContent": "TARGET CONTENT",
+      "keyword": "KEYWORD",
+      "respondidos": "RESPONDED",
+      "leads": "LEADS"
+    },
+    "footer": {
+      "showing": "Showing {{count}} of {{total}} campaigns"
+    },
+    "summary": {
+      "totalLeads": "TOTAL LEADS (30d)",
+      "avgConversion": "AVG CONVERSION",
+      "activeChannels": "ACTIVE CHANNELS",
+      "apisConnected": "3 APIs Connected"
+    }
+  },
+  "wizard": {
+    "title": "Create New Campaign",
+    "subtitle": "Set up your next high-impact marketing initiative. Define the basics, channels, and review before launch.",
+    "breadcrumb": {
+      "campaigns": "Campaigns",
+      "new": "New Campaign"
+    },
+    "steps": {
+      "step1": "Details",
+      "step2": "Channels",
+      "step3": "Audience",
+      "step4": "Review",
+      "step5": "Creative"
+    },
+    "navigation": {
+      "next": "Next Step",
+      "back": "Back",
+      "cancel": "Cancel",
+      "continue": "Continue",
+      "reviewCampaign": "Review Campaign",
+      "continueToCreatvie": "Continue to Creative",
+      "launchCampaign": "Launch Campaign",
+      "saveDraft": "Save Draft",
+      "backToAudience": "Back to Audience",
+      "saveExit": "Save & Exit"
+    },
+    "step1": {
+      "heading": "Create New Campaign",
+      "name": "Campaign Name",
+      "namePlaceholder": "Ex: Q3 Lead Generation Alpha",
+      "nameHint": "A unique identifier for internal tracking.",
+      "nameRequired": "Campaign name is required.",
+      "description": "Description",
+      "descriptionPlaceholder": "Briefly describe the campaign's focus and target audience...",
+      "objective": "Campaign Objective",
+      "objectives": {
+        "leadGen": "Lead Gen",
+        "leadGenDesc": "Acquire new contacts and prospects.",
+        "engagement": "Engagement",
+        "engagementDesc": "Boost brand interaction and visibility.",
+        "sales": "Sales",
+        "salesDesc": "Drive direct conversions and revenue."
+      },
+      "priority": "Priority Campaign",
+      "priorityHint": "Pin to top of dashboard."
+    },
+    "step2": {
+      "heading": "Step 2: Select Channels",
+      "subheading": "Choose the platforms where your campaign will be active.",
+      "channels": {
+        "email": "Email",
+        "emailDesc": "Professional communication for detailed updates and newsletters.",
+        "socialMedia": "Social Media",
+        "socialMediaDesc": "Reach your audience on LinkedIn, YouTube, LinkedIn.",
+        "sms": "SMS",
+        "smsDesc": "Direct mobile messaging for urgent or highly personal alerts.",
+        "ads": "Ads",
+        "adsDesc": "Targeted advertising campaigns across networks."
+      },
+      "required": "Select at least one channel."
+    },
+    "step3": {
+      "heading": "Define Your Audience",
+      "subheading": "Select a predefined segment or build a custom targeting profile.",
+      "savedSegments": "Saved Segments",
+      "customBuilder": "Custom Builder",
+      "estReach": "Est. Reach: ~1.2M",
+      "demographics": "Demographics",
+      "location": "Location",
+      "ageRange": "Age Range",
+      "interests": "Interests & Skills",
+      "interestsPlaceholder": "Search interests (e.g., No-code, AI)",
+      "pastBehavior": "Past Behavior",
+      "behaviorOpenedEmail": "Opened any email in last 30 days",
+      "behaviorClickedLinkedIn": "Clicked on recent LinkedIn Post",
+      "behaviorNewLeads": "New Leads (Added < 7 days)",
+      "required": "Select a segment or configure the custom builder."
+    },
+    "step4": {
+      "heading": "Review Your Audience",
+      "subheading": "Confirm your targeting parameters before proceeding to creative assets.",
+      "selectedSegment": "Selected Segment",
+      "audienceSize": "Audience Size",
+      "engagement": "Engagement",
+      "demographics": "Demographics",
+      "interestsBehaviors": "Interests & Behaviors",
+      "estReach": "EST. REACH",
+      "location": "Location",
+      "ageRange": "Age Range"
+    },
+    "step5": {
+      "heading": "Creative Assets",
+      "stepIndicator": "STEP 5 OF 5",
+      "formatSelection": "Format Selection",
+      "formats": {
+        "singleImage": "Single Image",
+        "video": "Video",
+        "carousel": "Carousel",
+        "document": "Document"
+      },
+      "mediaAssets": "Media Assets",
+      "slotsUsed": "1 of 10 slots used",
+      "dropzone": "Drop assets here or click to browse",
+      "dropzoneHint": "Supports JPG, PNG, MP4, and PDF (Max 50MB)",
+      "copywriting": "Copywriting",
+      "headline": "HEADLINE",
+      "primaryText": "PRIMARY TEXT",
+      "aiGenerate": "AI Generate",
+      "cta": "CALL TO ACTION",
+      "preview": "Preview"
+    }
+  },
+  "launch": {
+    "initializing": "INITIALIZING SEQUENCE",
+    "title": "Launching Campaign",
+    "subtitle": "is being deployed to global networks.",
+    "stages": {
+      "compliance": "Checking compliance",
+      "complianceDesc": "Automated brand safety checks passed.",
+      "mediaAssets": "Optimizing media assets",
+      "mediaAssetsDesc": "4K video encoded for 5 platforms.",
+      "linkedinApi": "Connecting to LinkedIn API",
+      "linkedinApiDesc": "Establishing secure handshake...",
+      "youtubeUpload": "Preparing YouTube upload",
+      "youtubeUploadDesc": "Waiting for dependency resolution."
+    },
+    "abort": "ABORT LAUNCH"
+  },
+  "success": {
+    "title": "Campaign is Live!",
+    "subtitle": "Your deployment sequence executed flawlessly. Systems are nominal.",
+    "channels": {
+      "active": "Active",
+      "targetReach": "Target Reach",
+      "budgetPacing": "Budget Pacing",
+      "onTrack": "On Track",
+      "adGroups": "Ad Groups",
+      "biddingStrategy": "Bidding Strategy",
+      "maxConv": "Max Conv.",
+      "broadcastLists": "Broadcast Lists",
+      "deliveryStatus": "Delivery Status"
+    },
+    "actions": {
+      "dashboard": "Go to Real-time Dashboard",
+      "shareReport": "Share Report",
+      "newCampaign": "New Campaign"
+    }
+  }
+}

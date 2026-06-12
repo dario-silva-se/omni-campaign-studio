@@ -20,7 +20,67 @@ export interface Campaign {
   audienceId?: string
   createdAt: string
   updatedAt: string
+  // Optional display fields used by campaign control table
+  routine?: string
+  routineIcon?: string
+  keyword?: string
+  respondidos?: number
+  contentLabel?: string
+  contentUrl?: string
 }
+
+// Campaign Wizard
+
+export type WizardChannelOption = 'email' | 'social-media' | 'sms' | 'ads'
+export type WizardObjective = 'lead-gen' | 'engagement' | 'sales'
+
+export interface WizardStep1State {
+  name: string
+  description: string
+  objective: WizardObjective
+  priority: boolean
+}
+
+export interface WizardStep2State {
+  channels: WizardChannelOption[]
+}
+
+export interface WizardStep3State {
+  selectedSegmentId: string | null
+  location: string
+  ageRange: string
+  interests: string[]
+  behaviorClickedLinkedIn: boolean
+  behaviorOpenedEmail: boolean
+  behaviorNewLeads: boolean
+}
+
+export interface WizardStep4State {
+  confirmed: boolean
+}
+
+export interface WizardStep5State {
+  format: string
+  headline: string
+  primaryText: string
+  cta: string
+}
+
+export interface WizardState {
+  step1: WizardStep1State
+  step2: WizardStep2State
+  step3: WizardStep3State
+  step4: WizardStep4State
+  step5: WizardStep5State
+}
+
+export type WizardAction =
+  | { type: 'SET_STEP1'; payload: Partial<WizardStep1State> }
+  | { type: 'SET_STEP2'; payload: Partial<WizardStep2State> }
+  | { type: 'SET_STEP3'; payload: Partial<WizardStep3State> }
+  | { type: 'SET_STEP4'; payload: Partial<WizardStep4State> }
+  | { type: 'SET_STEP5'; payload: Partial<WizardStep5State> }
+  | { type: 'RESET' }
 
 export interface AudienceSegment {
   _id: string

@@ -1,0 +1,181 @@
+{
+  "control": {
+    "title": "Campanhas",
+    "subtitle": "Painel de Controle de suas campanhas multicanal. Gerencie automações de comentários e mensagens para Instagram, YouTube e Telegram.",
+    "newCampaign": "Nova campanha",
+    "searchPlaceholder": "Buscar campanhas...",
+    "tabs": {
+      "all": "Todas",
+      "active": "Ativas",
+      "paused": "Pausadas",
+      "completed": "Concluídas"
+    },
+    "filter": "FILTRAR:",
+    "table": {
+      "status": "STATUS",
+      "routine": "ROUTINE",
+      "platform": "PLATFORM",
+      "targetContent": "TARGET CONTENT",
+      "keyword": "KEYWORD",
+      "respondidos": "RESPONDIDOS",
+      "leads": "LEADS"
+    },
+    "footer": {
+      "showing": "Mostrando {{count}} de {{total}} campanhas"
+    },
+    "summary": {
+      "totalLeads": "TOTAL DE LEADS (30d)",
+      "avgConversion": "CONVERSÃO MÉDIA",
+      "activeChannels": "CANAIS ATIVOS",
+      "apisConnected": "3 APIs Conectadas"
+    }
+  },
+  "wizard": {
+    "title": "Criar Nova Campanha",
+    "subtitle": "Configure sua próxima iniciativa de marketing de alto impacto. Defina o básico, canais e revise antes de lançar.",
+    "breadcrumb": {
+      "campaigns": "Campanhas",
+      "new": "Nova Campanha"
+    },
+    "steps": {
+      "step1": "Básicos",
+      "step2": "Canais",
+      "step3": "Público",
+      "step4": "Revisão",
+      "step5": "Criativo"
+    },
+    "navigation": {
+      "next": "Próximo Passo",
+      "back": "Voltar",
+      "cancel": "Cancelar",
+      "continue": "Continuar",
+      "reviewCampaign": "Revisar Campanha",
+      "continueToCreatvie": "Continuar para Criativo",
+      "launchCampaign": "Lançar Campanha",
+      "saveDraft": "Salvar Rascunho",
+      "backToAudience": "Voltar para Público",
+      "saveExit": "Salvar e Sair"
+    },
+    "step1": {
+      "heading": "Criar Nova Campanha",
+      "name": "Nome da Campanha",
+      "namePlaceholder": "Ex: Q3 Lead Generation Alpha",
+      "nameHint": "Um identificador único para rastreamento interno.",
+      "nameRequired": "Nome da campanha é obrigatório.",
+      "description": "Descrição",
+      "descriptionPlaceholder": "Descreva brevemente o foco e o público-alvo da campanha...",
+      "objective": "Objetivo da Campanha",
+      "objectives": {
+        "leadGen": "Lead Gen",
+        "leadGenDesc": "Adquira novos contatos e prospects.",
+        "engagement": "Engajamento",
+        "engagementDesc": "Aumente a interação e visibilidade da marca.",
+        "sales": "Vendas",
+        "salesDesc": "Impulsione conversões diretas e receita."
+      },
+      "priority": "Campanha Prioritária",
+      "priorityHint": "Fixar no topo do painel."
+    },
+    "step2": {
+      "heading": "Passo 2: Selecionar Canais",
+      "subheading": "Escolha as plataformas onde sua campanha estará ativa.",
+      "channels": {
+        "email": "E-mail",
+        "emailDesc": "Comunicação profissional para atualizações e newsletters.",
+        "socialMedia": "Redes Sociais",
+        "socialMediaDesc": "Alcance seu público no LinkedIn, YouTube e Telegram.",
+        "sms": "SMS",
+        "smsDesc": "Mensagens móveis diretas para alertas urgentes ou pessoais.",
+        "ads": "Anúncios",
+        "adsDesc": "Campanhas publicitárias segmentadas em redes diversas."
+      },
+      "required": "Selecione ao menos um canal."
+    },
+    "step3": {
+      "heading": "Definir Seu Público",
+      "subheading": "Selecione um segmento predefinido ou construa um perfil de segmentação personalizado.",
+      "savedSegments": "Segmentos Salvos",
+      "customBuilder": "Construtor Personalizado",
+      "estReach": "Alcance Est.: ~1.2M",
+      "demographics": "Dados Demográficos",
+      "location": "Localização",
+      "ageRange": "Faixa Etária",
+      "interests": "Interesses & Habilidades",
+      "interestsPlaceholder": "Buscar interesses (ex: No-code, IA)",
+      "pastBehavior": "Comportamento Anterior",
+      "behaviorOpenedEmail": "Abriu algum e-mail nos últimos 30 dias",
+      "behaviorClickedLinkedIn": "Clicou em post recente do LinkedIn",
+      "behaviorNewLeads": "Novos Leads (Adicionados < 7 dias)",
+      "required": "Selecione um segmento ou configure o construtor personalizado."
+    },
+    "step4": {
+      "heading": "Revisar Seu Público",
+      "subheading": "Confirme seus parâmetros de segmentação antes de prosseguir para os criativos.",
+      "selectedSegment": "Segmento Selecionado",
+      "audienceSize": "Tamanho do Público",
+      "engagement": "Engajamento",
+      "demographics": "Dados Demográficos",
+      "interestsBehaviors": "Interesses & Comportamentos",
+      "estReach": "ALCANCE EST.",
+      "location": "Localização",
+      "ageRange": "Faixa Etária"
+    },
+    "step5": {
+      "heading": "Ativos Criativos",
+      "stepIndicator": "PASSO 5 DE 5",
+      "formatSelection": "Seleção de Formato",
+      "formats": {
+        "singleImage": "Imagem Única",
+        "video": "Vídeo",
+        "carousel": "Carrossel",
+        "document": "Documento"
+      },
+      "mediaAssets": "Ativos de Mídia",
+      "slotsUsed": "1 de 10 slots usados",
+      "dropzone": "Solte ativos aqui ou clique para navegar",
+      "dropzoneHint": "Suporta JPG, PNG, MP4 e PDF (Máx 50MB)",
+      "copywriting": "Redação",
+      "headline": "TÍTULO",
+      "primaryText": "TEXTO PRINCIPAL",
+      "aiGenerate": "Gerar com IA",
+      "cta": "CHAMADA PARA AÇÃO",
+      "preview": "Pré-visualização"
+    }
+  },
+  "launch": {
+    "initializing": "INICIALIZANDO SEQUÊNCIA",
+    "title": "Lançando Campanha",
+    "subtitle": "está sendo implantada nas redes globais.",
+    "stages": {
+      "compliance": "Verificando conformidade",
+      "complianceDesc": "Verificações automáticas de segurança de marca aprovadas.",
+      "mediaAssets": "Otimizando ativos de mídia",
+      "mediaAssetsDesc": "Vídeo 4K codificado para 5 plataformas.",
+      "linkedinApi": "Conectando à API do LinkedIn",
+      "linkedinApiDesc": "Estabelecendo handshake seguro...",
+      "youtubeUpload": "Preparando upload no YouTube",
+      "youtubeUploadDesc": "Aguardando resolução de dependência."
+    },
+    "abort": "ABORTAR LANÇAMENTO"
+  },
+  "success": {
+    "title": "Campanha está ao Vivo!",
+    "subtitle": "Sua sequência de implantação foi executada com perfeição. Sistemas nominais.",
+    "channels": {
+      "active": "Ativo",
+      "targetReach": "Alcance Alvo",
+      "budgetPacing": "Ritmo de Orçamento",
+      "onTrack": "No Ritmo",
+      "adGroups": "Grupos de Anúncios",
+      "biddingStrategy": "Estratégia de Lance",
+      "maxConv": "Conv. Máx.",
+      "broadcastLists": "Listas de Broadcast",
+      "deliveryStatus": "Status de Entrega"
+    },
+    "actions": {
+      "dashboard": "Ir para o Painel em Tempo Real",
+      "shareReport": "Compartilhar Relatório",
+      "newCampaign": "Nova Campanha"
+    }
+  }
+}

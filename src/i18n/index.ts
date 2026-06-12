@@ -16,11 +16,13 @@ import ptBRCreativeLab from './locales/pt-BR/creativeLab.json'
 import enCreativeLab from './locales/en/creativeLab.json'
 import ptBRContentGeneration from './locales/pt-BR/contentGeneration.json'
 import enContentGeneration from './locales/en/contentGeneration.json'
+import ptBRCampaigns from './locales/pt-BR/campaigns.json'
+import enCampaigns from './locales/en/campaigns.json'
 
 export const defaultNS = 'common'
 export const resources = {
-  'pt-BR': { common: ptBRCommon, dashboard: ptBRDashboard, analytics: ptBRAnalytics, audiences: ptBRAudiences, templates: ptBRTemplates, creativeLab: ptBRCreativeLab, contentGeneration: ptBRContentGeneration },
-  en: { common: enCommon, dashboard: enDashboard, analytics: enAnalytics, audiences: enAudiences, templates: enTemplates, creativeLab: enCreativeLab, contentGeneration: enContentGeneration },
+  'pt-BR': { common: ptBRCommon, dashboard: ptBRDashboard, analytics: ptBRAnalytics, audiences: ptBRAudiences, templates: ptBRTemplates, creativeLab: ptBRCreativeLab, contentGeneration: ptBRContentGeneration, campaigns: ptBRCampaigns },
+  en: { common: enCommon, dashboard: enDashboard, analytics: enAnalytics, audiences: enAudiences, templates: enTemplates, creativeLab: enCreativeLab, contentGeneration: enContentGeneration, campaigns: enCampaigns },
 } as const
 
 i18n
