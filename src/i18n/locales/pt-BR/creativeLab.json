@@ -1,0 +1,51 @@
+{
+  "breadcrumb": {
+    "campaigns": "Campanhas",
+    "newCreative": "Novo Criativo"
+  },
+  "header": {
+    "saveDraft": "Salvar Rascunho",
+    "issues": "{{count}} Problemas",
+    "finalize": "Finalizar Criativo"
+  },
+  "format": {
+    "title": "Formato",
+    "singleImage": "Imagem Única",
+    "carousel": "Carrossel",
+    "video": "Vídeo",
+    "storyReel": "Story/Reel"
+  },
+  "publishContext": {
+    "title": "Contexto de Publicação",
+    "companyPage": "Página da Empresa",
+    "personalProfile": "Perfil Pessoal"
+  },
+  "mediaAssets": {
+    "title": "Mídia",
+    "addMore": "Adicionar",
+    "hint": "jpg, png, mp4 até 50mb"
+  },
+  "copywriting": {
+    "title": "Copywriting",
+    "headline": "Título",
+    "primaryText": "Texto Principal",
+    "cta": "Chamada para Ação (CTA)",
+    "aiGenerate": "Gerar com IA"
+  },
+  "preview": {
+    "desktop": "Desktop",
+    "mobile": "Mobile",
+    "safeZones": "Zonas Seguras",
+    "promoted": "Patrocinado",
+    "learnMore": "Saiba Mais"
+  },
+  "optimizer": {
+    "title": "Assistente Otimizador",
+    "subtitle": "Sugestões em tempo real para melhorar o desempenho do anúncio.",
+    "complianceTitle": "Checklist de Conformidade",
+    "platformSpecifics": "Específico por Plataforma",
+    "runFullAnalysis": "Executar Análise Completa",
+    "verified": "Verificado",
+    "pending": "Pendente"
+  }
+}

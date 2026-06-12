@@ -1,0 +1,51 @@
+{
+  "breadcrumb": {
+    "campaigns": "Campaigns",
+    "newCreative": "New Ad Creative"
+  },
+  "header": {
+    "saveDraft": "Save Draft",
+    "issues": "{{count}} Issues",
+    "finalize": "Finalize Creative"
+  },
+  "format": {
+    "title": "Format",
+    "singleImage": "Single Image",
+    "carousel": "Carousel",
+    "video": "Video",
+    "storyReel": "Story/Reel"
+  },
+  "publishContext": {
+    "title": "Publishing Context",
+    "companyPage": "Company Page",
+    "personalProfile": "Personal Profile"
+  },
+  "mediaAssets": {
+    "title": "Media Assets",
+    "addMore": "Add More",
+    "hint": "jpg, png, mp4 up to 50mb"
+  },
+  "copywriting": {
+    "title": "Copywriting",
+    "headline": "Headline",
+    "primaryText": "Primary Text",
+    "cta": "Call to Action (CTA)",
+    "aiGenerate": "AI Generate"
+  },
+  "preview": {
+    "desktop": "Desktop",
+    "mobile": "Mobile",
+    "safeZones": "Safe Zones",
+    "promoted": "Promoted",
+    "learnMore": "Learn More"
+  },
+  "optimizer": {
+    "title": "Optimizer Assistant",
+    "subtitle": "Real-time suggestions to improve ad performance.",
+    "complianceTitle": "Compliance Checklist",
+    "platformSpecifics": "Platform Specifics",
+    "runFullAnalysis": "Run Full Analysis",
+    "verified": "Verified",
+    "pending": "Pending"
+  }
+}
