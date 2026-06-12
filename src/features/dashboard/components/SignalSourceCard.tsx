@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import { Icon } from '@/components/ui/Icon'
-import type { DashboardSignal, DashboardSignalSource } from '@/mocks/fixtures/dashboard'
+import type { DashboardSignal, DashboardSignalSource } from '@/types'
 
 interface SignalSourceConfig {
   bgColor: string
@@ -14,11 +14,11 @@ const sourceConfig: Record<DashboardSignalSource, SignalSourceConfig> = {
   telegram: { bgColor: '#0088cc', iconName: 'send' },
 }
 
-interface LinkedInSignalItemProps {
+interface SignalItemProps {
   signal: DashboardSignal
 }
 
-function LinkedInSignalItem({ signal }: LinkedInSignalItemProps) {
+function LinkedInSignalItem({ signal }: SignalItemProps) {
   return (
     <div className="p-sm border-b border-outline-variant/10 hover:bg-surface-variant/30 transition-colors cursor-pointer group">
       <div className="flex items-center mb-1">
@@ -47,8 +47,7 @@ function LinkedInSignalItem({ signal }: LinkedInSignalItemProps) {
   )
 }
 
-interface YouTubeSignalItemProps {
-  signal: DashboardSignal
+interface YouTubeSignalItemProps extends SignalItemProps {
   isLast: boolean
 }
 
@@ -66,7 +65,8 @@ function YouTubeSignalItem({ signal, isLast }: YouTubeSignalItemProps) {
       )}
       <div className="text-[10px] text-outline-variant flex justify-between items-center">
         <span>
-          {t('signals.channel')} {signal.author} · {signal.publishedAt}
+          {t('signals.channel')} {signal.author}
+          {signal.publishedAt && ` · ${signal.publishedAt}`}
         </span>
         {signal.views != null && (
           <span className="flex items-center">
@@ -79,8 +79,7 @@ function YouTubeSignalItem({ signal, isLast }: YouTubeSignalItemProps) {
   )
 }
 
-interface TelegramSignalItemProps {
-  signal: DashboardSignal
+interface TelegramSignalItemProps extends SignalItemProps {
   isLast: boolean
 }
 
@@ -97,7 +96,7 @@ function TelegramSignalItem({ signal, isLast }: TelegramSignalItemProps) {
         )}
         <h4 className="font-body-sm font-semibold text-on-surface group-hover:text-primary transition-colors">
           {signal.title}
-          {signal.author && signal.source === 'telegram' && !signal.categoryTag && (
+          {signal.author && !signal.categoryTag && (
             <span className="text-outline-variant font-normal text-xs ml-1">{signal.author}</span>
           )}
         </h4>

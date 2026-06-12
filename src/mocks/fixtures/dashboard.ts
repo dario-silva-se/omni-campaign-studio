@@ -1,40 +1,6 @@
-export type DashboardSignalSource = 'linkedin' | 'youtube' | 'telegram'
+import type { DashboardData, DashboardSignal, DashboardSignalSource, DashboardStatCard } from '@/types'
 
-export interface DashboardSignal {
-  _id: string
-  source: DashboardSignalSource
-  title: string
-  description?: string
-  /** For linkedin: "Author: @handle · @handle2 · date" */
-  author: string
-  publishedAt: string
-  views?: number
-  /** LinkedIn only: high signal badge label e.g. "Alta" */
-  badge?: string
-  /** Telegram only: growth/activity text shown below description */
-  activityNote?: string
-  /** Telegram only: category tag shown as a badge e.g. "Crescimento" */
-  categoryTag?: string
-}
-
-export interface DashboardStatCard {
-  icon: string
-  label: string
-  value: string
-  trend: string
-  trendPositive: boolean
-  sparklinePoints: string
-}
-
-export interface DashboardData {
-  _id: string
-  greetingName: string
-  campaignsRunning: number
-  leadsCaptured: number
-  stats: DashboardStatCard[]
-  signals: DashboardSignal[]
-  radarUpdatedAt: string
-}
+export type { DashboardData, DashboardSignal, DashboardSignalSource, DashboardStatCard }
 
 export const dashboardFixture: DashboardData[] = [
   {
@@ -142,7 +108,6 @@ export const dashboardFixture: DashboardData[] = [
         description:
           'Monitoramento global indica migração de comunidades de desenvolvedores para canais privados.',
         author: 'telegram-monitoring',
-        publishedAt: '',
         categoryTag: 'Crescimento',
         activityNote: '+12.4k novos membros hoje',
       },
@@ -153,7 +118,6 @@ export const dashboardFixture: DashboardData[] = [
         description:
           'Atualização permite integração direta de checkouts em mini-apps dentro do mensageiro.',
         author: 'by telegram-dev',
-        publishedAt: '',
         activityNote: 'Alta atividade em @BotFather',
       },
     ],

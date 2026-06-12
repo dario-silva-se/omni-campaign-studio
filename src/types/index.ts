@@ -153,3 +153,43 @@ export interface AnalyticsSummary {
   mqlToSqlRate: number
   byChannel: { channel: Channel; leads: number; spend: number; roi: number }[]
 }
+
+// Dashboard
+
+export type DashboardSignalSource = 'linkedin' | 'youtube' | 'telegram'
+
+export interface DashboardSignal {
+  _id: string
+  source: DashboardSignalSource
+  title: string
+  description?: string
+  /** For linkedin: "Author: @handle · @handle2 · date" */
+  author: string
+  publishedAt?: string
+  views?: number
+  /** LinkedIn only: high signal badge label e.g. "Alta" */
+  badge?: string
+  /** Telegram only: growth/activity text shown below description */
+  activityNote?: string
+  /** Telegram only: category tag shown as a badge e.g. "Crescimento" */
+  categoryTag?: string
+}
+
+export interface DashboardStatCard {
+  icon: string
+  label: string
+  value: string
+  trend: string
+  trendPositive: boolean
+  sparklinePoints: string
+}
+
+export interface DashboardData {
+  _id: string
+  greetingName: string
+  campaignsRunning: number
+  leadsCaptured: number
+  stats: DashboardStatCard[]
+  signals: DashboardSignal[]
+  radarUpdatedAt: string
+}
