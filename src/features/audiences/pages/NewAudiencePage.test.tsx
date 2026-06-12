@@ -32,15 +32,15 @@ describe('NewAudiencePage', () => {
 
   it('renders the Save Segment CTA button', () => {
     renderWithRoutes()
-    expect(screen.getByRole('button', { name: /save segment/i })).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: /salvar segmento/i })).toBeInTheDocument()
   })
 
   it('renders all form sections', () => {
     renderWithRoutes()
-    expect(screen.getByText('Basic Details')).toBeInTheDocument()
-    expect(screen.getByText('Demographics')).toBeInTheDocument()
-    expect(screen.getByText('Interests & Keywords')).toBeInTheDocument()
-    expect(screen.getByText('Interaction History')).toBeInTheDocument()
+    expect(screen.getByText('Detalhes Básicos')).toBeInTheDocument()
+    expect(screen.getByText('Demografia')).toBeInTheDocument()
+    expect(screen.getByText('Interesses e Palavras-chave')).toBeInTheDocument()
+    expect(screen.getByText('Histórico de Interação')).toBeInTheDocument()
   })
 
   it('navigates to /audiences on successful submit', async () => {
@@ -52,7 +52,7 @@ describe('NewAudiencePage', () => {
     await user.type(nameInput, 'Test Segment')
 
     // Submit
-    await user.click(screen.getByRole('button', { name: /save segment/i }))
+    await user.click(screen.getByRole('button', { name: /salvar segmento/i }))
 
     // Should navigate to /audiences
     expect(await screen.findByTestId('audiences-list')).toBeInTheDocument()
@@ -62,7 +62,7 @@ describe('NewAudiencePage', () => {
     const user = userEvent.setup()
     renderWithRoutes()
     // Click submit without filling in the name - browser validation prevents it
-    const submitBtn = screen.getByRole('button', { name: /save segment/i })
+    const submitBtn = screen.getByRole('button', { name: /salvar segmento/i })
     expect(submitBtn).toBeInTheDocument()
     // The audience list page should NOT appear without a name
     await user.click(submitBtn)

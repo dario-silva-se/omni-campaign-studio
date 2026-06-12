@@ -8,18 +8,30 @@ interface AudienceCardProps {
   segment: AudienceSegment
 }
 
-/** Tiny bar-chart purely decorative – shows growth bars as seen in the spec */
+/** Tiny bar-chart purely decorative – shows growth bars as seen in the spec.
+ *  Opacity progression: 0.20 / 0.40 / 0.60 / 0.80 / 1.0 / 1.0 (last bar also gets a glow).
+ *  Inline style handles opacity so the dynamic colorClass isn't broken by Tailwind purging
+ *  opacity-utility combinations at build time.
+ */
 function SparkBars({ colorClass }: { colorClass: string }) {
   const heights = ['30%', '50%', '40%', '70%', '90%', '100%']
+  const opacities = [0.20, 0.40, 0.60, 0.80, 1.0, 1.0]
   return (
     <div className="flex-1 h-12 flex items-end justify-end gap-1 pb-1">
-      {heights.map((h, i) => (
-        <div
-          key={i}
-          className={cn('w-2 rounded-t-sm', colorClass)}
-          style={{ height: h }}
-        />
-      ))}
+      {heights.map((h, i) => {
+        const isLast = i === heights.length - 1
+        return (
+          <div
+            key={i}
+            className={cn('w-2 rounded-t-sm', colorClass)}
+            style={{
+              height: h,
+              opacity: opacities[i],
+              ...(isLast ? { boxShadow: '0 0 10px rgba(173,198,255,0.5)' } : {}),
+            }}
+          />
+        )
+      })}
     </div>
   )
 }
