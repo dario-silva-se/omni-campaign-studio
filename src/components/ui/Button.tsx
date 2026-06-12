@@ -9,6 +9,7 @@ export type ButtonSize = 'sm' | 'md' | 'lg'
 export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant
   size?: ButtonSize
+  /** Icons are decorative (aria-hidden). For icon-only buttons, pass an explicit aria-label. */
   leadingIcon?: string
   trailingIcon?: string
 }
