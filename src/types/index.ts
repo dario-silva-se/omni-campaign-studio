@@ -193,3 +193,142 @@ export interface DashboardData {
   signals: DashboardSignal[]
   radarUpdatedAt: string
 }
+
+// Analytics
+
+export interface AnalyticsKpi {
+  icon: string
+  colorClass: string
+  label: string
+  value: string
+  trendValue: string
+  trendPositive: boolean
+  barWidthPct: number
+}
+
+export interface AnalyticsRoiSummary {
+  estimatedRoi: string
+  costPerLead: string
+  customerAcquisitionCost: string
+}
+
+export interface AnalyticsChartBar {
+  /** height as Tailwind fraction class e.g. 'h-2/3' */
+  heightClass: string
+}
+
+export interface AnalyticsChannelLinkedIn {
+  cLevelPct: number
+  directorPct: number
+  ctrVideoContent: string
+}
+
+export interface AnalyticsChannelYouTube {
+  avgViewDuration: string
+  retentionRate: string
+  watchTimeHours: string
+}
+
+export interface AnalyticsChannelTelegram {
+  readRatePct: string
+  linkClicks: string
+  memberRetentionPct: string
+}
+
+export interface AnalyticsTopContent {
+  _id: string
+  title: string
+  channel: Channel
+  reach: number
+  clicks: number
+  status: 'active' | 'finished'
+}
+
+export interface AnalyticsValueMetrics {
+  _id: 'value-metrics'
+  roi: AnalyticsRoiSummary
+  kpis: AnalyticsKpi[]
+  chartBars: AnalyticsChartBar[]
+  linkedin: AnalyticsChannelLinkedIn
+  youtube: AnalyticsChannelYouTube
+  telegram: AnalyticsChannelTelegram
+  topContent: AnalyticsTopContent[]
+}
+
+// Campaign Health
+
+export interface CampaignHealthFunnelStage {
+  label: string
+  value: number
+  barWidthPct: number
+  colorClass: string
+}
+
+export interface CampaignHealthChannelRow {
+  _id: string
+  name: string
+  icon: string
+  iconColorClass: string
+  spend: string
+  cpaSql: string
+  cpaChange: string
+  cpaChangePositive: boolean
+  status: 'optimal' | 'scaling' | 'fatigue'
+}
+
+export type AiActionDotColor = 'secondary-container' | 'primary' | 'outline-variant'
+
+export interface CampaignHealthAiAction {
+  _id: string
+  title: string
+  description: string
+  timeAgo: string
+  dotColor: AiActionDotColor
+}
+
+export interface CampaignHealthRoi {
+  _id: 'campaign-health'
+  pipelineAmount: string
+  blendedRoas: string
+  budgetBurn: string
+  roiTrendPct: string
+  chartBars: AnalyticsChartBar[]
+  funnelStages: CampaignHealthFunnelStage[]
+  mqlToSqlRate: string
+  channelRows: CampaignHealthChannelRow[]
+  aiActions: CampaignHealthAiAction[]
+}
+
+// Lead Lifecycle
+
+export type LeadStage = 'sql-crm-synced' | 'mql-nurture' | 'lead-discovery'
+
+export interface LeadSourceAttribution {
+  source: Channel
+  label: string
+  pct: number
+  colorHex: string
+}
+
+export interface LeadLifecycleLead {
+  _id: string
+  initials: string
+  name: string
+  company: string
+  sourceTouch: string
+  sourceTouchChannel: Channel
+  qualityScore: number
+  qualityStars: number
+  stage: LeadStage
+  lastActive: string
+}
+
+export interface LeadLifecycleAttribution {
+  _id: 'lead-lifecycle'
+  sources: LeadSourceAttribution[]
+  avgTimeToSqlDays: number
+  avgTimeToSqlTrendPct: string
+  avgQualityScore: number
+  avgQualityOutOf: number
+  leads: LeadLifecycleLead[]
+}
