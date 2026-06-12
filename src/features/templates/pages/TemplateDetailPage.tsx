@@ -1,6 +1,7 @@
 import { useParams, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Icon } from '@/components/ui/Icon'
+import { Button } from '@/components/ui/Button'
 import { useTemplate } from '../hooks/useTemplates'
 import { LinkedInTemplateDetail } from '../components/LinkedInTemplateDetail'
 import { TelegramTemplateDetail } from '../components/TelegramTemplateDetail'
@@ -37,6 +38,9 @@ export default function TemplateDetailPage() {
             <span className="font-body-sm text-body-sm text-on-surface-variant">{template.name}</span>
           </div>
         </div>
+        <Button variant="primary" size="sm">
+          {t('detail.publish')}
+        </Button>
       </div>
 
       {/* Channel-specific detail */}

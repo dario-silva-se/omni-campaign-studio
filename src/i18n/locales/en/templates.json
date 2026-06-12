@@ -32,6 +32,7 @@
     "mobileView": "Mobile View",
     "livePreviewing": "Live Previewing",
     "estEngagement": "Est. Engagement",
+    "engagementHint": "Proprietary score based on performance history.",
     "bestPractices": "Best Practices",
     "sentimentTone": "Sentiment Tone",
     "like": "Like",
@@ -57,6 +58,7 @@
     "engagementAnalysis": "Engagement Analysis",
     "estReach": "EST. REACH",
     "estClicks": "EST. CLICKS",
+    "postingTimeHint": "Posting at 14:20 local time aligns with peak subscriber activity.",
     "complianceChecklist": "Compliance Checklist",
     "livePreviewing": "Live Preview Active",
     "autoSaved": "Auto-saved 2m ago"

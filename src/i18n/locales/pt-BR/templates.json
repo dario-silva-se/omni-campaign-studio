@@ -32,6 +32,7 @@
     "mobileView": "Visão Mobile",
     "livePreviewing": "Pré-visualização ao Vivo",
     "estEngagement": "Engajamento Est.",
+    "engagementHint": "Pontuação proprietária baseada no histórico de desempenho.",
     "bestPractices": "Melhores Práticas",
     "sentimentTone": "Tom de Sentimento",
     "like": "Curtir",
@@ -57,6 +58,7 @@
     "engagementAnalysis": "Análise de Engajamento",
     "estReach": "ALCANCE EST.",
     "estClicks": "CLIQUES EST.",
+    "postingTimeHint": "Postagem às 14:20 hora local alinha-se com o período de pico de atividade dos assinantes.",
     "complianceChecklist": "Lista de Conformidade",
     "livePreviewing": "Pré-visualização Ativa",
     "autoSaved": "Salvo automaticamente há 2 min"
