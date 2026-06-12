@@ -3,6 +3,7 @@ import { Routes, Route, MemoryRouter } from 'react-router-dom'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { I18nextProvider } from 'react-i18next'
 import i18n from '@/i18n'
+import { audienceService } from '@/services/audienceService'
 import EditSegmentPage from './EditSegmentPage'
 
 function renderEditPage(segmentId = 'seg-001') {
@@ -55,5 +56,12 @@ describe('EditSegmentPage', () => {
     await screen.findByDisplayValue('Desenvolvedores Sênior')
     expect(screen.getByRole('button', { name: /salvar alterações/i })).toBeInTheDocument()
     expect(screen.getByRole('button', { name: /cancelar/i })).toBeInTheDocument()
+  })
+
+  it('shows an alert when the service rejects', async () => {
+    const spy = vi.spyOn(audienceService, 'getById').mockRejectedValueOnce(new Error('not found'))
+    renderEditPage('seg-001')
+    expect(await screen.findByRole('alert')).toBeInTheDocument()
+    spy.mockRestore()
   })
 })

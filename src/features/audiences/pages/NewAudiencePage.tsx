@@ -9,32 +9,36 @@ import { Select } from '@/components/ui/Select'
 import { useCreateAudience } from '../hooks/useAudiences'
 
 const LOCATION_OPTIONS = [
-  { value: 'global', label: 'Global (All)' },
-  { value: 'north-america', label: 'North America' },
-  { value: 'latam', label: 'Latin America' },
-  { value: 'europe', label: 'Europe' },
-  { value: 'asia-pacific', label: 'Asia Pacific' },
+  { value: 'global', labelKey: 'audiences:create.locationGlobal' },
+  { value: 'north-america', labelKey: 'audiences:create.locationNorthAmerica' },
+  { value: 'latam', labelKey: 'audiences:create.locationLatam' },
+  { value: 'europe', labelKey: 'audiences:create.locationEurope' },
+  { value: 'asia-pacific', labelKey: 'audiences:create.locationAsiaPacific' },
 ]
 
 const AGE_OPTIONS = [
-  { value: '', label: 'Any Age' },
-  { value: '18-24', label: '18 - 24' },
-  { value: '25-34', label: '25 - 34' },
-  { value: '35-44', label: '35 - 44' },
-  { value: '45+', label: '45+' },
+  { value: '', labelKey: 'audiences:create.ageAny' },
+  { value: '18-24', labelKey: 'audiences:create.age1824' },
+  { value: '25-34', labelKey: 'audiences:create.age2534' },
+  { value: '35-44', labelKey: 'audiences:create.age3544' },
+  { value: '45+', labelKey: 'audiences:create.age45plus' },
 ]
 
 const INDUSTRY_OPTIONS = [
-  { value: '', label: 'Any Industry' },
-  { value: 'software', label: 'Software / IT' },
-  { value: 'marketing', label: 'Marketing / Advertising' },
-  { value: 'finance', label: 'Finance' },
+  { value: '', labelKey: 'audiences:create.industryAny' },
+  { value: 'software', labelKey: 'audiences:create.industrySoftware' },
+  { value: 'marketing', labelKey: 'audiences:create.industryMarketing' },
+  { value: 'finance', labelKey: 'audiences:create.industryFinance' },
 ]
 
 export default function NewAudiencePage() {
   const { t } = useTranslation(['audiences', 'common'])
   const navigate = useNavigate()
   const createAudience = useCreateAudience()
+
+  const locationOptions = LOCATION_OPTIONS.map((o) => ({ value: o.value, label: t(o.labelKey) }))
+  const ageOptions = AGE_OPTIONS.map((o) => ({ value: o.value, label: t(o.labelKey) }))
+  const industryOptions = INDUSTRY_OPTIONS.map((o) => ({ value: o.value, label: t(o.labelKey) }))
 
   const [name, setName] = useState('')
   const [description, setDescription] = useState('')
@@ -157,19 +161,19 @@ export default function NewAudiencePage() {
                 label={t('audiences:create.location')}
                 value={location}
                 onChange={(e) => setLocation(e.target.value)}
-                options={LOCATION_OPTIONS}
+                options={locationOptions}
               />
               <Select
                 label={t('audiences:create.ageRange')}
                 value={ageRange}
                 onChange={(e) => setAgeRange(e.target.value)}
-                options={AGE_OPTIONS}
+                options={ageOptions}
               />
               <Select
                 label={t('audiences:create.industry')}
                 value={industry}
                 onChange={(e) => setIndustry(e.target.value)}
-                options={INDUSTRY_OPTIONS}
+                options={industryOptions}
               />
             </div>
           </div>
