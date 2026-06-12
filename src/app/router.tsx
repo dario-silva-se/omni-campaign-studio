@@ -15,6 +15,9 @@ const DashboardPage = lazy(() => import('@/features/dashboard/pages/DashboardPag
 const AnalyticsPage = lazy(() => import('@/features/analytics/pages/AnalyticsPage'))
 const CampaignHealthPage = lazy(() => import('@/features/analytics/pages/CampaignHealthPage'))
 const LeadLifecyclePage = lazy(() => import('@/features/analytics/pages/LeadLifecyclePage'))
+const AudiencesPage = lazy(() => import('@/features/audiences/pages/AudiencesPage'))
+const NewAudiencePage = lazy(() => import('@/features/audiences/pages/NewAudiencePage'))
+const EditSegmentPage = lazy(() => import('@/features/audiences/pages/EditSegmentPage'))
 
 export function AppRoutes() {
   return (
@@ -25,9 +28,9 @@ export function AppRoutes() {
           <Route path="analytics" element={<AnalyticsPage />} />
           <Route path="analytics/campaign-health" element={<CampaignHealthPage />} />
           <Route path="analytics/lead-lifecycle" element={<LeadLifecyclePage />} />
-          <Route path="audiences" element={<PagePlaceholder />} />
-          <Route path="audiences/new" element={<PagePlaceholder />} />
-          <Route path="audiences/:id/edit" element={<PagePlaceholder />} />
+          <Route path="audiences" element={<AudiencesPage />} />
+          <Route path="audiences/new" element={<NewAudiencePage />} />
+          <Route path="audiences/:id/edit" element={<EditSegmentPage />} />
           <Route path="templates" element={<PagePlaceholder />} />
           <Route path="templates/:id" element={<PagePlaceholder />} />
           <Route path="creative-lab" element={<PagePlaceholder />} />

@@ -25,11 +25,29 @@ export interface Campaign {
 export interface AudienceSegment {
   _id: string
   name: string
+  /** Short category label shown as a pill above the card title */
+  tag?: string
+  /** Tailwind color token name for the tag pill (e.g. 'primary', 'secondary-container') */
+  tagColor?: string
   description: string
   size: number
+  /** Formatted size string shown on the card, e.g. '2.4M' */
+  sizeLabel?: string
+  /** Human-readable location string */
+  location?: string
+  /** Human-readable age range string */
+  ageRange?: string
+  /** Free-text interest / keyword tags */
+  interests?: string[]
   channels: Channel[]
   criteria: { field: string; operator: string; value: string }[]
   personas: string[]
+  // Audience builder fields (new / edit form)
+  locationOption?: string
+  ageRangeOption?: string
+  industry?: string
+  interactionClickedLink?: boolean
+  interactionEngagedLinkedIn?: boolean
   createdAt: string
   updatedAt: string
 }
