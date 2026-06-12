@@ -1,4 +1,4 @@
-import { Suspense } from 'react'
+import { Suspense, lazy } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { AppLayout } from '@/components/layout/AppLayout'
 
@@ -11,15 +11,14 @@ function PageLoader() {
   return <div role="status" aria-live="polite" className="p-lg text-on-surface-variant">Carregando…</div>
 }
 
-// Example as pages land (Task 11+):
-// const DashboardPage = lazy(() => import('@/features/dashboard/pages/DashboardPage'))
+const DashboardPage = lazy(() => import('@/features/dashboard/pages/DashboardPage'))
 
 export function AppRoutes() {
   return (
     <Suspense fallback={<PageLoader />}>
       <Routes>
         <Route element={<AppLayout />}>
-          <Route index element={<PagePlaceholder />} />
+          <Route index element={<DashboardPage />} />
           <Route path="analytics" element={<PagePlaceholder />} />
           <Route path="analytics/campaign-health" element={<PagePlaceholder />} />
           <Route path="analytics/lead-lifecycle" element={<PagePlaceholder />} />

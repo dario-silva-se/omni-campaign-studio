@@ -1,0 +1,37 @@
+{
+  "header": {
+    "tabDashboard": "Dashboard",
+    "tabAnalytics": "Analytics",
+    "syncButton": "Sincronizar",
+    "panelLabel": "PAINEL",
+    "dayLabel": "SEXTA-FEIRA, 22 DE MAIO"
+  },
+  "greeting": {
+    "prefix": "Bom dia,",
+    "campaignsRunning": "campanhas rodando",
+    "leadsCaptured": "leads capturados"
+  },
+  "resultados": {
+    "title": "Resultados Gerais",
+    "subtitle": "Acumulado de todas as campanhas"
+  },
+  "radar": {
+    "title": "Radar de Hoje",
+    "updatedAt": "Atualizado hoje às",
+    "sinais": "Sinais"
+  },
+  "sources": {
+    "linkedin": "LinkedIn Trends",
+    "youtube": "YouTube",
+    "telegram": "Telegram Insights"
+  },
+  "signals": {
+    "badge": {
+      "alta": "Alta",
+      "crescimento": "Crescimento"
+    },
+    "views": "visualizações",
+    "channel": "Canal:",
+    "trendingUp": "trending_up"
+  }
+}
