@@ -1,0 +1,38 @@
+import type { Campaign } from '@/types'
+
+export const campaignsFixture: Campaign[] = [
+  {
+    _id: 'cmp-001',
+    name: 'Q4 Enterprise Push — LinkedIn ABM',
+    status: 'active',
+    channels: ['linkedin'],
+    budget: 25000,
+    spend: 14230,
+    cpl: 42.1,
+    cpm: 12.8,
+    roas: 3.4,
+    leads: 338,
+    mql: 120,
+    sql: 41,
+    startDate: '2026-05-01',
+    createdAt: '2026-04-20T10:00:00Z',
+    updatedAt: '2026-06-10T08:40:00Z',
+  },
+  {
+    _id: 'cmp-002',
+    name: 'DevRel YouTube Series',
+    status: 'paused',
+    channels: ['youtube', 'telegram'],
+    budget: 12000,
+    spend: 9100,
+    cpl: 48.2,
+    cpm: 15.45,
+    roas: 1.9,
+    leads: 189,
+    mql: 60,
+    sql: 12,
+    startDate: '2026-04-12',
+    createdAt: '2026-04-01T10:00:00Z',
+    updatedAt: '2026-06-09T17:00:00Z',
+  },
+]
