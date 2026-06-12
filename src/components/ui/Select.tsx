@@ -25,6 +25,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(function Select
         ref={ref}
         id={selectId}
         aria-invalid={error ? true : undefined}
+        aria-describedby={error ? `${selectId}-error` : undefined}
         className={cn(
           'h-10 rounded-md border border-white/10 bg-[#0a0a0a] px-sm text-body-sm text-on-surface transition-colors',
           'hover:border-white/20 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary',
@@ -38,7 +39,7 @@ export const Select = forwardRef<HTMLSelectElement, SelectProps>(function Select
           <option key={opt.value} value={opt.value}>{opt.label}</option>
         ))}
       </select>
-      {error && <p className="text-body-sm text-error">{error}</p>}
+      {error && <p id={`${selectId}-error`} className="text-body-sm text-error">{error}</p>}
     </div>
   )
 })
