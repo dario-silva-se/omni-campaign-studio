@@ -1,0 +1,56 @@
+{
+  "appName": "Campaign Studio",
+  "appTagline": "Enterprise Command",
+  "nav": {
+    "sectionMain": "PRINCIPAL",
+    "sectionGovernance": "GOVERNANÇA",
+    "sectionSystem": "SISTEMA",
+    "dashboard": "Dashboard",
+    "analytics": "Analytics",
+    "audiences": "Públicos",
+    "templates": "Templates",
+    "creativeLab": "Creative Lab",
+    "contentGeneration": "Geração de Conteúdo",
+    "campaigns": "Campanhas",
+    "posts": "Posts",
+    "approvals": "Aprovações",
+    "alerts": "Alertas",
+    "automations": "Automações",
+    "connections": "Conexões",
+    "notifications": "Notificações",
+    "settings": "Configurações"
+  },
+  "actions": {
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "back": "Voltar",
+    "next": "Próximo",
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "export": "Exportar",
+    "retry": "Tentar novamente",
+    "viewAll": "Ver todos",
+    "close": "Fechar"
+  },
+  "status": {
+    "active": "Ativa",
+    "paused": "Pausada",
+    "draft": "Rascunho",
+    "completed": "Concluída",
+    "pending": "Pendente",
+    "approved": "Aprovado",
+    "rejected": "Rejeitado",
+    "connected": "Conectado",
+    "disconnected": "Desconectado",
+    "healthy": "Saudável",
+    "error": "Erro"
+  },
+  "channels": {
+    "linkedin": "LinkedIn",
+    "youtube": "YouTube",
+    "telegram": "Telegram"
+  },
+  "loading": "Carregando...",
+  "emptyState": "Nenhum item encontrado"
+}

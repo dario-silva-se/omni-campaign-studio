@@ -1,0 +1,56 @@
+{
+  "appName": "Campaign Studio",
+  "appTagline": "Enterprise Command",
+  "nav": {
+    "sectionMain": "MAIN",
+    "sectionGovernance": "GOVERNANCE",
+    "sectionSystem": "SYSTEM",
+    "dashboard": "Dashboard",
+    "analytics": "Analytics",
+    "audiences": "Audiences",
+    "templates": "Templates",
+    "creativeLab": "Creative Lab",
+    "contentGeneration": "Content Generation",
+    "campaigns": "Campaigns",
+    "posts": "Posts",
+    "approvals": "Approvals",
+    "alerts": "Alerts",
+    "automations": "Automations",
+    "connections": "Connections",
+    "notifications": "Notifications",
+    "settings": "Settings"
+  },
+  "actions": {
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "back": "Back",
+    "next": "Next",
+    "search": "Search",
+    "filter": "Filter",
+    "export": "Export",
+    "retry": "Try again",
+    "viewAll": "View all",
+    "close": "Close"
+  },
+  "status": {
+    "active": "Active",
+    "paused": "Paused",
+    "draft": "Draft",
+    "completed": "Completed",
+    "pending": "Pending",
+    "approved": "Approved",
+    "rejected": "Rejected",
+    "connected": "Connected",
+    "disconnected": "Disconnected",
+    "healthy": "Healthy",
+    "error": "Error"
+  },
+  "channels": {
+    "linkedin": "LinkedIn",
+    "youtube": "YouTube",
+    "telegram": "Telegram"
+  },
+  "loading": "Loading...",
+  "emptyState": "No items found"
+}
