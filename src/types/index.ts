@@ -249,6 +249,7 @@ export interface AnalyticsValueMetrics {
   roi: AnalyticsRoiSummary
   kpis: AnalyticsKpi[]
   chartBars: AnalyticsChartBar[]
+  xAxisLabels: string[]
   linkedin: AnalyticsChannelLinkedIn
   youtube: AnalyticsChannelYouTube
   telegram: AnalyticsChannelTelegram

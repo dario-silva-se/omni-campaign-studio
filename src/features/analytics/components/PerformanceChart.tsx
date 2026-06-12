@@ -3,9 +3,10 @@ import type { AnalyticsChartBar } from '@/types'
 
 interface Props {
   bars: AnalyticsChartBar[]
+  xAxisLabels: string[]
 }
 
-export function PerformanceChart({ bars }: Props) {
+export function PerformanceChart({ bars, xAxisLabels }: Props) {
   const { t } = useTranslation('analytics')
   return (
     <div className="glass-panel subtle-highlight p-xl rounded-xl mb-xl">
@@ -51,11 +52,9 @@ export function PerformanceChart({ bars }: Props) {
         ))}
       </div>
       <div className="flex justify-between mt-md px-4 text-[10px] text-on-surface-variant uppercase font-bold tracking-widest">
-        <span>01 Set</span>
-        <span>08 Set</span>
-        <span>15 Set</span>
-        <span>22 Set</span>
-        <span>30 Set</span>
+        {xAxisLabels.map((label) => (
+          <span key={label}>{label}</span>
+        ))}
       </div>
     </div>
   )

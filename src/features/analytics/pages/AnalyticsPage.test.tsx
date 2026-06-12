@@ -1,6 +1,7 @@
 import { screen } from '@testing-library/react'
 import { renderWithProviders } from '@/test/renderWithProviders'
 import AnalyticsPage from './AnalyticsPage'
+import { analyticsValueMetricsService } from '@/services/analyticsService'
 
 describe('AnalyticsPage', () => {
   it('shows loading state synchronously on first render', () => {
@@ -29,5 +30,12 @@ describe('AnalyticsPage', () => {
     await screen.findByText('Estratégias de Growth 2024')
     expect(screen.getByText('Tutorial: Master Class Analytics')).toBeInTheDocument()
     expect(screen.getByText('Relatório Semanal de Mercado')).toBeInTheDocument()
+  })
+
+  it('shows error state when the service fails', async () => {
+    const spy = vi.spyOn(analyticsValueMetricsService, 'getById').mockRejectedValueOnce(new Error('boom'))
+    renderWithProviders(<AnalyticsPage />)
+    expect(await screen.findByRole('alert')).toBeInTheDocument()
+    spy.mockRestore()
   })
 })

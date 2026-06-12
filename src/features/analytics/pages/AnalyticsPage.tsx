@@ -70,7 +70,7 @@ export default function AnalyticsPage() {
         </div>
 
         {/* Performance Chart */}
-        <PerformanceChart bars={data.chartBars} />
+        <PerformanceChart bars={data.chartBars} xAxisLabels={data.xAxisLabels} />
 
         {/* Channel Metrics */}
         <ChannelMetricsGrid
