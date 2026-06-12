@@ -8,11 +8,13 @@ import ptBRDashboard from './locales/pt-BR/dashboard.json'
 import enDashboard from './locales/en/dashboard.json'
 import ptBRAnalytics from './locales/pt-BR/analytics.json'
 import enAnalytics from './locales/en/analytics.json'
+import ptBRAudiences from './locales/pt-BR/audiences.json'
+import enAudiences from './locales/en/audiences.json'
 
 export const defaultNS = 'common'
 export const resources = {
-  'pt-BR': { common: ptBRCommon, dashboard: ptBRDashboard, analytics: ptBRAnalytics },
-  en: { common: enCommon, dashboard: enDashboard, analytics: enAnalytics },
+  'pt-BR': { common: ptBRCommon, dashboard: ptBRDashboard, analytics: ptBRAnalytics, audiences: ptBRAudiences },
+  en: { common: enCommon, dashboard: enDashboard, analytics: enAnalytics, audiences: enAudiences },
 } as const
 
 i18n
