@@ -1,0 +1,20 @@
+{
+  "title": "Post Generation",
+  "subtitle": "Track drafts and schedules for YouTube, LinkedIn and Telegram.",
+  "generateBtn": "Generate new post",
+  "stats": {
+    "generated": "GENERATED",
+    "generatedSub": "new drafts",
+    "scheduled": "SCHEDULED",
+    "scheduledSub": "next 7 days",
+    "published": "PUBLISHED",
+    "publishedSub": "across 3 networks"
+  },
+  "columns": {
+    "drafts": "Generated Posts",
+    "scheduled": "Scheduled",
+    "published": "Month's Highlights"
+  },
+  "generating": "Generating content...",
+  "generatedSuccess": "Content generated successfully!"
+}
