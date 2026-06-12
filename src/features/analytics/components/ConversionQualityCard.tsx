@@ -47,7 +47,7 @@ export function ConversionQualityCard({ funnelStages, mqlToSqlRate }: Props) {
             </span>
           </div>
           <div className="w-12 h-12 rounded-full border-2 border-secondary/20 flex items-center justify-center relative">
-            <svg className="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 36 36">
+            <svg aria-hidden="true" className="absolute inset-0 w-full h-full -rotate-90" viewBox="0 0 36 36">
               <path
                 className="text-secondary"
                 d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"

@@ -57,6 +57,7 @@ export const analyticsValueMetricsFixture: AnalyticsValueMetrics = {
     { heightClass: 'h-3/5' },
     { heightClass: 'h-2/3' },
   ],
+  xAxisLabels: ['01 Set', '08 Set', '15 Set', '22 Set', '30 Set'],
   linkedin: {
     cLevelPct: 42,
     directorPct: 35,
