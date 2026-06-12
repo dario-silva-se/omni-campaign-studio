@@ -54,6 +54,39 @@ export interface AudienceSegment {
 
 export type TemplateCategory = 'thought-leadership' | 'broadcast' | 'video-script' | 'lead-gen'
 
+// Templates
+
+export interface LinkedInTemplateDetail {
+  headline: string
+  contentBody: string
+  hashtags: string[]
+  authorName: string
+  authorTitle: string
+  estimatedEngagement: number
+  bestPractices: { label: string; passed: boolean }[]
+  sentimentTone: { label: string; value: string }[]
+}
+
+export interface TelegramTemplateDetail {
+  messageType: 'broadcast' | 'poll' | 'bot-interaction'
+  interactiveButtons: { label: string; url: string }[]
+  estimatedReach: string
+  estimatedClicks: string
+  complianceItems: { label: string; status: 'ok' | 'warn' | 'error' }[]
+}
+
+export interface YouTubeTemplateDetail {
+  hook: string
+  introValueProp: string
+  mainBody: string
+  thumbnailStrategy: string
+  tags: string[]
+  estimatedCtr: string
+  scriptPacing: string
+  retentionScore: string
+  viralChecklist: { label: string; description: string; passed: boolean }[]
+}
+
 export interface Template {
   _id: string
   name: string
@@ -63,8 +96,14 @@ export interface Template {
   body: string
   performanceScore: number
   usageCount: number
+  /** Formatted usage count for display, e.g. "2.4k" */
+  usageLabel?: string
   thumbnailUrl?: string
   createdAt: string
+  // Channel-specific detail data (populated only on templates that have a detail screen)
+  linkedInDetail?: LinkedInTemplateDetail
+  telegramDetail?: TelegramTemplateDetail
+  youTubeDetail?: YouTubeTemplateDetail
 }
 
 export type PostStatus = 'scheduled' | 'published' | 'draft' | 'failed' | 'pending-approval'
