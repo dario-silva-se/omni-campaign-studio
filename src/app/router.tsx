@@ -20,6 +20,8 @@ const NewAudiencePage = lazy(() => import('@/features/audiences/pages/NewAudienc
 const EditSegmentPage = lazy(() => import('@/features/audiences/pages/EditSegmentPage'))
 const TemplateLibraryPage = lazy(() => import('@/features/templates/pages/TemplateLibraryPage'))
 const TemplateDetailPage = lazy(() => import('@/features/templates/pages/TemplateDetailPage'))
+const CreativeLabPage = lazy(() => import('@/features/creative-lab/pages/CreativeLabPage'))
+const ContentGenerationPage = lazy(() => import('@/features/content-generation/pages/ContentGenerationPage'))
 
 export function AppRoutes() {
   return (
@@ -35,8 +37,8 @@ export function AppRoutes() {
           <Route path="audiences/:id/edit" element={<EditSegmentPage />} />
           <Route path="templates" element={<TemplateLibraryPage />} />
           <Route path="templates/:id" element={<TemplateDetailPage />} />
-          <Route path="creative-lab" element={<PagePlaceholder />} />
-          <Route path="content-generation" element={<PagePlaceholder />} />
+          <Route path="creative-lab" element={<CreativeLabPage />} />
+          <Route path="content-generation" element={<ContentGenerationPage />} />
           <Route path="campaigns" element={<PagePlaceholder />} />
           <Route path="campaigns/new/step-1" element={<PagePlaceholder />} />
           <Route path="campaigns/new/step-2" element={<PagePlaceholder />} />

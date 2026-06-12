@@ -390,3 +390,79 @@ export interface LeadLifecycleAttribution {
   avgQualityOutOf: number
   leads: LeadLifecycleLead[]
 }
+
+// Creative Lab
+
+export type CreativeFormat = 'single-image' | 'carousel' | 'video' | 'story-reel'
+export type CreativePublishContext = 'company-page' | 'personal-profile'
+
+export interface ComplianceCheckItem {
+  id: string
+  label: string
+  /** Whether the item is automatically validated (no user action required) */
+  autoChecked: boolean
+  /** For auto-checked items, an optional display note */
+  note?: string
+  /** Whether this is a required check that must pass before publishing */
+  required: boolean
+  /** For non-auto items that have an action button */
+  actionLabel?: string
+}
+
+export interface ComplianceSuggestion {
+  id: string
+  type: 'warning' | 'tip'
+  title: string
+  description: string
+  quickActions?: { label: string; value: string }[]
+}
+
+export interface CreativeAsset {
+  id: string
+  name: string
+  type: 'image' | 'video'
+  /** Percentage loaded/processed (0-100) */
+  progress?: number
+}
+
+export interface CreativeLabDraft {
+  _id: string
+  title: string
+  format: CreativeFormat
+  publishContext: CreativePublishContext
+  assets: CreativeAsset[]
+  headline: string
+  primaryText: string
+  cta: string
+  complianceItems: ComplianceCheckItem[]
+  suggestions: ComplianceSuggestion[]
+  createdAt: string
+  updatedAt: string
+}
+
+// Content Generation
+
+export type ContentPostStatus = 'draft' | 'scheduled' | 'published'
+
+export interface GeneratedPost {
+  _id: string
+  content: string
+  channel: Channel
+  status: ContentPostStatus
+  scheduledFor?: string
+  publishedAt?: string
+}
+
+export interface ContentGenerationStats {
+  generated: number
+  scheduled: number
+  published: number
+}
+
+export interface ContentGenerationData {
+  _id: 'content-generation'
+  stats: ContentGenerationStats
+  drafts: GeneratedPost[]
+  scheduled: GeneratedPost[]
+  published: GeneratedPost[]
+}
