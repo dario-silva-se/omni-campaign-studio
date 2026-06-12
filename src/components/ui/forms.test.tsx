@@ -4,6 +4,7 @@ import { Input } from './Input'
 import { Select } from './Select'
 import { Toggle } from './Toggle'
 import { ProgressBar } from './ProgressBar'
+import { Textarea } from './Textarea'
 
 describe('form primitives', () => {
   it('Input is labelled and typeable', async () => {
@@ -40,5 +41,18 @@ describe('form primitives', () => {
     render(<ProgressBar value={62} label="Download" />)
     const bar = screen.getByRole('progressbar', { name: 'Download' })
     expect(bar).toHaveAttribute('aria-valuenow', '62')
+  })
+
+  it('Textarea is labelled and shows error with aria-invalid', () => {
+    render(<Textarea label="Descrição" error="Obrigatório" />)
+    const ta = screen.getByLabelText('Descrição')
+    expect(ta).toHaveAccessibleDescription('Obrigatório')
+    expect(ta).toHaveAttribute('aria-invalid', 'true')
+  })
+
+  it('ProgressBar clamps value above 100 to 100', () => {
+    render(<ProgressBar value={150} label="Overload" />)
+    const bar = screen.getByRole('progressbar', { name: 'Overload' })
+    expect(bar).toHaveAttribute('aria-valuenow', '100')
   })
 })
