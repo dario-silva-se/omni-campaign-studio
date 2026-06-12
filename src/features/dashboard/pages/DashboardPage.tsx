@@ -76,7 +76,7 @@ export default function DashboardPage() {
           </button>
           <button
             type="button"
-            aria-label="Toggle theme"
+            aria-label={t('dashboard:header.toggleTheme')}
             className="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-variant focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"
           >
             <Icon name="contrast" />
