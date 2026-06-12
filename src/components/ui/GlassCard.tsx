@@ -21,11 +21,16 @@ function Header({ className, children, ...props }: React.HTMLAttributes<HTMLDivE
   )
 }
 
-function Title({ className, children, ...props }: React.HTMLAttributes<HTMLHeadingElement>) {
+interface TitleProps extends React.HTMLAttributes<HTMLHeadingElement> {
+  headingLevel?: 2 | 3 | 4
+}
+
+function Title({ className, children, headingLevel = 3, ...props }: TitleProps) {
+  const Tag = ('h' + headingLevel) as 'h2' | 'h3' | 'h4'
   return (
-    <h3 className={cn('text-title-md text-on-surface', className)} {...props}>
+    <Tag className={cn('text-title-md text-on-surface', className)} {...props}>
       {children}
-    </h3>
+    </Tag>
   )
 }
 
