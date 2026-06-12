@@ -1,0 +1,20 @@
+{
+  "title": "Geração de Posts",
+  "subtitle": "Acompanhe rascunhos e agendamentos para YouTube, LinkedIn e Telegram.",
+  "generateBtn": "Gerar novo post",
+  "stats": {
+    "generated": "GERADOS",
+    "generatedSub": "novos rascunhos",
+    "scheduled": "AGENDADOS",
+    "scheduledSub": "próximos 7 dias",
+    "published": "PUBLICADOS",
+    "publishedSub": "nas 3 redes"
+  },
+  "columns": {
+    "drafts": "Posts Gerados",
+    "scheduled": "Agendados",
+    "published": "Feitos do mês"
+  },
+  "generating": "Gerando conteúdo...",
+  "generatedSuccess": "Conteúdo gerado com sucesso!"
+}
