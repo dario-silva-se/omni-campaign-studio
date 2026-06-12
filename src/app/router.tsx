@@ -18,6 +18,8 @@ const LeadLifecyclePage = lazy(() => import('@/features/analytics/pages/LeadLife
 const AudiencesPage = lazy(() => import('@/features/audiences/pages/AudiencesPage'))
 const NewAudiencePage = lazy(() => import('@/features/audiences/pages/NewAudiencePage'))
 const EditSegmentPage = lazy(() => import('@/features/audiences/pages/EditSegmentPage'))
+const TemplateLibraryPage = lazy(() => import('@/features/templates/pages/TemplateLibraryPage'))
+const TemplateDetailPage = lazy(() => import('@/features/templates/pages/TemplateDetailPage'))
 
 export function AppRoutes() {
   return (
@@ -31,8 +33,8 @@ export function AppRoutes() {
           <Route path="audiences" element={<AudiencesPage />} />
           <Route path="audiences/new" element={<NewAudiencePage />} />
           <Route path="audiences/:id/edit" element={<EditSegmentPage />} />
-          <Route path="templates" element={<PagePlaceholder />} />
-          <Route path="templates/:id" element={<PagePlaceholder />} />
+          <Route path="templates" element={<TemplateLibraryPage />} />
+          <Route path="templates/:id" element={<TemplateDetailPage />} />
           <Route path="creative-lab" element={<PagePlaceholder />} />
           <Route path="content-generation" element={<PagePlaceholder />} />
           <Route path="campaigns" element={<PagePlaceholder />} />
