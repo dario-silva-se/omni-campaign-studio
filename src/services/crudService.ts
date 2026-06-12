@@ -38,7 +38,7 @@ export function createCrudService<T extends Entity>(
         await delay(mockLatencyMs)
         const found = store.find((e) => e._id === id)
         if (!found) throw new Error(`${resourcePath}/${id} not found`)
-        return found
+        return { ...found }
       }
       const { data } = await apiClient.get<T>(`${resourcePath}/${id}`)
       return data
@@ -46,6 +46,7 @@ export function createCrudService<T extends Entity>(
     async create(payload) {
       if (mock()) {
         await delay(mockLatencyMs)
+        // spread ensures all T fields are present; _id is always set
         const created = { ...payload, _id: payload._id || crypto.randomUUID() } as T
         store = [...store, created]
         return created
@@ -59,7 +60,7 @@ export function createCrudService<T extends Entity>(
         const index = store.findIndex((e) => e._id === id)
         if (index === -1) throw new Error(`${resourcePath}/${id} not found`)
         store[index] = { ...store[index], ...payload }
-        return store[index]
+        return { ...store[index] }
       }
       const { data } = await apiClient.patch<T>(`${resourcePath}/${id}`, payload)
       return data
