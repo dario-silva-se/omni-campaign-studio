@@ -1,4 +1,4 @@
-﻿{
+{
   "header": {
     "tabDashboard": "Dashboard",
     "tabAnalytics": "Analytics",
@@ -18,7 +18,7 @@
   },
   "radar": {
     "title": "Radar de Hoje",
-    "updatedAt": "Atualizado hoje Ã s",
+    "updatedAt": "Atualizado hoje às",
     "sinais": "Sinais"
   },
   "sources": {
@@ -31,7 +31,7 @@
       "alta": "Alta",
       "crescimento": "Crescimento"
     },
-    "views": "visualizaÃ§Ãµes",
+    "views": "visualizações",
     "channel": "Canal:"
   }
 }
