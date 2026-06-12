@@ -1,0 +1,129 @@
+{
+  "valueMetrics": {
+    "title": "Analytics Dashboard",
+    "subtitle": "Consolidated performance view in real time.",
+    "periodSelector": "Last 30 days",
+    "downloadReport": "Download report",
+    "roi": {
+      "label": "Estimated ROI / Conversion Value",
+      "costPerLead": "Cost per Lead",
+      "customerAcquisitionCost": "Customer Acquisition Cost"
+    },
+    "performance": {
+      "title": "Overall Performance",
+      "subtitle": "Accumulated reach and engagement for the period.",
+      "legendReach": "Reach",
+      "legendEngagement": "Engagement",
+      "chartAriaLabel": "Overall performance chart by period"
+    },
+    "linkedin": {
+      "title": "LinkedIn",
+      "subtitle": "Value Metrics",
+      "engagementBySeniority": "Engagement by Seniority",
+      "cLevel": "C-Level",
+      "director": "Director",
+      "ctrVideoContent": "CTR (Video Content)"
+    },
+    "youtube": {
+      "title": "YouTube",
+      "subtitle": "Retention Focus",
+      "avgViewDuration": "Avg. View Duration",
+      "retentionRate": "Retention Rate",
+      "watchTime": "Watch Time (h)",
+      "retentionCurve": "Retention Curve",
+      "chartAriaLabel": "YouTube retention curve"
+    },
+    "telegram": {
+      "title": "Telegram",
+      "subtitle": "Community Health",
+      "readRate": "Read Rate (Open)",
+      "linkClicks": "Link Clicks",
+      "memberRetention": "Member Retention",
+      "chartAriaLabel": "Telegram activity bars"
+    },
+    "topContent": {
+      "title": "Top Performing Content",
+      "viewAll": "View all",
+      "columns": {
+        "post": "Post / Content",
+        "channel": "Channel",
+        "reach": "Reach",
+        "clicks": "Clicks",
+        "status": "Status"
+      },
+      "statusActive": "Active",
+      "statusFinished": "Finished"
+    }
+  },
+  "campaignHealth": {
+    "title": "Campaign Health & ROI",
+    "subtitle": "Real-time performance and AI-driven optimization status across active channels.",
+    "liveSync": "Live Sync",
+    "periodSelector": "Last 7 Days",
+    "globalRoi": {
+      "title": "Global Pipeline ROI",
+      "subtitle": "Blended return across LinkedIn, YT, and Telegram.",
+      "generatedPipeline": "Generated Pipeline",
+      "blendedRoas": "Blended ROAS",
+      "budgetBurn": "Budget Burn (7d)",
+      "peakMql": "Peak MQL",
+      "chartAriaLabel": "Global ROI pipeline chart"
+    },
+    "conversionQuality": {
+      "title": "Conversion Quality",
+      "mqlToSqlRate": "MQL to SQL Rate"
+    },
+    "channelDiagnostics": {
+      "title": "Channel Diagnostics",
+      "viewAll": "View All Details",
+      "columns": {
+        "channel": "Channel",
+        "spend": "Spend",
+        "cpaSql": "CPA (SQL)",
+        "status": "Status"
+      },
+      "statusOptimal": "Optimal",
+      "statusScaling": "Scaling",
+      "statusFatigue": "Fatigue"
+    },
+    "aiActions": {
+      "title": "AI Actions",
+      "live": "Live"
+    }
+  },
+  "leadLifecycle": {
+    "title": "Lead Lifecycle & Attribution",
+    "subtitle": "Tracking prospect journey from first touch to CRM integration.",
+    "periodSelector": "Last 30 Days",
+    "filter": "Filter",
+    "sourceAttribution": {
+      "title": "Source Attribution"
+    },
+    "velocity": {
+      "title": "Velocity",
+      "subtitle": "Avg. Time to SQL",
+      "days": "days",
+      "vsLastMonth": "vs last month"
+    },
+    "avgQuality": {
+      "title": "Avg Quality",
+      "subtitle": "Lead Scoring Engine"
+    },
+    "recentLeads": {
+      "title": "Recent Leads Lifecycle",
+      "viewAll": "View All",
+      "columns": {
+        "lead": "Lead / Company",
+        "sourceTouch": "Source Touch",
+        "qualityScore": "Quality Score",
+        "currentStage": "Current Stage",
+        "lastActive": "Last Active"
+      },
+      "stages": {
+        "sqlCrmSynced": "SQL (CRM Synced)",
+        "mqlNurture": "MQL (Nurture)",
+        "leadDiscovery": "Lead (Discovery)"
+      }
+    }
+  }
+}

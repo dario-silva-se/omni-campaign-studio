@@ -12,6 +12,9 @@ function PageLoader() {
 }
 
 const DashboardPage = lazy(() => import('@/features/dashboard/pages/DashboardPage'))
+const AnalyticsPage = lazy(() => import('@/features/analytics/pages/AnalyticsPage'))
+const CampaignHealthPage = lazy(() => import('@/features/analytics/pages/CampaignHealthPage'))
+const LeadLifecyclePage = lazy(() => import('@/features/analytics/pages/LeadLifecyclePage'))
 
 export function AppRoutes() {
   return (
@@ -19,9 +22,9 @@ export function AppRoutes() {
       <Routes>
         <Route element={<AppLayout />}>
           <Route index element={<DashboardPage />} />
-          <Route path="analytics" element={<PagePlaceholder />} />
-          <Route path="analytics/campaign-health" element={<PagePlaceholder />} />
-          <Route path="analytics/lead-lifecycle" element={<PagePlaceholder />} />
+          <Route path="analytics" element={<AnalyticsPage />} />
+          <Route path="analytics/campaign-health" element={<CampaignHealthPage />} />
+          <Route path="analytics/lead-lifecycle" element={<LeadLifecyclePage />} />
           <Route path="audiences" element={<PagePlaceholder />} />
           <Route path="audiences/new" element={<PagePlaceholder />} />
           <Route path="audiences/:id/edit" element={<PagePlaceholder />} />
