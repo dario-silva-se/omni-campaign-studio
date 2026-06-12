@@ -28,11 +28,14 @@ export default function TemplateDetailPage() {
           >
             <Icon name="arrow_back" />
           </button>
-          <h2 className="font-title-md text-title-md text-on-surface font-semibold">
-            {template.channel === 'linkedin' && t('linkedin.title')}
-            {template.channel === 'telegram' && t('telegram.title')}
-            {template.channel === 'youtube' && t('youtube.title')}
-          </h2>
+          <div className="flex flex-col">
+            <h2 className="font-title-md text-title-md text-on-surface font-semibold">
+              {template.channel === 'linkedin' && t('linkedin.title')}
+              {template.channel === 'telegram' && t('telegram.title')}
+              {template.channel === 'youtube' && t('youtube.title')}
+            </h2>
+            <span className="font-body-sm text-body-sm text-on-surface-variant">{template.name}</span>
+          </div>
         </div>
       </div>
 
