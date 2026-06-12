@@ -50,6 +50,18 @@ export default function TemplateLibraryPage() {
           ))}
         </div>
 
+        {/* Desktop search */}
+        <div className="relative w-64 group hidden md:block">
+          <Icon name="search" className="absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant group-focus-within:text-primary transition-colors" />
+          <input
+            type="text"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder={t('library.searchPlaceholder')}
+            className="w-full bg-surface-container border border-outline-variant/30 rounded-full py-xs pl-xl pr-sm text-body-sm font-body-sm text-on-surface placeholder-on-surface-variant/50 focus:border-primary focus:ring-1 focus:ring-primary focus:outline-none transition-all"
+          />
+        </div>
+
         {/* Mobile search */}
         <div className="relative w-full md:hidden">
           <Icon name="search" className="absolute left-sm top-1/2 -translate-y-1/2 text-on-surface-variant" />

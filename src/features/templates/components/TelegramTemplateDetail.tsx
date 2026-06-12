@@ -216,7 +216,7 @@ export function TelegramTemplateDetail({ template }: Props) {
               <div className="mt-md p-sm bg-primary/5 border border-primary/10 rounded-lg flex items-start gap-md">
                 <Icon name="info" className="text-primary text-sm mt-1" />
                 <p className="text-body-sm text-on-surface-variant/80">
-                  Postagem às <b>14:20</b> hora local alinha-se com o período de pico de atividade dos assinantes.
+                  {t('telegram.postingTimeHint')}
                 </p>
               </div>
             </section>

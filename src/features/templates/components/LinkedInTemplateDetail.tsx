@@ -223,7 +223,7 @@ export function LinkedInTemplateDetail({ template }: Props) {
               <div className="h-full bg-primary" style={{ width: `${estEngagement}%` }} />
             </div>
             <p className="text-[10px] text-on-surface-variant leading-tight">
-              Pontuação proprietária baseada no histórico de desempenho.
+              {t('linkedin.engagementHint')}
             </p>
           </div>
           {/* Best practices */}
