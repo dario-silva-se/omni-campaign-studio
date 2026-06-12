@@ -1,0 +1,37 @@
+{
+  "header": {
+    "tabDashboard": "Dashboard",
+    "tabAnalytics": "Analytics",
+    "syncButton": "Sync",
+    "panelLabel": "PANEL",
+    "dayLabel": "FRIDAY, MAY 22"
+  },
+  "greeting": {
+    "prefix": "Good morning,",
+    "campaignsRunning": "campaigns running",
+    "leadsCaptured": "leads captured"
+  },
+  "resultados": {
+    "title": "Overall Results",
+    "subtitle": "Accumulated across all campaigns"
+  },
+  "radar": {
+    "title": "Today's Radar",
+    "updatedAt": "Updated today at",
+    "sinais": "Signals"
+  },
+  "sources": {
+    "linkedin": "LinkedIn Trends",
+    "youtube": "YouTube",
+    "telegram": "Telegram Insights"
+  },
+  "signals": {
+    "badge": {
+      "alta": "High",
+      "crescimento": "Growth"
+    },
+    "views": "views",
+    "channel": "Channel:",
+    "trendingUp": "trending_up"
+  }
+}

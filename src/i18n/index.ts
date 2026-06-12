@@ -4,11 +4,13 @@ import LanguageDetector from 'i18next-browser-languagedetector'
 
 import ptBRCommon from './locales/pt-BR/common.json'
 import enCommon from './locales/en/common.json'
+import ptBRDashboard from './locales/pt-BR/dashboard.json'
+import enDashboard from './locales/en/dashboard.json'
 
 export const defaultNS = 'common'
 export const resources = {
-  'pt-BR': { common: ptBRCommon },
-  en: { common: enCommon },
+  'pt-BR': { common: ptBRCommon, dashboard: ptBRDashboard },
+  en: { common: enCommon, dashboard: enDashboard },
 } as const
 
 i18n
