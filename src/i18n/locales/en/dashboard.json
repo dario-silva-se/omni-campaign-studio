@@ -1,10 +1,11 @@
-{
+﻿{
   "header": {
     "tabDashboard": "Dashboard",
     "tabAnalytics": "Analytics",
     "syncButton": "Sync",
     "panelLabel": "PANEL",
-    "dayLabel": "FRIDAY, MAY 22"
+    "dayLabel": "FRIDAY, MAY 22",
+    "toggleTheme": "Toggle theme"
   },
   "greeting": {
     "prefix": "Good morning,",
@@ -31,7 +32,6 @@
       "crescimento": "Growth"
     },
     "views": "views",
-    "channel": "Channel:",
-    "trendingUp": "trending_up"
+    "channel": "Channel:"
   }
 }

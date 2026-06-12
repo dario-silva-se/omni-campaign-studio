@@ -107,7 +107,7 @@ function TelegramSignalItem({ signal, isLast }: TelegramSignalItemProps) {
       )}
       {signal.activityNote && (
         <div className="text-[10px] text-outline-variant flex items-center">
-          <Icon name="trending_up" className="text-[12px] mr-0.5 text-secondary-fixed" />
+          <Icon name="bolt" className="text-[12px] mr-0.5 text-secondary-fixed" />
           {signal.activityNote}
         </div>
       )}

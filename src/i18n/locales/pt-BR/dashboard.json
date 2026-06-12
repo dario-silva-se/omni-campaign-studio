@@ -1,10 +1,11 @@
-{
+﻿{
   "header": {
     "tabDashboard": "Dashboard",
     "tabAnalytics": "Analytics",
     "syncButton": "Sincronizar",
     "panelLabel": "PAINEL",
-    "dayLabel": "SEXTA-FEIRA, 22 DE MAIO"
+    "dayLabel": "SEXTA-FEIRA, 22 DE MAIO",
+    "toggleTheme": "Alternar tema"
   },
   "greeting": {
     "prefix": "Bom dia,",
@@ -17,7 +18,7 @@
   },
   "radar": {
     "title": "Radar de Hoje",
-    "updatedAt": "Atualizado hoje às",
+    "updatedAt": "Atualizado hoje Ã s",
     "sinais": "Sinais"
   },
   "sources": {
@@ -30,8 +31,7 @@
       "alta": "Alta",
       "crescimento": "Crescimento"
     },
-    "views": "visualizações",
-    "channel": "Canal:",
-    "trendingUp": "trending_up"
+    "views": "visualizaÃ§Ãµes",
+    "channel": "Canal:"
   }
 }
