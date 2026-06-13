@@ -13,8 +13,8 @@ function statusBadgeClass(status: DataFlowTrafficRow['status']): string {
 }
 
 function statusLabel(status: DataFlowTrafficRow['status'], t: (key: string) => string): string {
-  if (status === 'success') return 'Success'
-  if (status === 'delayed') return 'Delayed'
+  if (status === 'success') return t('dataFlow.statusSuccess')
+  if (status === 'delayed') return t('dataFlow.statusDelayed')
   return t('dataFlow.channelStatus.error')
 }
 
@@ -126,7 +126,7 @@ export default function DataFlowPage() {
             </div>
             <p className="text-sm text-primary/80 mt-sm flex items-center gap-1 z-10">
               <Icon name="arrow_downward" className="text-sm" />
-              2ms vs last hour
+              {t('dataFlow.latencyDelta')}
             </p>
           </div>
 

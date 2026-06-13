@@ -36,11 +36,15 @@
     "triggerAction": {
       "pauseCampaign": "Pause Campaign",
       "notifyOpsAlerts": "Notify #ops-alerts"
-    }
+    },
+    "actionLabel": "Action",
+    "connectorAnd": "AND",
+    "connectorOr": "OR"
   },
   "monitor": {
     "title": "Automation Insights & Monitoring",
     "realtimeOperations": "Real-time Operations",
+    "today": "Today",
     "stats": {
       "activeRules": "Active Rules",
       "logicBuilderDeployments": "Logic Builder Deployments",
@@ -93,6 +97,9 @@
       "stable": "Stable",
       "syncing": "Syncing",
       "error": "Error"
-    }
+    },
+    "statusSuccess": "Success",
+    "statusDelayed": "Delayed",
+    "latencyDelta": "2ms vs last hour"
   }
 }

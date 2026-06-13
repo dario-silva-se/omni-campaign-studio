@@ -16,11 +16,11 @@ export function YouTubePostDetail({ post }: Props) {
       <div className="flex justify-between items-end mb-xl">
         <div>
           <div className="flex items-center gap-xs text-on-surface-variant mb-base font-label-caps text-[10px] tracking-widest">
-            <span>CAMPANHAS</span>
+            <span>{t('detail.breadcrumbCampaigns')}</span>
             <Icon name="chevron_right" className="text-[12px]" />
             <span>{d?.channelName ?? 'Tech Channel Alpha'}</span>
             <Icon name="chevron_right" className="text-[12px]" />
-            <span className="text-primary">DETALHES DO POST</span>
+            <span className="text-primary">{t('detail.youtube.breadcrumbPostDetails')}</span>
           </div>
           <h1 className="font-headline-lg text-headline-lg font-bold tracking-tight">{post.title}</h1>
           <div className="flex items-center gap-md mt-sm">
@@ -141,7 +141,7 @@ export function YouTubePostDetail({ post }: Props) {
           <div className="bg-surface-container-low/60 backdrop-blur-sm border border-outline-variant/10 p-lg rounded-xl">
             <div className="flex justify-between items-center mb-md">
               <h4 className="font-title-md text-[14px]">{t('detail.youtube.audienceRetention')}</h4>
-              <span className="text-xs text-on-surface-variant">MÉDIA: {d?.audienceRetentionAvg ?? '—'}</span>
+              <span className="text-xs text-on-surface-variant">{t('detail.youtube.avg')}: {d?.audienceRetentionAvg ?? '—'}</span>
             </div>
             <div className="flex items-end gap-xs h-24">
               {RETENTION_BARS.map((h, i) => (
@@ -153,7 +153,7 @@ export function YouTubePostDetail({ post }: Props) {
               ))}
             </div>
             <div className="flex justify-between text-[9px] text-on-surface-variant opacity-50 mt-xs font-label-caps">
-              <span>0:00</span><span>INTRO</span><span>PEAK</span><span>OUTRO</span><span>12:44</span>
+              <span>0:00</span><span>{t('detail.youtube.retentionIntro')}</span><span>{t('detail.youtube.retentionPeak')}</span><span>{t('detail.youtube.retentionOutro')}</span><span>12:44</span>
             </div>
           </div>
 

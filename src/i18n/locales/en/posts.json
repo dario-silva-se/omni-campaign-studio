@@ -187,7 +187,12 @@
       "sentimentPositive": "% positive sentiment",
       "likes": "LIKES",
       "comments": "COMMENTS",
-      "trafficSources": "Traffic Sources"
+      "trafficSources": "Traffic Sources",
+      "breadcrumbPostDetails": "POST DETAILS",
+      "avg": "AVG",
+      "retentionIntro": "INTRO",
+      "retentionPeak": "PEAK",
+      "retentionOutro": "OUTRO"
     },
     "telegram": {
       "totalReach": "Total Reach",
