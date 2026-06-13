@@ -75,7 +75,12 @@
       "approveForPublication": "Aprovar para Publicação",
       "requestChanges": "Solicitar Alterações",
       "archive": "Arquivar"
-    }
+    },
+    "reviewers": "Revisores",
+    "postFollowing": "Seguindo",
+    "postLike": "Gostar",
+    "postComment": "Comentar",
+    "postShare": "Compartilhar"
   },
   "requestChanges": {
     "title": "Solicitar Alterações",

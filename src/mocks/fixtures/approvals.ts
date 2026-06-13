@@ -1,4 +1,4 @@
-import type { Approval, GovernanceHistoryRow } from '@/types'
+import type { Approval, ApprovalActivityItem, ApprovalDashboardStats, GovernanceHistoryRow } from '@/types'
 
 export const approvalsFixture: Approval[] = [
   {
@@ -21,8 +21,9 @@ export const approvalsFixture: Approval[] = [
       { id: 'c3', label: 'High-Res Asset Validation', checked: false },
     ],
     reviewers: [
-      { name: 'Sarah Jenkins', role: 'Legal Compliance', status: 'pending', avatarInitials: 'SJ' },
+      { name: 'Sarah Jenkins', role: 'Legal Compliance', status: 'approved', avatarInitials: 'SJ' },
       { name: 'Mark Davis', role: 'Creative Copy', status: 'pending', avatarInitials: 'MD' },
+      { name: 'Priya Nair', role: 'Brand Strategy', status: 'changes-requested', avatarInitials: 'PN' },
     ],
     comments: [
       {
@@ -91,6 +92,34 @@ export const approvalsFixture: Approval[] = [
     contentSnippet: '',
     thumbnailColorClass: 'bg-slate-700',
     createdAt: '2024-05-23T16:00:00Z',
+  },
+]
+
+export const approvalDashboardStatsFixture: ApprovalDashboardStats = {
+  scheduledToday: 15,
+}
+
+export const approvalActivityFixture: ApprovalActivityItem[] = [
+  {
+    _id: 'act-001',
+    text: 'You approved "Brand Launch Video"',
+    timeAgo: '12 min ago',
+    icon: 'check_circle',
+    colorToken: 'primary',
+  },
+  {
+    _id: 'act-002',
+    text: 'David L. commented on "Q4 Roadmap"',
+    timeAgo: '45 min ago',
+    icon: 'chat',
+    colorToken: 'tertiary',
+  },
+  {
+    _id: 'act-003',
+    text: 'You rejected "Twitter Fleet concept"',
+    timeAgo: '2h ago',
+    icon: 'cancel',
+    colorToken: 'error',
   },
 ]
 
