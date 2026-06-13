@@ -26,6 +26,10 @@ const CampaignsPage = lazy(() => import('@/features/campaigns/pages/CampaignsPag
 const NewCampaignWizard = lazy(() => import('@/features/campaigns/pages/NewCampaignWizard'))
 const LaunchProgressPage = lazy(() => import('@/features/campaigns/pages/LaunchProgressPage'))
 const LaunchSuccessPage = lazy(() => import('@/features/campaigns/pages/LaunchSuccessPage'))
+const PostsOverviewPage = lazy(() => import('@/features/posts/pages/PostsOverviewPage'))
+const NewPostPage = lazy(() => import('@/features/posts/pages/NewPostPage'))
+const SchedulePostPage = lazy(() => import('@/features/posts/pages/SchedulePostPage'))
+const PostDetailPage = lazy(() => import('@/features/posts/pages/PostDetailPage'))
 
 export function AppRoutes() {
   return (
@@ -51,10 +55,10 @@ export function AppRoutes() {
           <Route path="campaigns/new/step-5" element={<NewCampaignWizard />} />
           <Route path="campaigns/launching" element={<LaunchProgressPage />} />
           <Route path="campaigns/launched" element={<LaunchSuccessPage />} />
-          <Route path="posts" element={<PagePlaceholder />} />
-          <Route path="posts/new" element={<PagePlaceholder />} />
-          <Route path="posts/schedule/:channel" element={<PagePlaceholder />} />
-          <Route path="posts/:id" element={<PagePlaceholder />} />
+          <Route path="posts" element={<PostsOverviewPage />} />
+          <Route path="posts/new" element={<NewPostPage />} />
+          <Route path="posts/schedule/:channel" element={<SchedulePostPage />} />
+          <Route path="posts/:id" element={<PostDetailPage />} />
           <Route path="approvals" element={<PagePlaceholder />} />
           <Route path="approvals/history" element={<PagePlaceholder />} />
           <Route path="approvals/:id" element={<PagePlaceholder />} />
