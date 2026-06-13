@@ -50,7 +50,7 @@
       "cancel": "Cancel",
       "continue": "Continue",
       "reviewCampaign": "Review Campaign",
-      "continueToCreatvie": "Continue to Creative",
+      "continueToCreative": "Continue to Creative",
       "launchCampaign": "Launch Campaign",
       "saveDraft": "Save Draft",
       "backToAudience": "Back to Audience",
@@ -83,7 +83,7 @@
         "email": "Email",
         "emailDesc": "Professional communication for detailed updates and newsletters.",
         "socialMedia": "Social Media",
-        "socialMediaDesc": "Reach your audience on LinkedIn, YouTube, LinkedIn.",
+        "socialMediaDesc": "Reach your audience on LinkedIn, YouTube, Telegram.",
         "sms": "SMS",
         "smsDesc": "Direct mobile messaging for urgent or highly personal alerts.",
         "ads": "Ads",
@@ -118,7 +118,10 @@
       "interestsBehaviors": "Interests & Behaviors",
       "estReach": "EST. REACH",
       "location": "Location",
-      "ageRange": "Age Range"
+      "ageRange": "Age Range",
+      "customAudience": "Custom Audience",
+      "linkedinClicks": "LinkedIn clicks",
+      "reachDescription": "Based on your selected channels and targeting criteria over 14 days."
     },
     "step5": {
       "heading": "Creative Assets",

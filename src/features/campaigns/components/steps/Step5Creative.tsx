@@ -5,6 +5,33 @@ import { Icon } from '@/components/ui/Icon'
 import { useWizard, clearWizardStorage } from '../../wizardContext'
 import { useCreateCampaign } from '../../hooks/useCampaigns'
 import { cn } from '@/lib/cn'
+import type { Channel, WizardChannelOption } from '@/types'
+
+/**
+ * Maps Step 2 wizard channel options (Email/SocialMedia/SMS/Ads) to the
+ * Campaign domain's Channel[] (linkedin | youtube | telegram).
+ *
+ * Mapping rationale:
+ *  - 'social-media' → all three platform channels (linkedin, youtube, telegram)
+ *    because the social-media option represents the full set of social platforms
+ *    supported by the app.
+ *  - 'email', 'sms', 'ads' → no direct platform equivalent in the Campaign
+ *    Channel union, so they are omitted (they affect delivery config, not channel
+ *    presence).  This deduplication means that selecting only email/sms/ads with
+ *    no social-media yields an empty set → fallback to ['linkedin'].
+ */
+const WIZARD_TO_CAMPAIGN_CHANNELS: Partial<Record<WizardChannelOption, Channel[]>> = {
+  'social-media': ['linkedin', 'youtube', 'telegram'],
+}
+
+function mapWizardChannels(wizardChannels: WizardChannelOption[]): Channel[] {
+  const set = new Set<Channel>()
+  for (const wc of wizardChannels) {
+    const mapped = WIZARD_TO_CAMPAIGN_CHANNELS[wc]
+    if (mapped) mapped.forEach((c) => set.add(c))
+  }
+  return set.size > 0 ? Array.from(set) : ['linkedin']
+}
 
 interface Props {
   onBack: () => void
@@ -41,7 +68,7 @@ export default function Step5Creative({ onBack }: Props) {
       {
         name: state.step1.name || 'Nova Campanha',
         status: 'launching',
-        channels: state.step2.channels.length > 0 ? (['linkedin'] as const) : (['linkedin'] as const),
+        channels: mapWizardChannels(state.step2.channels),
         budget: 0,
         spend: 0,
         cpl: 0,

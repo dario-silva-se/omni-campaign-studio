@@ -18,7 +18,7 @@ export default function Step4Review({ onBack, onNext }: Props) {
   const { selectedSegmentId, interests, location, ageRange, behaviorClickedLinkedIn } = state.step3
 
   const seg = selectedSegmentId ? SEGMENTS[selectedSegmentId] : null
-  const displayName = seg?.name ?? 'Custom Audience'
+  const displayName = seg?.name ?? t('wizard.step4.customAudience')
   const displaySize = seg?.size ?? '~1.2M'
   const displayEngagement = seg?.engagement ?? 'Medium'
   const displayLocation = seg?.location ?? location
@@ -108,7 +108,7 @@ export default function Step4Review({ onBack, onNext }: Props) {
                 ))}
                 {behaviorClickedLinkedIn && (
                   <span className="px-sm py-xs rounded-full bg-surface-variant/50 border border-outline-variant/20 font-body-sm text-body-sm text-on-surface-variant">
-                    LinkedIn clicks
+                    {t('wizard.step4.linkedinClicks')}
                   </span>
                 )}
               </div>
@@ -123,7 +123,7 @@ export default function Step4Review({ onBack, onNext }: Props) {
           </span>
           <span className="font-display-lg text-display-lg text-primary leading-none">~1.2M</span>
           <p className="font-body-sm text-body-sm text-on-surface-variant mt-sm opacity-70">
-            Based on your selected channels and targeting criteria over 14 days.
+            {t('wizard.step4.reachDescription')}
           </p>
         </div>
       </div>
@@ -143,7 +143,7 @@ export default function Step4Review({ onBack, onNext }: Props) {
           onClick={onNext}
           className="px-xl py-sm rounded-lg bg-gradient-to-b from-primary to-[#005bc1] text-on-primary font-bold hover:brightness-110 transition-all flex items-center gap-sm"
         >
-          {t('wizard.navigation.continueToCreatvie')}
+          {t('wizard.navigation.continueToCreative')}
           <Icon name="arrow_forward" className="text-sm" />
         </button>
       </div>

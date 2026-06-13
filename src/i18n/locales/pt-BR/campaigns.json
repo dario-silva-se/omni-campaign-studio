@@ -50,7 +50,7 @@
       "cancel": "Cancelar",
       "continue": "Continuar",
       "reviewCampaign": "Revisar Campanha",
-      "continueToCreatvie": "Continuar para Criativo",
+      "continueToCreative": "Continuar para Criativo",
       "launchCampaign": "Lançar Campanha",
       "saveDraft": "Salvar Rascunho",
       "backToAudience": "Voltar para Público",
@@ -118,7 +118,10 @@
       "interestsBehaviors": "Interesses & Comportamentos",
       "estReach": "ALCANCE EST.",
       "location": "Localização",
-      "ageRange": "Faixa Etária"
+      "ageRange": "Faixa Etária",
+      "customAudience": "Público Personalizado",
+      "linkedinClicks": "cliques no LinkedIn",
+      "reachDescription": "Com base nos seus canais selecionados e critérios de segmentação ao longo de 14 dias."
     },
     "step5": {
       "heading": "Ativos Criativos",

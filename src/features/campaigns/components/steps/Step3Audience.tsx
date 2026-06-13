@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Icon } from '@/components/ui/Icon'
 import { useWizard } from '../../wizardContext'
@@ -29,6 +30,29 @@ export default function Step3Audience({ onBack, onNext }: Props) {
     behaviorOpenedEmail,
     behaviorNewLeads,
   } = state.step3
+  const [error, setError] = useState('')
+
+  /**
+   * A segment is considered configured if:
+   * - a saved segment is selected, OR
+   * - the custom builder has at least one interest OR one behavior flag set
+   *   (location and ageRange have default values so they don't count alone)
+   */
+  function isAudienceConfigured(): boolean {
+    if (selectedSegmentId) return true
+    const hasInterest = interests.length > 0
+    const hasBehavior = behaviorClickedLinkedIn || behaviorOpenedEmail || behaviorNewLeads
+    return hasInterest || hasBehavior
+  }
+
+  function handleNext() {
+    if (!isAudienceConfigured()) {
+      setError(t('wizard.step3.required'))
+      return
+    }
+    setError('')
+    onNext()
+  }
 
   function toggleInterest(interest: string) {
     const next = interests.includes(interest)
@@ -220,22 +244,25 @@ export default function Step3Audience({ onBack, onNext }: Props) {
       </div>
 
       {/* Actions */}
-      <div className="flex justify-between items-center pt-lg border-t border-outline-variant/10">
-        <button
-          type="button"
-          onClick={onBack}
-          className="px-lg py-sm rounded-lg font-body-sm text-on-surface border border-outline-variant/50 hover:bg-surface-container-high transition-colors"
-        >
-          {t('wizard.navigation.back')}
-        </button>
-        <button
-          type="button"
-          onClick={onNext}
-          className="px-xl py-sm rounded-lg bg-gradient-to-b from-primary to-[#005bc1] text-on-primary font-bold hover:brightness-110 transition-all flex items-center gap-sm"
-        >
-          {t('wizard.navigation.reviewCampaign')}
-          <Icon name="arrow_forward" className="text-sm" />
-        </button>
+      <div className="flex flex-col gap-sm pt-lg border-t border-outline-variant/10">
+        {error && <p className="font-body-sm text-body-sm text-error">{error}</p>}
+        <div className="flex justify-between items-center">
+          <button
+            type="button"
+            onClick={onBack}
+            className="px-lg py-sm rounded-lg font-body-sm text-on-surface border border-outline-variant/50 hover:bg-surface-container-high transition-colors"
+          >
+            {t('wizard.navigation.back')}
+          </button>
+          <button
+            type="button"
+            onClick={handleNext}
+            className="px-xl py-sm rounded-lg bg-gradient-to-b from-primary to-[#005bc1] text-on-primary font-bold hover:brightness-110 transition-all flex items-center gap-sm"
+          >
+            {t('wizard.navigation.reviewCampaign')}
+            <Icon name="arrow_forward" className="text-sm" />
+          </button>
+        </div>
       </div>
     </div>
   )
