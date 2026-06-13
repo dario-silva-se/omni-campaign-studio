@@ -466,15 +466,44 @@ export interface DataFlowData {
 
 export type ConnectionHealth = 'healthy' | 'expiring' | 'error' | 'disconnected'
 
+// Connections
+
+export interface ConnectionPermission {
+  label: string
+  scope: string
+  icon: string
+}
+
+export interface ConnectedAccount {
+  name: string
+  id: string
+  type: string
+  role: string
+}
+
 export interface ApiConnection {
   _id: string
   channel: Channel
   accountName: string
   health: ConnectionHealth
   tokenExpiresAt?: string
+  /** Pre-formatted display label for token expiry (avoids time-flaky tests) */
+  tokenExpiresLabel?: string
   lastSyncAt?: string
+  /** Pre-formatted display label for last sync */
+  lastSyncLabel?: string
   errorMessage?: string
+  /** Technical error code shown in diagnostics panel */
+  errorCode?: string
+  /** OAuth error reason shown in diagnostics */
+  errorReason?: string
+  /** Latency reading shown in diagnostics */
+  errorLatency?: string
   scopes: string[]
+  /** Structured permission scopes for the detail view */
+  permissions?: ConnectionPermission[]
+  /** Connected pages / accounts for the detail view */
+  connectedAccounts?: ConnectedAccount[]
 }
 
 export interface NotificationSettings {
