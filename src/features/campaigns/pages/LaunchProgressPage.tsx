@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Icon } from '@/components/ui/Icon'
@@ -33,6 +33,7 @@ export default function LaunchProgressPage() {
   const navigate = useNavigate()
   const [activeStage, setActiveStage] = useState(0)
   const [progress, setProgress] = useState(0)
+  const timerIds = useRef<ReturnType<typeof setTimeout>[]>([])
 
   useEffect(() => {
     let elapsed = 0
@@ -51,19 +52,20 @@ export default function LaunchProgressPage() {
         stageIdx++
         advanceStage()
       }, stageDuration)
-      return id
+      timerIds.current.push(id)
     }
 
-    const firstId = advanceStage()
+    advanceStage()
 
     // Navigate after total + small buffer
     const navId = setTimeout(() => {
       navigate('/campaigns/launched')
     }, TOTAL_MS + 400)
+    timerIds.current.push(navId)
 
     return () => {
-      clearTimeout(firstId)
-      clearTimeout(navId)
+      timerIds.current.forEach(clearTimeout)
+      timerIds.current = []
     }
   }, [navigate])
 
