@@ -1,0 +1,50 @@
+{
+  "center": {
+    "title": "Central de Alertas",
+    "subtitle": "Alertas & Anomalias",
+    "description": "Vigilância em tempo real e supervisão da integridade do sistema.",
+    "priorityQueue": "Fila de Prioridade",
+    "stats": {
+      "activeAlerts": "Alertas Ativos",
+      "activeSince1h": "+3 desde 1h",
+      "meanTimeToResolution": "Tempo Médio de Resolução",
+      "target": "Meta: <10m",
+      "systemHealthIndex": "Índice de Saúde do Sistema",
+      "stable": "Estável"
+    },
+    "sidebar": {
+      "systemUptime": "Uptime do Sistema",
+      "continuityPulse": "Pulso de Continuidade de 7 Dias",
+      "alertHistory": "Histórico de Alertas",
+      "viewSystemLogs": "Ver Logs do Sistema"
+    },
+    "severity": {
+      "critical": "Crítico",
+      "warning": "Aviso",
+      "info": "Info"
+    },
+    "actions": {
+      "acknowledge": "Reconhecer"
+    }
+  },
+  "detail": {
+    "back": "Voltar",
+    "diagnosticChart": "Gráfico de Diagnóstico",
+    "cpmDeviationAnalysis": "Análise de Desvio de CPM",
+    "live": "Ao Vivo",
+    "baseline": "Base",
+    "aiIntelligence": "Inteligência de IA",
+    "recommendation": "Recomendação",
+    "impactAnalysis": "Análise de Impacto",
+    "estimatedDailyLoss": "Perda Diária Estimada",
+    "reachEfficiency": "Eficiência de Alcance",
+    "executiveActions": "Ações Executivas",
+    "actionsLoggedNote": "As decisões serão registradas e sincronizadas com o Líder da Equipe",
+    "pauseAdSet": "PAUSAR CONJUNTO DE ANÚNCIOS",
+    "muteAlert": "SILENCIAR ALERTA",
+    "reallocateToLinkedIn": "REALOCAR PARA LINKEDIN",
+    "dismissAndIgnore": "DISPENSAR E IGNORAR",
+    "historicalContext": "Contexto Histórico",
+    "eventStream": "Fluxo de Eventos"
+  }
+}

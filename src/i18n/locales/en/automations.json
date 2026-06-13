@@ -1,0 +1,98 @@
+{
+  "builder": {
+    "title": "Automation Logic Builder",
+    "breadcrumb": {
+      "campaigns": "Campaigns",
+      "automations": "Automations",
+      "newLogic": "New Logic"
+    },
+    "realtimeSimulation": "Real-time Simulation Active",
+    "publish": "Publish",
+    "triggerLabel": "Trigger",
+    "threshold": "Threshold",
+    "simulationLab": {
+      "title": "Simulation Lab",
+      "estimated30DayImpact": "Estimated 30-Day Impact",
+      "adSpendSaved": "Ad Spend Saved",
+      "roasRecovery": "ROAS Recovery",
+      "leadQualityImprovement": "Lead Quality Improvement",
+      "confidence": "Confidence",
+      "basedOnSimilarTriggers": "Based on Similar Triggers",
+      "runBacktest": "Run Backtest",
+      "success": "Success"
+    },
+    "footer": {
+      "logicReady": "Logic valid and ready for testing.",
+      "testRun": "Test Run",
+      "saveLogic": "Save Logic"
+    },
+    "actionPanel": {
+      "addTrigger": "Add Trigger",
+      "triggers": "Triggers",
+      "triggersHint": "CPL, MQL, Funnel",
+      "conditions": "Conditions",
+      "actions": "Actions"
+    },
+    "triggerAction": {
+      "pauseCampaign": "Pause Campaign",
+      "notifyOpsAlerts": "Notify #ops-alerts"
+    }
+  },
+  "monitor": {
+    "title": "Automation Insights & Monitoring",
+    "realtimeOperations": "Real-time Operations",
+    "stats": {
+      "activeRules": "Active Rules",
+      "logicBuilderDeployments": "Logic Builder Deployments",
+      "actionsTriggered": "Actions Triggered",
+      "automatedAdjustments": "Automated adjustments made",
+      "adSpendSaved": "Ad Spend Saved",
+      "simulationSavings": "Simulation-backed logic savings",
+      "healthStatus": "Health Status",
+      "systemLatency": "System latency < 45ms"
+    },
+    "executionFeed": {
+      "title": "Execution Feed",
+      "liveUpdates": "Live Updates",
+      "viewHistoricalLog": "View Historical Log"
+    },
+    "performanceChart": {
+      "title": "Performance vs. Automation Impact",
+      "description": "Visualizing ROAS lift since Logic Builder deployment",
+      "roas": "ROAS (Automated)",
+      "baseline": "Baseline (Manual)"
+    },
+    "criticalToggles": {
+      "title": "Critical Logic Toggles",
+      "manageInBuilder": "Manage in Logic Builder"
+    }
+  },
+  "dataFlow": {
+    "title": "Real-Time Data Stream",
+    "description": "Live architecture monitoring and event pipeline status.",
+    "systemOnline": "SYSTEM ONLINE",
+    "dataPulseArchitecture": "Data Pulse Architecture",
+    "atlasClusterHealthy": "Atlas Cluster: Healthy",
+    "metrics": {
+      "globalLatency": "Global Latency",
+      "throughput": "Throughput",
+      "eventsPerSec": "events / sec"
+    },
+    "liveTraffic": {
+      "title": "Live Traffic",
+      "filter": "Filter",
+      "export": "Export",
+      "timestamp": "Timestamp",
+      "eventType": "Event Type",
+      "sourceDestination": "Source → Dest",
+      "status": "Status"
+    },
+    "channelStatus": {
+      "title": "Channel Status",
+      "successRate": "Success Rate",
+      "stable": "Stable",
+      "syncing": "Syncing",
+      "error": "Error"
+    }
+  }
+}

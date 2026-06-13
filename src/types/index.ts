@@ -348,6 +348,33 @@ export interface GovernanceHistoryRow {
 
 export type AlertSeverity = 'critical' | 'warning' | 'info'
 
+// Alerts
+
+export interface AlertHistoryEvent {
+  event: string
+  color: 'primary' | 'tertiary' | 'error' | 'outline'
+  timestamp: string
+}
+
+export interface AlertDetail {
+  alertId: string
+  /** Short ID shown in badge, e.g. "YTA-9921-X" */
+  shortId: string
+  /** Campaign name */
+  campaignName: string
+  detectedAt: string
+  /** Chart live value e.g. "$42.10" */
+  chartLiveValue: string
+  /** Chart baseline value e.g. "$18.50" */
+  chartBaselineValue: string
+  aiInsight: string
+  aiRecommendation: string
+  estimatedDailyLoss: string
+  reachEfficiencyChange: string
+  historicalContext: AlertHistoryEvent[]
+  eventStream: { time: string; message: string; isError?: boolean }[]
+}
+
 export interface Alert {
   _id: string
   title: string
@@ -361,11 +388,17 @@ export interface Alert {
   acknowledged: boolean
   actions: { label: string; action: string }[]
   createdAt: string
+  timeAgo?: string
+  /** Extra detail data for the drill-down view */
+  detail?: AlertDetail
 }
+
+// Automations
 
 export interface AutomationTrigger {
   _id: string
   name: string
+  description?: string
   metric: 'cpm' | 'cpl' | 'roas' | 'ctr'
   operator: 'gt' | 'lt'
   threshold: number
@@ -373,6 +406,62 @@ export interface AutomationTrigger {
   enabled: boolean
   lastFiredAt?: string
   estimatedImpact?: { adSpendSaved: number; roasRecovery: number; leadQualityLift: number }
+  /** Confidence score 0-100 */
+  confidencePct?: number
+}
+
+export interface AutomationSimulationLab {
+  adSpendSaved: number
+  roasRecovery: number
+  leadQualityLiftPct: number
+  confidencePct: number
+  historicalSamples: { label: string; result: 'success' | 'failure' }[]
+}
+
+export interface AutomationExecutionFeedItem {
+  _id: string
+  timeAgo: string
+  severity: 'critical' | 'warning' | 'info'
+  title: string
+  actionLabel: string
+  icon: string
+  iconColor: string
+}
+
+export interface AutomationMonitorStats {
+  _id: 'automation-monitor'
+  activeRules: number
+  activeRulesTrend: string
+  actionsTriggered: number
+  adSpendSaved: string
+  healthStatus: string
+  executionFeed: AutomationExecutionFeedItem[]
+}
+
+export interface DataFlowTrafficRow {
+  _id: string
+  timestamp: string
+  eventType: string
+  source: string
+  dest: string
+  sourceColor: string
+  status: 'success' | 'delayed' | 'error'
+}
+
+export interface DataFlowChannelStatus {
+  channel: Channel
+  label: string
+  note: string
+  status: 'stable' | 'syncing' | 'error'
+}
+
+export interface DataFlowData {
+  _id: 'data-flow'
+  globalLatencyMs: number
+  throughputK: number
+  trafficRows: DataFlowTrafficRow[]
+  channelStatuses: DataFlowChannelStatus[]
+  successRatePct: string
 }
 
 export type ConnectionHealth = 'healthy' | 'expiring' | 'error' | 'disconnected'

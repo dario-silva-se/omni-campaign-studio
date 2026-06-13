@@ -1,0 +1,98 @@
+{
+  "builder": {
+    "title": "Construtor de Lógica de Automação",
+    "breadcrumb": {
+      "campaigns": "Campanhas",
+      "automations": "Automações",
+      "newLogic": "Nova Lógica"
+    },
+    "realtimeSimulation": "Simulação em Tempo Real Ativa",
+    "publish": "Publicar",
+    "triggerLabel": "Gatilho",
+    "threshold": "Limiar",
+    "simulationLab": {
+      "title": "Lab de Simulação",
+      "estimated30DayImpact": "Impacto Estimado em 30 Dias",
+      "adSpendSaved": "Gasto em Anúncios Economizado",
+      "roasRecovery": "Recuperação de ROAS",
+      "leadQualityImprovement": "Melhoria de Qualidade de Lead",
+      "confidence": "Confiança",
+      "basedOnSimilarTriggers": "Baseado em Gatilhos Similares",
+      "runBacktest": "Executar Backtest",
+      "success": "Sucesso"
+    },
+    "footer": {
+      "logicReady": "Lógica válida e pronta para teste.",
+      "testRun": "Teste",
+      "saveLogic": "Salvar Lógica"
+    },
+    "actionPanel": {
+      "addTrigger": "Adicionar Gatilho",
+      "triggers": "Gatilhos",
+      "triggersHint": "CPL, MQL, Funil",
+      "conditions": "Condições",
+      "actions": "Ações"
+    },
+    "triggerAction": {
+      "pauseCampaign": "Pausar Campanha",
+      "notifyOpsAlerts": "Notificar #ops-alertas"
+    }
+  },
+  "monitor": {
+    "title": "Insights & Monitoramento de Automação",
+    "realtimeOperations": "Operações em Tempo Real",
+    "stats": {
+      "activeRules": "Regras Ativas",
+      "logicBuilderDeployments": "Implantações do Logic Builder",
+      "actionsTriggered": "Ações Acionadas",
+      "automatedAdjustments": "Ajustes automatizados feitos",
+      "adSpendSaved": "Gasto em Anúncios Economizado",
+      "simulationSavings": "Economias baseadas em simulação",
+      "healthStatus": "Status de Saúde",
+      "systemLatency": "Latência do sistema < 45ms"
+    },
+    "executionFeed": {
+      "title": "Feed de Execução",
+      "liveUpdates": "Atualizações ao Vivo",
+      "viewHistoricalLog": "Ver Histórico"
+    },
+    "performanceChart": {
+      "title": "Desempenho vs. Impacto de Automação",
+      "description": "Visualizando ganho de ROAS desde a implantação do Logic Builder",
+      "roas": "ROAS (Automatizado)",
+      "baseline": "Base (Manual)"
+    },
+    "criticalToggles": {
+      "title": "Ativações Críticas de Lógica",
+      "manageInBuilder": "Gerenciar no Logic Builder"
+    }
+  },
+  "dataFlow": {
+    "title": "Fluxo de Dados em Tempo Real",
+    "description": "Monitoramento de arquitetura ao vivo e status do pipeline de eventos.",
+    "systemOnline": "SISTEMA ONLINE",
+    "dataPulseArchitecture": "Arquitetura de Pulso de Dados",
+    "atlasClusterHealthy": "Atlas Cluster: Saudável",
+    "metrics": {
+      "globalLatency": "Latência Global",
+      "throughput": "Throughput",
+      "eventsPerSec": "eventos / seg"
+    },
+    "liveTraffic": {
+      "title": "Tráfego ao Vivo",
+      "filter": "Filtrar",
+      "export": "Exportar",
+      "timestamp": "Timestamp",
+      "eventType": "Tipo de Evento",
+      "sourceDestination": "Origem → Destino",
+      "status": "Status"
+    },
+    "channelStatus": {
+      "title": "Status dos Canais",
+      "successRate": "Taxa de Sucesso",
+      "stable": "Estável",
+      "syncing": "Sincronizando",
+      "error": "Erro"
+    }
+  }
+}

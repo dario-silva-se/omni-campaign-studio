@@ -1,0 +1,50 @@
+{
+  "center": {
+    "title": "Alerts Center",
+    "subtitle": "Alerts & Anomalies",
+    "description": "Real-time surveillance and system integrity oversight.",
+    "priorityQueue": "Priority Queue",
+    "stats": {
+      "activeAlerts": "Active Alerts",
+      "activeSince1h": "+3 since 1h",
+      "meanTimeToResolution": "Mean Time to Resolution",
+      "target": "Target: <10m",
+      "systemHealthIndex": "System Health Index",
+      "stable": "Stable"
+    },
+    "sidebar": {
+      "systemUptime": "System Uptime",
+      "continuityPulse": "7-Day Continuity Pulse",
+      "alertHistory": "Alert History",
+      "viewSystemLogs": "View System Logs"
+    },
+    "severity": {
+      "critical": "Critical",
+      "warning": "Warning",
+      "info": "Info"
+    },
+    "actions": {
+      "acknowledge": "Acknowledge"
+    }
+  },
+  "detail": {
+    "back": "Back",
+    "diagnosticChart": "Diagnostic Chart",
+    "cpmDeviationAnalysis": "CPM Deviation Analysis",
+    "live": "Live",
+    "baseline": "Baseline",
+    "aiIntelligence": "AI Intelligence",
+    "recommendation": "Recommendation",
+    "impactAnalysis": "Impact Analysis",
+    "estimatedDailyLoss": "Estimated Daily Loss",
+    "reachEfficiency": "Reach Efficiency",
+    "executiveActions": "Executive Actions",
+    "actionsLoggedNote": "Decisions will be logged and synced with Team Lead",
+    "pauseAdSet": "PAUSE AD SET",
+    "muteAlert": "MUTE ALERT",
+    "reallocateToLinkedIn": "REALLOCATE TO LINKEDIN",
+    "dismissAndIgnore": "DISMISS & IGNORE",
+    "historicalContext": "Historical Context",
+    "eventStream": "Event Stream"
+  }
+}
