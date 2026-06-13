@@ -16,6 +16,10 @@
     "latency": "{{label}} Latency",
     "requiresRefresh": "Requires urgent refresh",
     "oauthCompliant": "2026 OAuth Compliant",
+    "healthWarning": "Warning",
+    "logSuccess": "Success",
+    "logWarning": "Warning",
+    "logInfo": "Info",
     "logTable": {
       "eventType": "Event Type",
       "platform": "Platform",
@@ -57,7 +61,9 @@
     "disconnectDesc": "This action will immediately terminate all active campaigns, scheduled posts, and real-time analytics tracking. This cannot be undone.",
     "disconnectBtn": "Disconnect Account",
     "returnToIntegrations": "Return to Integrations",
-    "viewApiLogs": "View API Logs"
+    "viewApiLogs": "View API Logs",
+    "managementTitle": "{{channel}} Management",
+    "managementSubtitle": "Manage global enterprise tokens and permission scopes for {{channel}}."
   },
   "error": {
     "title": "YouTube API Connection Failed",
@@ -65,6 +71,7 @@
     "offline": "OFFLINE",
     "description": "The bridge between Campaign Studio and YouTube Data v3 has been severed. Campaign synchronizations, real-time analytics, and content uploads are currently suspended.",
     "reconnect": "Reconnect Integration",
+    "reconnecting": "Reconnecting...",
     "viewLogs": "View Full Logs",
     "technicalDiagnostics": "TECHNICAL DIAGNOSTICS",
     "errorCode": "Error Code:",
@@ -88,7 +95,8 @@
   },
   "restored": {
     "bannerTitle": "API Link Established Successfully",
-    "title": "YouTube Connection Restored",
+    "title": "{{channel}} Connection Restored",
+    "body": "The {{channel}} integration is now active and healthy. Your creative pipeline is fully synchronized.",
     "description": "The bridge between Campaign Studio and YouTube Data v3 is now active and healthy. Your creative pipeline is fully synchronized.",
     "syncStatus": "Sync Status",
     "syncActive": "Active",

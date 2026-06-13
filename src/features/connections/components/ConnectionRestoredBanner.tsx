@@ -8,9 +8,9 @@ interface Props {
 }
 
 export function ConnectionRestoredBanner({ connection }: Props) {
-  const { t } = useTranslation('connections')
+  const { t } = useTranslation(['connections', 'common'])
   const navigate = useNavigate()
-  const channelName = connection.channel.charAt(0).toUpperCase() + connection.channel.slice(1)
+  const channelName = t(`common:channels.${connection.channel}`)
 
   return (
     <div className="p-xl flex flex-col items-center justify-center min-h-[calc(100vh-64px)]">
@@ -44,12 +44,10 @@ export function ConnectionRestoredBanner({ connection }: Props) {
         {/* Title & Subtitle */}
         <div className="space-y-md">
           <h2 className="font-display-lg text-display-lg text-on-surface">
-            {channelName} {t('restored.title').replace('YouTube', '')}
+            {t('restored.title', { channel: channelName })}
           </h2>
           <p className="font-body-lg text-body-lg text-on-surface-variant max-w-xl mx-auto leading-relaxed">
-            {t('restored.description').replace('YouTube Data v3', (
-              `<span class="text-secondary font-bold">${channelName} Data v3</span>`
-            ) as unknown as string)}
+            {t('restored.body', { channel: channelName })}
           </p>
         </div>
 
