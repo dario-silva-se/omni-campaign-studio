@@ -168,6 +168,79 @@ export interface Template {
 
 export type PostStatus = 'scheduled' | 'published' | 'draft' | 'failed' | 'pending-approval'
 
+// Posts
+
+export interface PostHistoryEvent {
+  event: string
+  actor: string
+  timeAgo: string
+  type: 'publish' | 'approve' | 'edit' | 'schedule'
+  quote?: string
+  note?: string
+  badge?: string
+}
+
+export interface LinkedInPostDetail {
+  totalImpressions: string
+  impressionsTrend: string
+  impressionsTrendPositive: boolean
+  engagementRate: string
+  engagementTrend: string
+  engagementTrendPositive: boolean
+  clicks: string
+  clicksTrend: string
+  clicksTrendPositive: boolean
+  shares: string
+  sharesTrend: string
+  sharesTrendPositive: boolean
+  authorName: string
+  authorTitle: string
+  targetAudience: string
+  publicationDate: string
+  postStatus: string
+  history: PostHistoryEvent[]
+}
+
+export interface YouTubePostDetail {
+  views: string
+  viewsTrend: string
+  viewsTrendPositive: boolean
+  watchTimeHrs: string
+  watchTimeTrend: string
+  watchTimeTrendPositive: boolean
+  subGrowth: string
+  subGrowthTrend: string
+  subGrowthTrendPositive: boolean
+  avgViewDuration: string
+  avgViewTrend: string
+  avgViewTrendPositive: boolean
+  audienceRetentionAvg: string
+  category: string
+  visibility: string
+  language: string
+  description: string
+  tags: string[]
+  likes: string
+  comments: string
+  shares: string
+  sentimentPositive: string
+  channelName: string
+  trafficSources: { label: string; pct: number }[]
+}
+
+export interface TelegramPostDetail {
+  totalReach: string
+  reachTrend: string
+  reachTrendPositive: boolean
+  forwardCount: string
+  reactionCount: string
+  velocityBars: number[]
+  targetChannel: string
+  publicationDate: string
+  referralId: string
+  history: (PostHistoryEvent & { badge?: string })[]
+}
+
 export interface Post {
   _id: string
   title: string
@@ -180,6 +253,9 @@ export interface Post {
   campaignId?: string
   metrics?: { impressions: number; clicks: number; engagement: number }
   createdAt: string
+  linkedInDetail?: LinkedInPostDetail
+  youTubeDetail?: YouTubePostDetail
+  telegramDetail?: TelegramPostDetail
 }
 
 export type ApprovalStatus = 'pending' | 'approved' | 'rejected' | 'changes-requested'
