@@ -506,15 +506,39 @@ export interface ApiConnection {
   connectedAccounts?: ConnectedAccount[]
 }
 
+// Settings
+
+export interface NotificationTeamMember {
+  name: string
+  role: string
+  activeRules: number
+  initials?: string
+}
+
+export interface NotificationChannelOverride {
+  channel: 'linkedin' | 'youtube' | 'customBot'
+  condition: string
+  routing: string
+  progressPct: number
+}
+
 export interface NotificationSettings {
   _id: string
   slackEnabled: boolean
   telegramEnabled: boolean
   emailEnabled: boolean
+  /** In-app notification center toggle */
+  inAppEnabled?: boolean
   criticalOnly: boolean
+  /** 'realtime' | 'summary' */
+  batchingPreference?: 'realtime' | 'summary'
   quietHours?: { start: string; end: string }
   routes: { severity: AlertSeverity; channels: string[] }[]
+  teamSubscriptions?: NotificationTeamMember[]
+  channelOverrides?: NotificationChannelOverride[]
 }
+
+// Reports
 
 export type ReportJobStatus = 'queued' | 'in-progress' | 'completed' | 'failed'
 
@@ -527,6 +551,8 @@ export interface ReportJob {
   downloadUrl?: string
   errorMessage?: string
   createdAt: string
+  /** If true, the mock export will fail (used for testing error path) */
+  forceError?: boolean
 }
 
 export interface AnalyticsSummary {

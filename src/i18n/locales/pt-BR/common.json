@@ -49,7 +49,8 @@
   "channels": {
     "linkedin": "LinkedIn",
     "youtube": "YouTube",
-    "telegram": "Telegram"
+    "telegram": "Telegram",
+    "customBot": "Custom Bot Logic"
   },
   "loading": "Carregando...",
   "errorState": "Não foi possível carregar os dados. Tente novamente.",

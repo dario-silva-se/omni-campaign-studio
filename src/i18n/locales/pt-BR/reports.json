@@ -1,0 +1,31 @@
+{
+  "export": {
+    "title": "Exportar Relatório PDF",
+    "periodLabel": "PERÍODO DE RELATÓRIO",
+    "period7": "7 dias",
+    "period30": "30 dias",
+    "periodCustom": "Personalizar",
+    "channelsLabel": "CANAIS INCLUSOS",
+    "sectionsLabel": "SEÇÕES DO DOCUMENTO",
+    "sectionSummary": "Resumo Geral",
+    "sectionGrowth": "Gráficos de Crescimento",
+    "sectionChannels": "Detalhes por Canal",
+    "sectionTopContent": "Melhores Conteúdos",
+    "previewLabel": "PREVIEW DO LAYOUT",
+    "previewSize": "~2.4 MB tamanho estimado",
+    "previewFormat": "FORMATO A4",
+    "cancel": "Cancelar",
+    "generate": "Gerar PDF",
+    "processing": "Processando...",
+    "generating": "Gerando seu relatório...",
+    "generatingDesc": "Isso pode levar alguns segundos.",
+    "successTitle": "Relatório Gerado com Sucesso!",
+    "successDesc": "O download do seu relatório PDF foi concluído.",
+    "openFile": "Abrir Arquivo",
+    "close": "Fechar",
+    "errorTitle": "Erro ao Gerar Relatório",
+    "errorDesc": "Não foi possível processar os dados no momento. Verifique sua conexão e tente novamente.",
+    "retry": "Tentar Novamente",
+    "progressLabel": "Progresso da geração"
+  }
+}
