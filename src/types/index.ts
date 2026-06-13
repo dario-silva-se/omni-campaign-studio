@@ -551,8 +551,6 @@ export interface ReportJob {
   downloadUrl?: string
   errorMessage?: string
   createdAt: string
-  /** If true, the mock export will fail (used for testing error path) */
-  forceError?: boolean
 }
 
 export interface AnalyticsSummary {

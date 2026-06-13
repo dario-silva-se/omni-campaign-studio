@@ -18,6 +18,5 @@ export const reportFixtures: ReportJob[] = [
     progress: 0,
     errorMessage: 'Falha ao processar os dados',
     createdAt: '2025-10-02T00:00:00.000Z',
-    forceError: true,
   },
 ]

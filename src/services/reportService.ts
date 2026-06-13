@@ -9,7 +9,7 @@ export const reportService = createCrudService<ReportJob>('/reports', {
 
 /**
  * Mock duration in ms for the export animation.
- * Override in tests: reportService.mockDurationMs = 50
+ * Override in tests: setMockExportDurationMs(50)
  */
 export let mockExportDurationMs = 1500
 
@@ -17,17 +17,27 @@ export function setMockExportDurationMs(ms: number) {
   mockExportDurationMs = ms
 }
 
+/**
+ * Test-only flag: when true the mock runExport will throw an error.
+ * Never read from production code — call setMockForceError(true) in a test
+ * and reset to false in afterEach.
+ */
+let _mockForceError = false
+
+export function setMockForceError(value: boolean) {
+  _mockForceError = value
+}
+
 export interface ExportOptions {
   period: '7d' | '30d' | 'custom'
   channels: string[]
   sections: string[]
-  forceError?: boolean
 }
 
 export async function runExport(options: ExportOptions): Promise<ReportJob> {
   if (isMockMode()) {
     await new Promise<void>((resolve) => setTimeout(resolve, mockExportDurationMs))
-    if (options.forceError) {
+    if (_mockForceError) {
       throw new Error('Falha ao processar os dados')
     }
     const job: ReportJob = {

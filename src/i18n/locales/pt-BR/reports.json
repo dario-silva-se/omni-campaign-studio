@@ -26,6 +26,7 @@
     "errorTitle": "Erro ao Gerar Relatório",
     "errorDesc": "Não foi possível processar os dados no momento. Verifique sua conexão e tente novamente.",
     "retry": "Tentar Novamente",
-    "progressLabel": "Progresso da geração"
+    "progressLabel": "Progresso da geração",
+    "errorUnknown": "Erro desconhecido"
   }
 }
