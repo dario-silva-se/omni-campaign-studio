@@ -10,9 +10,9 @@ interface Props {
 }
 
 export function ConnectionErrorPanel({ connection, onReconnect, isReconnecting }: Props) {
-  const { t } = useTranslation('connections')
+  const { t } = useTranslation(['connections', 'common'])
   const navigate = useNavigate()
-  const channelName = connection.channel.charAt(0).toUpperCase() + connection.channel.slice(1)
+  const channelName = t(`common:channels.${connection.channel}`)
 
   return (
     <div className="flex-1 p-xl space-y-xl relative">
@@ -82,7 +82,7 @@ export function ConnectionErrorPanel({ connection, onReconnect, isReconnecting }
                 className="bg-secondary-container hover:bg-secondary-container/80 text-on-secondary-container px-xl py-md rounded-lg font-title-md flex items-center gap-md transition-all active:scale-95 disabled:opacity-60"
               >
                 <Icon name={isReconnecting ? 'refresh' : 'sync'} className={isReconnecting ? 'animate-spin' : ''} />
-                {isReconnecting ? 'Reconectando...' : t('error.reconnect')}
+                {isReconnecting ? t('error.reconnecting') : t('error.reconnect')}
               </button>
               <button
                 type="button"

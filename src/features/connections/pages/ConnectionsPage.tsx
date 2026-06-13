@@ -60,29 +60,29 @@ const LOG_ENTRIES = [
   },
 ]
 
-function statusBadge(status: string) {
-  if (status === 'success')
-    return (
-      <span className="inline-flex items-center gap-xs text-[10px] font-bold text-green-500 uppercase px-2 py-0.5 bg-green-500/10 rounded">
-        Success
-      </span>
-    )
-  if (status === 'warning')
-    return (
-      <span className="inline-flex items-center gap-xs text-[10px] font-bold text-amber-500 uppercase px-2 py-0.5 bg-amber-500/10 rounded">
-        Warning
-      </span>
-    )
-  return (
-    <span className="inline-flex items-center gap-xs text-[10px] font-bold text-primary uppercase px-2 py-0.5 bg-primary/10 rounded">
-      Info
-    </span>
-  )
-}
-
 export default function ConnectionsPage() {
   const { t } = useTranslation(['connections', 'common'])
   const { data: connections, isLoading, isError } = useConnectionList()
+
+  function statusBadge(status: string) {
+    if (status === 'success')
+      return (
+        <span className="inline-flex items-center gap-xs text-[10px] font-bold text-green-500 uppercase px-2 py-0.5 bg-green-500/10 rounded">
+          {t('connections:list.logSuccess')}
+        </span>
+      )
+    if (status === 'warning')
+      return (
+        <span className="inline-flex items-center gap-xs text-[10px] font-bold text-amber-500 uppercase px-2 py-0.5 bg-amber-500/10 rounded">
+          {t('connections:list.logWarning')}
+        </span>
+      )
+    return (
+      <span className="inline-flex items-center gap-xs text-[10px] font-bold text-primary uppercase px-2 py-0.5 bg-primary/10 rounded">
+        {t('connections:list.logInfo')}
+      </span>
+    )
+  }
 
   if (isError) return <div role="alert" className="p-lg text-error">{t('common:errorState')}</div>
   if (isLoading || !connections) return <div className="p-lg text-on-surface-variant">{t('common:loading')}</div>

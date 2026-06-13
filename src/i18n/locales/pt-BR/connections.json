@@ -16,6 +16,10 @@
     "latency": "{{label}} Latência",
     "requiresRefresh": "Requer atualização urgente",
     "oauthCompliant": "OAuth 2026 Compatível",
+    "healthWarning": "Atenção",
+    "logSuccess": "Sucesso",
+    "logWarning": "Atenção",
+    "logInfo": "Info",
     "logTable": {
       "eventType": "Tipo de Evento",
       "platform": "Plataforma",
@@ -57,7 +61,9 @@
     "disconnectDesc": "Esta ação encerrará imediatamente todas as campanhas ativas, posts agendados e rastreamento de análises em tempo real. Isso não pode ser desfeito.",
     "disconnectBtn": "Desconectar Conta",
     "returnToIntegrations": "Voltar às Integrações",
-    "viewApiLogs": "Ver Logs da API"
+    "viewApiLogs": "Ver Logs da API",
+    "managementTitle": "Gerenciamento de {{channel}}",
+    "managementSubtitle": "Gerencie tokens globais corporativos e escopos de permissão para {{channel}}."
   },
   "error": {
     "title": "Falha na Conexão com a API do YouTube",
@@ -65,6 +71,7 @@
     "offline": "OFFLINE",
     "description": "A ponte entre o Campaign Studio e o YouTube Data v3 foi interrompida. As sincronizações de campanhas, análises em tempo real e uploads de conteúdo estão suspensos.",
     "reconnect": "Reconectar Integração",
+    "reconnecting": "Reconectando...",
     "viewLogs": "Ver Logs Completos",
     "technicalDiagnostics": "DIAGNÓSTICOS TÉCNICOS",
     "errorCode": "Código de Erro:",
@@ -88,7 +95,8 @@
   },
   "restored": {
     "bannerTitle": "Link de API Estabelecido com Sucesso",
-    "title": "Conexão YouTube Restaurada",
+    "title": "Conexão {{channel}} Restaurada",
+    "body": "A integração com {{channel}} está ativa e saudável. Seu pipeline criativo está totalmente sincronizado.",
     "description": "A ponte entre o Campaign Studio e o YouTube Data v3 agora está ativa e saudável. Seu pipeline criativo está totalmente sincronizado.",
     "syncStatus": "Status de Sincronização",
     "syncActive": "Ativo",

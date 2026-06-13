@@ -10,7 +10,7 @@ describe('ConnectionsPage', () => {
 
   it('renders channel cards from fixture', async () => {
     renderWithProviders(<ConnectionsPage />)
-    // channel names rendered as capitalized from fixture (_id = 'linkedin' → 'Linkedin')
+    // channel names come from i18n common:channels (LinkedIn, YouTube, Telegram)
     const linkedinEls = await screen.findAllByText(/linkedin/i)
     expect(linkedinEls.length).toBeGreaterThanOrEqual(1)
     const youtubeEls = await screen.findAllByText(/youtube/i)
@@ -21,10 +21,10 @@ describe('ConnectionsPage', () => {
 
   it('renders health chips from fixture', async () => {
     renderWithProviders(<ConnectionsPage />)
-    // LinkedIn and Telegram are healthy (Ativo), YouTube is error (Warning)
+    // LinkedIn and Telegram are healthy (Ativo), YouTube is error (Atenção) — pt-BR default
     const activeChips = await screen.findAllByText('Ativo')
     expect(activeChips.length).toBeGreaterThanOrEqual(2)
-    const warningChips = await screen.findAllByText('Warning')
+    const warningChips = await screen.findAllByText('Atenção')
     expect(warningChips.length).toBeGreaterThanOrEqual(1)
   })
 

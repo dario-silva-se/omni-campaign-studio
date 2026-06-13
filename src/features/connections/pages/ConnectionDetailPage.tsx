@@ -33,13 +33,14 @@ export default function ConnectionDetailPage() {
 
   // State machine: healthy (justRestored=false) → normal detail
   //                healthy (justRestored=true) → restored banner
+  //                expiring → health detail (token countdown, still connected)
   //                error/disconnected → error panel
   if (connection.health === 'healthy' && justRestored) {
     return <ConnectionRestoredBanner connection={connection} />
   }
 
-  if (connection.health === 'healthy') {
-    return <ConnectionHealthDetail connection={connection} justRestored={false} />
+  if (connection.health === 'healthy' || connection.health === 'expiring') {
+    return <ConnectionHealthDetail connection={connection} />
   }
 
   // error or disconnected

@@ -40,7 +40,7 @@ function HealthBadge({ health }: { health: ConnectionHealth }) {
     return (
       <div className="px-2 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center gap-xs">
         <span className="w-2 h-2 rounded-full bg-amber-500" />
-        <span className="text-[10px] font-bold text-amber-500 uppercase tracking-wider">Warning</span>
+        <span className="text-[10px] font-bold text-amber-500 uppercase tracking-wider">{t('list.healthWarning')}</span>
       </div>
     )
   }
@@ -48,7 +48,7 @@ function HealthBadge({ health }: { health: ConnectionHealth }) {
   return (
     <div className="px-2 py-1 rounded-full bg-amber-500/10 border border-amber-500/20 flex items-center gap-xs">
       <span className="w-2 h-2 rounded-full bg-amber-500" />
-      <span className="text-[10px] font-bold text-amber-500 uppercase tracking-wider">Warning</span>
+      <span className="text-[10px] font-bold text-amber-500 uppercase tracking-wider">{t('list.healthWarning')}</span>
     </div>
   )
 }
@@ -58,12 +58,12 @@ interface Props {
 }
 
 export function ConnectionHealthCard({ connection }: Props) {
-  const { t } = useTranslation('connections')
+  const { t } = useTranslation(['connections', 'common'])
   const navigate = useNavigate()
   const meta = CHANNEL_META[connection.channel] ?? CHANNEL_META['linkedin']
   const isError = connection.health === 'error' || connection.health === 'disconnected'
 
-  const channelName = connection.channel.charAt(0).toUpperCase() + connection.channel.slice(1)
+  const channelName = t(`common:channels.${connection.channel}`)
 
   return (
     <div

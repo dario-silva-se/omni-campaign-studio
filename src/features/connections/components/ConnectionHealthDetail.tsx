@@ -1,3 +1,4 @@
+import { useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { Icon } from '@/components/ui/Icon'
@@ -11,16 +12,19 @@ interface Props {
 export function ConnectionHealthDetail({ connection, justRestored }: Props) {
   const { t } = useTranslation('connections')
   const navigate = useNavigate()
-  const channelName = connection.channel.charAt(0).toUpperCase() + connection.channel.slice(1)
+  const channelName = t(`common:channels.${connection.channel}`)
+
+  // Capture the timestamp at mount using a lazy useState initializer (runs once, not during render)
+  const [now] = useState<number>(() => Date.now())
 
   // Calculate days remaining from tokenExpiresAt or fall back to label
-  const daysRemaining = (() => {
+  const daysRemaining = useMemo(() => {
     if (!connection.tokenExpiresAt) return '45'
     const diff = Math.ceil(
-      (new Date(connection.tokenExpiresAt).getTime() - Date.now()) / (1000 * 60 * 60 * 24),
+      (new Date(connection.tokenExpiresAt).getTime() - now) / (1000 * 60 * 60 * 24),
     )
     return diff > 0 ? String(diff) : '45'
-  })()
+  }, [connection.tokenExpiresAt, now])
 
   const permissions = connection.permissions ?? []
   const connectedAccounts = connection.connectedAccounts ?? []
@@ -44,7 +48,7 @@ export function ConnectionHealthDetail({ connection, justRestored }: Props) {
           <Icon name="chevron_right" className="text-[14px]" />
           <span>{t('detail.breadcrumbIntegrations')}</span>
           <Icon name="chevron_right" className="text-[14px]" />
-          <span className="text-primary">{channelName} Management</span>
+          <span className="text-primary">{t('detail.managementTitle', { channel: channelName })}</span>
         </div>
         <div className="flex justify-between items-end">
           <div>
@@ -56,7 +60,7 @@ export function ConnectionHealthDetail({ connection, justRestored }: Props) {
               </span>
             </h2>
             <p className="text-on-surface-variant/60 mt-1">
-              Manage global enterprise tokens and permission scopes for {channelName}.
+              {t('detail.managementSubtitle', { channel: channelName })}
             </p>
           </div>
           <div className="flex gap-md">
