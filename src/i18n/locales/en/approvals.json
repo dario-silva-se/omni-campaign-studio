@@ -1,0 +1,130 @@
+{
+  "dashboard": {
+    "title": "Approval Center",
+    "searchPlaceholder": "Search approvals...",
+    "support": "Support",
+    "stats": {
+      "pendingApproval": "Pending Approval",
+      "inReview": "In Review",
+      "scheduledToday": "Scheduled Today",
+      "vsLastWeek": "+12% vs last week",
+      "liveNow": "Live Now",
+      "onTrack": "On Track"
+    },
+    "filters": {
+      "allChannels": "All Channels",
+      "linkedin": "LinkedIn",
+      "youtube": "YouTube",
+      "telegram": "Telegram",
+      "urgency": "Urgency:",
+      "high": "High Priority",
+      "recent": "Recently Added",
+      "oldest": "Oldest First"
+    },
+    "feed": {
+      "viewDetails": "View Details",
+      "reject": "Reject",
+      "approve": "Approve",
+      "critical": "Critical",
+      "ago": "ago"
+    },
+    "sidebar": {
+      "reviewProgress": "Review Progress",
+      "monthlyTarget": "Monthly Target",
+      "recentActivity": "Recent Activity",
+      "viewAllActivity": "View All Activity"
+    },
+    "bulkBar": {
+      "itemsSelected": "{{count}} Items Selected",
+      "addLabel": "Add Label",
+      "assignReviewer": "Assign Reviewer",
+      "clear": "Clear",
+      "rejectAll": "Reject All",
+      "approveSelected": "Approve Selected"
+    }
+  },
+  "detail": {
+    "back": "Back",
+    "awaitingReview": "Awaiting Review",
+    "approved": "Approved",
+    "changesRequested": "Changes Requested",
+    "rejected": "Rejected",
+    "desktopPreview": "Desktop Preview",
+    "mobilePreview": "Mobile Preview",
+    "zoom": "Zoom: 100%",
+    "campaignContext": "Campaign Context",
+    "targetAudience": "Target Audience",
+    "channel": "Channel",
+    "complianceChecklist": "Compliance Checklist",
+    "tabs": {
+      "comments": "Comments ({{count}})",
+      "history": "History"
+    },
+    "comments": {
+      "reply": "Reply",
+      "resolve": "Resolve",
+      "missingPixel": "Missing Pixel Tracking",
+      "writeComment": "Write a comment...",
+      "send": "Send"
+    },
+    "history": {
+      "visualUpdated": "Visual Updated",
+      "contentCreated": "Content Created"
+    },
+    "actions": {
+      "approveForPublication": "Approve for Publication",
+      "requestChanges": "Request Changes",
+      "archive": "Archive"
+    }
+  },
+  "requestChanges": {
+    "title": "Request Changes",
+    "asset": "Asset: {{name}}",
+    "detailedFeedback": "Detailed Feedback",
+    "charCount": "{{count}}/500 characters",
+    "feedbackPlaceholder": "Describe the necessary modifications. Be specific about timing, color grading, or layout adjustments...",
+    "tagStakeholders": "Tag Stakeholders",
+    "tagPlaceholder": "Type name...",
+    "referenceAttachments": "Reference Attachments",
+    "dropZoneLabel": "Drop reference images or browse files",
+    "dropZoneHint": "PNG, JPG, PDF (Max 25MB)",
+    "cancel": "Cancel",
+    "saveDraft": "Save Draft",
+    "submitChanges": "Submit Changes"
+  },
+  "history": {
+    "title": "History & Audit",
+    "searchPlaceholder": "Search content name, ID, or approver...",
+    "support": "Support",
+    "filters": {
+      "allTime": "All Time",
+      "last30Days": "Last 30 Days",
+      "last7Days": "Last 7 Days",
+      "dateRange": "May 01 - May 31, 2024",
+      "channelAll": "Channel: All"
+    },
+    "exportCsv": "Export CSV",
+    "auditReport": "Audit Report",
+    "table": {
+      "contentName": "Content Name",
+      "channel": "Channel",
+      "finalDecision": "Final Decision",
+      "approver": "Approver",
+      "date": "Date"
+    },
+    "decision": {
+      "approved": "Approved",
+      "rejected": "Rejected",
+      "changesRequested": "Changes Requested"
+    },
+    "summary": {
+      "totalApproved": "Total Approved",
+      "totalRejected": "Total Rejected",
+      "avgCycleTime": "Avg Cycle Time",
+      "complianceRate": "Compliance Rate"
+    },
+    "pagination": {
+      "showing": "Showing {{from}}-{{to}} of {{total}} items"
+    }
+  }
+}

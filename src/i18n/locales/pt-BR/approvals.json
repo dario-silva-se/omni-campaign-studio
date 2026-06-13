@@ -1,0 +1,130 @@
+{
+  "dashboard": {
+    "title": "Central de Aprovações",
+    "searchPlaceholder": "Buscar aprovações...",
+    "support": "Suporte",
+    "stats": {
+      "pendingApproval": "Aguardando Aprovação",
+      "inReview": "Em Revisão",
+      "scheduledToday": "Agendados Hoje",
+      "vsLastWeek": "+12% vs semana passada",
+      "liveNow": "Ao Vivo",
+      "onTrack": "No Prazo"
+    },
+    "filters": {
+      "allChannels": "Todos os Canais",
+      "linkedin": "LinkedIn",
+      "youtube": "YouTube",
+      "telegram": "Telegram",
+      "urgency": "Urgência:",
+      "high": "Alta Prioridade",
+      "recent": "Adicionado Recentemente",
+      "oldest": "Mais Antigo"
+    },
+    "feed": {
+      "viewDetails": "Ver Detalhes",
+      "reject": "Rejeitar",
+      "approve": "Aprovar",
+      "critical": "Crítico",
+      "ago": "atrás"
+    },
+    "sidebar": {
+      "reviewProgress": "Progresso de Revisão",
+      "monthlyTarget": "Meta Mensal",
+      "recentActivity": "Atividade Recente",
+      "viewAllActivity": "Ver Toda Atividade"
+    },
+    "bulkBar": {
+      "itemsSelected": "{{count}} Itens Selecionados",
+      "addLabel": "Adicionar Rótulo",
+      "assignReviewer": "Atribuir Revisor",
+      "clear": "Limpar",
+      "rejectAll": "Rejeitar Todos",
+      "approveSelected": "Aprovar Selecionados"
+    }
+  },
+  "detail": {
+    "back": "Voltar",
+    "awaitingReview": "Aguardando Revisão",
+    "approved": "Aprovado",
+    "changesRequested": "Alterações Solicitadas",
+    "rejected": "Rejeitado",
+    "desktopPreview": "Visualização Desktop",
+    "mobilePreview": "Visualização Mobile",
+    "zoom": "Zoom: 100%",
+    "campaignContext": "Contexto da Campanha",
+    "targetAudience": "Público-Alvo",
+    "channel": "Canal",
+    "complianceChecklist": "Checklist de Conformidade",
+    "tabs": {
+      "comments": "Comentários ({{count}})",
+      "history": "Histórico"
+    },
+    "comments": {
+      "reply": "Responder",
+      "resolve": "Resolver",
+      "missingPixel": "Pixel de Rastreamento Ausente",
+      "writeComment": "Escrever um comentário...",
+      "send": "Enviar"
+    },
+    "history": {
+      "visualUpdated": "Visual Atualizado",
+      "contentCreated": "Conteúdo Criado"
+    },
+    "actions": {
+      "approveForPublication": "Aprovar para Publicação",
+      "requestChanges": "Solicitar Alterações",
+      "archive": "Arquivar"
+    }
+  },
+  "requestChanges": {
+    "title": "Solicitar Alterações",
+    "asset": "Ativo: {{name}}",
+    "detailedFeedback": "Feedback Detalhado",
+    "charCount": "{{count}}/500 caracteres",
+    "feedbackPlaceholder": "Descreva as modificações necessárias. Seja específico sobre timing, gradação de cores ou ajustes de layout...",
+    "tagStakeholders": "Marcar Participantes",
+    "tagPlaceholder": "Digite o nome...",
+    "referenceAttachments": "Anexos de Referência",
+    "dropZoneLabel": "Solte imagens de referência ou navegue pelos arquivos",
+    "dropZoneHint": "PNG, JPG, PDF (Máx. 25MB)",
+    "cancel": "Cancelar",
+    "saveDraft": "Salvar Rascunho",
+    "submitChanges": "Enviar Alterações"
+  },
+  "history": {
+    "title": "Histórico & Auditoria",
+    "searchPlaceholder": "Buscar nome de conteúdo, ID ou aprovador...",
+    "support": "Suporte",
+    "filters": {
+      "allTime": "Todo o Período",
+      "last30Days": "Últimos 30 Dias",
+      "last7Days": "Últimos 7 Dias",
+      "dateRange": "Mai 01 - Mai 31, 2024",
+      "channelAll": "Canal: Todos"
+    },
+    "exportCsv": "Exportar CSV",
+    "auditReport": "Relatório de Auditoria",
+    "table": {
+      "contentName": "Nome do Conteúdo",
+      "channel": "Canal",
+      "finalDecision": "Decisão Final",
+      "approver": "Aprovador",
+      "date": "Data"
+    },
+    "decision": {
+      "approved": "Aprovado",
+      "rejected": "Rejeitado",
+      "changesRequested": "Alterações Solicitadas"
+    },
+    "summary": {
+      "totalApproved": "Total Aprovados",
+      "totalRejected": "Total Rejeitados",
+      "avgCycleTime": "Tempo Médio de Ciclo",
+      "complianceRate": "Taxa de Conformidade"
+    },
+    "pagination": {
+      "showing": "Mostrando {{from}}-{{to}} de {{total}} itens"
+    }
+  }
+}

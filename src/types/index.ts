@@ -260,6 +260,42 @@ export interface Post {
 
 export type ApprovalStatus = 'pending' | 'approved' | 'rejected' | 'changes-requested'
 
+// Approvals
+
+export interface ApprovalReviewer {
+  name: string
+  role: string
+  status: ApprovalStatus
+  avatarInitials?: string
+}
+
+export interface ApprovalComment {
+  author: string
+  role?: string
+  message: string
+  createdAt: string
+  /** If present, this is a system-generated alert comment */
+  isAlert?: boolean
+  replies?: { author: string; role?: string; message: string; createdAt: string }[]
+}
+
+export interface ApprovalHistoryEvent {
+  event: string
+  actor: string
+  timeAgo: string
+}
+
+export interface ApprovalComplianceItem {
+  id: string
+  label: string
+  checked: boolean
+}
+
+export interface ApprovalCampaignContext {
+  targetAudience: string
+  channel: string
+}
+
 export interface Approval {
   _id: string
   postId: string
@@ -267,10 +303,33 @@ export interface Approval {
   channel: Channel
   status: ApprovalStatus
   requestedBy: string
-  reviewers: { name: string; role: string; status: ApprovalStatus }[]
-  comments: { author: string; message: string; createdAt: string }[]
+  /** e.g. "Sarah Jenkins", "Alex Chen" */
+  requestedByName?: string
+  /** e.g. "2h ago" */
+  timeAgo?: string
+  /** urgency label: 'critical' | 'normal' */
+  urgency?: 'critical' | 'normal'
+  reviewers: ApprovalReviewer[]
+  comments: ApprovalComment[]
+  historyEvents?: ApprovalHistoryEvent[]
+  complianceItems?: ApprovalComplianceItem[]
+  campaignContext?: ApprovalCampaignContext
+  /** Post content snippet (used in dashboard feed for text posts) */
+  contentSnippet?: string
+  /** For media posts: thumbnail placeholder color class */
+  thumbnailColorClass?: string
   dueAt?: string
   createdAt: string
+}
+
+export interface GovernanceHistoryRow {
+  _id: string
+  contentName: string
+  contentId: string
+  channel: string
+  decision: 'approved' | 'rejected' | 'changes-requested'
+  approver: string
+  date: string
 }
 
 export type AlertSeverity = 'critical' | 'warning' | 'info'
