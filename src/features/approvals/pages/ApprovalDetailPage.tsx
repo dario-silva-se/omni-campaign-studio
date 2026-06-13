@@ -96,7 +96,7 @@ export default function ApprovalDetailPage() {
                 </div>
                 <div>
                   <p className="text-sm font-bold text-on-surface">BrandX Solutions</p>
-                  <p className="text-xs text-on-surface-variant">Following</p>
+                  <p className="text-xs text-on-surface-variant">{t('detail.postFollowing')}</p>
                 </div>
               </div>
 
@@ -121,15 +121,15 @@ export default function ApprovalDetailPage() {
               <div className="px-md py-sm border-t border-white/5 flex items-center gap-lg">
                 <button className="flex items-center gap-xs text-xs text-on-surface-variant hover:text-primary transition-colors">
                   <Icon name="thumb_up" className="text-sm" />
-                  Like
+                  {t('detail.postLike')}
                 </button>
                 <button className="flex items-center gap-xs text-xs text-on-surface-variant hover:text-primary transition-colors">
                   <Icon name="chat_bubble_outline" className="text-sm" />
-                  Comment
+                  {t('detail.postComment')}
                 </button>
                 <button className="flex items-center gap-xs text-xs text-on-surface-variant hover:text-primary transition-colors">
                   <Icon name="share" className="text-sm" />
-                  Share
+                  {t('detail.postShare')}
                 </button>
               </div>
             </div>
@@ -213,7 +213,7 @@ export default function ApprovalDetailPage() {
             {approval.reviewers && approval.reviewers.length > 0 && (
               <div className="bg-surface-container border border-white/5 rounded-xl p-md">
                 <h3 className="text-label-caps uppercase text-on-surface-variant tracking-widest mb-md">
-                  Revisores
+                  {t('detail.reviewers')}
                 </h3>
                 <ReviewerPanel reviewers={approval.reviewers} />
               </div>

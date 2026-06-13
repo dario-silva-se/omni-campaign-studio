@@ -4,6 +4,10 @@ import { useNavigate } from 'react-router-dom'
 import { useApprovalList, useUpdateApproval } from '../hooks/useApprovals'
 import { Icon } from '@/components/ui/Icon'
 import { StatusChip } from '@/components/ui/StatusChip'
+import {
+  approvalActivityFixture,
+  approvalDashboardStatsFixture,
+} from '@/mocks/fixtures/approvals'
 import type { Approval } from '@/types'
 
 function channelIcon(channel: Approval['channel']): string {
@@ -89,7 +93,7 @@ export default function ApprovalsPage() {
             <p className="text-label-caps uppercase text-on-surface-variant tracking-widest">
               {t('dashboard.stats.pendingApproval')}
             </p>
-            <h3 className="text-4xl font-bold mt-xs text-on-surface">{pendingCount || 24}</h3>
+            <h3 className="text-4xl font-bold mt-xs text-on-surface">{pendingCount}</h3>
           </div>
 
           {/* In Review */}
@@ -104,7 +108,7 @@ export default function ApprovalsPage() {
             <p className="text-label-caps uppercase text-on-surface-variant tracking-widest">
               {t('dashboard.stats.inReview')}
             </p>
-            <h3 className="text-4xl font-bold mt-xs text-on-surface">{inReviewCount || 8}</h3>
+            <h3 className="text-4xl font-bold mt-xs text-on-surface">{inReviewCount}</h3>
           </div>
 
           {/* Scheduled Today */}
@@ -119,7 +123,7 @@ export default function ApprovalsPage() {
             <p className="text-label-caps uppercase text-on-surface-variant tracking-widest">
               {t('dashboard.stats.scheduledToday')}
             </p>
-            <h3 className="text-4xl font-bold mt-xs text-on-surface">15</h3>
+            <h3 className="text-4xl font-bold mt-xs text-on-surface">{approvalDashboardStatsFixture.scheduledToday}</h3>
           </div>
         </section>
 
@@ -268,39 +272,17 @@ export default function ApprovalsPage() {
                   {t('dashboard.sidebar.recentActivity')}
                 </h5>
                 <div className="space-y-lg">
-                  <div className="flex gap-md">
-                    <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center shrink-0">
-                      <Icon name="check_circle" className="text-primary text-sm" />
+                  {approvalActivityFixture.map((item) => (
+                    <div key={item._id} className="flex gap-md">
+                      <div className={`w-8 h-8 rounded-full bg-${item.colorToken}/10 flex items-center justify-center shrink-0`}>
+                        <Icon name={item.icon} className={`text-${item.colorToken} text-sm`} />
+                      </div>
+                      <div>
+                        <p className="text-sm text-on-surface">{item.text}</p>
+                        <p className="text-label-sm text-on-surface-variant mt-1">{item.timeAgo}</p>
+                      </div>
                     </div>
-                    <div>
-                      <p className="text-sm text-on-surface">
-                        Você aprovou <span className="font-bold">"Brand Launch Video"</span>
-                      </p>
-                      <p className="text-label-sm text-on-surface-variant mt-1">12 minutos atrás</p>
-                    </div>
-                  </div>
-                  <div className="flex gap-md">
-                    <div className="w-8 h-8 rounded-full bg-tertiary/10 flex items-center justify-center shrink-0">
-                      <Icon name="chat" className="text-tertiary text-sm" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-on-surface">
-                        <span className="font-bold">David L.</span> comentou em "Q4 Roadmap"
-                      </p>
-                      <p className="text-label-sm text-on-surface-variant mt-1">45 minutos atrás</p>
-                    </div>
-                  </div>
-                  <div className="flex gap-md">
-                    <div className="w-8 h-8 rounded-full bg-error/10 flex items-center justify-center shrink-0">
-                      <Icon name="cancel" className="text-error text-sm" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-on-surface">
-                        Você rejeitou <span className="font-bold">"Twitter Fleet concept"</span>
-                      </p>
-                      <p className="text-label-sm text-on-surface-variant mt-1">2 horas atrás</p>
-                    </div>
-                  </div>
+                  ))}
                 </div>
 
                 <button

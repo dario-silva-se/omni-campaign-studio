@@ -262,6 +262,20 @@ export type ApprovalStatus = 'pending' | 'approved' | 'rejected' | 'changes-requ
 
 // Approvals
 
+export interface ApprovalActivityItem {
+  _id: string
+  text: string
+  timeAgo: string
+  /** Material Symbol icon name */
+  icon: string
+  /** Tailwind color token for icon and bg, e.g. 'primary' | 'tertiary' | 'error' */
+  colorToken: string
+}
+
+export interface ApprovalDashboardStats {
+  scheduledToday: number
+}
+
 export interface ApprovalReviewer {
   name: string
   role: string

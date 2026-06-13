@@ -75,7 +75,12 @@
       "approveForPublication": "Approve for Publication",
       "requestChanges": "Request Changes",
       "archive": "Archive"
-    }
+    },
+    "reviewers": "Reviewers",
+    "postFollowing": "Following",
+    "postLike": "Like",
+    "postComment": "Comment",
+    "postShare": "Share"
   },
   "requestChanges": {
     "title": "Request Changes",
