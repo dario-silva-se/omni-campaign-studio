@@ -187,7 +187,12 @@
       "sentimentPositive": "% de sentimento positivo",
       "likes": "CURTIDAS",
       "comments": "COMENTÁRIOS",
-      "trafficSources": "Fontes de Tráfego"
+      "trafficSources": "Fontes de Tráfego",
+      "breadcrumbPostDetails": "DETALHES DO POST",
+      "avg": "MÉDIA",
+      "retentionIntro": "INTRO",
+      "retentionPeak": "PICO",
+      "retentionOutro": "SAÍDA"
     },
     "telegram": {
       "totalReach": "Alcance Total",

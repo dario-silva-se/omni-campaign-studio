@@ -36,11 +36,15 @@
     "triggerAction": {
       "pauseCampaign": "Pausar Campanha",
       "notifyOpsAlerts": "Notificar #ops-alertas"
-    }
+    },
+    "actionLabel": "Ação",
+    "connectorAnd": "E",
+    "connectorOr": "OU"
   },
   "monitor": {
     "title": "Insights & Monitoramento de Automação",
     "realtimeOperations": "Operações em Tempo Real",
+    "today": "Hoje",
     "stats": {
       "activeRules": "Regras Ativas",
       "logicBuilderDeployments": "Implantações do Logic Builder",
@@ -93,6 +97,9 @@
       "stable": "Estável",
       "syncing": "Sincronizando",
       "error": "Erro"
-    }
+    },
+    "statusSuccess": "Sucesso",
+    "statusDelayed": "Atrasado",
+    "latencyDelta": "2ms vs última hora"
   }
 }

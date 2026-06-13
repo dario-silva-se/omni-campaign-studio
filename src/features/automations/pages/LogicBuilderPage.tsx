@@ -96,7 +96,7 @@ export default function LogicBuilderPage() {
                   <div className="flex justify-center mb-xs">
                     <div className="bg-surface-container-highest px-md py-1 rounded-full border border-outline-variant/50 flex items-center gap-xs">
                       <span className="text-xs font-bold uppercase text-on-surface">
-                        {index === 1 ? 'AND' : 'OR'}
+                        {index === 1 ? t('builder.connectorAnd') : t('builder.connectorOr')}
                       </span>
                       <Icon name="keyboard_arrow_down" className="text-xs" />
                     </div>
@@ -146,7 +146,7 @@ export default function LogicBuilderPage() {
                     <Icon name="pause_circle" className="text-primary" />
                   </div>
                   <div className="flex-1">
-                    <p className="text-xs font-bold uppercase text-on-surface-variant">Ação</p>
+                    <p className="text-xs font-bold uppercase text-on-surface-variant">{t('builder.actionLabel')}</p>
                     <p className="text-sm font-semibold">{t('builder.triggerAction.pauseCampaign')}</p>
                   </div>
                   <Icon name="drag_indicator" className="text-outline-variant opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -156,7 +156,7 @@ export default function LogicBuilderPage() {
                     <Icon name="notifications" className="text-error" />
                   </div>
                   <div className="flex-1">
-                    <p className="text-xs font-bold uppercase text-on-surface-variant">Ação</p>
+                    <p className="text-xs font-bold uppercase text-on-surface-variant">{t('builder.actionLabel')}</p>
                     <p className="text-sm font-semibold">{t('builder.triggerAction.notifyOpsAlerts')}</p>
                   </div>
                   <Icon name="drag_indicator" className="text-outline-variant opacity-0 group-hover:opacity-100 transition-opacity" />

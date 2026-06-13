@@ -80,7 +80,7 @@ export default function AutomationMonitorPage() {
           </div>
           <div className="flex items-baseline gap-xs">
             <span className="text-3xl font-bold">{monitorStats.actionsTriggered.toLocaleString()}</span>
-            <span className="text-secondary text-sm font-bold">Hoje</span>
+            <span className="text-secondary text-sm font-bold">{t('monitor.today')}</span>
           </div>
           <p className="text-on-surface-variant/60 text-sm mt-xs">{t('monitor.stats.automatedAdjustments')}</p>
         </div>
