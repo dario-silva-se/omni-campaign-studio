@@ -12,7 +12,7 @@ export function usePostList() {
 export function usePost(id: string | undefined) {
   return useQuery({
     queryKey: ['posts', id],
-    queryFn: () => postService.getById(id!),
+    queryFn: () => postService.getById(id as string),
     enabled: !!id,
   })
 }

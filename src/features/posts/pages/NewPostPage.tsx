@@ -95,7 +95,7 @@ function LinkedInComposer() {
       {/* Preview */}
       <div className="col-span-12 lg:col-span-5">
         <div className="sticky top-8">
-          <h3 className="font-label-caps text-on-surface-variant mb-md">PREVIEW EM TEMPO REAL</h3>
+          <h3 className="font-label-caps text-on-surface-variant mb-md">{t('new.livePreview')}</h3>
           <div className="bg-[#1d2226] rounded-xl border border-white/5 overflow-hidden">
             <div className="p-md flex gap-sm">
               <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
@@ -224,7 +224,7 @@ function YouTubeComposer() {
 
         {/* Live preview */}
         <div className="bg-surface-container-low/60 backdrop-blur-sm border border-outline-variant/10 rounded-xl p-lg">
-          <h3 className="font-label-caps text-label-caps text-on-surface-variant uppercase mb-md">LIVE PREVIEW</h3>
+          <h3 className="font-label-caps text-label-caps text-on-surface-variant uppercase mb-md">{t('new.livePreview')}</h3>
           <div className="bg-black rounded-lg aspect-video flex items-center justify-center mb-md">
             <div className="flex flex-col items-center gap-md">
               <div className="w-16 h-16 bg-surface-container-high rounded flex items-center justify-center">
@@ -233,7 +233,7 @@ function YouTubeComposer() {
             </div>
           </div>
           <div className="space-y-xs">
-            <p className="font-bold text-on-surface text-sm">Título do Vídeo Aparecerá Aqui</p>
+            <p className="font-bold text-on-surface text-sm">{t('new.videoTitlePlaceholder')}</p>
             <p className="text-xs text-on-surface-variant">Campaign Studio • 0 visualizações • Agora</p>
           </div>
         </div>
@@ -396,7 +396,7 @@ export default function NewPostPage() {
                   ))}
                   <Icon name="bookmark_border" className="ml-auto" />
                 </div>
-                <p className="text-sm font-bold">1.204 curtidas</p>
+                <p className="text-sm font-bold">{t('new.previewLikes')}</p>
                 <p className="text-sm text-on-surface opacity-60">
                   <span className="font-bold mr-xs">campaign_studio</span>
                   {t('new.descriptionPlaceholder')}

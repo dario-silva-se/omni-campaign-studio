@@ -56,7 +56,8 @@
       "publishTime": "PUBLISH TIME (EST)",
       "saveDraft": "Save Draft",
       "schedulePost": "Schedule Cinematic Post",
-      "realTimePreview": "REAL-TIME PREVIEW"
+      "realTimePreview": "REAL-TIME PREVIEW",
+      "previewPlaceholder": "Your cinematic campaign post will appear here in real-time as you type. Start crafting your story..."
     },
     "telegram": {
       "title": "New Telegram Broadcast",
@@ -142,7 +143,10 @@
       "scheduleLabel": "DATE",
       "timeLabel": "TIME",
       "finalizeSchedule": "Finalize Schedule"
-    }
+    },
+    "livePreview": "LIVE PREVIEW",
+    "videoTitlePlaceholder": "Video Title Will Appear Here",
+    "previewLikes": "1,204 likes"
   },
   "detail": {
     "back": "Back to Posts",

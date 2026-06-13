@@ -32,6 +32,9 @@ export default function PostDetailPage() {
       {post.channel === 'linkedin' && <LinkedInPostDetail post={post} />}
       {post.channel === 'youtube' && <YouTubePostDetail post={post} />}
       {post.channel === 'telegram' && <TelegramPostDetail post={post} />}
+      {post.channel !== 'linkedin' && post.channel !== 'youtube' && post.channel !== 'telegram' && (
+        <div role="alert" className="p-lg text-error">{t('common:errorState')}</div>
+      )}
     </div>
   )
 }

@@ -37,4 +37,12 @@ describe('NewPostPage', () => {
     await user.click(backBtn)
     expect(screen.getByRole('heading', { level: 1, name: /Criar Novo Post/i })).toBeInTheDocument()
   })
+
+  it('shows telegram stub message when Telegram is selected', async () => {
+    const user = userEvent.setup()
+    renderWithProviders(<NewPostPage />, { route: '/posts/new' })
+    const buttons = screen.getAllByRole('button', { name: /Telegram/i })
+    await user.click(buttons[0])
+    expect(await screen.findByText(/Telegram composer/i)).toBeInTheDocument()
+  })
 })

@@ -120,7 +120,7 @@ export function LinkedInScheduleForm() {
               </div>
               <div className="px-md py-md">
                 <p className="text-[14px] text-white/90 leading-relaxed">
-                  Your cinematic campaign post will appear here in real-time as you type. Start crafting your story...
+                  {t('schedule.linkedin.previewPlaceholder')}
                 </p>
               </div>
               <div className="w-full bg-[#38434f] aspect-video flex items-center justify-center">
