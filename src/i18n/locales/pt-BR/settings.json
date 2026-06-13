@@ -1,0 +1,62 @@
+{
+  "notifications": {
+    "breadcrumbAlerts": "CENTRAL DE ALERTAS",
+    "breadcrumbConfig": "CONFIGURAÇÃO",
+    "title": "Configurações de Notificação",
+    "subtitle": "Configure como e onde sua equipe recebe atualizações de inteligência.",
+    "discardChanges": "Descartar Alterações",
+    "saveRulebase": "Salvar Regras",
+    "channelRouting": {
+      "title": "Roteamento de Canais",
+      "inApp": "Central In-App",
+      "inAppDesc": "Notificações em tempo real na barra lateral",
+      "slack": "Integração Slack",
+      "slackDesc": "Direto para o canal #alerts-ops",
+      "email": "Digest por E-mail",
+      "emailDesc": "Relatórios HTML para o grupo admin",
+      "telegram": "Bot Telegram",
+      "telegramDesc": "Alertas críticos no celular"
+    },
+    "severityMatrix": {
+      "title": "Matriz de Roteamento por Severidade",
+      "resetToDefault": "RESTAURAR PADRÃO",
+      "colSeverity": "SEVERIDADE",
+      "colInApp": "IN-APP",
+      "colSlack": "SLACK",
+      "colEmail": "E-MAIL",
+      "colTelegram": "TELEGRAM",
+      "colAction": "AÇÃO",
+      "sendTest": "Testar Envio",
+      "critical": "Crítico",
+      "criticalDesc": "Falha no sistema, Segurança",
+      "warning": "Atenção",
+      "warningDesc": "Limites de threshold, Lag de API",
+      "info": "Info",
+      "infoDesc": "Campanha ao vivo, Novo lead"
+    },
+    "timeThresholds": {
+      "title": "Thresholds de Tempo",
+      "dndLabel": "NÃO PERTURBE (DND)",
+      "dndNote": "Alertas críticos ignoram as configurações de DND.",
+      "to": "até",
+      "batchingLabel": "PREFERÊNCIA DE AGRUPAMENTO",
+      "realtime": "Tempo Real",
+      "realtimeDesc": "Entrega Imediata",
+      "summary": "Resumo",
+      "summaryDesc": "Diário às 9:00"
+    },
+    "teamSubscriptions": {
+      "title": "Assinaturas da Equipe",
+      "viewPermissions": "VER PERMISSÕES GLOBAIS",
+      "activeRules": "{{count}} Regras Ativas",
+      "noRules": "0 Regras Ativas"
+    },
+    "channelOverrides": {
+      "title": "Substituições por Canal",
+      "overridesActive": "{{count}} SUBSTITUIÇÕES ATIVAS",
+      "telegramOnly": "Somente Telegram",
+      "inAppOnly": "Somente In-App",
+      "slackHighPrio": "Slack Alta Prioridade"
+    }
+  }
+}

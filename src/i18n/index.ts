@@ -28,11 +28,15 @@ import ptBRAutomations from './locales/pt-BR/automations.json'
 import enAutomations from './locales/en/automations.json'
 import ptBRConnections from './locales/pt-BR/connections.json'
 import enConnections from './locales/en/connections.json'
+import ptBRSettings from './locales/pt-BR/settings.json'
+import enSettings from './locales/en/settings.json'
+import ptBRReports from './locales/pt-BR/reports.json'
+import enReports from './locales/en/reports.json'
 
 export const defaultNS = 'common'
 export const resources = {
-  'pt-BR': { common: ptBRCommon, dashboard: ptBRDashboard, analytics: ptBRAnalytics, audiences: ptBRAudiences, templates: ptBRTemplates, creativeLab: ptBRCreativeLab, contentGeneration: ptBRContentGeneration, campaigns: ptBRCampaigns, posts: ptBRPosts, approvals: ptBRApprovals, alerts: ptBRAlerts, automations: ptBRAutomations, connections: ptBRConnections },
-  en: { common: enCommon, dashboard: enDashboard, analytics: enAnalytics, audiences: enAudiences, templates: enTemplates, creativeLab: enCreativeLab, contentGeneration: enContentGeneration, campaigns: enCampaigns, posts: enPosts, approvals: enApprovals, alerts: enAlerts, automations: enAutomations, connections: enConnections },
+  'pt-BR': { common: ptBRCommon, dashboard: ptBRDashboard, analytics: ptBRAnalytics, audiences: ptBRAudiences, templates: ptBRTemplates, creativeLab: ptBRCreativeLab, contentGeneration: ptBRContentGeneration, campaigns: ptBRCampaigns, posts: ptBRPosts, approvals: ptBRApprovals, alerts: ptBRAlerts, automations: ptBRAutomations, connections: ptBRConnections, settings: ptBRSettings, reports: ptBRReports },
+  en: { common: enCommon, dashboard: enDashboard, analytics: enAnalytics, audiences: enAudiences, templates: enTemplates, creativeLab: enCreativeLab, contentGeneration: enContentGeneration, campaigns: enCampaigns, posts: enPosts, approvals: enApprovals, alerts: enAlerts, automations: enAutomations, connections: enConnections, settings: enSettings, reports: enReports },
 } as const
 
 i18n

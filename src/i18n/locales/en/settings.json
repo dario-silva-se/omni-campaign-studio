@@ -1,0 +1,62 @@
+{
+  "notifications": {
+    "breadcrumbAlerts": "ALERTS CENTER",
+    "breadcrumbConfig": "CONFIGURATION",
+    "title": "Notification Settings",
+    "subtitle": "Configure how and where your team receives intelligence updates.",
+    "discardChanges": "Discard Changes",
+    "saveRulebase": "Save Rulebase",
+    "channelRouting": {
+      "title": "Channel Routing",
+      "inApp": "In-App Center",
+      "inAppDesc": "Real-time sidebar notifications",
+      "slack": "Slack Integration",
+      "slackDesc": "Direct to #alerts-ops channel",
+      "email": "Email Digest",
+      "emailDesc": "HTML reports to admin group",
+      "telegram": "Telegram Bot",
+      "telegramDesc": "Critical mobile alerts"
+    },
+    "severityMatrix": {
+      "title": "Severity Routing Matrix",
+      "resetToDefault": "RESET TO DEFAULT",
+      "colSeverity": "SEVERITY",
+      "colInApp": "IN-APP",
+      "colSlack": "SLACK",
+      "colEmail": "EMAIL",
+      "colTelegram": "TELEGRAM",
+      "colAction": "ACTION",
+      "sendTest": "Send Test",
+      "critical": "Critical",
+      "criticalDesc": "System failure, Security",
+      "warning": "Warning",
+      "warningDesc": "Threshold limits, API lag",
+      "info": "Info",
+      "infoDesc": "Campaign live, New lead"
+    },
+    "timeThresholds": {
+      "title": "Time Thresholds",
+      "dndLabel": "DO NOT DISTURB (DND)",
+      "dndNote": "Critical alerts bypass DND settings.",
+      "to": "to",
+      "batchingLabel": "BATCHING PREFERENCE",
+      "realtime": "Real-time",
+      "realtimeDesc": "Immediate Delivery",
+      "summary": "Summary",
+      "summaryDesc": "Daily at 9:00 AM"
+    },
+    "teamSubscriptions": {
+      "title": "Team Subscriptions",
+      "viewPermissions": "VIEW GLOBAL PERMISSIONS",
+      "activeRules": "{{count}} Active Rules",
+      "noRules": "0 Active Rules"
+    },
+    "channelOverrides": {
+      "title": "Channel-Specific Overrides",
+      "overridesActive": "{{count}} OVERRIDES ACTIVE",
+      "telegramOnly": "Telegram Only",
+      "inAppOnly": "In-App Only",
+      "slackHighPrio": "Slack High-Prio"
+    }
+  }
+}
