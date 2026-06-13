@@ -35,6 +35,7 @@ const ApprovalDetailPage = lazy(() => import('@/features/approvals/pages/Approva
 const GovernanceHistoryPage = lazy(() => import('@/features/approvals/pages/GovernanceHistoryPage'))
 const AlertsPage = lazy(() => import('@/features/alerts/pages/AlertsPage'))
 const AlertDetailPage = lazy(() => import('@/features/alerts/pages/AlertDetailPage'))
+const LogicBuilderPage = lazy(() => import('@/features/automations/pages/LogicBuilderPage'))
 
 export function AppRoutes() {
   return (
@@ -69,7 +70,7 @@ export function AppRoutes() {
           <Route path="approvals/:id" element={<ApprovalDetailPage />} />
           <Route path="alerts" element={<AlertsPage />} />
           <Route path="alerts/:id" element={<AlertDetailPage />} />
-          <Route path="automations" element={<PagePlaceholder />} />
+          <Route path="automations" element={<LogicBuilderPage />} />
           <Route path="automations/monitor" element={<PagePlaceholder />} />
           <Route path="system/data-flow" element={<PagePlaceholder />} />
           <Route path="settings/connections" element={<PagePlaceholder />} />
