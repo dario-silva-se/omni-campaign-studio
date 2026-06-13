@@ -31,6 +31,7 @@ const NewPostPage = lazy(() => import('@/features/posts/pages/NewPostPage'))
 const SchedulePostPage = lazy(() => import('@/features/posts/pages/SchedulePostPage'))
 const PostDetailPage = lazy(() => import('@/features/posts/pages/PostDetailPage'))
 const ApprovalsPage = lazy(() => import('@/features/approvals/pages/ApprovalsPage'))
+const ApprovalDetailPage = lazy(() => import('@/features/approvals/pages/ApprovalDetailPage'))
 
 export function AppRoutes() {
   return (
@@ -62,8 +63,7 @@ export function AppRoutes() {
           <Route path="posts/:id" element={<PostDetailPage />} />
           <Route path="approvals" element={<ApprovalsPage />} />
           <Route path="approvals/history" element={<PagePlaceholder />} />
-          <Route path="approvals/:id" element={<PagePlaceholder />} />
-          <Route path="approvals/:id/request-changes" element={<PagePlaceholder />} />
+          <Route path="approvals/:id" element={<ApprovalDetailPage />} />
           <Route path="alerts" element={<PagePlaceholder />} />
           <Route path="alerts/:id" element={<PagePlaceholder />} />
           <Route path="automations" element={<PagePlaceholder />} />
