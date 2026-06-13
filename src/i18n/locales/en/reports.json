@@ -26,6 +26,7 @@
     "errorTitle": "Error Generating Report",
     "errorDesc": "Could not process data at this time. Check your connection and try again.",
     "retry": "Try Again",
-    "progressLabel": "Generation progress"
+    "progressLabel": "Generation progress",
+    "errorUnknown": "Unknown error"
   }
 }

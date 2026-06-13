@@ -57,14 +57,6 @@ export default function ExportReportPage() {
     Object.fromEntries(SECTION_OPTIONS.map((s) => [s.key, s.defaultChecked]))
   )
 
-  // forceError can be toggled for testing or passed via query param
-  const [forceError] = useState<boolean>(() => {
-    if (typeof window !== 'undefined') {
-      return new URLSearchParams(window.location.search).get('forceError') === 'true'
-    }
-    return false
-  })
-
   const handleToggleChannel = (key: string) => {
     setChannels((prev) => ({ ...prev, [key]: !prev[key] }))
   }
@@ -89,7 +81,6 @@ export default function ExportReportPage() {
         period,
         channels: Object.entries(channels).filter(([, v]) => v).map(([k]) => k),
         sections: Object.entries(sections).filter(([, v]) => v).map(([k]) => k),
-        forceError,
       },
       {
         onSuccess: (job) => {
@@ -100,7 +91,7 @@ export default function ExportReportPage() {
         },
         onError: (err) => {
           clearInterval(tick)
-          setErrorMessage(err instanceof Error ? err.message : 'Erro desconhecido')
+          setErrorMessage(err instanceof Error ? err.message : t('reports:export.errorUnknown'))
           setExportState('failed')
         },
       }

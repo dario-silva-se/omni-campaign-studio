@@ -1,7 +1,7 @@
 import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { renderWithProviders } from '@/test/renderWithProviders'
-import { setMockExportDurationMs } from '@/services/reportService'
+import { setMockExportDurationMs, setMockForceError } from '@/services/reportService'
 import ExportReportPage from './ExportReportPage'
 
 // Use a very short duration so tests complete fast and are not flaky
@@ -11,6 +11,11 @@ beforeAll(() => {
 
 afterAll(() => {
   setMockExportDurationMs(1500)
+})
+
+afterEach(() => {
+  // Reset test-only mock flags after every test so no state leaks between tests
+  setMockForceError(false)
 })
 
 describe('ExportReportPage', () => {
@@ -47,12 +52,9 @@ describe('ExportReportPage', () => {
   it('shows error state and allows retry', async () => {
     const user = userEvent.setup()
 
-    // Mock window.location.search to include forceError=true
-    const originalSearch = window.location.search
-    Object.defineProperty(window, 'location', {
-      writable: true,
-      value: { ...window.location, search: '?forceError=true' },
-    })
+    // Use the test-only seam in reportService to trigger the error path —
+    // no URL mutation needed; afterEach resets this flag automatically.
+    setMockForceError(true)
 
     renderWithProviders(<ExportReportPage />)
 
@@ -70,11 +72,5 @@ describe('ExportReportPage', () => {
     // Click retry -> should go back to idle
     await user.click(retryBtn)
     expect(await screen.findByText(/gerar pdf/i)).toBeInTheDocument()
-
-    // Restore location
-    Object.defineProperty(window, 'location', {
-      writable: true,
-      value: { ...window.location, search: originalSearch },
-    })
   })
 })
