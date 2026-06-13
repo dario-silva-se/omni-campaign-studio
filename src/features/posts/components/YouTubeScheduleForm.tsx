@@ -66,7 +66,7 @@ export function YouTubeScheduleForm() {
                 <button
                   key={i}
                   type="button"
-                  className={`aspect-video rounded-lg overflow-hidden border-2 transition-all ${i === 0 ? 'border-primary/50 bg-primary/10' : 'border-transparent bg-surface-container-highest hover:border-outline-variant/50'} flex items-center justify-center`}
+                  className={`relative aspect-video rounded-lg overflow-hidden border-2 transition-all ${i === 0 ? 'border-primary/50 bg-primary/10' : 'border-transparent bg-surface-container-highest hover:border-outline-variant/50'} flex items-center justify-center`}
                 >
                   <Icon name="play_circle" className="text-on-surface-variant opacity-30 text-[32px]" />
                   {i === 0 && (

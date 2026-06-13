@@ -56,7 +56,8 @@
       "publishTime": "HORA DE PUBLICAÇÃO (EST)",
       "saveDraft": "Salvar Rascunho",
       "schedulePost": "Agendar Post Cinemático",
-      "realTimePreview": "VISUALIZAÇÃO EM TEMPO REAL"
+      "realTimePreview": "VISUALIZAÇÃO EM TEMPO REAL",
+      "previewPlaceholder": "Seu post cinemático de campanha aparecerá aqui em tempo real à medida que você digita. Comece a criar sua história..."
     },
     "telegram": {
       "title": "Nova Transmissão Telegram",
@@ -142,7 +143,10 @@
       "scheduleLabel": "DATA",
       "timeLabel": "HORA",
       "finalizeSchedule": "Finalizar Agendamento"
-    }
+    },
+    "livePreview": "PREVIEW EM TEMPO REAL",
+    "videoTitlePlaceholder": "Título do Vídeo Aparecerá Aqui",
+    "previewLikes": "1.204 curtidas"
   },
   "detail": {
     "back": "Voltar para Posts",
