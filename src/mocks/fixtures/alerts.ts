@@ -1,0 +1,98 @@
+import type { Alert } from '@/types'
+
+export const alertsFixture: Alert[] = [
+  {
+    _id: 'alert-yt-001',
+    title: 'Anomalia de CPM do YouTube: Campanha Q4 Tech',
+    description: 'CPM aumentou 45% nas últimas 2 horas.',
+    severity: 'critical',
+    channel: 'youtube',
+    metric: 'cpm',
+    threshold: 15.45,
+    currentValue: 42.1,
+    acknowledged: false,
+    actions: [
+      { label: 'Pausar Conjunto de Anúncios', action: 'pause-ad-set' },
+      { label: 'Ver Analytics', action: 'view-analytics' },
+    ],
+    timeAgo: '14m atrás',
+    createdAt: '2023-10-24T14:32:05Z',
+    detail: {
+      alertId: 'alert-yt-001',
+      shortId: 'YTA-9921-X',
+      campaignName: 'YouTube CPM Surge: Q4 Tech Campaign',
+      detectedAt: 'Detectado há 14 minutos • 24 Out 2023, 14:32:05 GMT',
+      chartLiveValue: '$42.10',
+      chartBaselineValue: '$18.50',
+      aiInsight:
+        'Nosso modelo neural identificou um aumento de lances de concorrente direcionado especificamente às palavras-chave "Enterprise AI" e "DevOps". Um grande player (provavelmente CloudScale Inc) aumentou sua agressividade em 3,5x nas últimas 4 horas.',
+      aiRecommendation:
+        'Redirecionar 40% do orçamento não gasto para LinkedIn Ads, onde o CPM técnico permanece estável em $22,40.',
+      estimatedDailyLoss: '-$4.280,00',
+      reachEfficiencyChange: '-42%',
+      historicalContext: [
+        {
+          event: 'Weekend CPM Drift',
+          color: 'tertiary',
+          timestamp: 'SET 12, 09:15',
+        },
+        {
+          event: 'Conflito de Lances',
+          color: 'error',
+          timestamp: 'AGO 28, 11:42',
+        },
+        {
+          event: 'Atualização de Algoritmo',
+          color: 'outline',
+          timestamp: 'AGO 15, 14:00',
+        },
+      ],
+      eventStream: [
+        { time: '14:32', message: 'Detector de anomalia acionado: YouTube_CPM_Agg' },
+        { time: '14:35', message: 'Referenciando picos históricos de concorrentes...' },
+        { time: '14:38', message: 'Escalonamento de alerta: CRÍTICO (Limiar > 2,0x)', isError: true },
+        { time: '14:41', message: 'Agente de IA gerando relatório de recomendação...' },
+        { time: '14:45', message: "Notificação enviada ao Grupo Admin: 'Global_Ops'" },
+      ],
+    },
+  },
+  {
+    _id: 'alert-li-001',
+    title: 'Token de API LinkedIn Expirado',
+    description: 'Todas as campanhas do LinkedIn foram pausadas.',
+    severity: 'critical',
+    channel: 'linkedin',
+    acknowledged: false,
+    actions: [{ label: 'Re-autorizar Agora', action: 'reauthorize' }],
+    timeAgo: '14m atrás',
+    createdAt: '2023-10-24T14:18:00Z',
+  },
+  {
+    _id: 'alert-tg-001',
+    title: 'Bot do Telegram Otimizado',
+    description: 'Latência de resposta reduzida para 85ms.',
+    severity: 'info',
+    channel: 'telegram',
+    acknowledged: false,
+    actions: [{ label: 'Dispensar', action: 'dismiss' }],
+    timeAgo: '2h atrás',
+    createdAt: '2023-10-24T12:45:00Z',
+  },
+  {
+    _id: 'alert-yt-002',
+    title: 'Desempenho de Conversão Baixo — YouTube',
+    description: 'Taxa de conversão 30% abaixo da média dos últimos 7 dias.',
+    severity: 'warning',
+    channel: 'youtube',
+    metric: 'ctr',
+    threshold: 0.5,
+    currentValue: 0.35,
+    acknowledged: false,
+    actions: [
+      { label: 'Ajustar Lance', action: 'adjust-bid' },
+      { label: 'Ver Relatório', action: 'view-report' },
+    ],
+    timeAgo: '1h atrás',
+    createdAt: '2023-10-24T13:30:00Z',
+  },
+]
