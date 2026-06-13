@@ -38,6 +38,8 @@ const AlertDetailPage = lazy(() => import('@/features/alerts/pages/AlertDetailPa
 const LogicBuilderPage = lazy(() => import('@/features/automations/pages/LogicBuilderPage'))
 const AutomationMonitorPage = lazy(() => import('@/features/automations/pages/AutomationMonitorPage'))
 const DataFlowPage = lazy(() => import('@/features/automations/pages/DataFlowPage'))
+const ConnectionsPage = lazy(() => import('@/features/connections/pages/ConnectionsPage'))
+const ConnectionDetailPage = lazy(() => import('@/features/connections/pages/ConnectionDetailPage'))
 
 export function AppRoutes() {
   return (
@@ -75,8 +77,8 @@ export function AppRoutes() {
           <Route path="automations" element={<LogicBuilderPage />} />
           <Route path="automations/monitor" element={<AutomationMonitorPage />} />
           <Route path="system/data-flow" element={<DataFlowPage />} />
-          <Route path="settings/connections" element={<PagePlaceholder />} />
-          <Route path="settings/connections/:channel" element={<PagePlaceholder />} />
+          <Route path="settings/connections" element={<ConnectionsPage />} />
+          <Route path="settings/connections/:channel" element={<ConnectionDetailPage />} />
           <Route path="settings/notifications" element={<PagePlaceholder />} />
           <Route path="reports/export" element={<PagePlaceholder />} />
           <Route path="*" element={<PagePlaceholder />} />
