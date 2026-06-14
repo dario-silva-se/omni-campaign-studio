@@ -89,7 +89,7 @@ export default function DataFlowPage() {
                   </div>
                   <div className="w-32 h-16 rounded-xl bg-tertiary/10 border border-tertiary/30 flex items-center justify-center">
                     <Icon name="storage" className="text-tertiary text-3xl" />
-                    <span className="text-xs font-bold text-tertiary ml-sm">Atlas</span>
+                    <span className="text-xs font-bold text-tertiary ml-sm">{t('dataFlow.atlasLabel')}</span>
                   </div>
                 </div>
               </div>

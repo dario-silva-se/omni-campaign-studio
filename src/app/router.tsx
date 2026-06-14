@@ -1,14 +1,10 @@
-import { Suspense, lazy } from 'react'
+import { lazy } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { AppLayout } from '@/components/layout/AppLayout'
 
 // Pages are added by their tasks; until then routes point to PagePlaceholder.
 function PagePlaceholder() {
   return <div className="p-lg text-on-surface-variant">…</div>
-}
-
-function PageLoader() {
-  return <div role="status" aria-live="polite" className="p-lg text-on-surface-variant">Carregando…</div>
 }
 
 const DashboardPage = lazy(() => import('@/features/dashboard/pages/DashboardPage'))
@@ -45,9 +41,8 @@ const ExportReportPage = lazy(() => import('@/features/reports/pages/ExportRepor
 
 export function AppRoutes() {
   return (
-    <Suspense fallback={<PageLoader />}>
-      <Routes>
-        <Route element={<AppLayout />}>
+    <Routes>
+      <Route element={<AppLayout />}>
           <Route index element={<DashboardPage />} />
           <Route path="analytics" element={<AnalyticsPage />} />
           <Route path="analytics/campaign-health" element={<CampaignHealthPage />} />
@@ -86,6 +81,5 @@ export function AppRoutes() {
           <Route path="*" element={<PagePlaceholder />} />
         </Route>
       </Routes>
-    </Suspense>
   )
 }
