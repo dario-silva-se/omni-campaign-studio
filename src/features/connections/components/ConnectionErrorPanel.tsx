@@ -79,7 +79,7 @@ export function ConnectionErrorPanel({ connection, onReconnect, isReconnecting }
                 type="button"
                 onClick={onReconnect}
                 disabled={isReconnecting}
-                className="bg-secondary-container hover:bg-secondary-container/80 text-on-secondary-container px-xl py-md rounded-lg font-title-md flex items-center gap-md transition-all active:scale-95 disabled:opacity-60"
+                className="bg-gradient-to-b from-primary-container to-[#3b7de6] hover:brightness-110 text-white px-xl py-md rounded-lg font-title-md flex items-center gap-md transition-all active:scale-95 disabled:opacity-60"
               >
                 <Icon name={isReconnecting ? 'refresh' : 'sync'} className={isReconnecting ? 'animate-spin' : ''} />
                 {isReconnecting ? t('error.reconnecting') : t('error.reconnect')}

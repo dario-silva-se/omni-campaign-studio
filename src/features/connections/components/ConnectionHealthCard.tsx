@@ -132,7 +132,7 @@ export function ConnectionHealthCard({ connection }: Props) {
         <button
           type="button"
           onClick={() => navigate(`/settings/connections/${connection.channel}`)}
-          className="w-full py-xs bg-secondary-container text-on-secondary-container rounded-lg text-body-sm font-bold hover:brightness-110 active:scale-95 transition-all shadow-lg shadow-secondary/20 mt-lg"
+          className="w-full py-xs bg-gradient-to-b from-primary-container to-[#3b7de6] text-white rounded-lg text-body-sm font-bold hover:brightness-110 active:scale-95 transition-all shadow-lg shadow-primary/20 mt-lg"
         >
           {t('list.reauthorize')}
         </button>

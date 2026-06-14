@@ -280,7 +280,7 @@ export default function Step5Creative({ onBack }: Props) {
             type="button"
             onClick={handleLaunch}
             disabled={isPending}
-            className="px-lg py-sm rounded-lg bg-gradient-to-b from-secondary-container to-[#d94a00] text-white font-body-sm font-semibold hover:brightness-110 transition-all flex items-center gap-xs disabled:opacity-60 disabled:cursor-not-allowed shadow-[0_4px_14px_0_rgba(255,94,7,0.39)]"
+            className="px-lg py-sm rounded-lg bg-gradient-to-b from-primary-container to-[#3b7de6] text-white font-body-sm font-semibold hover:brightness-110 transition-all flex items-center gap-xs disabled:opacity-60 disabled:cursor-not-allowed shadow-[0_4px_14px_0_rgba(75,142,255,0.39)]"
           >
             <Icon name="rocket_launch" className="text-[18px]" filled />
             {t('wizard.navigation.launchCampaign')}
