@@ -98,6 +98,7 @@
       "syncing": "Sincronizando",
       "error": "Erro"
     },
+    "atlasLabel": "Atlas",
     "statusSuccess": "Sucesso",
     "statusDelayed": "Atrasado",
     "latencyDelta": "2ms vs última hora"

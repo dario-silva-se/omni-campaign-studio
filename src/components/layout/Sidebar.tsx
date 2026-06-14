@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { cn } from '@/lib/cn'
 import { Icon } from '@/components/ui/Icon'
 import { navSections } from './navItems'
+import { currentUserFixture } from '@/mocks/fixtures/user'
 
 export function Sidebar() {
   const { t } = useTranslation('common')
@@ -18,7 +19,7 @@ export function Sidebar() {
       <nav aria-label={t('nav.sectionMain')} className="flex-1 overflow-y-auto px-sm py-md">
         {navSections.map((section) => (
           <div key={section.labelKey} className="mb-lg">
-            <p className="px-sm pb-xs text-label-caps uppercase text-on-surface-variant/60">
+            <p className="px-sm pb-xs text-label-caps uppercase text-on-surface-variant/80">
               {t(section.labelKey)}
             </p>
             <ul className="flex flex-col gap-0.5">
@@ -51,11 +52,11 @@ export function Sidebar() {
           aria-hidden="true"
           className="size-9 rounded-full bg-primary-container/40 flex items-center justify-center text-body-sm font-bold text-primary"
         >
-          M
+          {currentUserFixture.initials}
         </div>
         <div className="min-w-0">
-          <p className="truncate text-body-sm font-medium">Matheus</p>
-          <p className="truncate text-label-caps text-on-surface-variant">Admin</p>
+          <p className="truncate text-body-sm font-medium">{currentUserFixture.name}</p>
+          <p className="truncate text-label-caps text-on-surface-variant">{currentUserFixture.role}</p>
         </div>
       </div>
     </aside>

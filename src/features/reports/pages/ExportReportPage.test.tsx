@@ -4,9 +4,9 @@ import { renderWithProviders } from '@/test/renderWithProviders'
 import { setMockExportDurationMs, setMockForceError } from '@/services/reportService'
 import ExportReportPage from './ExportReportPage'
 
-// Use a very short duration so tests complete fast and are not flaky
+// 300ms: long enough for findByRole to catch in-progress state, short enough for fast suite
 beforeAll(() => {
-  setMockExportDurationMs(50)
+  setMockExportDurationMs(300)
 })
 
 afterAll(() => {

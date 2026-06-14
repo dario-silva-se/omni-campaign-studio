@@ -1,13 +1,13 @@
-export function formatCurrency(value: number, currency = 'USD', locale = 'en-US'): string {
+export function formatCurrency(value: number, currency = 'USD', locale = 'pt-BR'): string {
   return new Intl.NumberFormat(locale, { style: 'currency', currency }).format(value)
 }
 
-export function formatCompact(value: number, locale = 'en-US'): string {
+export function formatCompact(value: number, locale = 'pt-BR'): string {
   return new Intl.NumberFormat(locale, { notation: 'compact', maximumFractionDigits: 1 }).format(value)
 }
 
 export function formatPercent(ratio: number, opts: { signed?: boolean; locale?: string } = {}): string {
-  const { signed = false, locale = 'en-US' } = opts
+  const { signed = false, locale = 'pt-BR' } = opts
   const formatted = new Intl.NumberFormat(locale, { style: 'percent', maximumFractionDigits: 1 }).format(Math.abs(ratio))
   if (!signed) return formatted
   return `${ratio >= 0 ? '+' : '-'}${formatted}`

@@ -1,5 +1,5 @@
 import i18n from 'i18next'
-import { initReactI18next } from 'react-i18next'
+import { initReactI18next, useTranslation } from 'react-i18next'
 import LanguageDetector from 'i18next-browser-languagedetector'
 
 import ptBRCommon from './locales/pt-BR/common.json'
@@ -52,5 +52,10 @@ i18n
     interpolation: { escapeValue: false },
     detection: { order: ['localStorage', 'navigator'], caches: ['localStorage'] },
   })
+
+export function useLocale(): string {
+  const { i18n: i18nInstance } = useTranslation()
+  return i18nInstance.language ?? 'pt-BR'
+}
 
 export default i18n
