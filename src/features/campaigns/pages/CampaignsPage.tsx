@@ -69,7 +69,7 @@ export default function CampaignsPage() {
           <button
             type="button"
             onClick={() => navigate('/campaigns/new/step-1')}
-            className="shrink-0 bg-gradient-to-b from-secondary-container to-[#d94a00] hover:from-[#ff6e1f] hover:to-secondary-container text-white font-body-sm !text-[15px] px-lg py-sm rounded-lg shadow-[0_4px_14px_0_rgba(255,94,7,0.39)] transition-all flex items-center gap-xs font-semibold border border-[#ff8340]/30 hover:scale-[1.02] active:scale-95"
+            className="shrink-0 bg-gradient-to-b from-primary-container to-[#3b7de6] hover:brightness-110 text-white font-body-sm !text-[15px] px-lg py-sm rounded-lg shadow-[0_4px_14px_0_rgba(75,142,255,0.39)] transition-all flex items-center gap-xs font-semibold border border-primary/30 hover:scale-[1.02] active:scale-95"
           >
             <Icon name="add" className="text-[18px]" />
             {t('campaigns:control.newCampaign')}
@@ -175,7 +175,7 @@ export default function CampaignsPage() {
                         <div
                           className={cn(
                             'w-10 h-5 rounded-full flex items-center p-0.5 relative shadow-inner',
-                            isOn ? 'bg-secondary-container' : 'bg-surface-variant/30 border border-outline-variant/30',
+                            isOn ? 'bg-primary-container' : 'bg-surface-variant/30 border border-outline-variant/30',
                           )}
                         >
                           <div

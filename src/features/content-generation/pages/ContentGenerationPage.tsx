@@ -59,7 +59,7 @@ export default function ContentGenerationPage() {
             type="button"
             onClick={handleGenerate}
             disabled={generateMutation.isPending}
-            className="flex items-center gap-2 bg-gradient-to-b from-secondary-container to-[#cc4b05] text-on-secondary px-lg py-2 rounded-lg font-title-md text-[14px] font-semibold hover:opacity-90 transition-opacity border border-white/10 shadow-[0_4px_12px_rgba(255,94,7,0.2)] disabled:opacity-60 disabled:cursor-not-allowed"
+            className="flex items-center gap-2 bg-gradient-to-b from-primary-container to-[#3b7de6] text-white px-lg py-2 rounded-lg font-title-md text-[14px] font-semibold hover:brightness-110 active:brightness-95 transition-all border border-white/10 shadow-[0_4px_12px_rgba(75,142,255,0.2)] disabled:opacity-60 disabled:cursor-not-allowed"
           >
             <Icon name="auto_awesome" className="text-[18px]" />
             {generateMutation.isPending ? t('generating') : t('generateBtn')}
