@@ -58,5 +58,131 @@
       "inAppOnly": "In-App Only",
       "slackHighPrio": "Slack High-Prio"
     }
+  },
+  "userSettings": {
+    "title": "Settings",
+    "subtitle": "Manage your profile, security and account preferences.",
+    "tabs": {
+      "profile": "Profile",
+      "security": "Password",
+      "account": "Account"
+    },
+    "profile": {
+      "changePhoto": "Change photo",
+      "roleAdmin": "Admin",
+      "statusActive": "Active",
+      "personalInfo": {
+        "title": "Personal Information",
+        "subtitle": "Data displayed on your public profile",
+        "firstName": "First name",
+        "lastName": "Last name",
+        "email": "Email",
+        "phone": "Phone",
+        "phonePlaceholder": "+1 (555) 000-0000",
+        "bio": "Bio",
+        "bioPlaceholder": "Write a brief description about yourself...",
+        "position": "Position",
+        "company": "Company",
+        "cancel": "Cancel",
+        "save": "Save changes"
+      },
+      "social": {
+        "title": "Social Networks",
+        "subtitle": "Links to display on your profile",
+        "linkedinPlaceholder": "https://linkedin.com/in/your-profile",
+        "xPlaceholder": "https://x.com/yourprofile",
+        "whatsappPlaceholder": "https://wa.me/1555...",
+        "save": "Save networks"
+      }
+    },
+    "security": {
+      "changePassword": {
+        "title": "Change Password",
+        "subtitle": "Last changed 3 months ago",
+        "currentPassword": "Current password",
+        "currentPasswordPlaceholder": "Enter your current password",
+        "newPassword": "New password",
+        "newPasswordPlaceholder": "Minimum 8 characters",
+        "confirmPassword": "Confirm new password",
+        "confirmPasswordPlaceholder": "Repeat the new password",
+        "requirementsTitle": "Password requirements",
+        "reqMinLength": "Minimum 8 characters",
+        "reqUppercase": "1 uppercase letter",
+        "reqNumber": "1 number",
+        "reqSpecial": "1 special character",
+        "strengthEmpty": "Type a password to see its strength",
+        "strengthWeak": "Weak — add uppercase, numbers and symbols",
+        "strengthFair": "Fair — add more variation",
+        "strengthGood": "Good — add a symbol to make it strong",
+        "strengthStrong": "Strong — your password is secure",
+        "submit": "Update password"
+      },
+      "twoFactor": {
+        "title": "Two-Factor Authentication",
+        "subtitle": "Add an extra layer of security",
+        "disabled": "Disabled",
+        "appTitle": "Authenticator App",
+        "appDesc": "Google Authenticator, Authy",
+        "smsTitle": "SMS",
+        "smsDesc": "Code via text message",
+        "emailTitle": "Email",
+        "emailDesc": "Code sent to your email",
+        "configure": "Set up"
+      },
+      "sessions": {
+        "title": "Active Sessions",
+        "subtitle": "Devices with account access",
+        "terminateAll": "Terminate all",
+        "current": "Current",
+        "terminate": "Terminate"
+      }
+    },
+    "account": {
+      "preferences": {
+        "title": "General Preferences",
+        "subtitle": "Language, timezone and display format",
+        "language": "Language",
+        "timezone": "Timezone",
+        "dateFormat": "Date format",
+        "currency": "Default currency",
+        "save": "Save preferences"
+      },
+      "notifications": {
+        "title": "Notification Preferences",
+        "subtitle": "Choose what you want to receive",
+        "campaigns": "Campaign alerts",
+        "campaignsDesc": "Anomalies, high CPA, audience fatigue",
+        "approvals": "Pending approvals",
+        "approvalsDesc": "Content awaiting your review",
+        "reports": "Weekly reports",
+        "reportsDesc": "Performance summary every Monday",
+        "tips": "Tips and updates",
+        "tipsDesc": "Product updates and usage suggestions"
+      },
+      "plan": {
+        "title": "Plan & Billing",
+        "subtitle": "Your current plan and period usage",
+        "planName": "Enterprise Command",
+        "status": "Active",
+        "nextBilling": "Next charge: Jul 14 2026 · $2,490/mo",
+        "viewInvoices": "View invoices",
+        "activeCampaigns": "Active campaigns",
+        "generatedPosts": "Generated posts",
+        "teamMembers": "Team members"
+      },
+      "dangerZone": {
+        "title": "Danger Zone",
+        "subtitle": "Irreversible actions for the account",
+        "exportTitle": "Export all data",
+        "exportDesc": "Download a .zip file with all your data",
+        "export": "Export",
+        "deactivateTitle": "Deactivate account",
+        "deactivateDesc": "Suspends access without deleting data",
+        "deactivate": "Deactivate",
+        "deleteTitle": "Permanently delete account",
+        "deleteDesc": "Removes all data. This action cannot be undone.",
+        "delete": "Delete account"
+      }
+    }
   }
 }

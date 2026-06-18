@@ -1,4 +1,4 @@
-import { useLocation, useNavigate } from 'react-router-dom'
+﻿import { useLocation, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Icon } from '@/components/ui/Icon'
 import { WizardContext, useWizardReducer } from '../wizardContext'
@@ -71,7 +71,7 @@ export default function NewCampaignWizard() {
 
           {/* Wizard shell */}
           <div className="glass-panel rounded-xl p-lg md:p-xl flex flex-col gap-xl relative">
-            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent rounded-t-xl" />
+            <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-overlay-md to-transparent rounded-t-xl" />
 
             {/* Stepper */}
             <div className="relative flex justify-between items-center" data-testid="stepper">

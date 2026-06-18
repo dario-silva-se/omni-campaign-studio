@@ -22,7 +22,7 @@ export function ProgressBar({ value, label, tone = 'primary', className, ...prop
       aria-valuenow={clamped}
       aria-valuemin={0}
       aria-valuemax={100}
-      className={cn('h-2 w-full overflow-hidden rounded-full bg-white/10', className)}
+      className={cn('h-2 w-full overflow-hidden rounded-full bg-overlay-md', className)}
       {...props}
     >
       <div className={cn('h-full rounded-full transition-all duration-500', toneClasses[tone])} style={{ width: `${clamped}%` }} />

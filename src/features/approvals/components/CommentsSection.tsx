@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next'
+﻿import { useTranslation } from 'react-i18next'
 import { Icon } from '@/components/ui/Icon'
 import type { ApprovalComment } from '@/types'
 
@@ -17,7 +17,7 @@ export function CommentsSection({ comments }: CommentsSectionProps) {
           className={`rounded-lg p-md ${
             comment.isAlert
               ? 'bg-error/10 border border-error/30'
-              : 'bg-surface-container-highest border border-white/5'
+              : 'bg-surface-container-highest border border-overlay-sm'
           }`}
         >
           {comment.isAlert && (
@@ -44,7 +44,7 @@ export function CommentsSection({ comments }: CommentsSectionProps) {
           <p className="text-sm text-on-surface-variant leading-relaxed">{comment.message}</p>
 
           {comment.replies && comment.replies.length > 0 && (
-            <div className="mt-md ml-lg space-y-sm border-l border-white/10 pl-md">
+            <div className="mt-md ml-lg space-y-sm border-l border-overlay-md pl-md">
               {comment.replies.map((reply, ri) => (
                 <div key={ri}>
                   <div className="flex items-center gap-sm mb-xs">
@@ -82,7 +82,7 @@ export function CommentsSection({ comments }: CommentsSectionProps) {
         <input
           type="text"
           placeholder={t('detail.comments.writeComment')}
-          className="flex-1 rounded-lg border border-white/10 bg-surface-container px-md py-sm text-sm text-on-surface placeholder:text-on-surface-variant/50 focus:border-primary focus:outline-none"
+          className="flex-1 rounded-lg border border-overlay-md bg-surface-container px-md py-sm text-sm text-on-surface placeholder:text-on-surface-variant/50 focus:border-primary focus:outline-none"
         />
         <button className="px-md py-sm bg-primary text-on-primary-container text-sm font-bold rounded-lg hover:shadow-primary/20 hover:shadow-lg transition-all">
           {t('detail.comments.send')}

@@ -34,7 +34,7 @@ export function Sidebar() {
                         'focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary',
                         isActive
                           ? 'bg-primary/10 text-primary font-semibold'
-                          : 'text-on-surface-variant/80 hover:bg-white/5 hover:text-on-surface',
+                          : 'text-on-surface-variant/80 hover:bg-overlay-sm hover:text-on-surface',
                       )
                     }
                   >

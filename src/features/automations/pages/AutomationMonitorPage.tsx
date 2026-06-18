@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next'
+﻿import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { useAutomationMonitor, useAutomationList, useUpdateAutomation } from '../hooks/useAutomations'
 import { Icon } from '@/components/ui/Icon'
@@ -56,7 +56,7 @@ export default function AutomationMonitorPage() {
       {/* Stat Cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-lg">
         {/* Active Rules */}
-        <div className="bg-surface-container/40 backdrop-blur-xl border border-white/10 p-lg rounded-2xl flex flex-col hover:border-primary/30 transition-colors">
+        <div className="bg-surface-container/40 backdrop-blur-xl border border-overlay-md p-lg rounded-2xl flex flex-col hover:border-primary/30 transition-colors">
           <div className="flex justify-between items-start mb-md">
             <span className="text-on-surface-variant text-xs font-bold uppercase tracking-widest">{t('monitor.stats.activeRules')}</span>
             <div className="p-sm bg-primary/10 rounded-lg">
@@ -71,7 +71,7 @@ export default function AutomationMonitorPage() {
         </div>
 
         {/* Actions Triggered */}
-        <div className="bg-surface-container/40 backdrop-blur-xl border border-white/10 p-lg rounded-2xl flex flex-col hover:border-primary/30 transition-colors">
+        <div className="bg-surface-container/40 backdrop-blur-xl border border-overlay-md p-lg rounded-2xl flex flex-col hover:border-primary/30 transition-colors">
           <div className="flex justify-between items-start mb-md">
             <span className="text-on-surface-variant text-xs font-bold uppercase tracking-widest">{t('monitor.stats.actionsTriggered')}</span>
             <div className="p-sm bg-secondary/10 rounded-lg">
@@ -86,7 +86,7 @@ export default function AutomationMonitorPage() {
         </div>
 
         {/* Ad Spend Saved */}
-        <div className="bg-surface-container/40 backdrop-blur-xl border border-white/10 p-lg rounded-2xl flex flex-col border-l-4 border-l-primary">
+        <div className="bg-surface-container/40 backdrop-blur-xl border border-overlay-md p-lg rounded-2xl flex flex-col border-l-4 border-l-primary">
           <div className="flex justify-between items-start mb-md">
             <span className="text-on-surface-variant text-xs font-bold uppercase tracking-widest">{t('monitor.stats.adSpendSaved')}</span>
             <div className="p-sm bg-primary/10 rounded-lg">
@@ -101,7 +101,7 @@ export default function AutomationMonitorPage() {
         </div>
 
         {/* Health Status */}
-        <div className="bg-surface-container/40 backdrop-blur-xl border border-white/10 p-lg rounded-2xl flex flex-col hover:border-primary/30 transition-colors">
+        <div className="bg-surface-container/40 backdrop-blur-xl border border-overlay-md p-lg rounded-2xl flex flex-col hover:border-primary/30 transition-colors">
           <div className="flex justify-between items-start mb-md">
             <span className="text-on-surface-variant text-xs font-bold uppercase tracking-widest">{t('monitor.stats.healthStatus')}</span>
             <div className="p-sm bg-emerald-500/10 rounded-lg">
@@ -120,7 +120,7 @@ export default function AutomationMonitorPage() {
       <div className="grid grid-cols-12 gap-lg">
         {/* Execution Feed */}
         <div className="col-span-12 lg:col-span-4 flex flex-col gap-lg">
-          <div className="bg-surface-container/40 backdrop-blur-xl border border-white/10 p-lg rounded-2xl flex flex-col overflow-hidden" style={{ minHeight: '600px' }}>
+          <div className="bg-surface-container/40 backdrop-blur-xl border border-overlay-md p-lg rounded-2xl flex flex-col overflow-hidden" style={{ minHeight: '600px' }}>
             <div className="flex justify-between items-center mb-lg">
               <h3 className="text-lg font-bold flex items-center gap-xs">
                 <Icon name="dynamic_feed" className="text-primary" />
@@ -135,7 +135,7 @@ export default function AutomationMonitorPage() {
               {monitorStats.executionFeed.map((item) => (
                 <div
                   key={item._id}
-                  className="p-md bg-surface-container rounded-xl border border-white/10 hover:bg-surface-container-high transition-colors"
+                  className="p-md bg-surface-container rounded-xl border border-overlay-md hover:bg-surface-container-high transition-colors"
                 >
                   <div className="flex items-start gap-md">
                     <div className="relative">
@@ -177,7 +177,7 @@ export default function AutomationMonitorPage() {
         {/* Performance Chart + Critical Toggles */}
         <div className="col-span-12 lg:col-span-8 flex flex-col gap-lg">
           {/* Performance Chart */}
-          <div className="bg-surface-container/40 backdrop-blur-xl border border-white/10 p-lg rounded-2xl flex-1 relative overflow-hidden flex flex-col">
+          <div className="bg-surface-container/40 backdrop-blur-xl border border-overlay-md p-lg rounded-2xl flex-1 relative overflow-hidden flex flex-col">
             <div className="flex justify-between items-center mb-lg">
               <div>
                 <h3 className="text-lg font-bold">{t('monitor.performanceChart.title')}</h3>
@@ -243,7 +243,7 @@ export default function AutomationMonitorPage() {
           </div>
 
           {/* Critical Logic Toggles */}
-          <div className="bg-surface-container/40 backdrop-blur-xl border border-white/10 p-lg rounded-2xl">
+          <div className="bg-surface-container/40 backdrop-blur-xl border border-overlay-md p-lg rounded-2xl">
             <div className="flex justify-between items-center mb-lg">
               <h3 className="text-lg font-bold">{t('monitor.criticalToggles.title')}</h3>
               <button
@@ -258,7 +258,7 @@ export default function AutomationMonitorPage() {
               {triggerList.map((trigger) => (
                 <div
                   key={trigger._id}
-                  className="flex items-center justify-between p-md bg-surface-container rounded-xl border border-white/10"
+                  className="flex items-center justify-between p-md bg-surface-container rounded-xl border border-overlay-md"
                 >
                   <div className="flex items-center gap-md">
                     <div className="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center">

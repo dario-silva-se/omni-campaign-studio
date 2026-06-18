@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { Icon } from '@/components/ui/Icon'
@@ -132,7 +132,7 @@ export default function CampaignsPage() {
 
         {/* Campaign table */}
         <div className="glass-panel rounded-xl overflow-hidden shadow-2xl relative">
-          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+          <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-overlay-md to-transparent" />
           <div className="overflow-x-auto">
             <table className="w-full text-left border-collapse">
               <thead>

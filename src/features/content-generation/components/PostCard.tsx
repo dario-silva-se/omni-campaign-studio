@@ -1,4 +1,4 @@
-import { Icon } from '@/components/ui/Icon'
+﻿import { Icon } from '@/components/ui/Icon'
 import type { GeneratedPost } from '@/types'
 
 const CHANNEL_STYLES: Record<

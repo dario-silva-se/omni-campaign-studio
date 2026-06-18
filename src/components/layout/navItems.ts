@@ -34,6 +34,7 @@ export const navSections: NavSection[] = [
   {
     labelKey: 'nav.sectionSystem',
     items: [
+      { labelKey: 'nav.settings', icon: 'settings', to: '/settings' },
       { labelKey: 'nav.connections', icon: 'hub', to: '/settings/connections' },
       { labelKey: 'nav.notifications', icon: 'notifications', to: '/settings/notifications' },
     ],

@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next'
+﻿import { useTranslation } from 'react-i18next'
 import { useAutomationList, useUpdateAutomation } from '../hooks/useAutomations'
 import { Icon } from '@/components/ui/Icon'
 import { Toggle } from '@/components/ui/Toggle'
@@ -108,7 +108,7 @@ export default function LogicBuilderPage() {
                   <div className="absolute -top-4 left-1/2 -translate-x-1/2 px-xs bg-surface-container text-primary text-[10px] font-bold uppercase tracking-widest border border-primary/20 rounded z-10">
                     {t('builder.triggerLabel')}
                   </div>
-                  <div className="w-full bg-surface-container/70 backdrop-blur-xl border border-white/5 rounded-xl border-l-4 border-l-primary flex gap-lg items-center p-lg">
+                  <div className="w-full bg-surface-container/70 backdrop-blur-xl border border-overlay-sm rounded-xl border-l-4 border-l-primary flex gap-lg items-center p-lg">
                     <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
                       <Icon name={triggerIcon(trigger)} className="text-primary text-3xl" />
                     </div>

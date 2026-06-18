@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Icon } from '@/components/ui/Icon'
 import { useWizard } from '../../wizardContext'
@@ -90,7 +90,7 @@ export default function Step3Audience({ onBack, onNext }: Props) {
                   'bg-[rgba(42,42,42,0.4)] backdrop-blur-[20px] border',
                   isSelected
                     ? 'border-primary/50 bg-primary/5'
-                    : 'border-white/10 hover:border-white/20',
+                    : 'border-overlay-md hover:border-overlay-lg',
                 )}
               >
                 <div className="flex justify-between items-start">
@@ -105,7 +105,7 @@ export default function Step3Audience({ onBack, onNext }: Props) {
                     <Icon name="check_circle" className="text-primary text-[20px] shrink-0" />
                   )}
                 </div>
-                <div className="flex gap-md border-t border-white/5 pt-sm">
+                <div className="flex gap-md border-t border-overlay-sm pt-sm">
                   <div>
                     <span className="block font-label-caps text-label-caps text-on-surface-variant">SIZE</span>
                     <span className="font-body-sm text-body-sm text-on-surface">{seg.size}</span>
@@ -122,7 +122,7 @@ export default function Step3Audience({ onBack, onNext }: Props) {
 
         {/* Right: custom builder */}
         <div className="lg:col-span-7 glass-panel rounded-xl p-lg flex flex-col gap-lg">
-          <div className="flex justify-between items-center border-b border-white/10 pb-md">
+          <div className="flex justify-between items-center border-b border-overlay-md pb-md">
             <h2 className="font-title-md text-title-md text-on-surface">{t('wizard.step3.customBuilder')}</h2>
             <span className="font-label-caps text-label-caps text-primary px-sm py-xs rounded-full bg-primary/10">
               {t('wizard.step3.estReach')}
@@ -142,7 +142,7 @@ export default function Step3Audience({ onBack, onNext }: Props) {
                   <select
                     value={location}
                     onChange={(e) => dispatch({ type: 'SET_STEP3', payload: { location: e.target.value } })}
-                    className="w-full bg-[#0A0A0A] border border-white/10 rounded-md px-sm py-xs text-on-surface font-body-sm text-body-sm appearance-none focus:border-primary focus:outline-none"
+                    className="w-full bg-input-bg border border-overlay-md rounded-md px-sm py-xs text-on-surface font-body-sm text-body-sm appearance-none focus:border-primary focus:outline-none"
                   >
                     {LOCATION_OPTIONS.map((o) => (
                       <option key={o}>{o}</option>
@@ -157,7 +157,7 @@ export default function Step3Audience({ onBack, onNext }: Props) {
                   <select
                     value={ageRange}
                     onChange={(e) => dispatch({ type: 'SET_STEP3', payload: { ageRange: e.target.value } })}
-                    className="w-full bg-[#0A0A0A] border border-white/10 rounded-md px-sm py-xs text-on-surface font-body-sm text-body-sm appearance-none focus:border-primary focus:outline-none"
+                    className="w-full bg-input-bg border border-overlay-md rounded-md px-sm py-xs text-on-surface font-body-sm text-body-sm appearance-none focus:border-primary focus:outline-none"
                   >
                     {AGE_OPTIONS.map((o) => (
                       <option key={o}>{o}</option>
@@ -180,7 +180,7 @@ export default function Step3Audience({ onBack, onNext }: Props) {
               <input
                 type="text"
                 placeholder={t('wizard.step3.interestsPlaceholder')}
-                className="w-full bg-[#0A0A0A] border border-white/10 rounded-md pl-xl pr-sm py-xs text-on-surface font-body-sm text-body-sm placeholder:text-on-surface-variant/50 focus:border-primary focus:outline-none"
+                className="w-full bg-input-bg border border-overlay-md rounded-md pl-xl pr-sm py-xs text-on-surface font-body-sm text-body-sm placeholder:text-on-surface-variant/50 focus:border-primary focus:outline-none"
               />
             </div>
             <div className="flex flex-wrap gap-xs">
@@ -228,7 +228,7 @@ export default function Step3Audience({ onBack, onNext }: Props) {
                       'w-5 h-5 rounded border flex items-center justify-center cursor-pointer transition-colors',
                       value
                         ? 'border-primary bg-primary/20'
-                        : 'border-white/20 bg-surface-container-lowest group-hover:border-primary',
+                        : 'border-overlay-lg bg-surface-container-lowest group-hover:border-primary',
                     )}
                   >
                     {value && <Icon name="check" className="text-[16px] text-primary" />}

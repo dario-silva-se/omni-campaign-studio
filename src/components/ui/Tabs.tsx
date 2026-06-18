@@ -72,7 +72,7 @@ function List({ className, children, ...props }: React.HTMLAttributes<HTMLDivEle
   return (
     <div
       role="tablist"
-      className={cn('flex gap-xs border-b border-white/10', className)}
+      className={cn('flex gap-xs border-b border-overlay-md', className)}
       onKeyDown={handleKeyDown}
       {...props}
     >

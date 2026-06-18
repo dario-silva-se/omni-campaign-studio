@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next'
+﻿import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { Icon } from '@/components/ui/Icon'
 import type { ApiConnection } from '@/types'
@@ -17,7 +17,7 @@ export function ConnectionRestoredBanner({ connection }: Props) {
       {/* Top slide-down banner */}
       <div className="fixed top-0 left-0 right-0 z-[60] flex justify-center pt-md pointer-events-none">
         <div
-          className="pointer-events-auto flex items-center gap-sm bg-primary-container text-on-primary-container px-lg py-sm rounded-xl shadow-2xl border border-white/10"
+          className="pointer-events-auto flex items-center gap-sm bg-primary-container text-on-primary-container px-lg py-sm rounded-xl shadow-2xl border border-overlay-md"
           style={{ animation: 'slide-down 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards' }}
         >
           <Icon name="check_circle" style={{ fontVariationSettings: "'FILL' 1" }} />
@@ -53,7 +53,7 @@ export function ConnectionRestoredBanner({ connection }: Props) {
 
         {/* Stats */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-lg text-left">
-          <div className="glass-card p-lg rounded-xl border-l-4 border-l-primary group hover:bg-white/5 transition-all cursor-default">
+          <div className="glass-card p-lg rounded-xl border-l-4 border-l-primary group hover:bg-overlay-sm transition-all cursor-default">
             <p className="font-label-caps text-label-caps text-on-surface-variant/60 uppercase mb-xs">
               {t('restored.syncStatus')}
             </p>
@@ -62,7 +62,7 @@ export function ConnectionRestoredBanner({ connection }: Props) {
               <span className="font-title-md text-title-md text-primary font-bold">{t('restored.syncActive')}</span>
             </div>
           </div>
-          <div className="glass-card p-lg rounded-xl border-l-4 border-l-secondary/40 group hover:bg-white/5 transition-all cursor-default">
+          <div className="glass-card p-lg rounded-xl border-l-4 border-l-secondary/40 group hover:bg-overlay-sm transition-all cursor-default">
             <p className="font-label-caps text-label-caps text-on-surface-variant/60 uppercase mb-xs">
               {t('restored.lastHeartbeat')}
             </p>
@@ -70,7 +70,7 @@ export function ConnectionRestoredBanner({ connection }: Props) {
               {t('restored.lastHeartbeatValue')}
             </span>
           </div>
-          <div className="glass-card p-lg rounded-xl border-l-4 border-l-tertiary/40 group hover:bg-white/5 transition-all cursor-default">
+          <div className="glass-card p-lg rounded-xl border-l-4 border-l-tertiary/40 group hover:bg-overlay-sm transition-all cursor-default">
             <p className="font-label-caps text-label-caps text-on-surface-variant/60 uppercase mb-xs">
               {t('restored.pendingTasks')}
             </p>
@@ -92,7 +92,7 @@ export function ConnectionRestoredBanner({ connection }: Props) {
           </button>
           <button
             type="button"
-            className="px-xl py-md bg-transparent border border-outline-variant/30 text-on-surface rounded-full font-bold font-title-md hover:bg-white/5 transition-all flex items-center gap-sm"
+            className="px-xl py-md bg-transparent border border-outline-variant/30 text-on-surface rounded-full font-bold font-title-md hover:bg-overlay-sm transition-all flex items-center gap-sm"
           >
             {t('restored.viewApiLogs')}
           </button>

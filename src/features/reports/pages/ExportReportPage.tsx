@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Icon } from '@/components/ui/Icon'
 import { ProgressBar } from '@/components/ui/ProgressBar'
@@ -209,7 +209,7 @@ export default function ExportReportPage() {
                 {t('reports:export.previewLabel')}
               </label>
               {/* PDF Thumbnail Mock */}
-              <div className="relative w-full aspect-[3/4] bg-white/5 border border-outline-variant rounded-sm p-md overflow-hidden shadow-2xl">
+              <div className="relative w-full aspect-[3/4] bg-overlay-sm border border-outline-variant rounded-sm p-md overflow-hidden shadow-2xl">
                 <div className="w-full h-full bg-white rounded-sm shadow-inner opacity-90 p-md flex flex-col gap-sm overflow-hidden scale-90">
                   <div className="h-2 w-1/2 bg-gray-300 rounded-full" />
                   <div className="grid grid-cols-3 gap-xs mt-md">

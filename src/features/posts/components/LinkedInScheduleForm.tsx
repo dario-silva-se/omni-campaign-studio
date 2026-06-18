@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Icon } from '@/components/ui/Icon'
 
@@ -106,9 +106,9 @@ export function LinkedInScheduleForm() {
           <div className="bg-black rounded-[3rem] p-3 border-[6px] border-[#222] relative overflow-hidden shadow-2xl w-[340px]">
             <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-[#222] rounded-b-2xl z-10" />
             <div className="bg-[#1d2226] rounded-[2.5rem] overflow-y-auto pt-8 max-h-[500px]">
-              <div className="px-md py-sm border-b border-white/5 flex items-center justify-between">
+              <div className="px-md py-sm border-b border-overlay-sm flex items-center justify-between">
                 <div className="flex items-center gap-sm">
-                  <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+                  <div className="w-10 h-10 rounded-full bg-overlay-md flex items-center justify-center">
                     <Icon name="person" className="text-white/60" />
                   </div>
                   <div>
@@ -126,7 +126,7 @@ export function LinkedInScheduleForm() {
               <div className="w-full bg-[#38434f] aspect-video flex items-center justify-center">
                 <Icon name="image" className="text-3xl opacity-40" />
               </div>
-              <div className="p-sm flex items-center gap-md border-t border-white/5">
+              <div className="p-sm flex items-center gap-md border-t border-overlay-sm">
                 {['thumb_up', 'comment', 'share', 'send'].map((icon) => (
                   <div key={icon} className="flex items-center gap-1 text-white/60">
                     <Icon name={icon} className="text-sm" />

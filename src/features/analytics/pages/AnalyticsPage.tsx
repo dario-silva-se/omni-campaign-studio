@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next'
+﻿import { useTranslation } from 'react-i18next'
 import { Icon } from '@/components/ui/Icon'
 import { useValueMetrics } from '../hooks/useAnalytics'
 import { RoiSummaryBanner } from '../components/RoiSummaryBanner'

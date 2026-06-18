@@ -78,7 +78,7 @@ export function Modal({ open, onClose, title, children, footer, className }: Mod
         aria-labelledby={titleId}
         tabIndex={-1}
         className={cn(
-          'relative w-full max-w-lg rounded-lg bg-surface-container border border-white/10 p-lg',
+          'relative w-full max-w-lg rounded-lg bg-surface-container border border-overlay-md p-lg',
           'shadow-[0_0_40px_rgba(0,0,0,0.2)] focus:outline-none',
           className,
         )}
@@ -89,7 +89,7 @@ export function Modal({ open, onClose, title, children, footer, className }: Mod
             type="button"
             onClick={onClose}
             aria-label="Fechar"
-            className="rounded-md p-1 text-on-surface-variant hover:bg-white/5 hover:text-on-surface focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"
+            className="rounded-md p-1 text-on-surface-variant hover:bg-overlay-sm hover:text-on-surface focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"
           >
             <Icon name="close" />
           </button>

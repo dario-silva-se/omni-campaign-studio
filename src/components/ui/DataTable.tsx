@@ -27,7 +27,7 @@ export function DataTable<T extends { _id: string }>({
     <div className={cn('overflow-x-auto', className)}>
       <table aria-label={caption} className="w-full border-collapse">
         <thead className="sticky top-0 bg-surface-container-lowest">
-          <tr className="border-b border-white/10">
+          <tr className="border-b border-overlay-md">
             {columns.map((col) => (
               <th
                 key={col.key}
@@ -51,7 +51,7 @@ export function DataTable<T extends { _id: string }>({
             <tr
               key={row._id}
               onClick={onRowClick ? () => onRowClick(row) : undefined}
-              className={cn('table-row-zebra border-b border-white/5', onRowClick && 'cursor-pointer hover:bg-white/5')}
+              className={cn('table-row-zebra border-b border-overlay-sm', onRowClick && 'cursor-pointer hover:bg-overlay-sm')}
             >
               {columns.map((col) => (
                 <td key={col.key} className={cn('px-md py-sm text-body-sm', alignClass[col.align ?? 'left'], col.className)}>

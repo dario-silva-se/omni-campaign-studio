@@ -1,4 +1,4 @@
-import { screen } from '@testing-library/react'
+﻿import { screen } from '@testing-library/react'
 import { renderWithProviders } from '@/test/renderWithProviders'
 import ConnectionsPage from './ConnectionsPage'
 

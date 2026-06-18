@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next'
+﻿import { useTranslation } from 'react-i18next'
 import { Icon } from '@/components/ui/Icon'
 import { useConnectionList } from '../hooks/useConnections'
 import { ConnectionHealthCard } from '../components/ConnectionHealthCard'
@@ -153,7 +153,7 @@ export default function ConnectionsPage() {
 
       {/* Security & Logs */}
       <section className="glass-card rounded-xl overflow-hidden">
-        <div className="p-lg border-b border-white/10 flex justify-between items-center">
+        <div className="p-lg border-b border-overlay-md flex justify-between items-center">
           <h3 className="text-title-md font-bold">{t('connections:list.securityLogs')}</h3>
           <button
             type="button"
@@ -166,7 +166,7 @@ export default function ConnectionsPage() {
         <div className="overflow-x-auto">
           <table className="w-full text-left">
             <thead>
-              <tr className="bg-white/5">
+              <tr className="bg-overlay-sm">
                 <th className="px-lg py-md text-label-caps text-outline uppercase">
                   {t('connections:list.logTable.eventType')}
                 </th>
@@ -184,9 +184,9 @@ export default function ConnectionsPage() {
                 </th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-white/5">
+            <tbody className="divide-y divide-overlay-sm">
               {LOG_ENTRIES.map((entry, i) => (
-                <tr key={i} className="hover:bg-white/5 transition-colors">
+                <tr key={i} className="hover:bg-overlay-sm transition-colors">
                   <td className="px-lg py-md font-bold text-body-sm">{entry.event}</td>
                   <td className="px-lg py-md text-body-sm">{entry.platform}</td>
                   <td className="px-lg py-md">{statusBadge(entry.status)}</td>

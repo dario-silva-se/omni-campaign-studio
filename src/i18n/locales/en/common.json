@@ -18,6 +18,7 @@
     "automations": "Automations",
     "connections": "Connections",
     "notifications": "Notifications",
+    "toggleTheme": "Toggle theme",
     "settings": "Settings"
   },
   "actions": {

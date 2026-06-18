@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Icon } from '@/components/ui/Icon'
 import { Toggle } from '@/components/ui/Toggle'
@@ -124,7 +124,7 @@ export function TelegramScheduleForm() {
             <Icon name="more_vert" className="text-on-surface-variant" />
           </div>
           <div className="flex-1 p-lg overflow-y-auto flex flex-col justify-end space-y-md">
-            <div className="bg-surface-container-high rounded-2xl rounded-tr-sm p-0 overflow-hidden shadow-lg ml-auto max-w-[85%] border border-white/5">
+            <div className="bg-surface-container-high rounded-2xl rounded-tr-sm p-0 overflow-hidden shadow-lg ml-auto max-w-[85%] border border-overlay-sm">
               <div className="w-full aspect-video bg-surface-container-highest flex items-center justify-center">
                 <Icon name="image" className="text-on-surface-variant opacity-30 text-[32px]" />
               </div>

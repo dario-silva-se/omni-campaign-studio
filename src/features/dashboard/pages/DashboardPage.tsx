@@ -1,5 +1,6 @@
-import { useTranslation } from 'react-i18next'
+﻿import { useTranslation } from 'react-i18next'
 import { Icon } from '@/components/ui/Icon'
+import { useTheme } from '@/contexts/ThemeContext'
 import { useDashboard } from '../hooks/useDashboard'
 import { ResultsSummaryCard } from '../components/ResultsSummaryCard'
 import { SignalSourceCard } from '../components/SignalSourceCard'
@@ -17,6 +18,7 @@ function groupSignalsBySource(
 
 export default function DashboardPage() {
   const { t } = useTranslation(['dashboard', 'common'])
+  const { theme, toggleTheme } = useTheme()
   const { data, isLoading, isError } = useDashboard()
 
   if (isError) return <div role="alert" className="p-lg text-error">{t('common:errorState')}</div>
@@ -71,10 +73,11 @@ export default function DashboardPage() {
           </button>
           <button
             type="button"
-            aria-label={t('dashboard:header.toggleTheme')}
+            onClick={toggleTheme}
+            aria-label={t('common:nav.toggleTheme')}
             className="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-variant focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"
           >
-            <Icon name="contrast" />
+            <Icon name={theme === 'dark' ? 'light_mode' : 'dark_mode'} />
           </button>
         </div>
       </header>

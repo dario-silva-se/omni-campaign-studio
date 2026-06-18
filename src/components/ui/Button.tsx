@@ -19,8 +19,8 @@ const variantClasses: Record<ButtonVariant, string> = {
     'bg-primary-container text-white bg-gradient-to-b from-primary-container to-[#3b7de6] ' +
     'hover:brightness-110 active:brightness-95 disabled:opacity-40 disabled:pointer-events-none',
   ghost:
-    'border border-white/10 bg-transparent text-on-surface hover:bg-white/5 ' +
-    'active:bg-white/10 disabled:opacity-40 disabled:pointer-events-none',
+    'border border-overlay-md bg-transparent text-on-surface hover:bg-overlay-sm ' +
+    'active:bg-overlay-md disabled:opacity-40 disabled:pointer-events-none',
   danger:
     'bg-error-container text-on-error-container hover:brightness-110 ' +
     'active:brightness-95 disabled:opacity-40 disabled:pointer-events-none',

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Icon } from '@/components/ui/Icon'
 import { Button } from '@/components/ui/Button'
@@ -45,7 +45,7 @@ export function TelegramTemplateDetail({ template }: Props) {
                     className={`flex flex-col items-center gap-xs p-md rounded-lg border transition-all ${
                       activeType === mt.value
                         ? 'bg-primary/10 border-2 border-primary text-primary'
-                        : 'bg-surface-container-high border border-white/10 hover:border-white/20 text-on-surface-variant'
+                        : 'bg-surface-container-high border border-overlay-md hover:border-overlay-lg text-on-surface-variant'
                     }`}
                   >
                     <Icon name={mt.icon} className="text-3xl" />
@@ -61,14 +61,14 @@ export function TelegramTemplateDetail({ template }: Props) {
                 <h2 className="font-title-md text-title-md">{t('telegram.messageContent')}</h2>
                 <div className="flex gap-xs">
                   {['format_bold', 'format_italic', 'link', 'code'].map((ic) => (
-                    <button key={ic} type="button" className="p-2 hover:bg-white/10 rounded-lg text-on-surface-variant">
+                    <button key={ic} type="button" className="p-2 hover:bg-overlay-md rounded-lg text-on-surface-variant">
                       <Icon name={ic} />
                     </button>
                   ))}
                 </div>
               </div>
               <textarea
-                className="w-full h-48 bg-black/40 border border-white/10 rounded-xl p-md text-on-surface focus:outline-none focus:border-primary/50 transition-all font-body-lg resize-none"
+                className="w-full h-48 bg-black/40 border border-overlay-md rounded-xl p-md text-on-surface focus:outline-none focus:border-primary/50 transition-all font-body-lg resize-none"
                 placeholder="Craft your message here... use **bold** or [links](https://...)"
               />
               {/* Interactive Buttons */}
@@ -87,7 +87,7 @@ export function TelegramTemplateDetail({ template }: Props) {
                   {buttons.map((btn) => (
                     <div
                       key={btn.label}
-                      className="flex items-center gap-md p-sm bg-white/5 rounded-lg border border-white/5"
+                      className="flex items-center gap-md p-sm bg-overlay-sm rounded-lg border border-overlay-sm"
                     >
                       <Icon name="drag_indicator" className="text-on-surface-variant/40" />
                       <input
@@ -110,7 +110,7 @@ export function TelegramTemplateDetail({ template }: Props) {
             {/* Media Zone */}
             <section className="glass-panel p-lg rounded-xl">
               <h2 className="font-title-md text-title-md mb-md">{t('telegram.mediaAttachment')}</h2>
-              <div className="border-2 border-dashed border-white/10 rounded-xl p-xl flex flex-col items-center justify-center gap-md hover:border-primary/40 transition-all group cursor-pointer">
+              <div className="border-2 border-dashed border-overlay-md rounded-xl p-xl flex flex-col items-center justify-center gap-md hover:border-primary/40 transition-all group cursor-pointer">
                 <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:scale-110 transition-transform">
                   <Icon name="cloud_upload" className="text-4xl" />
                 </div>
@@ -162,7 +162,7 @@ export function TelegramTemplateDetail({ template }: Props) {
                 </div>
                 {/* Chat canvas */}
                 <div className="flex-1 p-md flex flex-col justify-end bg-[#0E1621]">
-                  <div className="bg-[#182533] rounded-2xl rounded-bl-none overflow-hidden max-w-[90%] shadow-lg border border-white/5">
+                  <div className="bg-[#182533] rounded-2xl rounded-bl-none overflow-hidden max-w-[90%] shadow-lg border border-overlay-sm">
                     <div className="w-full h-32 bg-surface-container-highest flex items-center justify-center">
                       <Icon name="image" className="text-on-surface-variant/30 text-[48px]" />
                     </div>
@@ -179,7 +179,7 @@ export function TelegramTemplateDetail({ template }: Props) {
                   {buttons.length > 0 && (
                     <div className="mt-xs max-w-[90%] flex flex-col gap-1">
                       {buttons.map((btn) => (
-                        <div key={btn.label} className="bg-[#182533]/90 backdrop-blur-sm p-sm rounded-lg border border-white/10 text-center">
+                        <div key={btn.label} className="bg-[#182533]/90 backdrop-blur-sm p-sm rounded-lg border border-overlay-md text-center">
                           <span className="text-[#24A1DE] text-xs font-bold">{btn.label}</span>
                         </div>
                       ))}
@@ -204,11 +204,11 @@ export function TelegramTemplateDetail({ template }: Props) {
                 <h2 className="font-title-md text-title-md">{t('telegram.engagementAnalysis')}</h2>
               </div>
               <div className="grid grid-cols-2 gap-md">
-                <div className="p-md bg-white/5 rounded-lg">
+                <div className="p-md bg-overlay-sm rounded-lg">
                   <p className="font-label-caps text-label-caps text-on-surface-variant/60 mb-xs">{t('telegram.estReach')}</p>
                   <p className="font-headline-lg-mobile text-headline-lg-mobile text-primary">{estReach}</p>
                 </div>
-                <div className="p-md bg-white/5 rounded-lg">
+                <div className="p-md bg-overlay-sm rounded-lg">
                   <p className="font-label-caps text-label-caps text-on-surface-variant/60 mb-xs">{t('telegram.estClicks')}</p>
                   <p className="font-headline-lg-mobile text-headline-lg-mobile text-secondary">{estClicks}</p>
                 </div>
@@ -240,7 +240,7 @@ export function TelegramTemplateDetail({ template }: Props) {
       </div>
 
       {/* Floating action bar */}
-      <div className="fixed bottom-0 left-0 right-0 p-lg bg-surface/40 backdrop-blur-md border-t border-white/5 z-50">
+      <div className="fixed bottom-0 left-0 right-0 p-lg bg-surface/40 backdrop-blur-md border-t border-overlay-sm z-50">
         <div className="max-w-[1200px] mx-auto flex justify-between items-center">
           <div className="flex items-center gap-xl">
             <div className="flex items-center gap-sm">
