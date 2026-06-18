@@ -44,13 +44,15 @@ i18n
   .use(initReactI18next)
   .init({
     resources,
-    // Force pt-BR in test environment so jsdom's navigator.language ('en-US')
-    // doesn't override the default. In production, LanguageDetector takes over.
-    lng: import.meta.env.MODE === 'test' ? 'pt-BR' : undefined,
+    // Default to pt-BR unless the user has explicitly stored a preference in
+    // localStorage. Navigator language is intentionally ignored — this is a
+    // pt-BR product and auto-detecting en-US (e.g. in headless/CI environments)
+    // creates a jarring mixed-language experience.
+    lng: (typeof localStorage !== 'undefined' && localStorage.getItem('i18nextLng')) || 'pt-BR',
     fallbackLng: 'pt-BR',
     defaultNS,
     interpolation: { escapeValue: false },
-    detection: { order: ['localStorage', 'navigator'], caches: ['localStorage'] },
+    detection: { order: ['localStorage'], caches: ['localStorage'] },
   })
 
 export function useLocale(): string {

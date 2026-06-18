@@ -13,7 +13,7 @@ export function Sidebar() {
         <Icon name="hub" className="text-primary" filled />
         <div>
           <p className="text-body-lg font-bold leading-tight">{t('appName')}</p>
-          <p className="text-label-caps uppercase text-on-surface-variant">{t('appTagline')}</p>
+          <p className="text-label-caps uppercase text-on-surface-variant whitespace-nowrap">{t('appTagline')}</p>
         </div>
       </div>
       <nav aria-label={t('nav.sectionMain')} className="flex-1 overflow-y-auto px-sm py-md">

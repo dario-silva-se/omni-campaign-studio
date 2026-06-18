@@ -67,8 +67,12 @@ export function ConnectionHealthCard({ connection }: Props) {
 
   return (
     <div
-      className={`glass-card rounded-xl p-lg flex flex-col justify-between hover:border-primary/40 transition-colors group ${
-        isError ? 'border-secondary/20' : ''
+      className={`glass-card rounded-xl p-lg flex flex-col justify-between transition-colors group ${
+        connection.health === 'error' || connection.health === 'disconnected'
+          ? 'border-red-500/40 bg-red-500/[0.03] hover:border-red-500/60'
+          : connection.health === 'expiring'
+          ? 'border-amber-500/40 bg-amber-500/[0.03] hover:border-amber-500/60'
+          : 'hover:border-primary/40'
       }`}
     >
       <div className="flex justify-between items-start mb-lg">

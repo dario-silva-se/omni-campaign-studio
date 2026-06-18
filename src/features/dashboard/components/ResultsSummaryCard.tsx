@@ -8,20 +8,20 @@ interface StatTileProps {
 
 function StatTile({ stat }: StatTileProps) {
   return (
-    <div className="glass-panel subtle-highlight rounded-xl p-md flex flex-col relative overflow-hidden group">
-      <div className="flex items-center justify-between mb-md">
-        <div className="flex items-center text-outline-variant text-xs font-semibold">
-          <Icon name={stat.icon} className="text-[16px] mr-1" />
+    <div className="glass-panel subtle-highlight rounded-xl p-lg flex flex-col relative overflow-hidden group min-h-[120px]">
+      <div className="flex items-center justify-between mb-lg">
+        <div className="flex items-center gap-1.5 text-outline-variant text-xs font-semibold uppercase tracking-wider">
+          <Icon name={stat.icon} className="text-[15px]" />
           {stat.label}
+        </div>
+        <div className={`flex items-center gap-0.5 text-[11px] font-bold px-2 py-0.5 rounded-full ${stat.trendPositive ? 'text-emerald-400 bg-emerald-500/10' : 'text-error bg-error/10'}`}>
+          <Icon name={stat.trendPositive ? 'trending_up' : 'trending_down'} className="text-[13px]" />
+          {stat.trend}
         </div>
       </div>
       <div className="flex items-end justify-between mt-auto">
-        <div className="font-display-lg text-display-lg text-on-surface">{stat.value}</div>
-        <div className={`text-[10px] font-bold flex items-center mt-1 ${stat.trendPositive ? 'text-secondary-fixed' : 'text-error'}`}>
-          <Icon name="trending_up" className="text-[12px] mr-0.5" />
-          {stat.trend}
-        </div>
-        <div className="w-16 h-8 flex items-end">
+        <div className="font-display-lg text-display-lg text-on-surface leading-none">{stat.value}</div>
+        <div className="w-20 h-10 flex items-end">
           <svg
             className="w-full h-full stroke-secondary-fixed stroke-2 fill-none"
             style={{ strokeLinecap: 'round', strokeLinejoin: 'round' }}

@@ -45,7 +45,7 @@ export function PerformanceChart({ bars, xAxisLabels }: Props) {
         {bars.map((bar, i) => (
           <div
             key={i}
-            className={`flex-1 ${bar.heightClass} bg-primary/20 rounded-t border-t border-x border-primary/40 relative`}
+            className={`flex-1 ${bar.heightClass} bg-primary/40 rounded-t border-t border-x border-primary/60 relative`}
           >
             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-primary rounded-full shadow-[0_0_10px_#adc6ff]" />
           </div>
