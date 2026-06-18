@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next'
+﻿import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { Icon } from '@/components/ui/Icon'
 import type { ApiConnection } from '@/types'
@@ -176,7 +176,7 @@ export function ConnectionErrorPanel({ connection, onReconnect, isReconnecting }
             <span className="text-error">03:42 PM (DROPPED)</span>
             <span>06:00 PM</span>
           </div>
-          <div className="mt-xl p-md bg-surface-container rounded-lg border border-white/5">
+          <div className="mt-xl p-md bg-surface-container rounded-lg border border-overlay-sm">
             <div className="flex items-start gap-md">
               <Icon name="info" className="text-error mt-1" />
               <div>
@@ -201,21 +201,21 @@ export function ConnectionErrorPanel({ connection, onReconnect, isReconnecting }
             {t('error.operationalImpact')}
           </h3>
           <div className="space-y-lg">
-            <div className="flex items-center justify-between p-md bg-surface-container/50 rounded border border-white/5">
+            <div className="flex items-center justify-between p-md bg-surface-container/50 rounded border border-overlay-sm">
               <div className="flex items-center gap-md">
                 <Icon name="upload_file" className="text-on-surface-variant" />
                 <span className="font-body-sm text-on-surface">{t('error.scheduledUploads')}</span>
               </div>
               <span className="text-error font-bold font-mono">{t('error.stalled')}</span>
             </div>
-            <div className="flex items-center justify-between p-md bg-surface-container/50 rounded border border-white/5">
+            <div className="flex items-center justify-between p-md bg-surface-container/50 rounded border border-overlay-sm">
               <div className="flex items-center gap-md">
                 <Icon name="monitoring" className="text-on-surface-variant" />
                 <span className="font-body-sm text-on-surface">{t('error.liveAnalytics')}</span>
               </div>
               <span className="text-error font-bold font-mono">{t('error.noData')}</span>
             </div>
-            <div className="flex items-center justify-between p-md bg-surface-container/50 rounded border border-white/5">
+            <div className="flex items-center justify-between p-md bg-surface-container/50 rounded border border-overlay-sm">
               <div className="flex items-center gap-md">
                 <Icon name="comment" className="text-on-surface-variant" />
                 <span className="font-body-sm text-on-surface">{t('error.commentModeration')}</span>
@@ -229,7 +229,7 @@ export function ConnectionErrorPanel({ connection, onReconnect, isReconnecting }
               <p className="font-label-caps text-on-surface font-black drop-shadow-lg">
                 {t('error.serviceInterruption')}
               </p>
-              <p className="text-[10px] text-white/70">{t('error.recoveryRequired')}</p>
+              <p className="text-[10px] text-on-surface-variant">{t('error.recoveryRequired')}</p>
             </div>
           </div>
         </section>
@@ -237,14 +237,14 @@ export function ConnectionErrorPanel({ connection, onReconnect, isReconnecting }
 
       {/* Real-time Exception Log */}
       <section
-        className="rounded-xl overflow-hidden border-white/10"
+        className="rounded-xl overflow-hidden border-overlay-md"
         style={{
           backdropFilter: 'blur(20px)',
           background: 'rgba(32, 31, 31, 0.4)',
           border: '1px solid rgba(255, 255, 255, 0.1)',
         }}
       >
-        <div className="bg-surface-container p-md flex items-center justify-between border-b border-white/5">
+        <div className="bg-surface-container p-md flex items-center justify-between border-b border-overlay-sm">
           <div className="flex items-center gap-md">
             <Icon name="terminal" className="text-on-surface-variant" />
             <span className="font-label-caps text-on-surface">{t('error.exceptionLog')}</span>

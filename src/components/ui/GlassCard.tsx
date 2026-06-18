@@ -48,7 +48,7 @@ function Body({ className, children, ...props }: React.HTMLAttributes<HTMLDivEle
 
 function Footer({ className, children, ...props }: React.HTMLAttributes<HTMLDivElement>) {
   return (
-    <div className={cn('mt-md border-t border-white/5 pt-md text-body-sm text-on-surface-variant', className)} {...props}>
+    <div className={cn('mt-md border-t border-overlay-sm pt-md text-body-sm text-on-surface-variant', className)} {...props}>
       {children}
     </div>
   )

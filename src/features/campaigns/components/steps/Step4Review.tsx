@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next'
+﻿import { useTranslation } from 'react-i18next'
 import { Icon } from '@/components/ui/Icon'
 import { useWizard } from '../../wizardContext'
 
@@ -39,7 +39,7 @@ export default function Step4Review({ onBack, onNext }: Props) {
         {/* Left col */}
         <div className="col-span-1 md:col-span-8 flex flex-col gap-lg">
           {/* Main segment card */}
-          <div className="bg-[rgba(42,42,42,0.4)] backdrop-blur-[20px] border border-white/10 rounded-xl p-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-lg relative overflow-hidden group">
+          <div className="bg-[rgba(42,42,42,0.4)] backdrop-blur-[20px] border border-overlay-md rounded-xl p-lg flex flex-col md:flex-row items-start md:items-center justify-between gap-lg relative overflow-hidden group">
             <div className="absolute -right-20 -top-20 w-64 h-64 bg-primary/5 rounded-full blur-[80px] pointer-events-none group-hover:bg-primary/10 transition-colors duration-700" />
             <div className="flex items-center gap-md z-10">
               <div className="w-12 h-12 rounded-full bg-surface-container-highest border border-outline-variant/20 flex items-center justify-center text-primary">
@@ -74,7 +74,7 @@ export default function Step4Review({ onBack, onNext }: Props) {
           {/* Details row */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-lg">
             {/* Demographics */}
-            <div className="bg-[rgba(42,42,42,0.4)] backdrop-blur-[20px] border border-white/10 rounded-xl p-lg flex flex-col gap-md">
+            <div className="bg-[rgba(42,42,42,0.4)] backdrop-blur-[20px] border border-overlay-md rounded-xl p-lg flex flex-col gap-md">
               <div className="flex items-center gap-sm text-on-surface-variant border-b border-outline-variant/10 pb-sm">
                 <Icon name="public" className="text-[18px]" />
                 <span className="font-label-caps text-label-caps">{t('wizard.step4.demographics')}</span>
@@ -92,7 +92,7 @@ export default function Step4Review({ onBack, onNext }: Props) {
             </div>
 
             {/* Interests */}
-            <div className="bg-[rgba(42,42,42,0.4)] backdrop-blur-[20px] border border-white/10 rounded-xl p-lg flex flex-col gap-md">
+            <div className="bg-[rgba(42,42,42,0.4)] backdrop-blur-[20px] border border-overlay-md rounded-xl p-lg flex flex-col gap-md">
               <div className="flex items-center gap-sm text-on-surface-variant border-b border-outline-variant/10 pb-sm">
                 <Icon name="favorite" className="text-[18px]" />
                 <span className="font-label-caps text-label-caps">{t('wizard.step4.interestsBehaviors')}</span>
@@ -117,7 +117,7 @@ export default function Step4Review({ onBack, onNext }: Props) {
         </div>
 
         {/* Right: reach estimate */}
-        <div className="col-span-1 md:col-span-4 flex flex-col items-center justify-center bg-[rgba(42,42,42,0.4)] backdrop-blur-[20px] border border-white/10 rounded-xl p-lg text-center">
+        <div className="col-span-1 md:col-span-4 flex flex-col items-center justify-center bg-[rgba(42,42,42,0.4)] backdrop-blur-[20px] border border-overlay-md rounded-xl p-lg text-center">
           <span className="font-label-caps text-label-caps text-on-surface-variant mb-sm tracking-widest">
             {t('wizard.step4.estReach')}
           </span>

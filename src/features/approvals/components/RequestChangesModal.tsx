@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Modal } from '@/components/ui/Modal'
 import { Textarea } from '@/components/ui/Textarea'
@@ -129,7 +129,7 @@ export function RequestChangesModal({
           <span className="text-label-caps uppercase text-on-surface-variant block mb-xs">
             {t('requestChanges.tagStakeholders')}
           </span>
-          <div className="flex flex-wrap gap-sm p-sm bg-white/[0.03] border border-white/10 rounded-lg min-h-[48px] items-center focus-within:border-primary transition-colors">
+          <div className="flex flex-wrap gap-sm p-sm bg-white/[0.03] border border-overlay-md rounded-lg min-h-[48px] items-center focus-within:border-primary transition-colors">
             {tags.map((tag) => (
               <div
                 key={tag}

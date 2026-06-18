@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next'
+﻿import { useTranslation } from 'react-i18next'
 import { Icon } from '@/components/ui/Icon'
 import type { Post } from '@/types'
 
@@ -20,7 +20,7 @@ export function TelegramPostDetail({ post }: Props) {
           <span className="text-on-surface">Post #{d?.referralId ?? ''}</span>
         </nav>
         <div className="flex gap-md">
-          <button className="px-lg py-xs border border-white/10 rounded font-label-caps text-label-caps hover:bg-white/5 transition-all flex items-center gap-xs">
+          <button className="px-lg py-xs border border-overlay-md rounded font-label-caps text-label-caps hover:bg-overlay-sm transition-all flex items-center gap-xs">
             <Icon name="edit" className="text-[18px]" /> {t('detail.edit')}
           </button>
           <button className="px-lg py-xs bg-primary text-on-primary rounded font-label-caps text-label-caps hover:brightness-110 transition-all flex items-center gap-xs font-bold">
@@ -143,7 +143,7 @@ export function TelegramPostDetail({ post }: Props) {
               { label: t('detail.telegram.publicationDate'), value: d?.publicationDate ?? '—' },
               { label: t('detail.telegram.referralId'), value: d?.referralId ?? '—' },
             ].map((row) => (
-              <div key={row.label} className="flex justify-between items-center py-sm border-b border-white/5">
+              <div key={row.label} className="flex justify-between items-center py-sm border-b border-overlay-sm">
                 <span className="font-label-caps text-label-caps text-on-surface-variant">{row.label}</span>
                 <span className="font-body-sm font-bold">{row.value}</span>
               </div>

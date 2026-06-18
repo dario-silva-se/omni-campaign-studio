@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next'
+﻿import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { Icon } from '@/components/ui/Icon'
 import type { ApiConnection, ConnectionHealth } from '@/types'
@@ -88,7 +88,7 @@ export function ConnectionHealthCard({ connection }: Props) {
             <p className="text-body-sm text-outline mb-md">
               {t('list.lastSync', { label: connection.lastSyncLabel ?? '' })}
             </p>
-            <div className="p-xs bg-white/5 rounded-lg mb-lg border border-white/5">
+            <div className="p-xs bg-overlay-sm rounded-lg mb-lg border border-overlay-sm">
               <p className="text-[10px] text-primary flex items-center gap-xs font-bold uppercase">
                 <Icon name="verified" className="text-xs" />
                 {t('list.oauthCompliant')}
@@ -117,7 +117,7 @@ export function ConnectionHealthCard({ connection }: Props) {
               {t('list.botLabel', { label: connection.accountName })}
             </p>
             <div className="flex items-center gap-md mt-sm">
-              <div className="flex-1 h-1 bg-white/10 rounded-full overflow-hidden">
+              <div className="flex-1 h-1 bg-overlay-md rounded-full overflow-hidden">
                 <div className="h-full bg-primary" style={{ width: '98%' }} />
               </div>
               <span className="text-[10px] font-bold text-primary">
@@ -140,7 +140,7 @@ export function ConnectionHealthCard({ connection }: Props) {
         <button
           type="button"
           onClick={() => navigate(`/settings/connections/${connection.channel}`)}
-          className="w-full py-xs border border-white/10 rounded-lg text-body-sm font-bold hover:bg-white/5 active:scale-95 transition-all mt-lg"
+          className="w-full py-xs border border-overlay-md rounded-lg text-body-sm font-bold hover:bg-overlay-sm active:scale-95 transition-all mt-lg"
         >
           {t('list.manage')}
         </button>

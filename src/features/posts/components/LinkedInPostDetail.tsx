@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next'
+﻿import { useTranslation } from 'react-i18next'
 import { Icon } from '@/components/ui/Icon'
 import type { Post } from '@/types'
 
@@ -23,7 +23,7 @@ export function LinkedInPostDetail({ post }: Props) {
           <span className="text-on-surface">LinkedIn Post #1234</span>
         </nav>
         <div className="flex gap-md">
-          <button className="px-lg py-xs border border-white/10 rounded font-label-caps text-label-caps hover:bg-white/5 transition-all flex items-center gap-xs">
+          <button className="px-lg py-xs border border-overlay-md rounded font-label-caps text-label-caps hover:bg-overlay-sm transition-all flex items-center gap-xs">
             <Icon name="share" className="text-[18px]" /> {t('detail.shareReport')}
           </button>
           <button className="px-lg py-xs bg-primary text-on-primary rounded font-label-caps text-label-caps hover:brightness-110 transition-all flex items-center gap-xs font-bold active:scale-95">
@@ -76,8 +76,8 @@ export function LinkedInPostDetail({ post }: Props) {
             <div className="flex justify-between items-center mb-lg">
               <h4 className="font-title-md text-title-md font-bold">{t('detail.engagementOverTime')}</h4>
               <div className="flex gap-xs">
-                <button className="px-sm py-1 bg-white/5 rounded text-xs font-bold">7D</button>
-                <button className="px-sm py-1 border border-white/10 rounded text-xs font-bold opacity-40">30D</button>
+                <button className="px-sm py-1 bg-overlay-sm rounded text-xs font-bold">7D</button>
+                <button className="px-sm py-1 border border-overlay-md rounded text-xs font-bold opacity-40">30D</button>
               </div>
             </div>
             <div className="flex-grow flex items-end justify-between px-md pb-xs">
@@ -89,7 +89,7 @@ export function LinkedInPostDetail({ post }: Props) {
                 />
               ))}
             </div>
-            <div className="flex justify-between px-md pt-base border-t border-white/5 font-label-caps text-label-caps text-on-surface-variant opacity-40">
+            <div className="flex justify-between px-md pt-base border-t border-overlay-sm font-label-caps text-label-caps text-on-surface-variant opacity-40">
               {CHART_DAYS.map((d) => <span key={d}>{d}</span>)}
             </div>
           </div>
@@ -97,14 +97,14 @@ export function LinkedInPostDetail({ post }: Props) {
           {/* History */}
           <div className="bg-surface-container-low/60 backdrop-blur-sm border border-outline-variant/10 p-lg rounded-xl">
             <h4 className="font-title-md text-title-md font-bold mb-lg">{t('detail.postHistory')}</h4>
-            <div className="space-y-lg relative before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[2px] before:bg-white/5">
+            <div className="space-y-lg relative before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[2px] before:bg-overlay-sm">
               {(d?.history ?? []).map((h, i) => (
                 <div key={i} className="flex gap-lg relative">
                   <div className={`w-6 h-6 rounded-full border-4 border-background z-10 shrink-0 ${h.type === 'publish' ? 'bg-primary' : h.type === 'approve' ? 'bg-green-500/50' : 'bg-surface-variant'}`} />
                   <div>
                     <p className="font-body-lg font-bold">{h.event}</p>
                     <p className="font-body-sm text-on-surface-variant opacity-60">{h.actor} • {h.timeAgo}</p>
-                    {h.quote && <p className="mt-xs bg-white/5 p-sm rounded text-xs italic border-l-2 border-primary">{h.quote}</p>}
+                    {h.quote && <p className="mt-xs bg-overlay-sm p-sm rounded text-xs italic border-l-2 border-primary">{h.quote}</p>}
                     {h.note && <p className="mt-xs text-xs text-on-surface-variant">{h.note}</p>}
                   </div>
                 </div>
@@ -115,9 +115,9 @@ export function LinkedInPostDetail({ post }: Props) {
 
         {/* Right: LinkedIn preview + distribution */}
         <div className="col-span-12 lg:col-span-4 space-y-lg">
-          <div className="bg-[#1D2226] border border-white/5 rounded-xl overflow-hidden">
+          <div className="bg-[#1D2226] border border-overlay-sm rounded-xl overflow-hidden">
             <div className="p-md flex items-start gap-md">
-              <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center">
+              <div className="w-12 h-12 rounded-full bg-overlay-md flex items-center justify-center">
                 <Icon name="person" className="text-white/60" />
               </div>
               <div className="flex-grow">
@@ -134,13 +134,13 @@ export function LinkedInPostDetail({ post }: Props) {
             <div className="w-full aspect-square bg-surface-container relative flex items-center justify-center">
               <Icon name="image" className="text-on-surface-variant opacity-30 text-[48px]" />
             </div>
-            <div className="p-sm border-b border-white/5 flex items-center justify-between text-[11px] text-white/60">
+            <div className="p-sm border-b border-overlay-sm flex items-center justify-between text-[11px] text-white/60">
               <span>{d?.shares ?? '0'} curtidas</span>
               <span>24 comentários</span>
             </div>
             <div className="flex justify-around p-xs text-white/60">
               {['thumb_up', 'comment', 'share'].map((icon) => (
-                <button key={icon} className="flex items-center gap-xs py-2 px-md hover:bg-white/5 rounded transition-all text-xs font-bold">
+                <button key={icon} className="flex items-center gap-xs py-2 px-md hover:bg-overlay-sm rounded transition-all text-xs font-bold">
                   <Icon name={icon} className="text-[18px]" />
                 </button>
               ))}
@@ -157,7 +157,7 @@ export function LinkedInPostDetail({ post }: Props) {
                 { label: t('detail.status'), value: d?.postStatus ?? '—', highlight: true },
                 { label: t('detail.platform'), value: 'LinkedIn Professional' },
               ].map((row) => (
-                <div key={row.label} className="flex justify-between items-center py-sm border-b border-white/5">
+                <div key={row.label} className="flex justify-between items-center py-sm border-b border-overlay-sm">
                   <span className="font-label-caps text-label-caps text-on-surface-variant">{row.label}</span>
                   <span className={`font-body-sm font-bold ${row.highlight ? 'text-primary' : ''}`}>{row.value}</span>
                 </div>

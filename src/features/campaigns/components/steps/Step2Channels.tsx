@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Icon } from '@/components/ui/Icon'
 import { useWizard } from '../../wizardContext'
@@ -65,7 +65,7 @@ export default function Step2Channels({ onBack, onNext }: Props) {
                 'bg-[rgba(255,255,255,0.03)] backdrop-blur-[20px] border',
                 isSelected
                   ? 'border-primary/50 bg-primary/5'
-                  : 'border-white/10 hover:bg-surface-container-high/50',
+                  : 'border-overlay-md hover:bg-surface-container-high/50',
               )}
             >
               <div className="flex justify-between items-start mb-md">

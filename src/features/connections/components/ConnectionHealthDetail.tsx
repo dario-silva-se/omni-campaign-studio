@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react'
+﻿import { useMemo, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { Icon } from '@/components/ui/Icon'
@@ -34,7 +34,7 @@ export function ConnectionHealthDetail({ connection, justRestored }: Props) {
       {/* Restored banner */}
       {justRestored && (
         <div className="fixed top-0 left-0 right-0 z-[60] flex justify-center pt-md pointer-events-none">
-          <div className="pointer-events-auto flex items-center gap-sm bg-primary-container text-on-primary-container px-lg py-sm rounded-xl shadow-2xl border border-white/10 animate-[slide-down_0.5s_cubic-bezier(0.16,1,0.3,1)_forwards]">
+          <div className="pointer-events-auto flex items-center gap-sm bg-primary-container text-on-primary-container px-lg py-sm rounded-xl shadow-2xl border border-overlay-md animate-[slide-down_0.5s_cubic-bezier(0.16,1,0.3,1)_forwards]">
             <Icon name="check_circle" style={{ fontVariationSettings: "'FILL' 1" }} />
             <span className="font-body-lg text-body-lg font-bold">{t('restored.bannerTitle')}</span>
           </div>
@@ -66,7 +66,7 @@ export function ConnectionHealthDetail({ connection, justRestored }: Props) {
           <div className="flex gap-md">
             <button
               type="button"
-              className="px-lg py-sm glass-card hover:bg-white/5 transition-all text-sm font-bold rounded-xl flex items-center gap-2"
+              className="px-lg py-sm glass-card hover:bg-overlay-sm transition-all text-sm font-bold rounded-xl flex items-center gap-2"
             >
               <Icon name="sync" className="text-[18px]" />
               {t('detail.forceRefresh')}
@@ -94,7 +94,7 @@ export function ConnectionHealthDetail({ connection, justRestored }: Props) {
             <div className="relative w-full aspect-square max-w-[200px] mx-auto flex items-center justify-center">
               <svg className="w-full h-full -rotate-90 transform" viewBox="0 0 100 100">
                 <circle
-                  className="text-white/5"
+                  className="text-overlay-sm"
                   cx="50"
                   cy="50"
                   fill="transparent"
@@ -122,7 +122,7 @@ export function ConnectionHealthDetail({ connection, justRestored }: Props) {
               </div>
             </div>
           </div>
-          <div className="mt-lg pt-lg border-t border-white/10">
+          <div className="mt-lg pt-lg border-t border-overlay-md">
             <div className="flex justify-between text-xs mb-2">
               <span className="text-on-surface-variant/60">{t('detail.status')}</span>
               <span className="text-primary font-bold">{t('detail.optimal')}</span>
@@ -131,7 +131,7 @@ export function ConnectionHealthDetail({ connection, justRestored }: Props) {
               <span className="text-on-surface-variant/60">{t('detail.lastRotation')}</span>
               <span className="text-on-surface">15 Oct, 2023</span>
             </div>
-            <div className="mt-md p-sm bg-white/5 rounded-xl border border-white/5 flex items-center gap-3">
+            <div className="mt-md p-sm bg-overlay-sm rounded-xl border border-overlay-sm flex items-center gap-3">
               <Icon name="info" className="text-primary text-[20px]" />
               <p className="text-[11px] text-on-surface-variant leading-tight">{t('detail.autoRefreshNote')}</p>
             </div>
@@ -151,7 +151,7 @@ export function ConnectionHealthDetail({ connection, justRestored }: Props) {
                 ? permissions.map((perm) => (
                     <div
                       key={perm.scope}
-                      className="p-md rounded-xl bg-surface-container-high border border-white/5 flex items-start gap-md"
+                      className="p-md rounded-xl bg-surface-container-high border border-overlay-sm flex items-start gap-md"
                     >
                       <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
                         <Icon name={perm.icon} />
@@ -168,7 +168,7 @@ export function ConnectionHealthDetail({ connection, justRestored }: Props) {
                 : connection.scopes.map((scope) => (
                     <div
                       key={scope}
-                      className="p-md rounded-xl bg-surface-container-high border border-white/5 flex items-start gap-md"
+                      className="p-md rounded-xl bg-surface-container-high border border-overlay-sm flex items-start gap-md"
                     >
                       <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary">
                         <Icon name="verified_user" />
@@ -196,7 +196,7 @@ export function ConnectionHealthDetail({ connection, justRestored }: Props) {
               </div>
             </div>
             <div className="space-y-sm">
-              <details className="group bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+              <details className="group bg-overlay-sm border border-overlay-md rounded-xl overflow-hidden">
                 <summary className="flex justify-between items-center p-md cursor-pointer list-none">
                   <div className="flex items-center gap-md">
                     <Icon name="dns" className="text-on-surface-variant/40" />
@@ -208,7 +208,7 @@ export function ConnectionHealthDetail({ connection, justRestored }: Props) {
                   {t('detail.networkApiDetail')}
                 </div>
               </details>
-              <details className="group bg-white/5 border border-white/10 rounded-xl overflow-hidden">
+              <details className="group bg-overlay-sm border border-overlay-md rounded-xl overflow-hidden">
                 <summary className="flex justify-between items-center p-md cursor-pointer list-none">
                   <div className="flex items-center gap-md">
                     <Icon name="history_toggle_off" className="text-on-surface-variant/40" />
@@ -236,7 +236,7 @@ export function ConnectionHealthDetail({ connection, justRestored }: Props) {
         {/* Connected Accounts */}
         {connectedAccounts.length > 0 && (
           <div className="col-span-12 glass-card rounded-xl overflow-hidden">
-            <div className="px-lg py-md bg-white/5 border-b border-white/10 flex justify-between items-center">
+            <div className="px-lg py-md bg-overlay-sm border-b border-overlay-md flex justify-between items-center">
               <h3 className="font-title-md text-title-md text-on-surface">{t('detail.connectedAccounts')}</h3>
               <button type="button" className="text-primary text-xs font-bold hover:underline">
                 {t('detail.addPage')}
@@ -245,7 +245,7 @@ export function ConnectionHealthDetail({ connection, justRestored }: Props) {
             <div className="overflow-x-auto">
               <table className="w-full text-left">
                 <thead>
-                  <tr className="text-[11px] uppercase font-bold text-on-surface-variant/40 border-b border-white/5">
+                  <tr className="text-[11px] uppercase font-bold text-on-surface-variant/40 border-b border-overlay-sm">
                     <th className="px-lg py-md">{t('detail.entityName')}</th>
                     <th className="px-lg py-md">{t('detail.type')}</th>
                     <th className="px-lg py-md">{t('detail.adminRole')}</th>
@@ -253,12 +253,12 @@ export function ConnectionHealthDetail({ connection, justRestored }: Props) {
                     <th className="px-lg py-md text-right">{t('detail.actions')}</th>
                   </tr>
                 </thead>
-                <tbody className="divide-y divide-white/5">
+                <tbody className="divide-y divide-overlay-sm">
                   {connectedAccounts.map((account) => (
-                    <tr key={account.id} className="hover:bg-white/5 transition-colors group">
+                    <tr key={account.id} className="hover:bg-overlay-sm transition-colors group">
                       <td className="px-lg py-md">
                         <div className="flex items-center gap-md">
-                          <div className="w-10 h-10 rounded-lg bg-surface flex items-center justify-center border border-white/10 bg-surface-container-high">
+                          <div className="w-10 h-10 rounded-lg bg-surface flex items-center justify-center border border-overlay-md bg-surface-container-high">
                             <Icon name="business" className="text-on-surface-variant/60" />
                           </div>
                           <div>
@@ -282,7 +282,7 @@ export function ConnectionHealthDetail({ connection, justRestored }: Props) {
                       <td className="px-lg py-md text-right">
                         <button
                           type="button"
-                          className="p-2 hover:bg-white/10 rounded-lg transition-colors"
+                          className="p-2 hover:bg-overlay-md rounded-lg transition-colors"
                           aria-label="settings"
                         >
                           <Icon name="settings" className="text-on-surface-variant" />

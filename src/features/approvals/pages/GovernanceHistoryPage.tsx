@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Icon } from '@/components/ui/Icon'
 import { StatusChip } from '@/components/ui/StatusChip'
@@ -118,7 +118,7 @@ export default function GovernanceHistoryPage() {
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               placeholder={t('history.searchPlaceholder')}
-              className="pl-9 pr-md py-sm rounded-lg border border-white/10 bg-surface-container text-sm text-on-surface placeholder:text-on-surface-variant/50 focus:border-primary focus:outline-none w-56"
+              className="pl-9 pr-md py-sm rounded-lg border border-overlay-md bg-surface-container text-sm text-on-surface placeholder:text-on-surface-variant/50 focus:border-primary focus:outline-none w-56"
             />
           </div>
         </div>
@@ -164,26 +164,26 @@ export default function GovernanceHistoryPage() {
 
       {/* Summary stats */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-md">
-        <div className="bg-surface-container border border-white/10 rounded-xl p-md">
+        <div className="bg-surface-container border border-overlay-md rounded-xl p-md">
           <p className="text-label-caps uppercase text-on-surface-variant">{t('history.summary.totalApproved')}</p>
           <p className="text-2xl font-bold text-emerald-400 mt-xs">{approvedCount}</p>
         </div>
-        <div className="bg-surface-container border border-white/10 rounded-xl p-md">
+        <div className="bg-surface-container border border-overlay-md rounded-xl p-md">
           <p className="text-label-caps uppercase text-on-surface-variant">{t('history.summary.totalRejected')}</p>
           <p className="text-2xl font-bold text-error mt-xs">{rejectedCount}</p>
         </div>
-        <div className="bg-surface-container border border-white/10 rounded-xl p-md">
+        <div className="bg-surface-container border border-overlay-md rounded-xl p-md">
           <p className="text-label-caps uppercase text-on-surface-variant">{t('history.summary.avgCycleTime')}</p>
           <p className="text-2xl font-bold text-on-surface mt-xs">2.4h</p>
         </div>
-        <div className="bg-surface-container border border-white/10 rounded-xl p-md">
+        <div className="bg-surface-container border border-overlay-md rounded-xl p-md">
           <p className="text-label-caps uppercase text-on-surface-variant">{t('history.summary.complianceRate')}</p>
           <p className="text-2xl font-bold text-primary mt-xs">97%</p>
         </div>
       </div>
 
       {/* Table */}
-      <div className="bg-surface-container border border-white/10 rounded-xl overflow-hidden">
+      <div className="bg-surface-container border border-overlay-md rounded-xl overflow-hidden">
         <DataTable<GovernanceHistoryRow>
           columns={columns}
           rows={filtered}

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Icon } from '@/components/ui/Icon'
 import type { Channel } from '@/types'
@@ -96,9 +96,9 @@ function LinkedInComposer() {
       <div className="col-span-12 lg:col-span-5">
         <div className="sticky top-8">
           <h3 className="font-label-caps text-on-surface-variant mb-md">{t('new.livePreview')}</h3>
-          <div className="bg-[#1d2226] rounded-xl border border-white/5 overflow-hidden">
+          <div className="bg-[#1d2226] rounded-xl border border-overlay-sm overflow-hidden">
             <div className="p-md flex gap-sm">
-              <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+              <div className="w-10 h-10 rounded-full bg-overlay-md flex items-center justify-center">
                 <Icon name="person" className="text-white/60" />
               </div>
               <div>
@@ -112,7 +112,7 @@ function LinkedInComposer() {
             <div className="w-full aspect-square bg-surface-container-highest flex items-center justify-center">
               <Icon name="image" className="text-on-surface-variant opacity-30 text-[48px]" />
             </div>
-            <div className="p-sm flex justify-around border-t border-white/5 text-white/60">
+            <div className="p-sm flex justify-around border-t border-overlay-sm text-white/60">
               {['thumb_up', 'comment', 'repeat', 'send'].map((icon) => (
                 <button key={icon} type="button" className="p-xs hover:text-white/80 transition-colors">
                   <Icon name={icon} className="text-[18px]" />

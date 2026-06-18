@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Icon } from '@/components/ui/Icon'
@@ -75,9 +75,9 @@ export default function ApprovalDetailPage() {
       {/* Main layout: preview + right panel */}
       <div className="grid grid-cols-12 gap-0 flex-1">
         {/* Left: Preview area */}
-        <div className="col-span-12 lg:col-span-8 border-r border-white/5 flex flex-col">
+        <div className="col-span-12 lg:col-span-8 border-r border-overlay-sm flex flex-col">
           {/* Preview toolbar */}
-          <div className="flex items-center gap-md px-lg py-sm border-b border-white/5 bg-surface-container">
+          <div className="flex items-center gap-md px-lg py-sm border-b border-overlay-sm bg-surface-container">
             <span className="text-label-sm font-medium text-primary">
               {t('detail.desktopPreview')}
             </span>
@@ -88,7 +88,7 @@ export default function ApprovalDetailPage() {
 
           {/* Post preview card */}
           <div className="flex-1 flex items-start justify-center bg-[#0a0a14] p-xl overflow-auto">
-            <div className="w-full max-w-lg bg-[#1c1c28] border border-white/10 rounded-xl overflow-hidden shadow-2xl">
+            <div className="w-full max-w-lg bg-[#1c1c28] border border-overlay-md rounded-xl overflow-hidden shadow-2xl">
               {/* Post header */}
               <div className="p-md flex items-center gap-sm">
                 <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary/40 to-secondary/40 flex items-center justify-center font-bold text-sm text-on-surface shrink-0">
@@ -118,7 +118,7 @@ export default function ApprovalDetailPage() {
               </div>
 
               {/* Engagement bar */}
-              <div className="px-md py-sm border-t border-white/5 flex items-center gap-lg">
+              <div className="px-md py-sm border-t border-overlay-sm flex items-center gap-lg">
                 <button className="flex items-center gap-xs text-xs text-on-surface-variant hover:text-primary transition-colors">
                   <Icon name="thumb_up" className="text-sm" />
                   {t('detail.postLike')}
@@ -136,7 +136,7 @@ export default function ApprovalDetailPage() {
           </div>
 
           {/* Bottom action bar */}
-          <div className="border-t border-white/5 bg-surface-container px-lg py-md flex items-center justify-end gap-md">
+          <div className="border-t border-overlay-sm bg-surface-container px-lg py-md flex items-center justify-end gap-md">
             <button
               type="button"
               onClick={() => setModalOpen(true)}
@@ -183,7 +183,7 @@ export default function ApprovalDetailPage() {
 
             {/* Campaign Context */}
             {approval.campaignContext && (
-              <div className="bg-surface-container border border-white/5 rounded-xl p-md space-y-sm">
+              <div className="bg-surface-container border border-overlay-sm rounded-xl p-md space-y-sm">
                 <h3 className="text-label-caps uppercase text-on-surface-variant tracking-widest">
                   {t('detail.campaignContext')}
                 </h3>
@@ -204,14 +204,14 @@ export default function ApprovalDetailPage() {
 
             {/* Compliance Checklist */}
             {approval.complianceItems && approval.complianceItems.length > 0 && (
-              <div className="bg-surface-container border border-white/5 rounded-xl p-md">
+              <div className="bg-surface-container border border-overlay-sm rounded-xl p-md">
                 <ComplianceChecklist items={approval.complianceItems} />
               </div>
             )}
 
             {/* Reviewers */}
             {approval.reviewers && approval.reviewers.length > 0 && (
-              <div className="bg-surface-container border border-white/5 rounded-xl p-md">
+              <div className="bg-surface-container border border-overlay-sm rounded-xl p-md">
                 <h3 className="text-label-caps uppercase text-on-surface-variant tracking-widest mb-md">
                   {t('detail.reviewers')}
                 </h3>
@@ -221,7 +221,7 @@ export default function ApprovalDetailPage() {
 
             {/* Tabs: Comments / History */}
             <div>
-              <div className="flex border-b border-white/10 mb-md">
+              <div className="flex border-b border-overlay-md mb-md">
                 <button
                   type="button"
                   onClick={() => setActiveTab('comments')}

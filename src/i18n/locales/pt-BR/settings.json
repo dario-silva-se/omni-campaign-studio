@@ -58,5 +58,131 @@
       "inAppOnly": "Somente In-App",
       "slackHighPrio": "Slack Alta Prioridade"
     }
+  },
+  "userSettings": {
+    "title": "Configurações",
+    "subtitle": "Gerencie seu perfil, segurança e preferências da conta.",
+    "tabs": {
+      "profile": "Perfil",
+      "security": "Senha",
+      "account": "Conta"
+    },
+    "profile": {
+      "changePhoto": "Trocar foto",
+      "roleAdmin": "Admin",
+      "statusActive": "Ativo",
+      "personalInfo": {
+        "title": "Informações Pessoais",
+        "subtitle": "Dados exibidos no seu perfil público",
+        "firstName": "Nome",
+        "lastName": "Sobrenome",
+        "email": "E-mail",
+        "phone": "Telefone",
+        "phonePlaceholder": "+55 (11) 99999-9999",
+        "bio": "Bio",
+        "bioPlaceholder": "Escreva uma breve descrição sobre você...",
+        "position": "Cargo",
+        "company": "Empresa",
+        "cancel": "Cancelar",
+        "save": "Salvar alterações"
+      },
+      "social": {
+        "title": "Redes Sociais",
+        "subtitle": "Links para exibir no seu perfil",
+        "linkedinPlaceholder": "https://linkedin.com/in/seu-perfil",
+        "xPlaceholder": "https://x.com/seuperfil",
+        "whatsappPlaceholder": "https://wa.me/55119...",
+        "save": "Salvar redes"
+      }
+    },
+    "security": {
+      "changePassword": {
+        "title": "Alterar Senha",
+        "subtitle": "Última alteração há 3 meses",
+        "currentPassword": "Senha atual",
+        "currentPasswordPlaceholder": "Digite sua senha atual",
+        "newPassword": "Nova senha",
+        "newPasswordPlaceholder": "Mínimo 8 caracteres",
+        "confirmPassword": "Confirmar nova senha",
+        "confirmPasswordPlaceholder": "Repita a nova senha",
+        "requirementsTitle": "Requisitos da senha",
+        "reqMinLength": "Mínimo 8 caracteres",
+        "reqUppercase": "1 letra maiúscula",
+        "reqNumber": "1 número",
+        "reqSpecial": "1 caractere especial",
+        "strengthEmpty": "Digite uma senha para ver a força",
+        "strengthWeak": "Fraca — adicione maiúsculas, números e símbolos",
+        "strengthFair": "Regular — adicione mais variações",
+        "strengthGood": "Boa — adicione um símbolo para ficar forte",
+        "strengthStrong": "Forte — sua senha está segura",
+        "submit": "Atualizar senha"
+      },
+      "twoFactor": {
+        "title": "Autenticação em 2 Fatores",
+        "subtitle": "Adicione uma camada extra de segurança",
+        "disabled": "Desativado",
+        "appTitle": "App Autenticador",
+        "appDesc": "Google Authenticator, Authy",
+        "smsTitle": "SMS",
+        "smsDesc": "Código via mensagem de texto",
+        "emailTitle": "E-mail",
+        "emailDesc": "Código enviado ao seu e-mail",
+        "configure": "Configurar"
+      },
+      "sessions": {
+        "title": "Sessões Ativas",
+        "subtitle": "Dispositivos com acesso à conta",
+        "terminateAll": "Encerrar todas",
+        "current": "Atual",
+        "terminate": "Encerrar"
+      }
+    },
+    "account": {
+      "preferences": {
+        "title": "Preferências Gerais",
+        "subtitle": "Idioma, fuso horário e formato de exibição",
+        "language": "Idioma",
+        "timezone": "Fuso Horário",
+        "dateFormat": "Formato de data",
+        "currency": "Moeda padrão",
+        "save": "Salvar preferências"
+      },
+      "notifications": {
+        "title": "Preferências de Notificação",
+        "subtitle": "Escolha o que você quer receber",
+        "campaigns": "Alertas de campanha",
+        "campaignsDesc": "Anomalias, CPA alto, fadiga de público",
+        "approvals": "Aprovações pendentes",
+        "approvalsDesc": "Conteúdo aguardando sua revisão",
+        "reports": "Relatórios semanais",
+        "reportsDesc": "Resumo de performance toda segunda-feira",
+        "tips": "Dicas e novidades",
+        "tipsDesc": "Atualizações do produto e sugestões de uso"
+      },
+      "plan": {
+        "title": "Plano e Faturamento",
+        "subtitle": "Seu plano atual e uso do período",
+        "planName": "Enterprise Command",
+        "status": "Ativo",
+        "nextBilling": "Próxima cobrança: 14 jul 2026 · R$ 2.490/mês",
+        "viewInvoices": "Ver faturas",
+        "activeCampaigns": "Campanhas ativas",
+        "generatedPosts": "Posts gerados",
+        "teamMembers": "Membros da equipe"
+      },
+      "dangerZone": {
+        "title": "Zona de Perigo",
+        "subtitle": "Ações irreversíveis para a conta",
+        "exportTitle": "Exportar todos os dados",
+        "exportDesc": "Baixe um arquivo .zip com todos os seus dados",
+        "export": "Exportar",
+        "deactivateTitle": "Desativar conta",
+        "deactivateDesc": "Suspende o acesso sem apagar os dados",
+        "deactivate": "Desativar",
+        "deleteTitle": "Excluir conta permanentemente",
+        "deleteDesc": "Remove todos os dados. Esta ação não pode ser desfeita.",
+        "delete": "Excluir conta"
+      }
+    }
   }
 }

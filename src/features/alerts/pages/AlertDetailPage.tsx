@@ -1,4 +1,4 @@
-import { useParams } from 'react-router-dom'
+﻿import { useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useAlert, useUpdateAlert } from '../hooks/useAlerts'
 import { Icon } from '@/components/ui/Icon'
@@ -46,7 +46,7 @@ export default function AlertDetailPage() {
   return (
     <div className="p-lg space-y-lg">
       {/* Alert Header Strip */}
-      <div className="bg-surface-container/70 backdrop-blur-xl border border-white/10 rounded-xl border-l-[6px] border-l-error p-lg flex justify-between items-center">
+      <div className="bg-surface-container/70 backdrop-blur-xl border border-overlay-md rounded-xl border-l-[6px] border-l-error p-lg flex justify-between items-center">
         <div className="space-y-1">
           <div className="flex items-center gap-md">
             <span className="bg-error/20 text-error px-md py-1 rounded-full text-[10px] tracking-widest uppercase font-black">
@@ -82,7 +82,7 @@ export default function AlertDetailPage() {
         {/* Main Diagnostic */}
         <div className="col-span-12 lg:col-span-8 space-y-lg">
           {/* Diagnostic Chart */}
-          <section className="bg-surface-container/70 backdrop-blur-xl border border-white/10 rounded-xl p-xl h-[400px] flex flex-col relative overflow-hidden">
+          <section className="bg-surface-container/70 backdrop-blur-xl border border-overlay-md rounded-xl p-xl h-[400px] flex flex-col relative overflow-hidden">
             <div className="flex justify-between items-start mb-xl">
               <div>
                 <h4 className="text-label-caps uppercase tracking-widest text-on-surface-variant text-xs font-semibold">
@@ -134,7 +134,7 @@ export default function AlertDetailPage() {
           {/* AI Insight & Impact Breakdown */}
           <div className="grid grid-cols-2 gap-lg">
             {/* AI Insight */}
-            <section className="bg-surface-container/70 backdrop-blur-xl border border-white/10 rounded-xl p-lg border-l-2 border-l-primary">
+            <section className="bg-surface-container/70 backdrop-blur-xl border border-overlay-md rounded-xl p-lg border-l-2 border-l-primary">
               <div className="flex items-center gap-md mb-md">
                 <Icon name="science" className="text-primary" />
                 <h4 className="text-label-caps uppercase tracking-widest text-primary text-xs font-bold">
@@ -145,7 +145,7 @@ export default function AlertDetailPage() {
                 {detail?.aiInsight ?? '—'}
               </p>
               {detail?.aiRecommendation && (
-                <div className="p-md bg-surface-container rounded border border-white/5 space-y-sm">
+                <div className="p-md bg-surface-container rounded border border-overlay-sm space-y-sm">
                   <p className="text-label-caps text-on-surface-variant uppercase font-bold text-xs">
                     {t('detail.recommendation')}
                   </p>
@@ -155,7 +155,7 @@ export default function AlertDetailPage() {
             </section>
 
             {/* Impact Analysis */}
-            <section className="bg-surface-container/70 backdrop-blur-xl border border-white/10 rounded-xl p-lg border-l-2 border-l-tertiary">
+            <section className="bg-surface-container/70 backdrop-blur-xl border border-overlay-md rounded-xl p-lg border-l-2 border-l-tertiary">
               <div className="flex items-center gap-md mb-md">
                 <Icon name="trending_down" className="text-tertiary" />
                 <h4 className="text-label-caps uppercase tracking-widest text-tertiary text-xs font-bold">
@@ -182,7 +182,7 @@ export default function AlertDetailPage() {
           </div>
 
           {/* Executive Actions */}
-          <section className="bg-surface-container/70 backdrop-blur-xl border border-white/10 rounded-xl p-xl">
+          <section className="bg-surface-container/70 backdrop-blur-xl border border-overlay-md rounded-xl p-xl">
             <div className="flex flex-col md:flex-row justify-between items-center gap-lg">
               <div className="space-y-1">
                 <h4 className="text-2xl font-bold text-on-surface">{t('detail.executiveActions')}</h4>
@@ -211,7 +211,7 @@ export default function AlertDetailPage() {
         {/* Right Sidebar */}
         <div className="col-span-12 lg:col-span-4 space-y-lg">
           {/* Historical Context */}
-          <section className="bg-surface-container/70 backdrop-blur-xl border border-white/10 rounded-xl p-lg flex flex-col h-full">
+          <section className="bg-surface-container/70 backdrop-blur-xl border border-overlay-md rounded-xl p-lg flex flex-col h-full">
             <h4 className="text-label-caps uppercase tracking-widest text-on-surface-variant text-xs font-semibold mb-lg">
               {t('detail.historicalContext')}
             </h4>
@@ -228,7 +228,7 @@ export default function AlertDetailPage() {
             </div>
 
             {/* Network Health Snapshot placeholder */}
-            <div className="mt-xl rounded-lg overflow-hidden border border-white/5 h-32 relative bg-surface-container-high flex items-center justify-center">
+            <div className="mt-xl rounded-lg overflow-hidden border border-overlay-sm h-32 relative bg-surface-container-high flex items-center justify-center">
               <Icon name="monitoring" className="text-6xl text-primary/20" />
               <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent flex items-end p-md">
                 <p className="text-[10px] font-bold text-white uppercase tracking-widest">Network Health Snapshot</p>
@@ -237,7 +237,7 @@ export default function AlertDetailPage() {
           </section>
 
           {/* Event Stream */}
-          <section className="bg-surface-container/70 backdrop-blur-xl border border-white/10 rounded-xl p-lg">
+          <section className="bg-surface-container/70 backdrop-blur-xl border border-overlay-md rounded-xl p-lg">
             <h4 className="text-label-caps uppercase tracking-widest text-on-surface-variant text-xs font-semibold mb-md">
               {t('detail.eventStream')}
             </h4>

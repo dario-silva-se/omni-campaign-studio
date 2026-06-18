@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next'
+﻿import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { useAlertList, useUpdateAlert } from '../hooks/useAlerts'
 import { Icon } from '@/components/ui/Icon'
@@ -121,7 +121,7 @@ export default function AlertsPage() {
             {/* Top Stats Row */}
             <section className="grid grid-cols-1 md:grid-cols-3 gap-lg">
               {/* Active Alerts */}
-              <div className="bg-surface-container border border-white/10 p-lg rounded-xl flex flex-col justify-between h-32 relative overflow-hidden">
+              <div className="bg-surface-container border border-overlay-md p-lg rounded-xl flex flex-col justify-between h-32 relative overflow-hidden">
                 <p className="text-label-caps uppercase tracking-widest text-on-surface-variant text-xs font-semibold">
                   {t('center.stats.activeAlerts')}
                 </p>
@@ -135,7 +135,7 @@ export default function AlertsPage() {
               </div>
 
               {/* Mean Time to Resolution */}
-              <div className="bg-surface-container border border-white/10 p-lg rounded-xl flex flex-col justify-between h-32">
+              <div className="bg-surface-container border border-overlay-md p-lg rounded-xl flex flex-col justify-between h-32">
                 <p className="text-label-caps uppercase tracking-widest text-on-surface-variant text-xs font-semibold">
                   {t('center.stats.meanTimeToResolution')}
                 </p>
@@ -146,7 +146,7 @@ export default function AlertsPage() {
               </div>
 
               {/* System Health Index */}
-              <div className="bg-surface-container border border-white/10 p-lg rounded-xl flex flex-col justify-between h-32">
+              <div className="bg-surface-container border border-overlay-md p-lg rounded-xl flex flex-col justify-between h-32">
                 <p className="text-label-caps uppercase tracking-widest text-on-surface-variant text-xs font-semibold">
                   {t('center.stats.systemHealthIndex')}
                 </p>
@@ -166,7 +166,7 @@ export default function AlertsPage() {
               {list.map((alert) => (
                 <div
                   key={alert._id}
-                  className={`bg-surface-container/60 backdrop-blur-lg border border-white/8 border-t border-white/15 rounded-xl overflow-hidden border-l-4 ${severityBorderClass(alert.severity)} ${alert.severity === 'critical' ? 'shadow-[0_0_0_0px_rgba(255,180,171,0.4)]' : ''}`}
+                  className={`bg-surface-container/60 backdrop-blur-lg border border-overlay-sm border-t border-overlay-md rounded-xl overflow-hidden border-l-4 ${severityBorderClass(alert.severity)} ${alert.severity === 'critical' ? 'shadow-[0_0_0_0px_rgba(255,180,171,0.4)]' : ''}`}
                 >
                   <div className="p-lg flex flex-col md:flex-row justify-between items-start md:items-center gap-lg">
                     <div className="flex gap-lg">
@@ -229,7 +229,7 @@ export default function AlertsPage() {
           {/* Right Sidebar */}
           <aside className="hidden lg:flex flex-col gap-lg w-80">
             {/* System Uptime */}
-            <div className="bg-surface-container/60 backdrop-blur-lg border border-white/8 rounded-xl p-lg">
+            <div className="bg-surface-container/60 backdrop-blur-lg border border-overlay-sm rounded-xl p-lg">
               <div className="flex justify-between items-center mb-lg">
                 <h4 className="text-label-caps uppercase tracking-widest text-on-surface-variant text-xs font-semibold">
                   {t('center.sidebar.systemUptime')}
@@ -251,8 +251,8 @@ export default function AlertsPage() {
             </div>
 
             {/* Alert History */}
-            <div className="bg-surface-container/60 backdrop-blur-lg border border-white/8 rounded-xl flex flex-col overflow-hidden flex-1">
-              <div className="p-lg border-b border-white/5">
+            <div className="bg-surface-container/60 backdrop-blur-lg border border-overlay-sm rounded-xl flex flex-col overflow-hidden flex-1">
+              <div className="p-lg border-b border-overlay-sm">
                 <h4 className="text-label-caps uppercase tracking-widest text-on-surface-variant text-xs font-semibold">
                   {t('center.sidebar.alertHistory')}
                 </h4>
@@ -268,7 +268,7 @@ export default function AlertsPage() {
                   </div>
                 ))}
               </div>
-              <button className="w-full p-md text-xs font-bold text-primary hover:bg-white/5 transition-colors border-t border-white/5 uppercase tracking-widest">
+              <button className="w-full p-md text-xs font-bold text-primary hover:bg-overlay-sm transition-colors border-t border-overlay-sm uppercase tracking-widest">
                 {t('center.sidebar.viewSystemLogs')}
               </button>
             </div>

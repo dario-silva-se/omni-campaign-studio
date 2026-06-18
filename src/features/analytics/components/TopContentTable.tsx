@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next'
+﻿import { useTranslation } from 'react-i18next'
 import type { AnalyticsTopContent, Channel } from '@/types'
 
 interface Props {
@@ -49,7 +49,7 @@ export function TopContentTable({ items }: Props) {
             {items.map((item) => {
               const ch = CHANNEL_STYLES[item.channel]
               return (
-                <tr key={item._id} className="table-row-zebra hover:bg-white/5 transition-colors">
+                <tr key={item._id} className="table-row-zebra hover:bg-overlay-sm transition-colors">
                   <td className="px-xl py-lg">
                     <div className="flex items-center gap-md">
                       <div className="w-12 h-12 rounded bg-surface-container-highest overflow-hidden shrink-0 flex items-center justify-center">

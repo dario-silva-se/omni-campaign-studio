@@ -1,4 +1,4 @@
-import { screen } from '@testing-library/react'
+﻿import { screen } from '@testing-library/react'
 import { vi } from 'vitest'
 import { renderWithProviders } from '@/test/renderWithProviders'
 import GovernanceHistoryPage from './GovernanceHistoryPage'

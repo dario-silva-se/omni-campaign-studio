@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { Icon } from '@/components/ui/Icon'
@@ -55,10 +55,10 @@ export default function Step1Details({ onNext }: Props) {
             }}
             placeholder={t('wizard.step1.namePlaceholder')}
             className={cn(
-              'bg-[#0A0A0A] border font-body-lg text-body-lg rounded-DEFAULT px-md py-sm w-full placeholder:text-outline-variant focus:outline-none transition-all',
+              'bg-input-bg border font-body-lg text-body-lg rounded-DEFAULT px-md py-sm w-full placeholder:text-outline-variant focus:outline-none transition-all',
               error
                 ? 'border-error focus:border-error focus:ring-1 focus:ring-error/20'
-                : 'border-white/10 focus:border-primary focus:ring-1 focus:ring-primary/20',
+                : 'border-overlay-md focus:border-primary focus:ring-1 focus:ring-primary/20',
             )}
           />
           {error ? (
@@ -81,7 +81,7 @@ export default function Step1Details({ onNext }: Props) {
             onChange={(e) => dispatch({ type: 'SET_STEP1', payload: { description: e.target.value } })}
             placeholder={t('wizard.step1.descriptionPlaceholder')}
             rows={4}
-            className="bg-[#0A0A0A] border border-white/10 font-body-lg text-body-lg rounded-DEFAULT px-md py-sm w-full placeholder:text-outline-variant focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary/20 resize-none transition-all"
+            className="bg-input-bg border border-overlay-md font-body-lg text-body-lg rounded-DEFAULT px-md py-sm w-full placeholder:text-outline-variant focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary/20 resize-none transition-all"
           />
         </div>
       </div>
@@ -141,7 +141,7 @@ export default function Step1Details({ onNext }: Props) {
         </div>
 
         {/* Priority toggle */}
-        <div className="bg-[rgba(42,42,42,0.6)] backdrop-blur-[16px] border border-white/5 rounded-lg p-md flex items-center justify-between">
+        <div className="bg-[rgba(42,42,42,0.6)] backdrop-blur-[16px] border border-overlay-sm rounded-lg p-md flex items-center justify-between">
           <div className="flex flex-col">
             <span className="font-title-md text-title-md text-on-surface flex items-center gap-xs">
               {t('wizard.step1.priority')}

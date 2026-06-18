@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate, useParams } from 'react-router-dom'
 import type React from 'react'
@@ -64,7 +64,7 @@ function EditSegmentForm({ id, initialName, initialDescription }: EditSegmentFor
             type="button"
             onClick={() => navigate('/audiences')}
             aria-label={t('common:actions.close')}
-            className="text-on-surface-variant hover:text-on-surface transition-colors p-sm rounded-full hover:bg-white/5"
+            className="text-on-surface-variant hover:text-on-surface transition-colors p-sm rounded-full hover:bg-overlay-sm"
           >
             <Icon name="close" />
           </button>
@@ -84,7 +84,7 @@ function EditSegmentForm({ id, initialName, initialDescription }: EditSegmentFor
               type="text"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              className="w-full bg-[#0A0A0A] border border-white/10 rounded-lg px-md py-sm text-on-surface font-body-lg text-body-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:text-on-surface-variant/50"
+              className="w-full bg-input-bg border border-overlay-md rounded-lg px-md py-sm text-on-surface font-body-lg text-body-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all placeholder:text-on-surface-variant/50"
               required
             />
           </div>
@@ -101,16 +101,16 @@ function EditSegmentForm({ id, initialName, initialDescription }: EditSegmentFor
               rows={4}
               value={description}
               onChange={(e) => setDescription(e.target.value)}
-              className="w-full bg-[#0A0A0A] border border-white/10 rounded-lg px-md py-sm text-on-surface font-body-lg text-body-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all resize-none placeholder:text-on-surface-variant/50"
+              className="w-full bg-input-bg border border-overlay-md rounded-lg px-md py-sm text-on-surface font-body-lg text-body-lg focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all resize-none placeholder:text-on-surface-variant/50"
             />
           </div>
 
           {/* Footer actions */}
-          <div className="flex justify-end gap-md mt-xl pt-lg border-t border-white/10">
+          <div className="flex justify-end gap-md mt-xl pt-lg border-t border-overlay-md">
             <button
               type="button"
               onClick={() => navigate('/audiences')}
-              className="px-xl py-sm rounded-lg border border-white/10 text-on-surface font-title-md text-title-md hover:bg-white/5 transition-colors"
+              className="px-xl py-sm rounded-lg border border-overlay-md text-on-surface font-title-md text-title-md hover:bg-overlay-sm transition-colors"
             >
               {t('audiences:edit.cancel')}
             </button>

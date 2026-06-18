@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { useApprovalList, useUpdateApproval } from '../hooks/useApprovals'
@@ -82,7 +82,7 @@ export default function ApprovalsPage() {
       <div className="p-lg space-y-xl">
         <section className="grid grid-cols-1 md:grid-cols-3 gap-lg">
           {/* Pending Approval */}
-          <div className="relative p-lg rounded-xl bg-surface-container border border-white/10 overflow-hidden">
+          <div className="relative p-lg rounded-xl bg-surface-container border border-overlay-md overflow-hidden">
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
             <div className="flex justify-between items-start mb-md">
               <Icon name="pending_actions" className="text-primary text-3xl" />
@@ -97,7 +97,7 @@ export default function ApprovalsPage() {
           </div>
 
           {/* In Review */}
-          <div className="relative p-lg rounded-xl bg-surface-container border border-white/10 overflow-hidden">
+          <div className="relative p-lg rounded-xl bg-surface-container border border-overlay-md overflow-hidden">
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-tertiary/30 to-transparent" />
             <div className="flex justify-between items-start mb-md">
               <Icon name="visibility" className="text-tertiary text-3xl" />
@@ -112,7 +112,7 @@ export default function ApprovalsPage() {
           </div>
 
           {/* Scheduled Today */}
-          <div className="relative p-lg rounded-xl bg-surface-container border border-white/10 overflow-hidden">
+          <div className="relative p-lg rounded-xl bg-surface-container border border-overlay-md overflow-hidden">
             <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-secondary/30 to-transparent" />
             <div className="flex justify-between items-start mb-md">
               <Icon name="event_available" className="text-secondary text-3xl" />
@@ -132,7 +132,7 @@ export default function ApprovalsPage() {
           {/* Feed Column */}
           <div className="col-span-12 lg:col-span-8 space-y-lg">
             {/* Filter Bar */}
-            <div className="flex items-center justify-between bg-surface-container border border-white/10 p-md rounded-xl">
+            <div className="flex items-center justify-between bg-surface-container border border-overlay-md p-md rounded-xl">
               <div className="flex gap-md flex-wrap">
                 {(['all', 'linkedin', 'youtube', 'telegram'] as const).map((ch) => (
                   <button
@@ -166,7 +166,7 @@ export default function ApprovalsPage() {
               {filtered.map((approval) => (
                 <div
                   key={approval._id}
-                  className="bg-surface-container border border-white/10 p-md rounded-xl hover:border-primary/50 transition-all flex items-center gap-lg"
+                  className="bg-surface-container border border-overlay-md p-md rounded-xl hover:border-primary/50 transition-all flex items-center gap-lg"
                 >
                   {/* Thumbnail */}
                   <div
@@ -245,7 +245,7 @@ export default function ApprovalsPage() {
 
           {/* Sidebar */}
           <div className="hidden lg:block lg:col-span-4 space-y-lg">
-            <div className="bg-surface-container border border-white/10 p-lg rounded-xl flex flex-col gap-lg sticky top-[84px]">
+            <div className="bg-surface-container border border-overlay-md p-lg rounded-xl flex flex-col gap-lg sticky top-[84px]">
               {/* Review Progress */}
               <div>
                 <h5 className="text-body-md font-semibold text-on-surface mb-md">

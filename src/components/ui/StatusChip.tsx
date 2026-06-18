@@ -13,7 +13,7 @@ const statusClasses: Record<ChipStatus, string> = {
   warning: 'bg-amber-500/15 text-amber-400',
   error: 'bg-error/15 text-error',
   info: 'bg-primary/15 text-primary',
-  neutral: 'bg-white/10 text-on-surface-variant',
+  neutral: 'bg-overlay-md text-on-surface-variant',
 }
 
 const dotClasses: Record<ChipStatus, string> = {

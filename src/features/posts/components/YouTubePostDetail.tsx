@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next'
+﻿import { useTranslation } from 'react-i18next'
 import { Icon } from '@/components/ui/Icon'
 import type { Post } from '@/types'
 
@@ -36,10 +36,10 @@ export function YouTubePostDetail({ post }: Props) {
           </div>
         </div>
         <div className="flex gap-md">
-          <button className="flex items-center gap-xs border border-white/10 px-lg py-md rounded-lg font-label-caps text-label-caps hover:bg-white/5 transition-all">
+          <button className="flex items-center gap-xs border border-overlay-md px-lg py-md rounded-lg font-label-caps text-label-caps hover:bg-overlay-sm transition-all">
             <Icon name="download" className="text-[20px]" /> {t('detail.downloadAnalytics')}
           </button>
-          <button className="flex items-center gap-xs border border-white/10 px-lg py-md rounded-lg font-label-caps text-label-caps hover:bg-white/5 transition-all">
+          <button className="flex items-center gap-xs border border-overlay-md px-lg py-md rounded-lg font-label-caps text-label-caps hover:bg-overlay-sm transition-all">
             <Icon name="open_in_new" className="text-[20px]" /> {t('detail.viewOnYouTube')}
           </button>
           <button className="flex items-center gap-xs bg-primary text-on-primary px-lg py-md rounded-lg font-label-caps text-label-caps hover:brightness-110 transition-all">
@@ -54,7 +54,7 @@ export function YouTubePostDetail({ post }: Props) {
           {/* Video preview */}
           <div className="bg-surface-container-low/60 backdrop-blur-sm border border-outline-variant/10 overflow-hidden rounded-xl relative aspect-video flex items-center justify-center">
             <Icon name="play_circle" className="text-primary text-[80px] opacity-60" filled />
-            <div className="absolute bottom-4 left-4 bg-black/60 backdrop-blur-md px-md py-xs rounded-lg text-label-caps border border-white/10 text-[10px]">
+            <div className="absolute bottom-4 left-4 bg-black/60 backdrop-blur-md px-md py-xs rounded-lg text-label-caps border border-overlay-md text-[10px]">
               12:44
             </div>
           </div>
@@ -80,7 +80,7 @@ export function YouTubePostDetail({ post }: Props) {
                   { label: t('detail.youtube.visibility'), value: d?.visibility ?? '—' },
                   { label: t('detail.youtube.language'), value: d?.language ?? '—' },
                 ].map((row) => (
-                  <div key={row.label} className="flex justify-between items-center pb-sm border-b border-white/5">
+                  <div key={row.label} className="flex justify-between items-center pb-sm border-b border-overlay-sm">
                     <span className="font-label-caps text-on-surface-variant">{row.label}</span>
                     <span className="text-body-sm font-bold">{row.value}</span>
                   </div>
@@ -104,7 +104,7 @@ export function YouTubePostDetail({ post }: Props) {
                 { icon: 'forum', label: t('detail.youtube.comments'), value: d?.comments ?? '—', trend: '+4.1%', pos: true },
                 { icon: 'share', label: t('detail.youtube.shares' as const), value: d?.shares ?? '—', trend: '+22.8%', pos: true },
               ].map((m) => (
-                <div key={m.label} className="p-md rounded-lg bg-surface-container-lowest border border-white/5">
+                <div key={m.label} className="p-md rounded-lg bg-surface-container-lowest border border-overlay-sm">
                   <div className="flex items-center justify-between mb-xs">
                     <Icon name={m.icon} className="text-primary" />
                     <span className={`font-label-caps text-[10px] ${m.pos ? 'text-green-400' : 'text-red-400'}`}>{m.trend}</span>

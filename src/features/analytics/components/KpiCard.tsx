@@ -1,4 +1,4 @@
-import { Icon } from '@/components/ui/Icon'
+﻿import { Icon } from '@/components/ui/Icon'
 import type { AnalyticsKpi } from '@/types'
 
 interface Props {

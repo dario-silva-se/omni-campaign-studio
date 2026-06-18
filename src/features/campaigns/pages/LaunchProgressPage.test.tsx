@@ -1,4 +1,4 @@
-import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
+﻿import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest'
 import { screen, act } from '@testing-library/react'
 import { renderWithProviders } from '@/test/renderWithProviders'
 import LaunchProgressPage from './LaunchProgressPage'

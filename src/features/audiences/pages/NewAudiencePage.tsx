@@ -1,4 +1,4 @@
-import { useState } from 'react'
+﻿import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate, Link } from 'react-router-dom'
 import { Icon } from '@/components/ui/Icon'
@@ -123,7 +123,7 @@ export default function NewAudiencePage() {
         <div className="glass-panel rounded-xl p-lg space-y-xl">
 
           {/* Section 1: Basic Details */}
-          <div className="space-y-md border-b border-white/5 pb-xl">
+          <div className="space-y-md border-b border-overlay-sm pb-xl">
             <h3 className="font-title-md text-title-md text-primary flex items-center gap-sm">
               <Icon name="id_card" className="text-[20px]" />
               {t('audiences:create.sectionBasic')}
@@ -151,7 +151,7 @@ export default function NewAudiencePage() {
           </div>
 
           {/* Section 2: Demographics */}
-          <div className="space-y-md border-b border-white/5 pb-xl">
+          <div className="space-y-md border-b border-overlay-sm pb-xl">
             <h3 className="font-title-md text-title-md text-primary flex items-center gap-sm">
               <Icon name="public" className="text-[20px]" />
               {t('audiences:create.sectionDemographics')}
@@ -179,7 +179,7 @@ export default function NewAudiencePage() {
           </div>
 
           {/* Section 3: Interests & Keywords */}
-          <div className="space-y-md border-b border-white/5 pb-xl">
+          <div className="space-y-md border-b border-overlay-sm pb-xl">
             <h3 className="font-title-md text-title-md text-primary flex items-center gap-sm">
               <Icon name="psychology" className="text-[20px]" />
               {t('audiences:create.sectionInterests')}
@@ -196,7 +196,7 @@ export default function NewAudiencePage() {
                   onChange={(e) => setTagInput(e.target.value)}
                   onKeyDown={handleTagKeyDown}
                   placeholder={t('audiences:create.interestsPlaceholder')}
-                  className="w-full bg-[#0a0a0a] border border-white/10 rounded-lg pl-xl pr-md py-sm text-body-sm text-on-surface placeholder:text-on-surface-variant/50 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all"
+                  className="w-full bg-input-bg border border-overlay-md rounded-lg pl-xl pr-md py-sm text-body-sm text-on-surface placeholder:text-on-surface-variant/50 focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary transition-all"
                 />
               </div>
               <div className="flex flex-wrap gap-sm mt-sm">
@@ -219,7 +219,7 @@ export default function NewAudiencePage() {
                 <button
                   type="button"
                   onClick={handleAddTag}
-                  className="flex items-center gap-xs px-sm py-xs bg-surface-container border border-white/10 rounded-full text-on-surface-variant font-body-sm text-[13px] hover:bg-white/5 cursor-pointer transition-colors border-dashed"
+                  className="flex items-center gap-xs px-sm py-xs bg-surface-container border border-overlay-md rounded-full text-on-surface-variant font-body-sm text-[13px] hover:bg-overlay-sm cursor-pointer transition-colors border-dashed"
                 >
                   <Icon name="add" className="text-[14px]" />
                   {t('audiences:create.addMore')}
@@ -240,7 +240,7 @@ export default function NewAudiencePage() {
                   type="checkbox"
                   checked={clickedLink}
                   onChange={(e) => setClickedLink(e.target.checked)}
-                  className="mt-1 w-4 h-4 border border-white/20 rounded bg-surface-dim accent-primary cursor-pointer"
+                  className="mt-1 w-4 h-4 border border-overlay-lg rounded bg-surface-dim accent-primary cursor-pointer"
                 />
                 <div>
                   <p className="font-body-sm text-body-sm text-on-surface group-hover:text-primary transition-colors">
@@ -256,7 +256,7 @@ export default function NewAudiencePage() {
                   type="checkbox"
                   checked={engagedLinkedIn}
                   onChange={(e) => setEngagedLinkedIn(e.target.checked)}
-                  className="mt-1 w-4 h-4 border border-white/20 rounded bg-surface-dim accent-primary cursor-pointer"
+                  className="mt-1 w-4 h-4 border border-overlay-lg rounded bg-surface-dim accent-primary cursor-pointer"
                 />
                 <div>
                   <p className="font-body-sm text-body-sm text-on-surface group-hover:text-primary transition-colors">
@@ -276,7 +276,7 @@ export default function NewAudiencePage() {
           <button
             type="button"
             onClick={() => navigate('/audiences')}
-            className="px-lg py-sm rounded-lg font-title-md text-sm text-on-surface-variant hover:text-on-surface hover:bg-white/5 transition-all"
+            className="px-lg py-sm rounded-lg font-title-md text-sm text-on-surface-variant hover:text-on-surface hover:bg-overlay-sm transition-all"
           >
             {t('audiences:create.cancel')}
           </button>

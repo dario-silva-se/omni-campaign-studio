@@ -1,4 +1,4 @@
-import { useTranslation } from 'react-i18next'
+﻿import { useTranslation } from 'react-i18next'
 import { useDataFlow } from '../hooks/useAutomations'
 import { Icon } from '@/components/ui/Icon'
 import type { DataFlowTrafficRow } from '@/types'
@@ -53,7 +53,7 @@ export default function DataFlowPage() {
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-lg">
         {/* Data Pulse Architecture (8 cols) */}
-        <div className="col-span-1 lg:col-span-8 bg-surface-container/40 backdrop-blur-xl border border-white/5 rounded-xl flex flex-col overflow-hidden relative">
+        <div className="col-span-1 lg:col-span-8 bg-surface-container/40 backdrop-blur-xl border border-overlay-sm rounded-xl flex flex-col overflow-hidden relative">
           <div className="p-md border-b border-outline-variant/10 flex justify-between items-center bg-surface-container/50">
             <h3 className="text-lg font-bold text-on-surface flex items-center gap-sm">
               <Icon name="hub" className="text-tertiary" />
@@ -105,7 +105,7 @@ export default function DataFlowPage() {
         {/* Sync Health Metrics (4 cols) */}
         <div className="col-span-1 lg:col-span-4 flex flex-col gap-lg">
           {/* Global Latency */}
-          <div className="bg-surface-container/40 backdrop-blur-xl border border-white/5 rounded-xl p-lg flex flex-col justify-between relative overflow-hidden group hover:border-primary/30 transition-colors">
+          <div className="bg-surface-container/40 backdrop-blur-xl border border-overlay-sm rounded-xl p-lg flex flex-col justify-between relative overflow-hidden group hover:border-primary/30 transition-colors">
             <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full blur-2xl -mr-10 -mt-10 group-hover:bg-primary/10 transition-all" />
             <div className="flex justify-between items-start mb-xl relative z-10">
               <div>
@@ -131,7 +131,7 @@ export default function DataFlowPage() {
           </div>
 
           {/* Throughput */}
-          <div className="bg-surface-container/40 backdrop-blur-xl border border-white/5 rounded-xl p-lg flex flex-col justify-between relative overflow-hidden group hover:border-tertiary/30 transition-colors">
+          <div className="bg-surface-container/40 backdrop-blur-xl border border-overlay-sm rounded-xl p-lg flex flex-col justify-between relative overflow-hidden group hover:border-tertiary/30 transition-colors">
             <div className="flex justify-between items-start mb-xl relative z-10">
               <div>
                 <p className="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-1">
@@ -166,7 +166,7 @@ export default function DataFlowPage() {
         </div>
 
         {/* Live Traffic Table (8 cols) */}
-        <div className="col-span-1 lg:col-span-8 bg-surface-container/40 backdrop-blur-xl border border-white/5 rounded-xl flex flex-col overflow-hidden">
+        <div className="col-span-1 lg:col-span-8 bg-surface-container/40 backdrop-blur-xl border border-overlay-sm rounded-xl flex flex-col overflow-hidden">
           <div className="p-md border-b border-outline-variant/10 flex justify-between items-center bg-surface-container/50">
             <h3 className="text-lg font-bold flex items-center gap-sm">
               <Icon name="list_alt" className="text-on-surface-variant" />
@@ -230,7 +230,7 @@ export default function DataFlowPage() {
         </div>
 
         {/* Channel Status (4 cols) */}
-        <div className="col-span-1 lg:col-span-4 bg-surface-container/40 backdrop-blur-xl border border-white/5 rounded-xl flex flex-col overflow-hidden">
+        <div className="col-span-1 lg:col-span-4 bg-surface-container/40 backdrop-blur-xl border border-overlay-sm rounded-xl flex flex-col overflow-hidden">
           <div className="p-md border-b border-outline-variant/10 bg-surface-container/50">
             <h3 className="text-lg font-bold flex items-center gap-sm">
               <Icon name="sensors" className="text-secondary" />

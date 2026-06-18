@@ -37,6 +37,7 @@ const DataFlowPage = lazy(() => import('@/features/automations/pages/DataFlowPag
 const ConnectionsPage = lazy(() => import('@/features/connections/pages/ConnectionsPage'))
 const ConnectionDetailPage = lazy(() => import('@/features/connections/pages/ConnectionDetailPage'))
 const NotificationSettingsPage = lazy(() => import('@/features/settings/pages/NotificationSettingsPage'))
+const UserSettingsPage = lazy(() => import('@/features/settings/pages/UserSettingsPage'))
 const ExportReportPage = lazy(() => import('@/features/reports/pages/ExportReportPage'))
 
 export function AppRoutes() {
@@ -74,6 +75,7 @@ export function AppRoutes() {
           <Route path="automations" element={<LogicBuilderPage />} />
           <Route path="automations/monitor" element={<AutomationMonitorPage />} />
           <Route path="system/data-flow" element={<DataFlowPage />} />
+          <Route path="settings" element={<UserSettingsPage />} />
           <Route path="settings/connections" element={<ConnectionsPage />} />
           <Route path="settings/connections/:channel" element={<ConnectionDetailPage />} />
           <Route path="settings/notifications" element={<NotificationSettingsPage />} />
