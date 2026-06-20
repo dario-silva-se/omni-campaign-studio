@@ -24,7 +24,7 @@ npm install
 | `npm run build` | `tsc -b` + Vite build → `/dist` |
 | `npm run preview` | Serve `/dist` locally |
 | `npm run lint` | ESLint 10 + typescript-eslint |
-| `npm run test` | Vitest single run (48 files · 179 tests) |
+| `npm run test` | Vitest single run (48 files · 182 tests) |
 | `npm run test:watch` | Vitest in watch mode |
 | `npm run coverage` | v8 coverage report → `/coverage` |
 
@@ -52,6 +52,7 @@ VITE_USE_MOCKS=false
 
 ## Known Issues
 
-- `npm run lint` has **1 error**: `src/contexts/ThemeContext.tsx:38`
-  Rule: `react-refresh/only-export-components`
-  Cause: file exports a non-component alongside a component, breaking Vite HMR fast-refresh.
+- None currently. `npm run lint` is clean.
+  Note: context files (`ThemeContext`, `LayoutContext`) colocate a Provider + a `useX` hook and carry an
+  `// eslint-disable-next-line react-refresh/only-export-components` on the hook export — keep that pattern
+  if you add new context files, otherwise the `react-refresh/only-export-components` rule fails the build.

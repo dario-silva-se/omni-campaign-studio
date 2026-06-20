@@ -19,7 +19,11 @@
     "connections": "Connections",
     "notifications": "Notifications",
     "toggleTheme": "Toggle theme",
-    "settings": "Settings"
+    "settings": "Settings",
+    "openMenu": "Open menu",
+    "closeMenu": "Close menu",
+    "collapseSidebar": "Collapse sidebar",
+    "expandSidebar": "Expand sidebar"
   },
   "actions": {
     "save": "Save",

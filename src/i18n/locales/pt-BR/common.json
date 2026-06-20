@@ -19,7 +19,11 @@
     "connections": "Conexões",
     "notifications": "Notificações",
     "toggleTheme": "Alternar tema",
-    "settings": "Configurações"
+    "settings": "Configurações",
+    "openMenu": "Abrir menu",
+    "closeMenu": "Fechar menu",
+    "collapseSidebar": "Recolher menu lateral",
+    "expandSidebar": "Expandir menu lateral"
   },
   "actions": {
     "save": "Salvar",

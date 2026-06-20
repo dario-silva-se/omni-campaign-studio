@@ -1,6 +1,5 @@
 ﻿import { useTranslation } from 'react-i18next'
 import { Icon } from '@/components/ui/Icon'
-import { useTheme } from '@/contexts/ThemeContext'
 import { useDashboard } from '../hooks/useDashboard'
 import { ResultsSummaryCard } from '../components/ResultsSummaryCard'
 import { SignalSourceCard } from '../components/SignalSourceCard'
@@ -18,7 +17,6 @@ function groupSignalsBySource(
 
 export default function DashboardPage() {
   const { t } = useTranslation(['dashboard', 'common'])
-  const { theme, toggleTheme } = useTheme()
   const { data, isLoading, isError } = useDashboard()
 
   if (isError) return <div role="alert" className="p-lg text-error">{t('common:errorState')}</div>
@@ -28,61 +26,7 @@ export default function DashboardPage() {
 
   return (
     <>
-      {/* Page-level header bar (tabs + actions) — replaces generic TopBar for this page */}
-      <header
-        className="sticky top-0 z-40 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/10 flex justify-between items-center w-full px-gutter h-16 shrink-0"
-        aria-label={t('dashboard:header.tabDashboard')}
-      >
-        <div className="flex items-center">
-          {/* Mobile menu toggle is handled by AppLayout */}
-          <nav className="hidden md:flex space-x-md" aria-label="page-tabs">
-            <a
-              href="#"
-              className="text-primary border-b-2 border-primary pb-4 pt-4 px-2 font-body-sm font-semibold transition-all"
-              aria-current="page"
-            >
-              {t('dashboard:header.tabDashboard')}
-            </a>
-            <a
-              href="#"
-              className="text-on-surface-variant hover:text-primary pb-4 pt-4 px-2 font-body-sm transition-all"
-            >
-              {t('dashboard:header.tabAnalytics')}
-            </a>
-          </nav>
-        </div>
-
-        <div className="flex items-center space-x-sm">
-          <button
-            type="button"
-            className="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-variant flex items-center border border-outline-variant/30 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"
-          >
-            <Icon name="sync" className="text-[18px] mr-xs" />
-            <span className="text-xs font-semibold">{t('dashboard:header.syncButton')}</span>
-          </button>
-          <button
-            type="button"
-            aria-label={t('common:nav.notifications')}
-            className="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-variant relative focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"
-          >
-            <Icon name="notifications" />
-            <span
-              aria-hidden="true"
-              className="absolute top-2 right-2 w-2 h-2 bg-secondary-container rounded-full"
-            />
-          </button>
-          <button
-            type="button"
-            onClick={toggleTheme}
-            aria-label={t('common:nav.toggleTheme')}
-            className="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-variant focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"
-          >
-            <Icon name={theme === 'dark' ? 'light_mode' : 'dark_mode'} />
-          </button>
-        </div>
-      </header>
-
-      {/* Main content canvas */}
+      {/* Main content canvas — the global AppHeader supplies the top bar. */}
       <main className="p-gutter md:p-lg space-y-lg max-w-container-max mx-auto w-full pb-24">
         {/* Welcome / greeting section */}
         <section
@@ -102,6 +46,13 @@ export default function DashboardPage() {
               {data.leadsCaptured} {t('dashboard:greeting.leadsCaptured')}
             </p>
           </div>
+          <button
+            type="button"
+            className="self-start md:self-auto inline-flex items-center gap-xs rounded-full border border-outline-variant/30 px-md py-2 text-on-surface-variant hover:text-primary hover:bg-surface-variant transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"
+          >
+            <Icon name="sync" className="text-[18px]" />
+            <span className="text-xs font-semibold">{t('dashboard:header.syncButton')}</span>
+          </button>
         </section>
 
         {/* Results summary — 4 stat tiles */}

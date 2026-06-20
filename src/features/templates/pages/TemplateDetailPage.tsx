@@ -18,8 +18,8 @@ export default function TemplateDetailPage() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Header bar */}
-      <div className="sticky top-0 z-40 bg-surface/80 backdrop-blur-xl border-b border-outline-variant/10 h-16 flex items-center justify-between px-lg">
+      {/* Detail toolbar — sits under the global AppHeader */}
+      <div className="flex items-center justify-between gap-md border-b border-outline-variant/10 px-lg py-md">
         <div className="flex items-center gap-md">
           <button
             type="button"

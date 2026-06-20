@@ -1,0 +1,653 @@
+From 683d17673cdca1ef3e4e019bea05c8d72f71915d Mon Sep 17 00:00:00 2001
+From: dario-silva-se <dario.dsn.erp@gmail.com>
+Date: Thu, 18 Jun 2026 12:56:47 +0000
+Subject: [PATCH 1/2] =?UTF-8?q?fix:=20UI=20improvements=20=E2=80=94=20i18n?=
+ =?UTF-8?q?,=20layout,=20chart=20visibility,=20connection=20status?=
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+- i18n: default to pt-BR regardless of navigator.language; remove
+  navigator from detection order so headless/CI envs don't fall back
+  to English. Users can still override via localStorage.
+- Sidebar: add whitespace-nowrap to appTagline so "ENTERPRISE COMMAND"
+  never wraps to two lines in the brand header.
+- ConnectionHealthCard: replace uniform secondary border with
+  semantic colours — amber for expiring tokens, red for errors.
+  Makes YouTube warning state immediately distinguishable from healthy.
+- PerformanceChart: increase bar opacity (20→40%) and border opacity
+  (40→60%) so bars are legible against the dark background.
+- ResultsSummaryCard: increase tile padding (p-md→p-lg), add min-height,
+  move trend indicator to a coloured pill badge, remove redundant overlap
+  in the value row.
+- index.html: switch Material Symbols font-display from swap to block
+  to prevent icon name text from flashing during load.
+
+Co-Authored-By: leanderson <leanderson.dario.silva@gmail.com>
+---
+ index.html                                    |  2 +-
+ src/components/layout/Sidebar.tsx             |  2 +-
+ .../analytics/components/PerformanceChart.tsx |  2 +-
+ .../components/ConnectionHealthCard.tsx       |  8 ++++++--
+ .../components/ResultsSummaryCard.tsx         | 20 +++++++++----------
+ src/i18n/index.ts                             | 10 ++++++----
+ 6 files changed, 25 insertions(+), 19 deletions(-)
+
+diff --git a/index.html b/index.html
+index 88b976f..676210d 100644
+--- a/index.html
++++ b/index.html
+@@ -8,7 +8,7 @@
+     <link rel="preconnect" href="https://fonts.googleapis.com" />
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap" rel="stylesheet" />
++    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=block" rel="stylesheet" />
+   </head>
+   <body>
+     <div id="root"></div>
+diff --git a/src/components/layout/Sidebar.tsx b/src/components/layout/Sidebar.tsx
+index e92150e..2566a91 100644
+--- a/src/components/layout/Sidebar.tsx
++++ b/src/components/layout/Sidebar.tsx
+@@ -13,7 +13,7 @@ export function Sidebar() {
+         <Icon name="hub" className="text-primary" filled />
+         <div>
+           <p className="text-body-lg font-bold leading-tight">{t('appName')}</p>
+-          <p className="text-label-caps uppercase text-on-surface-variant">{t('appTagline')}</p>
++          <p className="text-label-caps uppercase text-on-surface-variant whitespace-nowrap">{t('appTagline')}</p>
+         </div>
+       </div>
+       <nav aria-label={t('nav.sectionMain')} className="flex-1 overflow-y-auto px-sm py-md">
+diff --git a/src/features/analytics/components/PerformanceChart.tsx b/src/features/analytics/components/PerformanceChart.tsx
+index 5cc524c..345df07 100644
+--- a/src/features/analytics/components/PerformanceChart.tsx
++++ b/src/features/analytics/components/PerformanceChart.tsx
+@@ -45,7 +45,7 @@ export function PerformanceChart({ bars, xAxisLabels }: Props) {
+         {bars.map((bar, i) => (
+           <div
+             key={i}
+-            className={`flex-1 ${bar.heightClass} bg-primary/20 rounded-t border-t border-x border-primary/40 relative`}
++            className={`flex-1 ${bar.heightClass} bg-primary/40 rounded-t border-t border-x border-primary/60 relative`}
+           >
+             <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2 h-2 bg-primary rounded-full shadow-[0_0_10px_#adc6ff]" />
+           </div>
+diff --git a/src/features/connections/components/ConnectionHealthCard.tsx b/src/features/connections/components/ConnectionHealthCard.tsx
+index 5b6cfbc..f7ebdc2 100644
+--- a/src/features/connections/components/ConnectionHealthCard.tsx
++++ b/src/features/connections/components/ConnectionHealthCard.tsx
+@@ -67,8 +67,12 @@ export function ConnectionHealthCard({ connection }: Props) {
+ 
+   return (
+     <div
+-      className={`glass-card rounded-xl p-lg flex flex-col justify-between hover:border-primary/40 transition-colors group ${
+-        isError ? 'border-secondary/20' : ''
++      className={`glass-card rounded-xl p-lg flex flex-col justify-between transition-colors group ${
++        connection.health === 'error' || connection.health === 'disconnected'
++          ? 'border-red-500/40 bg-red-500/[0.03] hover:border-red-500/60'
++          : connection.health === 'expiring'
++          ? 'border-amber-500/40 bg-amber-500/[0.03] hover:border-amber-500/60'
++          : 'hover:border-primary/40'
+       }`}
+     >
+       <div className="flex justify-between items-start mb-lg">
+diff --git a/src/features/dashboard/components/ResultsSummaryCard.tsx b/src/features/dashboard/components/ResultsSummaryCard.tsx
+index cd93365..123d648 100644
+--- a/src/features/dashboard/components/ResultsSummaryCard.tsx
++++ b/src/features/dashboard/components/ResultsSummaryCard.tsx
+@@ -8,20 +8,20 @@ interface StatTileProps {
+ 
+ function StatTile({ stat }: StatTileProps) {
+   return (
+-    <div className="glass-panel subtle-highlight rounded-xl p-md flex flex-col relative overflow-hidden group">
+-      <div className="flex items-center justify-between mb-md">
+-        <div className="flex items-center text-outline-variant text-xs font-semibold">
+-          <Icon name={stat.icon} className="text-[16px] mr-1" />
++    <div className="glass-panel subtle-highlight rounded-xl p-lg flex flex-col relative overflow-hidden group min-h-[120px]">
++      <div className="flex items-center justify-between mb-lg">
++        <div className="flex items-center gap-1.5 text-outline-variant text-xs font-semibold uppercase tracking-wider">
++          <Icon name={stat.icon} className="text-[15px]" />
+           {stat.label}
+         </div>
+-      </div>
+-      <div className="flex items-end justify-between mt-auto">
+-        <div className="font-display-lg text-display-lg text-on-surface">{stat.value}</div>
+-        <div className={`text-[10px] font-bold flex items-center mt-1 ${stat.trendPositive ? 'text-secondary-fixed' : 'text-error'}`}>
+-          <Icon name="trending_up" className="text-[12px] mr-0.5" />
++        <div className={`flex items-center gap-0.5 text-[11px] font-bold px-2 py-0.5 rounded-full ${stat.trendPositive ? 'text-emerald-400 bg-emerald-500/10' : 'text-error bg-error/10'}`}>
++          <Icon name={stat.trendPositive ? 'trending_up' : 'trending_down'} className="text-[13px]" />
+           {stat.trend}
+         </div>
+-        <div className="w-16 h-8 flex items-end">
++      </div>
++      <div className="flex items-end justify-between mt-auto">
++        <div className="font-display-lg text-display-lg text-on-surface leading-none">{stat.value}</div>
++        <div className="w-20 h-10 flex items-end">
+           <svg
+             className="w-full h-full stroke-secondary-fixed stroke-2 fill-none"
+             style={{ strokeLinecap: 'round', strokeLinejoin: 'round' }}
+diff --git a/src/i18n/index.ts b/src/i18n/index.ts
+index 6b2bb28..aac493e 100644
+--- a/src/i18n/index.ts
++++ b/src/i18n/index.ts
+@@ -44,13 +44,15 @@ i18n
+   .use(initReactI18next)
+   .init({
+     resources,
+-    // Force pt-BR in test environment so jsdom's navigator.language ('en-US')
+-    // doesn't override the default. In production, LanguageDetector takes over.
+-    lng: import.meta.env.MODE === 'test' ? 'pt-BR' : undefined,
++    // Default to pt-BR unless the user has explicitly stored a preference in
++    // localStorage. Navigator language is intentionally ignored — this is a
++    // pt-BR product and auto-detecting en-US (e.g. in headless/CI environments)
++    // creates a jarring mixed-language experience.
++    lng: (typeof localStorage !== 'undefined' && localStorage.getItem('i18nextLng')) || 'pt-BR',
+     fallbackLng: 'pt-BR',
+     defaultNS,
+     interpolation: { escapeValue: false },
+-    detection: { order: ['localStorage', 'navigator'], caches: ['localStorage'] },
++    detection: { order: ['localStorage'], caches: ['localStorage'] },
+   })
+ 
+ export function useLocale(): string {
+-- 
+2.43.0
+
+
+From 9fabb45403c2bc56bfb944d74472fb6d5ee742b8 Mon Sep 17 00:00:00 2001
+From: dario-silva-se <dario.dsn.erp@gmail.com>
+Date: Thu, 18 Jun 2026 21:18:57 +0000
+Subject: [PATCH 2/2] feat: add design tokens (W3C JSON + TypeScript module)
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+Content-Transfer-Encoding: 8bit
+
+- design-tokens.json: formato W3C Design Tokens Community Group
+  compatível com Figma Tokens Plugin, Tokens Studio e Style Dictionary.
+  Cobre cores (light/dark), espaçamento, borderRadius, tipografia e efeitos.
+- src/tokens/tokens.ts: módulo TypeScript as const com os mesmos valores
+  para uso programático no código, com tipos exportados (ColorToken,
+  SpacingToken, RadiusToken, TypographyToken).
+
+Co-Authored-By: leanderson <leanderson.dario.silva@gmail.com>
+---
+ design-tokens.json   | 253 +++++++++++++++++++++++++++++++++++++++++++
+ src/tokens/tokens.ts | 206 +++++++++++++++++++++++++++++++++++
+ 2 files changed, 459 insertions(+)
+ create mode 100644 design-tokens.json
+ create mode 100644 src/tokens/tokens.ts
+
+diff --git a/design-tokens.json b/design-tokens.json
+new file mode 100644
+index 0000000..3e6b39b
+--- /dev/null
++++ b/design-tokens.json
+@@ -0,0 +1,253 @@
++{
++  "$schema": "https://design-tokens.github.io/community-group/format/",
++  "$metadata": {
++    "tokenSetOrder": ["color/light", "color/dark", "spacing", "borderRadius", "typography", "effect"]
++  },
++
++  "color": {
++    "light": {
++      "$description": "Cinematic Precision — Light theme",
++      "surface":                    { "$value": "#fdfbfa", "$type": "color" },
++      "surface-dim":                { "$value": "#ded8d7", "$type": "color" },
++      "surface-bright":             { "$value": "#fdfbfa", "$type": "color" },
++      "surface-container-lowest":   { "$value": "#ffffff", "$type": "color" },
++      "surface-container-low":      { "$value": "#f8f2f1", "$type": "color" },
++      "surface-container":          { "$value": "#f2eceb", "$type": "color" },
++      "surface-container-high":     { "$value": "#ece7e6", "$type": "color" },
++      "surface-container-highest":  { "$value": "#e6e1e0", "$type": "color" },
++      "on-surface":                 { "$value": "#1c1b1b", "$type": "color" },
++      "on-surface-variant":         { "$value": "#444746", "$type": "color" },
++      "inverse-surface":            { "$value": "#313030", "$type": "color" },
++      "inverse-on-surface":         { "$value": "#f5efee", "$type": "color" },
++      "outline":                    { "$value": "#776e6d", "$type": "color" },
++      "outline-variant":            { "$value": "#cac3c3", "$type": "color" },
++      "surface-tint":               { "$value": "#005bc1", "$type": "color" },
++      "surface-variant":            { "$value": "#e0e3f2", "$type": "color" },
++
++      "primary":                    { "$value": "#005bc1", "$type": "color" },
++      "on-primary":                 { "$value": "#ffffff", "$type": "color" },
++      "primary-container":          { "$value": "#d8e2ff", "$type": "color" },
++      "on-primary-container":       { "$value": "#001a41", "$type": "color" },
++      "inverse-primary":            { "$value": "#adc6ff", "$type": "color" },
++      "primary-fixed":              { "$value": "#d8e2ff", "$type": "color" },
++      "primary-fixed-dim":          { "$value": "#adc6ff", "$type": "color" },
++      "on-primary-fixed":           { "$value": "#001a41", "$type": "color" },
++      "on-primary-fixed-variant":   { "$value": "#004493", "$type": "color" },
++
++      "secondary":                  { "$value": "#802a00", "$type": "color" },
++      "on-secondary":               { "$value": "#ffffff", "$type": "color" },
++      "secondary-container":        { "$value": "#ffdbce", "$type": "color" },
++      "on-secondary-container":     { "$value": "#2d0c00", "$type": "color" },
++      "secondary-fixed":            { "$value": "#ffdbce", "$type": "color" },
++      "secondary-fixed-dim":        { "$value": "#ffb59a", "$type": "color" },
++      "on-secondary-fixed":         { "$value": "#370e00", "$type": "color" },
++      "on-secondary-fixed-variant": { "$value": "#802a00", "$type": "color" },
++
++      "tertiary":                   { "$value": "#2f2ebe", "$type": "color" },
++      "on-tertiary":                { "$value": "#ffffff", "$type": "color" },
++      "tertiary-container":         { "$value": "#e1e0ff", "$type": "color" },
++      "on-tertiary-container":      { "$value": "#07006c", "$type": "color" },
++      "tertiary-fixed":             { "$value": "#e1e0ff", "$type": "color" },
++      "tertiary-fixed-dim":         { "$value": "#c0c1ff", "$type": "color" },
++      "on-tertiary-fixed":          { "$value": "#07006c", "$type": "color" },
++      "on-tertiary-fixed-variant":  { "$value": "#2f2ebe", "$type": "color" },
++
++      "error":                      { "$value": "#ba1a1a", "$type": "color" },
++      "on-error":                   { "$value": "#ffffff", "$type": "color" },
++      "error-container":            { "$value": "#ffdad6", "$type": "color" },
++      "on-error-container":         { "$value": "#410002", "$type": "color" },
++
++      "background":                 { "$value": "#f4f3f3", "$type": "color" },
++      "on-background":              { "$value": "#1c1b1b", "$type": "color" }
++    },
++
++    "dark": {
++      "$description": "Cinematic Precision — Dark theme",
++      "surface":                    { "$value": "#131313", "$type": "color" },
++      "surface-dim":                { "$value": "#131313", "$type": "color" },
++      "surface-bright":             { "$value": "#393939", "$type": "color" },
++      "surface-container-lowest":   { "$value": "#0e0e0e", "$type": "color" },
++      "surface-container-low":      { "$value": "#1c1b1b", "$type": "color" },
++      "surface-container":          { "$value": "#201f1f", "$type": "color" },
++      "surface-container-high":     { "$value": "#2a2a2a", "$type": "color" },
++      "surface-container-highest":  { "$value": "#353534", "$type": "color" },
++      "on-surface":                 { "$value": "#e5e2e1", "$type": "color" },
++      "on-surface-variant":         { "$value": "#c1c6d7", "$type": "color" },
++      "inverse-surface":            { "$value": "#e5e2e1", "$type": "color" },
++      "inverse-on-surface":         { "$value": "#313030", "$type": "color" },
++      "outline":                    { "$value": "#8b90a0", "$type": "color" },
++      "outline-variant":            { "$value": "#414755", "$type": "color" },
++      "surface-tint":               { "$value": "#adc6ff", "$type": "color" },
++      "surface-variant":            { "$value": "#353534", "$type": "color" },
++
++      "primary":                    { "$value": "#adc6ff", "$type": "color" },
++      "on-primary":                 { "$value": "#002e69", "$type": "color" },
++      "primary-container":          { "$value": "#4b8eff", "$type": "color" },
++      "on-primary-container":       { "$value": "#00285c", "$type": "color" },
++      "inverse-primary":            { "$value": "#005bc1", "$type": "color" },
++      "primary-fixed":              { "$value": "#d8e2ff", "$type": "color" },
++      "primary-fixed-dim":          { "$value": "#adc6ff", "$type": "color" },
++      "on-primary-fixed":           { "$value": "#001a41", "$type": "color" },
++      "on-primary-fixed-variant":   { "$value": "#004493", "$type": "color" },
++
++      "secondary":                  { "$value": "#ffb59a", "$type": "color" },
++      "on-secondary":               { "$value": "#5a1b00", "$type": "color" },
++      "secondary-container":        { "$value": "#ff5e07", "$type": "color" },
++      "on-secondary-container":     { "$value": "#531900", "$type": "color" },
++      "secondary-fixed":            { "$value": "#ffdbce", "$type": "color" },
++      "secondary-fixed-dim":        { "$value": "#ffb59a", "$type": "color" },
++      "on-secondary-fixed":         { "$value": "#370e00", "$type": "color" },
++      "on-secondary-fixed-variant": { "$value": "#802a00", "$type": "color" },
++
++      "tertiary":                   { "$value": "#c0c1ff", "$type": "color" },
++      "on-tertiary":                { "$value": "#1000a9", "$type": "color" },
++      "tertiary-container":         { "$value": "#8083ff", "$type": "color" },
++      "on-tertiary-container":      { "$value": "#0d0096", "$type": "color" },
++      "tertiary-fixed":             { "$value": "#e1e0ff", "$type": "color" },
++      "tertiary-fixed-dim":         { "$value": "#c0c1ff", "$type": "color" },
++      "on-tertiary-fixed":          { "$value": "#07006c", "$type": "color" },
++      "on-tertiary-fixed-variant":  { "$value": "#2f2ebe", "$type": "color" },
++
++      "error":                      { "$value": "#ffb4ab", "$type": "color" },
++      "on-error":                   { "$value": "#690005", "$type": "color" },
++      "error-container":            { "$value": "#93000a", "$type": "color" },
++      "on-error-container":         { "$value": "#ffdad6", "$type": "color" },
++
++      "background":                 { "$value": "#131313", "$type": "color" },
++      "on-background":              { "$value": "#e5e2e1", "$type": "color" }
++    },
++
++    "overlay": {
++      "$description": "Overlay colors with baked-in alpha — not theme-specific",
++      "sm-light": { "$value": "rgba(0, 0, 0, 0.05)",   "$type": "color" },
++      "md-light": { "$value": "rgba(0, 0, 0, 0.10)",   "$type": "color" },
++      "lg-light": { "$value": "rgba(0, 0, 0, 0.20)",   "$type": "color" },
++      "sm-dark":  { "$value": "rgba(255, 255, 255, 0.05)", "$type": "color" },
++      "md-dark":  { "$value": "rgba(255, 255, 255, 0.10)", "$type": "color" },
++      "lg-dark":  { "$value": "rgba(255, 255, 255, 0.20)", "$type": "color" }
++    }
++  },
++
++  "spacing": {
++    "$description": "Spatial scale — used for padding, margin, gap",
++    "base": { "$value": "4px",    "$type": "dimension" },
++    "xs":   { "$value": "8px",    "$type": "dimension" },
++    "sm":   { "$value": "12px",   "$type": "dimension" },
++    "md":   { "$value": "16px",   "$type": "dimension" },
++    "lg":   { "$value": "24px",   "$type": "dimension" },
++    "xl":   { "$value": "32px",   "$type": "dimension" },
++    "gutter":        { "$value": "20px",   "$type": "dimension" },
++    "sidebar-width": { "$value": "260px",  "$type": "dimension" },
++    "container-max": { "$value": "1440px", "$type": "dimension" }
++  },
++
++  "borderRadius": {
++    "sm":      { "$value": "2px",    "$type": "dimension" },
++    "default": { "$value": "4px",    "$type": "dimension" },
++    "md":      { "$value": "6px",    "$type": "dimension" },
++    "lg":      { "$value": "8px",    "$type": "dimension" },
++    "xl":      { "$value": "12px",   "$type": "dimension" },
++    "full":    { "$value": "9999px", "$type": "dimension" }
++  },
++
++  "fontFamily": {
++    "sans": { "$value": ["Inter", "system-ui", "sans-serif"], "$type": "fontFamily" },
++    "icon": { "$value": ["Material Symbols Outlined"],        "$type": "fontFamily" }
++  },
++
++  "typography": {
++    "display-lg": {
++      "$type": "typography",
++      "$value": {
++        "fontFamily": "{fontFamily.sans}",
++        "fontSize": "48px",
++        "lineHeight": "56px",
++        "letterSpacing": "-0.02em",
++        "fontWeight": "700"
++      }
++    },
++    "headline-lg": {
++      "$type": "typography",
++      "$value": {
++        "fontFamily": "{fontFamily.sans}",
++        "fontSize": "32px",
++        "lineHeight": "40px",
++        "letterSpacing": "-0.01em",
++        "fontWeight": "600"
++      }
++    },
++    "headline-lg-mobile": {
++      "$type": "typography",
++      "$value": {
++        "fontFamily": "{fontFamily.sans}",
++        "fontSize": "24px",
++        "lineHeight": "32px",
++        "fontWeight": "600"
++      }
++    },
++    "title-md": {
++      "$type": "typography",
++      "$value": {
++        "fontFamily": "{fontFamily.sans}",
++        "fontSize": "20px",
++        "lineHeight": "28px",
++        "fontWeight": "600"
++      }
++    },
++    "body-lg": {
++      "$type": "typography",
++      "$value": {
++        "fontFamily": "{fontFamily.sans}",
++        "fontSize": "16px",
++        "lineHeight": "24px",
++        "fontWeight": "400"
++      }
++    },
++    "body-sm": {
++      "$type": "typography",
++      "$value": {
++        "fontFamily": "{fontFamily.sans}",
++        "fontSize": "14px",
++        "lineHeight": "20px",
++        "fontWeight": "400"
++      }
++    },
++    "label-caps": {
++      "$type": "typography",
++      "$value": {
++        "fontFamily": "{fontFamily.sans}",
++        "fontSize": "12px",
++        "lineHeight": "16px",
++        "letterSpacing": "0.05em",
++        "fontWeight": "700"
++      }
++    }
++  },
++
++  "effect": {
++    "glass": {
++      "light": {
++        "bg":        { "$value": "rgba(0, 0, 0, 0.04)",   "$type": "color" },
++        "border":    { "$value": "rgba(0, 0, 0, 0.10)",   "$type": "color" },
++        "highlight": { "$value": "rgba(0, 0, 0, 0.04)",   "$type": "color" },
++        "zebra":     { "$value": "rgba(0, 0, 0, 0.02)",   "$type": "color" }
++      },
++      "dark": {
++        "bg":        { "$value": "rgba(255, 255, 255, 0.03)", "$type": "color" },
++        "border":    { "$value": "rgba(255, 255, 255, 0.10)", "$type": "color" },
++        "highlight": { "$value": "rgba(255, 255, 255, 0.05)", "$type": "color" },
++        "zebra":     { "$value": "rgba(255, 255, 255, 0.02)", "$type": "color" }
++      }
++    },
++    "scrollbar": {
++      "light": {
++        "thumb":      { "$value": "#cac3c3", "$type": "color" },
++        "thumbHover": { "$value": "#aaa4a4", "$type": "color" }
++      },
++      "dark": {
++        "thumb":      { "$value": "#353534", "$type": "color" },
++        "thumbHover": { "$value": "#414755", "$type": "color" }
++      }
++    }
++  }
++}
+diff --git a/src/tokens/tokens.ts b/src/tokens/tokens.ts
+new file mode 100644
+index 0000000..506bb7e
+--- /dev/null
++++ b/src/tokens/tokens.ts
+@@ -0,0 +1,206 @@
++export const tokens = {
++  color: {
++    light: {
++      surface:                   '#fdfbfa',
++      'surface-dim':             '#ded8d7',
++      'surface-bright':          '#fdfbfa',
++      'surface-container-lowest':  '#ffffff',
++      'surface-container-low':     '#f8f2f1',
++      'surface-container':         '#f2eceb',
++      'surface-container-high':    '#ece7e6',
++      'surface-container-highest': '#e6e1e0',
++      'on-surface':              '#1c1b1b',
++      'on-surface-variant':      '#444746',
++      'inverse-surface':         '#313030',
++      'inverse-on-surface':      '#f5efee',
++      outline:                   '#776e6d',
++      'outline-variant':         '#cac3c3',
++      'surface-tint':            '#005bc1',
++      'surface-variant':         '#e0e3f2',
++
++      primary:                   '#005bc1',
++      'on-primary':              '#ffffff',
++      'primary-container':       '#d8e2ff',
++      'on-primary-container':    '#001a41',
++      'inverse-primary':         '#adc6ff',
++      'primary-fixed':           '#d8e2ff',
++      'primary-fixed-dim':       '#adc6ff',
++      'on-primary-fixed':        '#001a41',
++      'on-primary-fixed-variant':'#004493',
++
++      secondary:                   '#802a00',
++      'on-secondary':              '#ffffff',
++      'secondary-container':       '#ffdbce',
++      'on-secondary-container':    '#2d0c00',
++      'secondary-fixed':           '#ffdbce',
++      'secondary-fixed-dim':       '#ffb59a',
++      'on-secondary-fixed':        '#370e00',
++      'on-secondary-fixed-variant':'#802a00',
++
++      tertiary:                    '#2f2ebe',
++      'on-tertiary':               '#ffffff',
++      'tertiary-container':        '#e1e0ff',
++      'on-tertiary-container':     '#07006c',
++      'tertiary-fixed':            '#e1e0ff',
++      'tertiary-fixed-dim':        '#c0c1ff',
++      'on-tertiary-fixed':         '#07006c',
++      'on-tertiary-fixed-variant': '#2f2ebe',
++
++      error:                 '#ba1a1a',
++      'on-error':            '#ffffff',
++      'error-container':     '#ffdad6',
++      'on-error-container':  '#410002',
++
++      background:            '#f4f3f3',
++      'on-background':       '#1c1b1b',
++    },
++
++    dark: {
++      surface:                   '#131313',
++      'surface-dim':             '#131313',
++      'surface-bright':          '#393939',
++      'surface-container-lowest':  '#0e0e0e',
++      'surface-container-low':     '#1c1b1b',
++      'surface-container':         '#201f1f',
++      'surface-container-high':    '#2a2a2a',
++      'surface-container-highest': '#353534',
++      'on-surface':              '#e5e2e1',
++      'on-surface-variant':      '#c1c6d7',
++      'inverse-surface':         '#e5e2e1',
++      'inverse-on-surface':      '#313030',
++      outline:                   '#8b90a0',
++      'outline-variant':         '#414755',
++      'surface-tint':            '#adc6ff',
++      'surface-variant':         '#353534',
++
++      primary:                   '#adc6ff',
++      'on-primary':              '#002e69',
++      'primary-container':       '#4b8eff',
++      'on-primary-container':    '#00285c',
++      'inverse-primary':         '#005bc1',
++      'primary-fixed':           '#d8e2ff',
++      'primary-fixed-dim':       '#adc6ff',
++      'on-primary-fixed':        '#001a41',
++      'on-primary-fixed-variant':'#004493',
++
++      secondary:                   '#ffb59a',
++      'on-secondary':              '#5a1b00',
++      'secondary-container':       '#ff5e07',
++      'on-secondary-container':    '#531900',
++      'secondary-fixed':           '#ffdbce',
++      'secondary-fixed-dim':       '#ffb59a',
++      'on-secondary-fixed':        '#370e00',
++      'on-secondary-fixed-variant':'#802a00',
++
++      tertiary:                    '#c0c1ff',
++      'on-tertiary':               '#1000a9',
++      'tertiary-container':        '#8083ff',
++      'on-tertiary-container':     '#0d0096',
++      'tertiary-fixed':            '#e1e0ff',
++      'tertiary-fixed-dim':        '#c0c1ff',
++      'on-tertiary-fixed':         '#07006c',
++      'on-tertiary-fixed-variant': '#2f2ebe',
++
++      error:                 '#ffb4ab',
++      'on-error':            '#690005',
++      'error-container':     '#93000a',
++      'on-error-container':  '#ffdad6',
++
++      background:            '#131313',
++      'on-background':       '#e5e2e1',
++    },
++  },
++
++  spacing: {
++    base:           '4px',
++    xs:             '8px',
++    sm:             '12px',
++    md:             '16px',
++    lg:             '24px',
++    xl:             '32px',
++    gutter:         '20px',
++    sidebarWidth:   '260px',
++    containerMax:   '1440px',
++  },
++
++  borderRadius: {
++    sm:      '2px',
++    default: '4px',
++    md:      '6px',
++    lg:      '8px',
++    xl:      '12px',
++    full:    '9999px',
++  },
++
++  fontFamily: {
++    sans: ['Inter', 'system-ui', 'sans-serif'],
++    icon: ['Material Symbols Outlined'],
++  },
++
++  typography: {
++    'display-lg': {
++      fontSize:      '48px',
++      lineHeight:    '56px',
++      letterSpacing: '-0.02em',
++      fontWeight:    '700',
++    },
++    'headline-lg': {
++      fontSize:      '32px',
++      lineHeight:    '40px',
++      letterSpacing: '-0.01em',
++      fontWeight:    '600',
++    },
++    'headline-lg-mobile': {
++      fontSize:   '24px',
++      lineHeight: '32px',
++      fontWeight: '600',
++    },
++    'title-md': {
++      fontSize:   '20px',
++      lineHeight: '28px',
++      fontWeight: '600',
++    },
++    'body-lg': {
++      fontSize:   '16px',
++      lineHeight: '24px',
++      fontWeight: '400',
++    },
++    'body-sm': {
++      fontSize:   '14px',
++      lineHeight: '20px',
++      fontWeight: '400',
++    },
++    'label-caps': {
++      fontSize:      '12px',
++      lineHeight:    '16px',
++      letterSpacing: '0.05em',
++      fontWeight:    '700',
++    },
++  },
++
++  effect: {
++    glass: {
++      light: {
++        bg:        'rgba(0, 0, 0, 0.04)',
++        border:    'rgba(0, 0, 0, 0.10)',
++        highlight: 'rgba(0, 0, 0, 0.04)',
++        zebra:     'rgba(0, 0, 0, 0.02)',
++      },
++      dark: {
++        bg:        'rgba(255, 255, 255, 0.03)',
++        border:    'rgba(255, 255, 255, 0.10)',
++        highlight: 'rgba(255, 255, 255, 0.05)',
++        zebra:     'rgba(255, 255, 255, 0.02)',
++      },
++    },
++    scrollbar: {
++      light: { thumb: '#cac3c3', thumbHover: '#aaa4a4' },
++      dark:  { thumb: '#353534', thumbHover: '#414755' },
++    },
++  },
++} as const
++
++export type ColorToken   = keyof typeof tokens.color.light
++export type SpacingToken = keyof typeof tokens.spacing
++export type RadiusToken  = keyof typeof tokens.borderRadius
++export type TypographyToken = keyof typeof tokens.typography
+-- 
+2.43.0
+

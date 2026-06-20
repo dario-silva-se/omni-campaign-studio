@@ -46,7 +46,7 @@ src/
     ui/                 # Primitive components: Icon, Button, GlassCard, StatusChip,
     |                   #   Input, Select, Textarea, Toggle, ProgressBar, Tabs,
     |                   #   Modal, DataTable
-    layout/             # AppLayout, Sidebar, TopBar, MobileNav
+    layout/             # AppLayout, AppHeader, Sidebar (collapsible + mobile drawer)
   features/
     <feature>/
       pages/            # Route-level page components
@@ -115,6 +115,7 @@ The API is expected to be a MongoDB Atlas-backed REST service. Document IDs are 
 | `/analytics` | `AnalyticsPage` | Analytics |
 | `/analytics/campaign-health` | `CampaignHealthPage` | Analytics |
 | `/analytics/lead-lifecycle` | `LeadLifecyclePage` | Analytics |
+| `/settings` | `UserSettingsPage` | Settings |
 | `/audiences` | `AudiencesPage` | Audiences |
 | `/audiences/new` | `NewAudiencePage` | Audiences |
 | `/audiences/:id/edit` | `EditSegmentPage` | Audiences |
@@ -142,6 +143,15 @@ The API is expected to be a MongoDB Atlas-backed REST service. Document IDs are 
 | `/settings/connections/:channel` | `ConnectionDetailPage` | Connections |
 | `/settings/notifications` | `NotificationSettingsPage` | Settings |
 | `/reports/export` | `ExportReportPage` | Reports |
+
+---
+
+## Layout & Navigation
+
+- **`AppLayout`** wraps every route. It mounts a single global **`AppHeader`** (route-derived title + menu toggle + theme/notifications) above the page `<Outlet/>`, plus the **`Sidebar`**.
+- **`AppHeader`** derives the page title from the active route via `navItems` (longest-prefix match). Pages must **not** render their own top `<header>` bar — page-specific actions live inside the page content (e.g. Analytics' period selector / Dashboard's sync button / Template detail toolbar).
+- **`Sidebar`** is one component for both breakpoints: a **collapsible icon rail** on desktop (state persisted in `localStorage` under `sidebar-collapsed`) and an **off-canvas drawer** on mobile (backdrop + `Escape` to close + closes on navigation). It lists **all** destinations on every breakpoint.
+- Menu state lives in **`LayoutContext`** (`useLayout`): `mobileOpen`, `collapsed`, `toggleMobile`, `closeMobile`, `toggleCollapsed`.
 
 ---
 
