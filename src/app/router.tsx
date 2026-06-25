@@ -39,6 +39,7 @@ const ConnectionDetailPage = lazy(() => import('@/features/connections/pages/Con
 const NotificationSettingsPage = lazy(() => import('@/features/settings/pages/NotificationSettingsPage'))
 const UserSettingsPage = lazy(() => import('@/features/settings/pages/UserSettingsPage'))
 const ExportReportPage = lazy(() => import('@/features/reports/pages/ExportReportPage'))
+const AiNewsPage = lazy(() => import('@/features/ai-news/pages/AiNewsPage'))
 
 export function AppRoutes() {
   return (
@@ -80,6 +81,7 @@ export function AppRoutes() {
           <Route path="settings/connections/:channel" element={<ConnectionDetailPage />} />
           <Route path="settings/notifications" element={<NotificationSettingsPage />} />
           <Route path="reports/export" element={<ExportReportPage />} />
+          <Route path="ai-news" element={<AiNewsPage />} />
           <Route path="*" element={<PagePlaceholder />} />
         </Route>
       </Routes>

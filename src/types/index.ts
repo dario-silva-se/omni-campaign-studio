@@ -817,3 +817,27 @@ export interface ContentGenerationData {
   scheduled: GeneratedPost[]
   published: GeneratedPost[]
 }
+
+export type AiNewsCategory = 'models' | 'tools' | 'research' | 'industry' | 'product'
+export type AiNewsRelevance = 'high' | 'medium' | 'low'
+
+export interface AiNewsArticle {
+  _id: string
+  title: string
+  summary: string
+  category: AiNewsCategory
+  source: string
+  publishedAt: string
+  readTimeMin: number
+  relevance: AiNewsRelevance
+  tags: string[]
+  bookmarked: boolean
+}
+
+export interface AiNewsDigest {
+  _id: string
+  weekLabel: string
+  headline: string
+  highlights: string[]
+  generatedAt: string
+}
