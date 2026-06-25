@@ -1,9 +1,11 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useAiNewsList, useToggleBookmark } from '../hooks/useAiNews'
 import { Icon } from '@/components/ui/Icon'
 import { aiNewsDigestFixture } from '@/mocks/fixtures/aiNews'
 import type { AiNewsCategory, AiNewsRelevance } from '@/types'
+
+const REFETCH_INTERVAL_MS = 5 * 60 * 1000
 
 const CATEGORY_FILTERS: Array<{ key: AiNewsCategory | 'all' }> = [
   { key: 'all' },
@@ -28,14 +30,15 @@ const RELEVANCE_COLORS: Record<AiNewsRelevance, string> = {
   low: 'text-on-surface-variant bg-surface-variant',
 }
 
-const RELEVANCE_DOT: Record<AiNewsRelevance, string> = {
-  high: 'bg-primary',
-  medium: 'bg-tertiary',
-  low: 'bg-on-surface-variant/40',
-}
-
 function formatDate(iso: string): string {
   return new Date(iso).toLocaleDateString('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' })
+}
+
+function formatRelativeTime(ts: number, now: number): string {
+  const diffMin = Math.floor((now - ts) / 60_000)
+  if (diffMin < 1) return 'agora'
+  if (diffMin === 1) return 'há 1 min'
+  return `há ${diffMin} min`
 }
 
 function countUniqueSources(sources: string[]): number {
@@ -46,9 +49,16 @@ export default function AiNewsPage() {
   const { t } = useTranslation('aiNews')
   const [activeFilter, setActiveFilter] = useState<AiNewsCategory | 'all'>('all')
   const [showBookmarked, setShowBookmarked] = useState(false)
+  const [now, setNow] = useState(() => Date.now())
 
-  const { data: articles, isLoading, isError } = useAiNewsList()
+  const { data: articles, isLoading, isError, isFetching, dataUpdatedAt, refetch } = useAiNewsList()
   const toggleBookmark = useToggleBookmark()
+
+  // Tick every second so the countdown stays live without calling Date.now() in render
+  useEffect(() => {
+    const timer = setInterval(() => setNow(Date.now()), 1000)
+    return () => clearInterval(timer)
+  }, [])
 
   if (isLoading) return <p className="p-lg text-on-surface-variant">{t('common:loading')}</p>
   if (isError)
@@ -67,14 +77,49 @@ export default function AiNewsPage() {
 
   const highRelevanceCount = list.filter((a) => a.relevance === 'high').length
   const sourcesCount = countUniqueSources(list.map((a) => a.source))
+  const remainingMs = dataUpdatedAt ? Math.max(0, dataUpdatedAt + REFETCH_INTERVAL_MS - now) : REFETCH_INTERVAL_MS
+  const countdownMin = Math.ceil(remainingMs / 60_000)
 
   return (
     <div className="flex flex-col min-h-full">
       <div className="p-lg">
         {/* Header */}
-        <section className="mb-lg">
-          <h2 className="text-3xl font-bold text-on-surface">{t('page.title')}</h2>
-          <p className="text-on-surface-variant mt-1">{t('page.subtitle')}</p>
+        <section className="mb-md">
+          <div className="flex items-start justify-between gap-md">
+            <div>
+              <h2 className="text-3xl font-bold text-on-surface">{t('page.title')}</h2>
+              <p className="text-on-surface-variant mt-1">{t('page.subtitle')}</p>
+            </div>
+
+            {/* Sync status bar */}
+            <div className="flex items-center gap-md shrink-0 mt-1">
+              {isFetching ? (
+                <span className="flex items-center gap-xs text-xs text-primary font-mono">
+                  <Icon name="sync" className="text-sm animate-spin" />
+                  {t('page.sync.updating')}
+                </span>
+              ) : (
+                <span className="flex items-center gap-xs text-xs text-on-surface-variant/60 font-mono">
+                  <Icon name="check_circle" className="text-sm text-primary/60" />
+                  {dataUpdatedAt ? t('page.sync.updatedAt', { time: formatRelativeTime(dataUpdatedAt, now) }) : '—'}
+                </span>
+              )}
+
+              <span className="text-xs text-on-surface-variant/40 font-mono hidden sm:block">
+                {t('page.sync.nextIn', { min: countdownMin })}
+              </span>
+
+              <button
+                onClick={() => refetch()}
+                disabled={isFetching}
+                aria-label={t('page.sync.refreshNow')}
+                className="flex items-center gap-xs text-xs font-semibold text-on-surface-variant hover:text-primary transition-colors disabled:opacity-40 border border-overlay-md px-md py-1 rounded-full"
+              >
+                <Icon name="refresh" className={`text-sm ${isFetching ? 'animate-spin' : ''}`} />
+                <span className="hidden sm:inline">{t('page.sync.refreshNow')}</span>
+              </button>
+            </div>
+          </div>
         </section>
 
         {/* Stats row */}
@@ -162,10 +207,7 @@ export default function AiNewsPage() {
                   <div className="p-lg flex gap-lg">
                     {/* Category icon */}
                     <div className="bg-primary/10 rounded-xl p-md flex items-center justify-center shrink-0 w-12 h-12">
-                      <Icon
-                        name={CATEGORY_ICONS[article.category]}
-                        className="text-primary text-2xl"
-                      />
+                      <Icon name={CATEGORY_ICONS[article.category]} className="text-primary text-2xl" />
                     </div>
 
                     {/* Content */}
@@ -180,7 +222,9 @@ export default function AiNewsPage() {
                           }
                           aria-label={article.bookmarked ? t('page.card.unbookmark') : t('page.card.bookmark')}
                           className={`shrink-0 transition-colors ${
-                            article.bookmarked ? 'text-tertiary' : 'text-on-surface-variant/40 hover:text-on-surface-variant'
+                            article.bookmarked
+                              ? 'text-tertiary'
+                              : 'text-on-surface-variant/40 hover:text-on-surface-variant'
                           }`}
                         >
                           <Icon name={article.bookmarked ? 'bookmark' : 'bookmark_border'} className="text-xl" />
@@ -238,7 +282,7 @@ export default function AiNewsPage() {
                       {t('page.digest.title')}
                     </h4>
                     <span className="flex items-center gap-xs text-[10px] text-primary font-mono uppercase tracking-wider">
-                      <div className={`w-1.5 h-1.5 rounded-full ${RELEVANCE_DOT.high} animate-pulse`} />
+                      <div className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse" />
                       {t('page.digest.poweredBy')}
                     </span>
                   </div>
