@@ -32,11 +32,13 @@ import ptBRSettings from './locales/pt-BR/settings.json'
 import enSettings from './locales/en/settings.json'
 import ptBRReports from './locales/pt-BR/reports.json'
 import enReports from './locales/en/reports.json'
+import ptBRAiNews from './locales/pt-BR/aiNews.json'
+import enAiNews from './locales/en/aiNews.json'
 
 export const defaultNS = 'common'
 export const resources = {
-  'pt-BR': { common: ptBRCommon, dashboard: ptBRDashboard, analytics: ptBRAnalytics, audiences: ptBRAudiences, templates: ptBRTemplates, creativeLab: ptBRCreativeLab, contentGeneration: ptBRContentGeneration, campaigns: ptBRCampaigns, posts: ptBRPosts, approvals: ptBRApprovals, alerts: ptBRAlerts, automations: ptBRAutomations, connections: ptBRConnections, settings: ptBRSettings, reports: ptBRReports },
-  en: { common: enCommon, dashboard: enDashboard, analytics: enAnalytics, audiences: enAudiences, templates: enTemplates, creativeLab: enCreativeLab, contentGeneration: enContentGeneration, campaigns: enCampaigns, posts: enPosts, approvals: enApprovals, alerts: enAlerts, automations: enAutomations, connections: enConnections, settings: enSettings, reports: enReports },
+  'pt-BR': { common: ptBRCommon, dashboard: ptBRDashboard, analytics: ptBRAnalytics, audiences: ptBRAudiences, templates: ptBRTemplates, creativeLab: ptBRCreativeLab, contentGeneration: ptBRContentGeneration, campaigns: ptBRCampaigns, posts: ptBRPosts, approvals: ptBRApprovals, alerts: ptBRAlerts, automations: ptBRAutomations, connections: ptBRConnections, settings: ptBRSettings, reports: ptBRReports, aiNews: ptBRAiNews },
+  en: { common: enCommon, dashboard: enDashboard, analytics: enAnalytics, audiences: enAudiences, templates: enTemplates, creativeLab: enCreativeLab, contentGeneration: enContentGeneration, campaigns: enCampaigns, posts: enPosts, approvals: enApprovals, alerts: enAlerts, automations: enAutomations, connections: enConnections, settings: enSettings, reports: enReports, aiNews: enAiNews },
 } as const
 
 i18n

@@ -21,6 +21,7 @@ export const navSections: NavSection[] = [
       { labelKey: 'nav.contentGeneration', icon: 'auto_awesome', to: '/content-generation' },
       { labelKey: 'nav.campaigns', icon: 'rocket_launch', to: '/campaigns' },
       { labelKey: 'nav.posts', icon: 'calendar_month', to: '/posts' },
+      { labelKey: 'nav.aiNews', icon: 'auto_stories', to: '/ai-news' },
     ],
   },
   {

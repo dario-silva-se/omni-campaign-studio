@@ -1,0 +1,37 @@
+{
+  "page": {
+    "title": "IA em Foco",
+    "subtitle": "Notícias e atualizações sobre inteligência artificial",
+    "stats": {
+      "totalArticles": "ARTIGOS",
+      "highRelevance": "ALTA RELEVÂNCIA",
+      "sources": "FONTES"
+    },
+    "digest": {
+      "title": "Digest Semanal",
+      "poweredBy": "gerado por Claude",
+      "highlights": "Destaques da semana"
+    },
+    "filters": {
+      "all": "Todos",
+      "models": "Modelos",
+      "tools": "Ferramentas",
+      "research": "Pesquisa",
+      "industry": "Mercado",
+      "product": "Produtos"
+    },
+    "card": {
+      "readTime": "{{min}} min de leitura",
+      "bookmark": "Salvar artigo",
+      "unbookmark": "Remover dos salvos",
+      "saved": "Salvo"
+    },
+    "relevance": {
+      "high": "Alta relevância",
+      "medium": "Relevância média",
+      "low": "Baixa relevância"
+    },
+    "bookmarked": "Salvos",
+    "noArticles": "Nenhum artigo encontrado para este filtro."
+  }
+}

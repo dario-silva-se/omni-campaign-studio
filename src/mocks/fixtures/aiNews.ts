@@ -1,0 +1,177 @@
+import type { AiNewsArticle, AiNewsDigest } from '@/types'
+
+export const aiNewsFixture: AiNewsArticle[] = [
+  {
+    _id: 'ai-news-001',
+    title: 'Claude 4 Opus: Anthropic lança modelo com raciocínio expandido',
+    summary:
+      'A Anthropic anunciou o Claude 4 Opus com janela de contexto de 1M tokens, melhorias significativas em raciocínio matemático e capacidade multimodal nativa. O modelo supera benchmarks anteriores em 40% nas tarefas de codificação.',
+    category: 'models',
+    source: 'Anthropic Blog',
+    publishedAt: '2026-06-24T10:00:00Z',
+    readTimeMin: 5,
+    relevance: 'high',
+    tags: ['anthropic', 'claude', 'llm', 'multimodal'],
+    bookmarked: true,
+  },
+  {
+    _id: 'ai-news-002',
+    title: 'OpenAI GPT-5 disponível via API com modo de raciocínio profundo',
+    summary:
+      'OpenAI lançou o GPT-5 com "deep thinking mode", permitindo que o modelo delibere por mais tempo antes de responder. Testes iniciais mostram redução de 60% em erros em problemas de lógica complexa.',
+    category: 'models',
+    source: 'OpenAI Blog',
+    publishedAt: '2026-06-22T14:30:00Z',
+    readTimeMin: 4,
+    relevance: 'high',
+    tags: ['openai', 'gpt-5', 'reasoning', 'api'],
+    bookmarked: false,
+  },
+  {
+    _id: 'ai-news-003',
+    title: 'Google DeepMind Gemini Ultra 2 bate recordes em benchmarks científicos',
+    summary:
+      'O Gemini Ultra 2 demonstrou desempenho superior humano em testes de biologia molecular e física teórica. Novo modo "Scientific Research" permite análise de papers e síntese de hipóteses.',
+    category: 'models',
+    source: 'DeepMind Research',
+    publishedAt: '2026-06-20T09:15:00Z',
+    readTimeMin: 6,
+    relevance: 'high',
+    tags: ['google', 'gemini', 'science', 'benchmark'],
+    bookmarked: false,
+  },
+  {
+    _id: 'ai-news-004',
+    title: 'Meta lança Llama 4 como open-source com 70B e 405B parâmetros',
+    summary:
+      'Meta disponibilizou o Llama 4 sob licença comercial permissiva. A versão 405B supera GPT-4 em diversas tarefas e pode ser rodada em clusters de 8 GPUs A100. Comunidade já iniciou fine-tuning para casos de uso específicos.',
+    category: 'models',
+    source: 'Meta AI',
+    publishedAt: '2026-06-18T16:00:00Z',
+    readTimeMin: 5,
+    relevance: 'high',
+    tags: ['meta', 'llama', 'open-source', 'fine-tuning'],
+    bookmarked: true,
+  },
+  {
+    _id: 'ai-news-005',
+    title: 'Cursor AI 2.0 integra agentes autônomos de refatoração de código',
+    summary:
+      'O editor Cursor lançou agentes que analisam toda a base de código e propõem e executam refatorações em massa. Suporte a TypeScript, Python e Rust. Early adopters relatam aumento de 3x em produtividade.',
+    category: 'tools',
+    source: 'Cursor Blog',
+    publishedAt: '2026-06-23T11:00:00Z',
+    readTimeMin: 3,
+    relevance: 'high',
+    tags: ['cursor', 'coding', 'agents', 'ide'],
+    bookmarked: false,
+  },
+  {
+    _id: 'ai-news-006',
+    title: 'Perplexity lança modo de pesquisa profunda com citações verificadas',
+    summary:
+      'A Perplexity AI atualizou seu motor de busca com verificação automática de citações em tempo real. Integração com bases acadêmicas como PubMed, arXiv e Scopus permite pesquisa científica assistida por IA.',
+    category: 'tools',
+    source: 'Perplexity Blog',
+    publishedAt: '2026-06-21T13:45:00Z',
+    readTimeMin: 4,
+    relevance: 'medium',
+    tags: ['perplexity', 'search', 'research', 'citations'],
+    bookmarked: false,
+  },
+  {
+    _id: 'ai-news-007',
+    title: 'Anthropic publica pesquisa sobre interpretabilidade de circuitos neurais',
+    summary:
+      'Nova publicação da Anthropic mapeia "circuitos de raciocínio" em modelos transformer, identificando como conceitos abstratos são representados internamente. A pesquisa abre caminho para IA mais auditável e segura.',
+    category: 'research',
+    source: 'Anthropic Research',
+    publishedAt: '2026-06-19T08:00:00Z',
+    readTimeMin: 10,
+    relevance: 'medium',
+    tags: ['interpretability', 'safety', 'transformer', 'research'],
+    bookmarked: true,
+  },
+  {
+    _id: 'ai-news-008',
+    title: 'Stanford HAI: adoção empresarial de IA generativa cresce 180% em 2026',
+    summary:
+      'Relatório anual do Stanford Human-Centered AI Institute mostra que 78% das Fortune 500 já integraram modelos de linguagem em processos críticos. Marketing e atendimento ao cliente lideram os casos de uso.',
+    category: 'industry',
+    source: 'Stanford HAI',
+    publishedAt: '2026-06-17T10:30:00Z',
+    readTimeMin: 8,
+    relevance: 'high',
+    tags: ['enterprise', 'adoption', 'report', 'marketing'],
+    bookmarked: false,
+  },
+  {
+    _id: 'ai-news-009',
+    title: 'EU AI Act entra em vigência: impactos para sistemas de marketing automatizado',
+    summary:
+      'Com a implementação completa do EU AI Act, sistemas de IA para decisões de crédito, contratação e publicidade direcionada precisam de documentação de conformidade. Empresas têm 6 meses para adequação.',
+    category: 'industry',
+    source: 'EU Official Journal',
+    publishedAt: '2026-06-15T07:00:00Z',
+    readTimeMin: 7,
+    relevance: 'high',
+    tags: ['regulation', 'eu', 'compliance', 'marketing'],
+    bookmarked: false,
+  },
+  {
+    _id: 'ai-news-010',
+    title: 'Vercel lança SDK de IA com streaming nativo para React Server Components',
+    summary:
+      'O novo Vercel AI SDK 4.0 suporta streaming de respostas diretamente em Server Components, reduzindo latência percebida em 70%. Integração nativa com Claude, GPT-5 e Gemini via adaptadores unificados.',
+    category: 'product',
+    source: 'Vercel Blog',
+    publishedAt: '2026-06-22T17:00:00Z',
+    readTimeMin: 5,
+    relevance: 'medium',
+    tags: ['vercel', 'sdk', 'react', 'streaming'],
+    bookmarked: false,
+  },
+  {
+    _id: 'ai-news-011',
+    title: 'Microsoft Copilot Studio: agentes de marketing autônomos em preview',
+    summary:
+      'Microsoft anunciou agentes de Copilot Studio capazes de planejar, criar e publicar campanhas de marketing de forma autônoma, com aprovação humana em pontos de controle definidos. Integração com LinkedIn Ads e Meta.',
+    category: 'product',
+    source: 'Microsoft Blog',
+    publishedAt: '2026-06-16T12:00:00Z',
+    readTimeMin: 4,
+    relevance: 'high',
+    tags: ['microsoft', 'copilot', 'agents', 'marketing', 'linkedin'],
+    bookmarked: true,
+  },
+  {
+    _id: 'ai-news-012',
+    title: 'Pesquisa MIT: LLMs alcançam raciocínio causal comparável a humanos',
+    summary:
+      'Estudo do MIT demonstra que modelos de linguagem modernos conseguem identificar relações causais em dados observacionais com precisão de 89%, ante 91% de especialistas humanos. Implicações para análise de dados de campanhas.',
+    category: 'research',
+    source: 'MIT CSAIL',
+    publishedAt: '2026-06-14T09:30:00Z',
+    readTimeMin: 9,
+    relevance: 'medium',
+    tags: ['mit', 'causality', 'reasoning', 'analytics'],
+    bookmarked: false,
+  },
+]
+
+export const aiNewsDigestFixture: AiNewsDigest[] = [
+  {
+    _id: 'digest-2026-w25',
+    weekLabel: 'Semana 25 — Jun 2026',
+    headline:
+      'Semana marcada por lançamentos de modelos de nova geração e crescente regulação europeia com impacto direto em automação de marketing.',
+    highlights: [
+      'Claude 4 Opus e GPT-5 lançados com capacidades de raciocínio expandido, abrindo novas possibilidades para agentes de campanha autônomos.',
+      'EU AI Act em vigor exige documentação de conformidade para sistemas de publicidade direcionada — verifique seus fluxos de automação.',
+      'Adoção corporativa de IA generativa cresceu 180% segundo Stanford HAI; marketing lidera os casos de uso empresariais.',
+      'Microsoft Copilot Studio traz agentes de marketing com integração nativa ao LinkedIn Ads — relevante para campanhas B2B.',
+      'Meta Llama 4 open-source abre caminho para fine-tuning de modelos específicos para geração de conteúdo de marca.',
+    ],
+    generatedAt: '2026-06-25T06:00:00Z',
+  },
+]
