@@ -15,4 +15,5 @@ apiClient.interceptors.response.use(
   },
 )
 
-export const isMockMode = (): boolean => import.meta.env.VITE_USE_MOCKS === 'true'
+// Default to mock mode unless VITE_USE_MOCKS is explicitly 'false' (real backend connected)
+export const isMockMode = (): boolean => import.meta.env.VITE_USE_MOCKS !== 'false'
