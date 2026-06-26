@@ -22,7 +22,7 @@ export default function DashboardPage() {
   if (isError) return <div role="alert" className="p-lg text-error">{t('common:errorState')}</div>
   if (isLoading || !data) return <div className="p-lg text-on-surface-variant">{t('common:loading')}</div>
 
-  const signalsBySource = groupSignalsBySource(data.signals)
+  const signalsBySource = groupSignalsBySource(data.signals ?? [])
 
   return (
     <>
