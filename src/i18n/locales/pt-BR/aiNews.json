@@ -32,6 +32,12 @@
       "low": "Baixa relevância"
     },
     "bookmarked": "Salvos",
-    "noArticles": "Nenhum artigo encontrado para este filtro."
+    "noArticles": "Nenhum artigo encontrado para este filtro.",
+    "sync": {
+      "updating": "Atualizando...",
+      "updatedAt": "Atualizado {{time}}",
+      "refreshNow": "Atualizar agora",
+      "nextIn": "Próxima em {{min}}min"
+    }
   }
 }
