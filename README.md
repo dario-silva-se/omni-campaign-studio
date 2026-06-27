@@ -105,6 +105,18 @@ VITE_API_URL=https://your-api.example.com
 
 The API is expected to be a MongoDB Atlas-backed REST service. Document IDs are string `_id` fields (not numeric). Each domain service (`campaignService`, `postService`, `audienceService`, …) is built from `createCrudService<T>`.
 
+### Behind the gateway
+
+To route through [`omni-campaign-studio-gateway`](https://github.com/dario-silva-se/omni-campaign-studio-gateway) (access control, rate limiting, cost control, telemetry), point `VITE_API_URL` at the gateway's `/api` surface and provide an issued API key:
+
+```env
+VITE_USE_MOCKS=false
+VITE_API_URL=https://your-gateway.example.com/api
+VITE_API_KEY=gw_...
+```
+
+`apiClient` attaches the key as `Authorization: Bearer <key>` on every request. The gateway authenticates, throttles and meters the call, then forwards it to the upstream API.
+
 ---
 
 ## Route Map
