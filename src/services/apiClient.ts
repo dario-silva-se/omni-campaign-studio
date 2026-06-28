@@ -29,3 +29,11 @@ apiClient.interceptors.response.use(
 
 // Default to mock mode unless VITE_USE_MOCKS is explicitly 'false' (real backend connected)
 export const isMockMode = (): boolean => import.meta.env.VITE_USE_MOCKS !== 'false'
+
+// Dev-only guard: talking to a real backend with no credential is almost always
+// a misconfiguration (the gateway will answer 401). Warn instead of failing silently.
+if (import.meta.env.DEV && !isMockMode() && !import.meta.env.VITE_API_KEY) {
+  console.warn(
+    '[apiClient] VITE_USE_MOCKS=false but VITE_API_KEY is unset — requests through the gateway will be rejected (401). Set VITE_API_KEY or a user JWT.',
+  )
+}
