@@ -34,11 +34,13 @@ import ptBRReports from './locales/pt-BR/reports.json'
 import enReports from './locales/en/reports.json'
 import ptBRAiNews from './locales/pt-BR/aiNews.json'
 import enAiNews from './locales/en/aiNews.json'
+import ptBRAuth from './locales/pt-BR/auth.json'
+import enAuth from './locales/en/auth.json'
 
 export const defaultNS = 'common'
 export const resources = {
-  'pt-BR': { common: ptBRCommon, dashboard: ptBRDashboard, analytics: ptBRAnalytics, audiences: ptBRAudiences, templates: ptBRTemplates, creativeLab: ptBRCreativeLab, contentGeneration: ptBRContentGeneration, campaigns: ptBRCampaigns, posts: ptBRPosts, approvals: ptBRApprovals, alerts: ptBRAlerts, automations: ptBRAutomations, connections: ptBRConnections, settings: ptBRSettings, reports: ptBRReports, aiNews: ptBRAiNews },
-  en: { common: enCommon, dashboard: enDashboard, analytics: enAnalytics, audiences: enAudiences, templates: enTemplates, creativeLab: enCreativeLab, contentGeneration: enContentGeneration, campaigns: enCampaigns, posts: enPosts, approvals: enApprovals, alerts: enAlerts, automations: enAutomations, connections: enConnections, settings: enSettings, reports: enReports, aiNews: enAiNews },
+  'pt-BR': { common: ptBRCommon, dashboard: ptBRDashboard, analytics: ptBRAnalytics, audiences: ptBRAudiences, templates: ptBRTemplates, creativeLab: ptBRCreativeLab, contentGeneration: ptBRContentGeneration, campaigns: ptBRCampaigns, posts: ptBRPosts, approvals: ptBRApprovals, alerts: ptBRAlerts, automations: ptBRAutomations, connections: ptBRConnections, settings: ptBRSettings, reports: ptBRReports, aiNews: ptBRAiNews, auth: ptBRAuth },
+  en: { common: enCommon, dashboard: enDashboard, analytics: enAnalytics, audiences: enAudiences, templates: enTemplates, creativeLab: enCreativeLab, contentGeneration: enContentGeneration, campaigns: enCampaigns, posts: enPosts, approvals: enApprovals, alerts: enAlerts, automations: enAutomations, connections: enConnections, settings: enSettings, reports: enReports, aiNews: enAiNews, auth: enAuth },
 } as const
 
 i18n

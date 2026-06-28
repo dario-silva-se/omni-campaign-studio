@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { cn } from '@/lib/cn'
 import { Icon } from '@/components/ui/Icon'
 import { ThemeToggle } from '@/components/ui/ThemeToggle'
+import { LogoutButton } from '@/features/auth/LogoutButton'
 import { useLayout } from '@/contexts/LayoutContext'
 import { navSections } from './navItems'
 
@@ -74,6 +75,7 @@ export function AppHeader() {
         >
           <Icon name="notifications" />
         </button>
+        <LogoutButton />
       </div>
     </header>
   )
