@@ -96,14 +96,31 @@ createCrudService<T>(fixtures, axiosInstance)
 
 When `VITE_USE_MOCKS=true` (the default in `.env.development`), every service call is satisfied by the in-memory fixture arrays with simulated async delay. No network traffic is generated.
 
-To point at a real API:
+To point at a real API, set `VITE_USE_MOCKS=false` and `VITE_API_URL` to the API
+base URL **including the `/api` prefix** (the backend mounts every route under
+`/api`):
+
+```env
+# Production (.env.production or your host's build env vars)
+VITE_USE_MOCKS=false
+VITE_API_URL=https://omni-campaign-studio-api.vercel.app/api
+```
+
+Local development against a locally-running API
+([`omni-campaign-studio-api`](https://github.com/dario-silva-se/omni-campaign-studio-api),
+`npm run dev` on port 3000) — put this in an untracked `.env.development.local`:
 
 ```env
 VITE_USE_MOCKS=false
-VITE_API_URL=https://your-api.example.com
+VITE_API_URL=http://localhost:3000/api
 ```
 
-The API is expected to be a MongoDB Atlas-backed REST service. Document IDs are string `_id` fields (not numeric). Each domain service (`campaignService`, `postService`, `audienceService`, …) is built from `createCrudService<T>`.
+The backend is the MongoDB Atlas-backed REST service in `omni-campaign-studio-api`.
+Document IDs are string `_id` fields (not numeric). Each domain service
+(`campaignService`, `postService`, `audienceService`, …) is built from
+`createCrudService<T>`, which speaks plain REST (`GET/POST/PATCH/DELETE {path}`)
+when mocks are off. CORS on the API must allow the frontend's origin (configured
+via its `ALLOWED_ORIGINS` env var; `http://localhost:5173` is allowed by default).
 
 ### Behind the gateway
 
