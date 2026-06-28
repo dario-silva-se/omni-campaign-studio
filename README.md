@@ -124,15 +124,19 @@ via its `ALLOWED_ORIGINS` env var; `http://localhost:5173` is allowed by default
 
 ### Behind the gateway
 
-To route through [`omni-campaign-studio-gateway`](https://github.com/dario-silva-se/omni-campaign-studio-gateway) (access control, rate limiting, cost control, telemetry), point `VITE_API_URL` at the gateway's `/api` surface and provide an issued API key:
+To route through [`omni-campaign-studio-gateway`](https://github.com/dario-silva-se/omni-campaign-studio-gateway) (access control, rate limiting, cost control, telemetry), point `VITE_API_URL` at the gateway's `/api` surface and `VITE_GATEWAY_URL` at the gateway root:
 
 ```env
 VITE_USE_MOCKS=false
 VITE_API_URL=https://your-gateway.example.com/api
-VITE_API_KEY=gw_...
+VITE_GATEWAY_URL=https://your-gateway.example.com
 ```
 
-`apiClient` attaches the key as `Authorization: Bearer <key>` on every request. The gateway authenticates, throttles and meters the call, then forwards it to the upstream API.
+Users **sign in** at `/login`: `AuthProvider` calls the gateway's `/_gw/auth/login`, keeps the
+short-lived access token in memory (sent as `Authorization: Bearer`), and the gateway sets an httpOnly
+refresh cookie. `apiClient` transparently refreshes on a `401` and redirects to `/login` when the session
+is gone. In **mock mode** (`VITE_USE_MOCKS` unset/true) login is bypassed. A static `VITE_API_KEY` remains
+available as a fallback for server-to-server/dev use.
 
 ---
 

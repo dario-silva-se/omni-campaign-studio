@@ -1,6 +1,7 @@
 import { lazy } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { AppLayout } from '@/components/layout/AppLayout'
+import { RequireAuth } from '@/features/auth/RequireAuth'
 
 // Pages are added by their tasks; until then routes point to PagePlaceholder.
 function PagePlaceholder() {
@@ -40,11 +41,19 @@ const NotificationSettingsPage = lazy(() => import('@/features/settings/pages/No
 const UserSettingsPage = lazy(() => import('@/features/settings/pages/UserSettingsPage'))
 const ExportReportPage = lazy(() => import('@/features/reports/pages/ExportReportPage'))
 const AiNewsPage = lazy(() => import('@/features/ai-news/pages/AiNewsPage'))
+const LoginPage = lazy(() => import('@/features/auth/pages/LoginPage'))
 
 export function AppRoutes() {
   return (
     <Routes>
-      <Route element={<AppLayout />}>
+      <Route path="/login" element={<LoginPage />} />
+      <Route
+        element={
+          <RequireAuth>
+            <AppLayout />
+          </RequireAuth>
+        }
+      >
           <Route index element={<DashboardPage />} />
           <Route path="analytics" element={<AnalyticsPage />} />
           <Route path="analytics/campaign-health" element={<CampaignHealthPage />} />
