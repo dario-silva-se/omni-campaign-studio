@@ -6,6 +6,18 @@ export const apiClient = axios.create({
   timeout: 15_000,
 })
 
+// When pointing at omni-campaign-studio-gateway, requests must carry a
+// credential. Attach the configured API key (Bearer) on every request; the
+// gateway also accepts it via the `X-Api-Key` header. Leave VITE_API_KEY unset
+// to talk to an unauthenticated API directly (or in mock mode).
+apiClient.interceptors.request.use((config) => {
+  const apiKey = import.meta.env.VITE_API_KEY
+  if (apiKey) {
+    config.headers.Authorization = `Bearer ${apiKey}`
+  }
+  return config
+})
+
 apiClient.interceptors.response.use(
   (response) => response,
   (error) => {
