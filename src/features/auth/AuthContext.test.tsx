@@ -4,6 +4,7 @@ import { render, screen, waitFor } from '@testing-library/react'
 vi.mock('./authClient', () => ({
   refreshRequest: vi.fn(),
   loginRequest: vi.fn(),
+  registerRequest: vi.fn(),
   logoutRequest: vi.fn(),
 }))
 

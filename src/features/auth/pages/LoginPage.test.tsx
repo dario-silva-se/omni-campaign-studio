@@ -9,6 +9,7 @@ function renderLogin(login: AuthContextValue['login'] = vi.fn(async () => {})) {
     status: 'unauthenticated',
     user: null,
     login,
+    register: vi.fn(async () => {}),
     logout: vi.fn(async () => {}),
   }
   renderWithProviders(
@@ -27,7 +28,7 @@ describe('LoginPage', () => {
   it('submits credentials to login()', async () => {
     const { login } = renderLogin()
     fireEvent.change(screen.getByLabelText(/e-?mail/i), { target: { value: 'a@b.com' } })
-    fireEvent.change(screen.getByLabelText(/senha|password/i), { target: { value: 'secret12' } })
+    fireEvent.change(screen.getByLabelText('Senha'), { target: { value: 'secret12' } })
     fireEvent.click(screen.getByRole('button', { name: /entrar|sign in/i }))
     await waitFor(() => expect(login).toHaveBeenCalledWith('a@b.com', 'secret12'))
   })
@@ -38,10 +39,8 @@ describe('LoginPage', () => {
     })
     renderLogin(login)
     fireEvent.change(screen.getByLabelText(/e-?mail/i), { target: { value: 'a@b.com' } })
-    fireEvent.change(screen.getByLabelText(/senha|password/i), { target: { value: 'wrong' } })
+    fireEvent.change(screen.getByLabelText('Senha'), { target: { value: 'wrong' } })
     fireEvent.click(screen.getByRole('button', { name: /entrar|sign in/i }))
-    await waitFor(() =>
-      expect(screen.getByText(/inválidos|invalid/i)).toBeInTheDocument(),
-    )
+    await waitFor(() => expect(screen.getByText(/inválidos|invalid/i)).toBeInTheDocument())
   })
 })

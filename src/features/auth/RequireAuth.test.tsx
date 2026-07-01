@@ -9,6 +9,7 @@ function renderAt(status: AuthContextValue['status']) {
     status,
     user: null,
     login: vi.fn(async () => {}),
+    register: vi.fn(async () => {}),
     logout: vi.fn(async () => {}),
   }
   return render(

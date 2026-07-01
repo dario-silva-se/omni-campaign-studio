@@ -1,5 +1,5 @@
 import { createContext, useContext } from 'react'
-import type { AuthUser } from './authClient'
+import type { AuthUser, RegisterPayload } from './authClient'
 
 export type AuthStatus = 'loading' | 'authenticated' | 'unauthenticated'
 
@@ -7,6 +7,7 @@ export interface AuthContextValue {
   status: AuthStatus
   user: AuthUser | null
   login: (email: string, password: string) => Promise<void>
+  register: (payload: RegisterPayload) => Promise<void>
   logout: () => Promise<void>
 }
 
