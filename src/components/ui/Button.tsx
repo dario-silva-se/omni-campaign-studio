@@ -16,8 +16,9 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
 
 const variantClasses: Record<ButtonVariant, string> = {
   primary:
-    'bg-primary-container text-white bg-gradient-to-b from-primary-container to-[#3b7de6] ' +
-    'hover:brightness-110 active:brightness-95 disabled:opacity-40 disabled:pointer-events-none',
+    'bg-primary text-white ' +
+    'dark:bg-gradient-to-b dark:from-primary-container dark:to-[#3b7de6] dark:text-white ' +
+    'hover:opacity-90 dark:hover:brightness-110 active:opacity-95 dark:active:brightness-95 disabled:opacity-40 disabled:pointer-events-none',
   ghost:
     'border border-overlay-md bg-transparent text-on-surface hover:bg-overlay-sm ' +
     'active:bg-overlay-md disabled:opacity-40 disabled:pointer-events-none',

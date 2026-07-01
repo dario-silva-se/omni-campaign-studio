@@ -68,7 +68,7 @@ export function AccountTab() {
         <div className="px-lg pb-lg flex justify-end">
           <button
             type="button"
-            className="px-lg py-sm rounded-xl bg-primary text-on-primary text-[13px] font-semibold hover:shadow-[0_0_20px_rgba(173,198,255,0.2)] transition-all active:scale-95 flex items-center gap-2"
+            className="px-lg py-sm rounded-xl bg-primary text-on-primary text-[13px] font-semibold hover:shadow-md dark:hover:shadow-[0_0_20px_rgba(173,198,255,0.2)] transition-all active:scale-95 flex items-center gap-2"
           >
             <Icon name="save" className="text-[15px]" />
             {t(`${pref}.save`)}

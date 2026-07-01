@@ -34,10 +34,14 @@ export default function RegisterPage() {
   }
 
   const score = scorePassword(password)
-  const strengthColors = ['#414755', '#ffb4ab', '#ffc24b', '#7dffb0']
   const strengthLabels = ['—', t('register.strengthWeak'), t('register.strengthMedium'), t('register.strengthStrong')]
-  const barColor = (i: number) =>
-    score >= i ? strengthColors[score] : 'rgb(var(--color-surface-container-high))'
+  const barClass = (i: number) => {
+    if (score < i) return 'bg-surface-container-high'
+    if (score === 1) return 'bg-error dark:bg-[#ffb4ab]'
+    if (score === 2) return 'bg-[#f59e0b] dark:bg-[#ffc24b]'
+    if (score >= 3) return 'bg-primary dark:bg-[#7dffb0]'
+    return 'bg-outline-variant dark:bg-[#414755]'
+  }
 
   async function onSubmit(e: FormEvent) {
     e.preventDefault()
@@ -63,7 +67,7 @@ export default function RegisterPage() {
 
   return (
     <div className="grid min-h-screen place-items-center bg-background p-gutter">
-      <div className="flex w-full max-w-[1040px] overflow-hidden rounded-xl border border-overlay-md bg-surface shadow-[0_40px_120px_-40px_rgba(0,0,0,0.9)]">
+      <div className="flex w-full max-w-[1040px] overflow-hidden rounded-xl border border-overlay-md bg-surface shadow-2xl dark:shadow-[0_40px_120px_-40px_rgba(0,0,0,0.9)]">
         <AuthBrandPanel
           variant="register"
           kicker={t('register.brandKicker')}
@@ -134,8 +138,7 @@ export default function RegisterPage() {
                   {[1, 2, 3].map((i) => (
                     <span
                       key={i}
-                      className="h-1 flex-1 rounded-full transition-colors"
-                      style={{ background: barColor(i) }}
+                      className={`h-1 flex-1 rounded-full transition-colors ${barClass(i)}`}
                     />
                   ))}
                 </div>
@@ -188,7 +191,7 @@ export default function RegisterPage() {
               <button
                 type="submit"
                 disabled={submitting}
-                className="flex h-12 items-center justify-center gap-xs rounded-lg bg-gradient-to-b from-primary-container to-[#3b7de6] text-body-lg font-semibold text-white shadow-[0_8px_24px_-8px_rgba(75,142,255,0.6)] transition-all hover:brightness-110 active:brightness-95 disabled:pointer-events-none disabled:opacity-50"
+                className="flex h-12 items-center justify-center gap-xs rounded-lg bg-primary dark:bg-gradient-to-b dark:from-primary-container dark:to-[#3b7de6] text-body-lg font-semibold text-on-primary dark:text-white shadow-lg dark:shadow-[0_8px_24px_-8px_rgba(75,142,255,0.6)] transition-all hover:opacity-90 dark:hover:brightness-110 active:opacity-100 dark:active:brightness-95 disabled:pointer-events-none disabled:opacity-50"
               >
                 {submitting ? t('register.submitting') : t('register.submit')}
                 {!submitting && <Icon name="arrow_forward" className="text-[18px]" />}

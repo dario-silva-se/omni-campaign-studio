@@ -1,4 +1,4 @@
-﻿import { useState } from 'react'
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Icon } from '@/components/ui/Icon'
 import { PostCard } from '../components/PostCard'
@@ -59,7 +59,7 @@ export default function ContentGenerationPage() {
             type="button"
             onClick={handleGenerate}
             disabled={generateMutation.isPending}
-            className="flex items-center gap-2 bg-gradient-to-b from-primary-container to-[#3b7de6] text-white px-lg py-2 rounded-lg font-title-md text-[14px] font-semibold hover:brightness-110 active:brightness-95 transition-all border border-overlay-md shadow-[0_4px_12px_rgba(75,142,255,0.2)] disabled:opacity-60 disabled:cursor-not-allowed"
+            className="flex items-center gap-2 bg-primary dark:bg-gradient-to-b dark:from-primary-container dark:to-[#3b7de6] text-on-primary dark:text-white px-lg py-2 rounded-lg font-title-md text-[14px] font-semibold hover:opacity-90 dark:hover:brightness-110 active:opacity-100 dark:active:brightness-95 transition-all border border-overlay-md shadow-sm dark:shadow-[0_4px_12px_rgba(75,142,255,0.2)] disabled:opacity-60 disabled:cursor-not-allowed"
           >
             <Icon name="auto_awesome" className="text-[18px]" />
             {generateMutation.isPending ? t('generating') : t('generateBtn')}

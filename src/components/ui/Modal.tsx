@@ -4,6 +4,14 @@ import { createPortal } from 'react-dom'
 import { cn } from '@/lib/cn'
 import { Icon } from './Icon'
 
+const maxWidthClasses = {
+  sm: 'max-w-sm',
+  md: 'max-w-md',
+  lg: 'max-w-lg',
+  xl: 'max-w-xl',
+  '2xl': 'max-w-2xl',
+} as const
+
 export interface ModalProps {
   open: boolean
   onClose: () => void
@@ -11,12 +19,22 @@ export interface ModalProps {
   children: React.ReactNode
   footer?: React.ReactNode
   className?: string
+  /** Constrains the dialog width. Defaults to `lg` (the prior fixed width). */
+  maxWidth?: keyof typeof maxWidthClasses
 }
 
 const FOCUSABLE_SELECTORS =
   'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
 
-export function Modal({ open, onClose, title, children, footer, className }: ModalProps) {
+export function Modal({
+  open,
+  onClose,
+  title,
+  children,
+  footer,
+  className,
+  maxWidth = 'lg',
+}: ModalProps) {
   const dialogRef = useRef<HTMLDivElement>(null)
   const titleId = useId()
 
@@ -78,8 +96,9 @@ export function Modal({ open, onClose, title, children, footer, className }: Mod
         aria-labelledby={titleId}
         tabIndex={-1}
         className={cn(
-          'relative w-full max-w-lg rounded-lg bg-surface-container border border-overlay-md p-lg',
-          'shadow-[0_0_40px_rgba(0,0,0,0.2)] focus:outline-none',
+          'relative w-full bg-surface border border-overlay-md rounded-xl',
+          'shadow-2xl dark:shadow-[0_0_40px_rgba(0,0,0,0.4)] focus:outline-none',
+          maxWidthClasses[maxWidth],
           className,
         )}
       >

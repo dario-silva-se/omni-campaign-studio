@@ -1,4 +1,4 @@
-﻿import { useLocation, useNavigate } from 'react-router-dom'
+import { useLocation, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Icon } from '@/components/ui/Icon'
 import { WizardContext, useWizardReducer } from '../wizardContext'
@@ -79,7 +79,7 @@ export default function NewCampaignWizard() {
               <div className="absolute left-0 top-[18px] w-full h-1 bg-surface-variant rounded-full -z-10" />
               {/* Active line */}
               <div
-                className="absolute left-0 top-[18px] h-1 bg-primary rounded-full -z-10 shadow-[0_0_10px_rgba(173,198,255,0.5)] transition-all duration-500"
+                className="absolute left-0 top-[18px] h-1 bg-primary rounded-full -z-10 shadow-sm dark:shadow-[0_0_10px_rgba(173,198,255,0.5)] transition-all duration-500"
                 style={{ width: `${((currentStep - 1) / 4) * 100}%` }}
               />
 
@@ -100,10 +100,10 @@ export default function NewCampaignWizard() {
                       className={cn(
                         'w-9 h-9 rounded-full flex items-center justify-center font-title-md text-title-md border-2 transition-all',
                         isCompleted
-                          ? 'bg-primary border-primary text-on-primary shadow-[0_0_12px_rgba(173,198,255,0.4)]'
+                          ? 'bg-primary border-primary text-on-primary shadow-sm dark:shadow-[0_0_12px_rgba(173,198,255,0.4)]'
                           : isActive
-                          ? 'bg-primary border-primary-fixed-dim text-on-primary shadow-[0_0_15px_rgba(173,198,255,0.4)]'
-                          : 'bg-surface-container border-outline-variant text-on-surface-variant',
+                          ? 'bg-primary border-primary-fixed-dim text-on-primary shadow-sm dark:shadow-[0_0_15px_rgba(173,198,255,0.4)]'
+                          : 'bg-surface-container border-outline-variant/50 text-on-surface-variant',
                       )}
                     >
                       {isCompleted ? (

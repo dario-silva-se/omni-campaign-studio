@@ -1,4 +1,4 @@
-﻿import { useState } from 'react'
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { useApprovalList, useUpdateApproval } from '../hooks/useApprovals'
@@ -140,7 +140,7 @@ export default function ApprovalsPage() {
                     onClick={() => setActiveChannel(ch)}
                     className={`px-md py-sm rounded-lg text-label-md font-medium transition-colors flex items-center gap-xs ${
                       activeChannel === ch
-                        ? 'bg-primary text-on-primary-container'
+                        ? 'bg-primary text-white'
                         : 'text-on-surface-variant hover:bg-surface-variant/30'
                     }`}
                   >
@@ -231,7 +231,7 @@ export default function ApprovalsPage() {
                     <button
                       onClick={() => handleApprove(approval._id)}
                       disabled={approval.status !== 'pending'}
-                      className="px-lg py-md bg-primary text-on-primary-container font-bold rounded-lg hover:shadow-lg hover:shadow-primary/20 transition-all active:scale-95 disabled:opacity-50"
+                      className="px-lg py-md bg-primary text-white font-bold rounded-lg hover:shadow-lg hover:shadow-primary/20 transition-all active:scale-95 disabled:opacity-50"
                     >
                       {approval.status === 'approved'
                         ? t('detail.approved')
@@ -259,7 +259,7 @@ export default function ApprovalsPage() {
                     <span className="font-mono text-primary text-sm">84%</span>
                   </div>
                   <div className="w-full bg-surface-variant/30 h-1.5 rounded-full overflow-hidden">
-                    <div className="bg-primary h-full w-[84%] rounded-full shadow-[0_0_10px_rgba(173,198,255,0.5)]" />
+                    <div className="bg-primary h-full w-[84%] rounded-full shadow-sm dark:shadow-[0_0_10px_rgba(173,198,255,0.5)]" />
                   </div>
                 </div>
               </div>

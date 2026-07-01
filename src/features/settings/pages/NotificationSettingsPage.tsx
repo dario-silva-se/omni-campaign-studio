@@ -1,4 +1,4 @@
-﻿import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 import { Icon } from '@/components/ui/Icon'
 import { Toggle } from '@/components/ui/Toggle'
 import { GlassCard } from '@/components/ui/GlassCard'
@@ -66,7 +66,7 @@ function ChannelOverrideLabel({ t, channel }: { t: (key: string) => string; chan
 }
 
 const SEVERITY_ROWS: { key: AlertSeverity; labelKey: string; descKey: string; colorClass: string; indicatorClass: string }[] = [
-  { key: 'critical', labelKey: 'settings:notifications.severityMatrix.critical', descKey: 'settings:notifications.severityMatrix.criticalDesc', colorClass: 'text-error', indicatorClass: 'bg-error shadow-[0_0_10px_rgba(255,180,171,0.5)]' },
+  { key: 'critical', labelKey: 'settings:notifications.severityMatrix.critical', descKey: 'settings:notifications.severityMatrix.criticalDesc', colorClass: 'text-error', indicatorClass: 'bg-error dark:shadow-[0_0_10px_rgba(255,180,171,0.5)]' },
   { key: 'warning', labelKey: 'settings:notifications.severityMatrix.warning', descKey: 'settings:notifications.severityMatrix.warningDesc', colorClass: 'text-secondary', indicatorClass: 'bg-secondary' },
   { key: 'info', labelKey: 'settings:notifications.severityMatrix.info', descKey: 'settings:notifications.severityMatrix.infoDesc', colorClass: 'text-primary', indicatorClass: 'bg-primary' },
 ]
@@ -132,7 +132,7 @@ export default function NotificationSettingsPage() {
           </button>
           <button
             type="button"
-            className="px-xl py-md rounded-xl bg-primary text-on-primary font-title-md shadow-xl hover:shadow-[0_0_20px_rgba(173,198,255,0.15)] active:scale-95 transition-all"
+            className="px-xl py-md rounded-xl bg-primary text-on-primary font-title-md shadow-md dark:shadow-xl hover:shadow-lg dark:hover:shadow-[0_0_20px_rgba(173,198,255,0.15)] active:scale-95 transition-all"
           >
             {t('settings:notifications.saveRulebase')}
           </button>

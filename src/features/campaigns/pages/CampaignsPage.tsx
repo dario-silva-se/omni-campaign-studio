@@ -1,4 +1,4 @@
-﻿import { useState } from 'react'
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { Icon } from '@/components/ui/Icon'
@@ -69,7 +69,7 @@ export default function CampaignsPage() {
           <button
             type="button"
             onClick={() => navigate('/campaigns/new/step-1')}
-            className="shrink-0 bg-gradient-to-b from-primary-container to-[#3b7de6] hover:brightness-110 text-white font-body-sm !text-[15px] px-lg py-sm rounded-lg shadow-[0_4px_14px_0_rgba(75,142,255,0.39)] transition-all flex items-center gap-xs font-semibold border border-primary/30 hover:scale-[1.02] active:scale-95"
+            className="shrink-0 bg-primary dark:bg-gradient-to-b dark:from-primary-container dark:to-[#3b7de6] hover:opacity-90 dark:hover:brightness-110 text-on-primary dark:text-white font-body-sm !text-[15px] px-lg py-sm rounded-lg shadow-sm dark:shadow-[0_4px_14px_0_rgba(75,142,255,0.39)] transition-all flex items-center gap-xs font-semibold border border-primary/30 hover:scale-[1.02] active:scale-95"
           >
             <Icon name="add" className="text-[18px]" />
             {t('campaigns:control.newCampaign')}

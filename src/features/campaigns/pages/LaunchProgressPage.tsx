@@ -1,4 +1,4 @@
-﻿import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Icon } from '@/components/ui/Icon'
@@ -94,7 +94,7 @@ export default function LaunchProgressPage() {
         <div className="relative w-48 h-48 mb-xl flex items-center justify-center">
           <div className="absolute inset-0 rounded-full border border-primary/20 animate-pulse" />
           <div className="absolute inset-4 rounded-full border border-primary/40 animate-pulse" style={{ animationDelay: '0.5s' }} />
-          <div className="relative z-10 w-20 h-20 rounded-full bg-surface-container-high border border-outline-variant/30 flex items-center justify-center shadow-[0_0_40px_rgba(75,142,255,0.2)]">
+          <div className="relative z-10 w-20 h-20 rounded-full bg-surface-container-high border border-outline-variant/30 flex items-center justify-center shadow-md dark:shadow-[0_0_40px_rgba(75,142,255,0.2)]">
             <Icon name="rocket_launch" className="text-[40px] text-primary" filled />
           </div>
         </div>

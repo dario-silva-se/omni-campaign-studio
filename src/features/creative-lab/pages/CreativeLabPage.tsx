@@ -1,4 +1,4 @@
-﻿import { useState } from 'react'
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Icon } from '@/components/ui/Icon'
 import { AssetPanel } from '../components/AssetPanel'
@@ -101,7 +101,7 @@ export default function CreativeLabPage() {
           <button
             type="button"
             disabled={!canPublish}
-            className="px-4 py-1.5 rounded-lg bg-primary text-on-primary-container font-title-md text-title-md !text-[14px] flex items-center gap-2 transition-opacity disabled:opacity-40 disabled:cursor-not-allowed hover:enabled:bg-primary/90"
+            className="px-4 py-1.5 rounded-lg bg-primary text-on-primary font-title-md text-title-md !text-[14px] flex items-center gap-2 transition-opacity disabled:opacity-40 disabled:cursor-not-allowed hover:enabled:bg-primary/90"
             aria-label={t('header.finalize')}
           >
             <Icon name="check_circle" className="text-[18px]" />
@@ -148,7 +148,7 @@ export default function CreativeLabPage() {
               <label
                 className={`flex items-center gap-3 p-2 rounded-lg bg-surface-container border border-outline-variant/20 cursor-pointer hover:border-primary/30 transition-colors ${
                   publishContext === 'company-page'
-                    ? 'ring-1 ring-primary/50 border-primary/50 shadow-[0_0_15px_rgba(173,198,255,0.1)]'
+                    ? 'ring-1 ring-primary/50 border-primary/50 shadow-md dark:shadow-[0_0_15px_rgba(173,198,255,0.1)]'
                     : ''
                 }`}
               >

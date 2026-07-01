@@ -14,7 +14,7 @@ export function ProfileTab() {
       {/* ── Avatar + name ── */}
       <SettingsCard className="p-lg flex flex-col sm:flex-row items-center sm:items-start gap-lg">
         <div className="relative flex-shrink-0">
-          <div className="w-20 h-20 rounded-2xl bg-primary-container flex items-center justify-center text-3xl font-bold text-on-primary shadow-[0_0_0_3px_rgba(173,198,255,0.3),0_0_20px_rgba(75,142,255,0.25)]">
+          <div className="w-20 h-20 rounded-2xl bg-primary-container flex items-center justify-center text-3xl font-bold text-on-primary shadow-md dark:shadow-[0_0_0_3px_rgba(173,198,255,0.3),0_0_20px_rgba(75,142,255,0.25)]">
             M
           </div>
           <button
@@ -99,7 +99,7 @@ export function ProfileTab() {
           </button>
           <button
             type="button"
-            className="px-lg py-sm rounded-xl bg-primary text-on-primary text-[13px] font-semibold hover:shadow-[0_0_20px_rgba(173,198,255,0.2)] transition-all active:scale-95 flex items-center gap-2"
+            className="px-lg py-sm rounded-xl bg-primary text-on-primary text-[13px] font-semibold hover:shadow-md dark:hover:shadow-[0_0_20px_rgba(173,198,255,0.2)] transition-all active:scale-95 flex items-center gap-2"
           >
             <Icon name="save" className="text-[15px]" />
             {t(`${pi}.save`)}
@@ -158,7 +158,7 @@ export function ProfileTab() {
         <div className="px-lg pb-lg flex justify-end">
           <button
             type="button"
-            className="px-lg py-sm rounded-xl bg-primary text-on-primary text-[13px] font-semibold hover:shadow-[0_0_20px_rgba(173,198,255,0.2)] transition-all active:scale-95 flex items-center gap-2"
+            className="px-lg py-sm rounded-xl bg-primary text-on-primary text-[13px] font-semibold hover:shadow-md dark:hover:shadow-[0_0_20px_rgba(173,198,255,0.2)] transition-all active:scale-95 flex items-center gap-2"
           >
             <Icon name="save" className="text-[15px]" />
             {t(`${s}.save`)}

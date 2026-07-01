@@ -1,4 +1,4 @@
-﻿import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { useAlertList, useUpdateAlert } from '../hooks/useAlerts'
 import { Icon } from '@/components/ui/Icon'
@@ -166,7 +166,7 @@ export default function AlertsPage() {
               {list.map((alert) => (
                 <div
                   key={alert._id}
-                  className={`bg-surface-container/60 backdrop-blur-lg border border-overlay-sm border-t border-overlay-md rounded-xl overflow-hidden border-l-4 ${severityBorderClass(alert.severity)} ${alert.severity === 'critical' ? 'shadow-[0_0_0_0px_rgba(255,180,171,0.4)]' : ''}`}
+                  className={`bg-surface-container/60 backdrop-blur-lg border border-overlay-sm border-t border-overlay-md rounded-xl overflow-hidden border-l-4 ${severityBorderClass(alert.severity)} ${alert.severity === 'critical' ? 'shadow-sm dark:shadow-[0_0_20px_rgba(255,180,171,0.4)]' : ''}`}
                 >
                   <div className="p-lg flex flex-col md:flex-row justify-between items-start md:items-center gap-lg">
                     <div className="flex gap-lg">

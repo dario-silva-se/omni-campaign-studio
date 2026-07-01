@@ -1,4 +1,4 @@
-﻿import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 import { Icon } from '@/components/ui/Icon'
 import { ComplianceChecklist } from './ComplianceChecklist'
 import type { ComplianceCheckItem, ComplianceSuggestion } from '@/types'
@@ -109,7 +109,7 @@ export function PublishSafeguards({
         type="button"
         disabled={!canPublish}
         onClick={onPublish}
-        className="w-full py-3 rounded-xl bg-primary text-on-primary-container font-title-md text-title-md flex justify-center items-center gap-2 transition-opacity disabled:opacity-40 disabled:cursor-not-allowed hover:enabled:opacity-90"
+        className="w-full py-3 rounded-xl bg-primary text-on-primary font-title-md text-title-md flex justify-center items-center gap-2 transition-opacity disabled:opacity-40 disabled:cursor-not-allowed hover:enabled:opacity-90"
         aria-label={t('header.finalize')}
       >
         <Icon name="check_circle" className="text-[18px]" />

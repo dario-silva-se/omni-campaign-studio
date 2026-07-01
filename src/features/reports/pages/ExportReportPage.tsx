@@ -1,4 +1,4 @@
-﻿import { useState } from 'react'
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Icon } from '@/components/ui/Icon'
 import { ProgressBar } from '@/components/ui/ProgressBar'
@@ -307,7 +307,7 @@ export default function ExportReportPage() {
                 type="button"
                 onClick={startExport}
                 disabled={isPending}
-                className="px-xl py-md rounded-lg bg-primary-container text-on-primary-container text-body-lg font-bold flex items-center gap-md shadow-[0_4px_20px_rgba(75,142,255,0.3)] hover:shadow-[0_8px_30px_rgba(75,142,255,0.5)] transition-all active:scale-95 disabled:opacity-60"
+                className="px-xl py-md rounded-lg bg-primary-container text-on-primary-container text-body-lg font-bold flex items-center gap-md shadow-md dark:shadow-[0_4px_20px_rgba(75,142,255,0.3)] hover:shadow-lg dark:hover:shadow-[0_8px_30px_rgba(75,142,255,0.5)] transition-all active:scale-95 disabled:opacity-60"
               >
                 <Icon name="auto_awesome" />
                 {t('reports:export.generate')}
