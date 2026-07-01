@@ -1,7 +1,13 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import { isMockMode } from '@/services/apiClient'
 import { tokenStore } from './tokenStore'
-import { loginRequest, logoutRequest, refreshRequest, type AuthUser } from './authClient'
+import {
+  loginRequest,
+  logoutRequest,
+  refreshRequest,
+  registerRequest,
+  type AuthUser,
+} from './authClient'
 import { AuthContext, type AuthContextValue, type AuthStatus } from './authContext'
 
 /**
@@ -63,6 +69,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       user,
       async login(email, password) {
         const res = await loginRequest(email, password)
+        tokenStore.set(res.accessToken)
+        setUser(res.user)
+        setStatus('authenticated')
+      },
+      async register(payload) {
+        const res = await registerRequest(payload)
         tokenStore.set(res.accessToken)
         setUser(res.user)
         setStatus('authenticated')

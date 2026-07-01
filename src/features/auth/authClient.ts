@@ -3,6 +3,7 @@ import axios from 'axios'
 export interface AuthUser {
   id: string
   email: string
+  name?: string
   tenantId: string
   scopes: string[]
 }
@@ -35,6 +36,17 @@ export const gatewayClient = axios.create({
 
 export async function loginRequest(email: string, password: string): Promise<AuthResponse> {
   const { data } = await gatewayClient.post<AuthResponse>('/_gw/auth/login', { email, password })
+  return data
+}
+
+export interface RegisterPayload {
+  name: string
+  email: string
+  password: string
+}
+
+export async function registerRequest(payload: RegisterPayload): Promise<AuthResponse> {
+  const { data } = await gatewayClient.post<AuthResponse>('/_gw/auth/register', payload)
   return data
 }
 

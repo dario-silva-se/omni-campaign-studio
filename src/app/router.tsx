@@ -42,11 +42,13 @@ const UserSettingsPage = lazy(() => import('@/features/settings/pages/UserSettin
 const ExportReportPage = lazy(() => import('@/features/reports/pages/ExportReportPage'))
 const AiNewsPage = lazy(() => import('@/features/ai-news/pages/AiNewsPage'))
 const LoginPage = lazy(() => import('@/features/auth/pages/LoginPage'))
+const RegisterPage = lazy(() => import('@/features/auth/pages/RegisterPage'))
 
 export function AppRoutes() {
   return (
     <Routes>
       <Route path="/login" element={<LoginPage />} />
+      <Route path="/register" element={<RegisterPage />} />
       <Route
         element={
           <RequireAuth>
