@@ -1,4 +1,4 @@
-﻿import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 import { Icon } from '@/components/ui/Icon'
 import { useConnectionList } from '../hooks/useConnections'
 import { ConnectionHealthCard } from '../components/ConnectionHealthCard'
@@ -91,7 +91,7 @@ export default function ConnectionsPage() {
     <div className="max-w-container-max mx-auto space-y-xl p-xl">
       {/* Header */}
       <section className="mb-xl">
-        <h2 className="font-headline-lg text-headline-lg text-white mb-xs">{t('connections:list.title')}</h2>
+        <h2 className="font-headline-lg text-headline-lg text-on-surface mb-xs">{t('connections:list.title')}</h2>
         <p className="text-on-surface-variant max-w-2xl">{t('connections:list.description')}</p>
       </section>
 

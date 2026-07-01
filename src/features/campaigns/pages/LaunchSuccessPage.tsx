@@ -1,4 +1,4 @@
-﻿import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Icon } from '@/components/ui/Icon'
 
@@ -68,7 +68,7 @@ export default function LaunchSuccessPage() {
       <div className="w-full max-w-4xl z-10 flex flex-col items-center">
         {/* Header */}
         <div className="text-center mb-xl">
-          <div className="w-24 h-24 rounded-full bg-surface-container-high border border-outline-variant/30 flex items-center justify-center mx-auto mb-lg shadow-[0_0_40px_rgba(173,198,255,0.2)]">
+          <div className="w-24 h-24 rounded-full bg-surface-container-high border border-outline-variant/30 flex items-center justify-center mx-auto mb-lg shadow-md dark:shadow-[0_0_40px_rgba(173,198,255,0.2)]">
             <Icon name="check_circle" className="text-[64px] text-primary" filled />
           </div>
           <h1 className="font-display-lg text-display-lg text-on-surface mb-xs hidden md:block">
@@ -126,7 +126,7 @@ export default function LaunchSuccessPage() {
           <button
             type="button"
             onClick={() => navigate('/')}
-            className="w-full md:w-auto px-xl py-sm rounded-lg bg-gradient-to-b from-primary to-[#8aa7db] text-on-primary-container font-title-md text-title-md font-semibold hover:opacity-90 transition-opacity active:scale-95 duration-200 shadow-[0_4px_14px_0_rgba(173,198,255,0.39)]"
+            className="w-full md:w-auto px-xl py-sm rounded-lg bg-primary dark:bg-gradient-to-b dark:from-primary dark:to-[#8aa7db] text-on-primary dark:text-on-primary-container font-title-md text-title-md font-semibold hover:opacity-90 transition-opacity active:scale-95 duration-200 shadow-md dark:shadow-[0_4px_14px_0_rgba(173,198,255,0.39)]"
           >
             {t('success.actions.dashboard')}
           </button>

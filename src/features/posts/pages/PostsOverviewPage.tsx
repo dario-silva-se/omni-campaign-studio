@@ -1,4 +1,4 @@
-﻿import { useState } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Icon } from '@/components/ui/Icon'
@@ -10,7 +10,7 @@ type TabFilter = 'all' | Channel
 
 const STATUS_COLORS: Record<PostStatus, string> = {
   scheduled: 'bg-primary/20 text-primary',
-  published: 'bg-[#4ADE80]/20 text-[#4ADE80]',
+  published: 'bg-[#4ADE80]/20 text-emerald-600 dark:text-[#4ADE80]',
   draft: 'bg-secondary/20 text-secondary',
   failed: 'bg-error/20 text-error',
   'pending-approval': 'bg-tertiary/20 text-tertiary',
@@ -86,7 +86,7 @@ export default function PostsOverviewPage() {
           { label: t('overview.stats.nextUp'), value: '14:00', desc: t('overview.stats.nextUpDesc'), icon: 'schedule', color: 'text-primary' },
           { label: t('overview.stats.scheduled'), value: String(scheduledCount).padStart(2, '0'), desc: t('overview.stats.scheduledDesc'), icon: 'event_available', color: 'text-secondary' },
           { label: t('overview.stats.drafts'), value: String(draftCount).padStart(2, '0'), desc: t('overview.stats.draftsDesc'), icon: 'edit_note', color: 'text-tertiary' },
-          { label: t('overview.stats.successful'), value: String(publishedCount), desc: t('overview.stats.successfulDesc'), icon: 'check_circle', color: 'text-[#4ADE80]' },
+          { label: t('overview.stats.successful'), value: String(publishedCount), desc: t('overview.stats.successfulDesc'), icon: 'check_circle', color: 'text-emerald-600 dark:text-[#4ADE80]' },
         ].map((stat) => (
           <div key={stat.label} className="bg-surface-container-low/60 backdrop-blur-sm border border-outline-variant/10 rounded-xl p-lg">
             <div className="flex justify-between items-start mb-md">
@@ -155,7 +155,7 @@ export default function PostsOverviewPage() {
                 <p className="text-body-sm text-on-surface-variant opacity-70 mb-lg line-clamp-2">{post.content}</p>
                 <div className="mt-auto flex justify-between items-center">
                   {post.metrics && post.metrics.impressions > 0 ? (
-                    <div className="flex items-center gap-xs text-[12px] text-[#4ADE80]">
+                    <div className="flex items-center gap-xs text-[12px] text-emerald-600 dark:text-[#4ADE80]">
                       <Icon name="visibility" className="text-[16px]" />
                       <span>{(post.metrics.impressions / 1000).toFixed(1)}k Views</span>
                     </div>
@@ -240,7 +240,7 @@ export default function PostsOverviewPage() {
                     <span className="text-sm font-bold capitalize">{ch}</span>
                   </div>
                   <div className="flex items-center gap-xs">
-                    <span className="w-2 h-2 rounded-full bg-[#4ADE80]" />
+                    <span className="w-2 h-2 rounded-full bg-emerald-500 dark:bg-[#4ADE80]" />
                     <span className="text-[12px] text-on-surface-variant">{t('overview.connected')}</span>
                   </div>
                 </div>

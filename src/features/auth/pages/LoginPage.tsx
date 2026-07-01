@@ -46,7 +46,7 @@ export default function LoginPage() {
 
   return (
     <div className="grid min-h-screen place-items-center bg-background p-gutter">
-      <div className="flex w-full max-w-[1040px] overflow-hidden rounded-xl border border-overlay-md bg-surface shadow-[0_40px_120px_-40px_rgba(0,0,0,0.9)]">
+      <div className="flex w-full max-w-[1040px] overflow-hidden rounded-xl border border-overlay-md bg-surface shadow-2xl dark:shadow-[0_40px_120px_-40px_rgba(0,0,0,0.9)]">
         <AuthBrandPanel
           variant="login"
           kicker={t('brandKicker')}
@@ -108,7 +108,7 @@ export default function LoginPage() {
               <button
                 type="submit"
                 disabled={submitting}
-                className="flex h-12 items-center justify-center gap-xs rounded-lg bg-gradient-to-b from-primary-container to-[#3b7de6] text-body-lg font-semibold text-white shadow-[0_8px_24px_-8px_rgba(75,142,255,0.6)] transition-all hover:brightness-110 active:brightness-95 disabled:pointer-events-none disabled:opacity-50"
+                className="flex h-12 items-center justify-center gap-xs rounded-lg bg-primary dark:bg-gradient-to-b dark:from-primary-container dark:to-[#3b7de6] text-body-lg font-semibold text-on-primary dark:text-white shadow-lg dark:shadow-[0_8px_24px_-8px_rgba(75,142,255,0.6)] transition-all hover:opacity-90 dark:hover:brightness-110 active:opacity-100 dark:active:brightness-95 disabled:pointer-events-none disabled:opacity-50"
               >
                 {submitting ? t('submitting') : t('submit')}
                 {!submitting && <Icon name="arrow_forward" className="text-[18px]" />}

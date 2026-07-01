@@ -1,4 +1,4 @@
-﻿import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 import { useAutomationList, useUpdateAutomation } from '../hooks/useAutomations'
 import { Icon } from '@/components/ui/Icon'
 import { Toggle } from '@/components/ui/Toggle'
@@ -67,7 +67,7 @@ export default function LogicBuilderPage() {
             <Icon name="bolt" className="text-primary text-lg" />
             <span className="text-xs font-medium">{t('builder.realtimeSimulation')}</span>
           </div>
-          <button className="px-md py-xs bg-primary text-on-primary-container rounded-full font-bold text-sm active:scale-95 transition-transform">
+          <button className="px-md py-xs bg-primary text-white rounded-full font-bold text-sm active:scale-95 transition-transform">
             {t('builder.publish')}
           </button>
         </div>
@@ -79,7 +79,7 @@ export default function LogicBuilderPage() {
         <div
           className="flex-1 overflow-auto p-xl relative"
           style={{
-            backgroundImage: 'radial-gradient(#1c1b1b 1px, transparent 1px)',
+            backgroundImage: 'radial-gradient(rgba(0,0,0,0.15) 1px, transparent 1px)',
             backgroundSize: '32px 32px',
           }}
         >
@@ -316,7 +316,7 @@ export default function LogicBuilderPage() {
           <button className="px-xl py-md bg-surface-container-high border border-outline-variant/40 text-on-surface rounded-xl font-bold text-sm hover:bg-surface-variant transition-colors">
             {t('builder.footer.testRun')}
           </button>
-          <button className="px-xl py-md bg-primary text-on-primary-container rounded-xl font-bold text-sm shadow-lg shadow-primary/20 active:scale-95 transition-transform">
+          <button className="px-xl py-md bg-primary text-white rounded-xl font-bold text-sm shadow-lg shadow-primary/20 active:scale-95 transition-transform">
             {t('builder.footer.saveLogic')}
           </button>
         </div>

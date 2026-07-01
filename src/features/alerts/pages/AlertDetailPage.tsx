@@ -1,4 +1,4 @@
-﻿import { useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { useAlert, useUpdateAlert } from '../hooks/useAlerts'
 import { Icon } from '@/components/ui/Icon'
@@ -17,9 +17,9 @@ const chartBars: { heightPct: number; isHigh?: boolean; label?: string }[] = [
 
 const severityHistoryColorClass: Record<string, string> = {
   primary: 'bg-outline',
-  tertiary: 'bg-tertiary shadow-[0_0_8px_rgba(255,182,145,0.6)]',
-  error: 'bg-error shadow-[0_0_8px_rgba(255,180,171,0.6)]',
-  outline: 'bg-outline shadow-[0_0_8px_rgba(139,145,160,0.6)]',
+  tertiary: 'bg-tertiary shadow-sm dark:shadow-[0_0_8px_rgba(255,182,145,0.6)]',
+  error: 'bg-error shadow-sm dark:shadow-[0_0_8px_rgba(255,180,171,0.6)]',
+  outline: 'bg-outline shadow-sm dark:shadow-[0_0_8px_rgba(139,145,160,0.6)]',
 }
 
 export default function AlertDetailPage() {

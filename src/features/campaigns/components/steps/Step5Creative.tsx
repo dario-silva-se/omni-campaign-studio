@@ -1,4 +1,4 @@
-﻿import { useState } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Icon } from '@/components/ui/Icon'
@@ -280,7 +280,7 @@ export default function Step5Creative({ onBack }: Props) {
             type="button"
             onClick={handleLaunch}
             disabled={isPending}
-            className="px-lg py-sm rounded-lg bg-gradient-to-b from-primary-container to-[#3b7de6] text-white font-body-sm font-semibold hover:brightness-110 transition-all flex items-center gap-xs disabled:opacity-60 disabled:cursor-not-allowed shadow-[0_4px_14px_0_rgba(75,142,255,0.39)]"
+            className="px-lg py-sm rounded-lg bg-primary dark:bg-gradient-to-b dark:from-primary-container dark:to-[#3b7de6] text-on-primary dark:text-white font-body-sm font-semibold hover:opacity-90 dark:hover:brightness-110 transition-all flex items-center gap-xs disabled:opacity-60 disabled:cursor-not-allowed shadow-md dark:shadow-[0_4px_14px_0_rgba(75,142,255,0.39)]"
           >
             <Icon name="rocket_launch" className="text-[18px]" filled />
             {t('wizard.navigation.launchCampaign')}

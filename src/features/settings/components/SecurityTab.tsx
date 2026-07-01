@@ -154,7 +154,7 @@ export function SecurityTab() {
 
           <button
             type="button"
-            className="w-full py-sm rounded-xl bg-primary text-on-primary text-[14px] font-semibold hover:shadow-[0_0_20px_rgba(173,198,255,0.2)] transition-all active:scale-95 flex items-center justify-center gap-2"
+            className="w-full py-sm rounded-xl bg-primary text-on-primary text-[14px] font-semibold hover:shadow-md dark:hover:shadow-[0_0_20px_rgba(173,198,255,0.2)] transition-all active:scale-95 flex items-center justify-center gap-2"
           >
             <Icon name="lock_reset" className="text-[17px]" />
             {t(`${cp}.submit`)}

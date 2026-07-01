@@ -1,4 +1,4 @@
-﻿import { useState } from 'react'
+import { useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 import { Icon } from '@/components/ui/Icon'
@@ -149,7 +149,7 @@ export default function ApprovalDetailPage() {
               type="button"
               onClick={handleApprove}
               disabled={approval.status !== 'pending' || updateApproval.isPending}
-              className="px-lg py-sm bg-primary text-on-primary-container font-bold rounded-lg hover:shadow-lg hover:shadow-primary/20 transition-all active:scale-95 disabled:opacity-50 flex items-center gap-xs"
+              className="px-lg py-sm bg-primary text-white font-bold rounded-lg hover:shadow-lg hover:shadow-primary/20 transition-all active:scale-95 disabled:opacity-50 flex items-center gap-xs"
             >
               <Icon name="check_circle" className="text-sm" />
               {t('detail.actions.approveForPublication')}

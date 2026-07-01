@@ -1,4 +1,4 @@
-﻿import { useState } from 'react'
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Icon } from '@/components/ui/Icon'
 import { StatusChip } from '@/components/ui/StatusChip'
@@ -135,7 +135,7 @@ export default function GovernanceHistoryPage() {
             key={key}
             className={`px-md py-sm rounded-lg text-label-sm font-medium transition-colors ${
               key === 'allTime'
-                ? 'bg-primary text-on-primary-container'
+                ? 'bg-primary text-white'
                 : 'text-on-surface-variant hover:bg-surface-variant/30'
             }`}
           >
@@ -202,7 +202,7 @@ export default function GovernanceHistoryPage() {
           })}
         </span>
         <div className="flex items-center gap-xs">
-          <button className="w-8 h-8 rounded bg-primary text-on-primary-container font-bold">1</button>
+          <button className="w-8 h-8 rounded bg-primary text-white font-bold">1</button>
           <button className="w-8 h-8 rounded hover:bg-surface-variant/30 transition-all">2</button>
           <button className="w-8 h-8 rounded hover:bg-surface-variant/30 transition-all">3</button>
         </div>

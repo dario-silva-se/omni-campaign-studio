@@ -1,4 +1,4 @@
-﻿import { useState } from 'react'
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Modal } from '@/components/ui/Modal'
 import { Textarea } from '@/components/ui/Textarea'
@@ -90,7 +90,7 @@ export function RequestChangesModal({
               type="button"
               onClick={handleSubmit}
               disabled={updateApproval.isPending}
-              className="px-lg py-sm bg-primary text-on-primary-container font-bold rounded-lg hover:shadow-lg hover:shadow-primary/20 transition-all active:scale-95 disabled:opacity-50 text-sm flex items-center gap-xs"
+              className="px-lg py-sm bg-primary text-white font-bold rounded-lg hover:shadow-lg hover:shadow-primary/20 transition-all active:scale-95 disabled:opacity-50 text-sm flex items-center gap-xs"
             >
               <Icon name="send" className="text-[18px]" />
               {t('requestChanges.submitChanges')}

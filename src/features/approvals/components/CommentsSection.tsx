@@ -1,4 +1,4 @@
-﻿import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 import { Icon } from '@/components/ui/Icon'
 import type { ApprovalComment } from '@/types'
 
@@ -84,7 +84,7 @@ export function CommentsSection({ comments }: CommentsSectionProps) {
           placeholder={t('detail.comments.writeComment')}
           className="flex-1 rounded-lg border border-overlay-md bg-surface-container px-md py-sm text-sm text-on-surface placeholder:text-on-surface-variant/50 focus:border-primary focus:outline-none"
         />
-        <button className="px-md py-sm bg-primary text-on-primary-container text-sm font-bold rounded-lg hover:shadow-primary/20 hover:shadow-lg transition-all">
+        <button className="px-md py-sm bg-primary text-white text-sm font-bold rounded-lg hover:shadow-primary/20 hover:shadow-lg transition-all">
           {t('detail.comments.send')}
         </button>
       </div>

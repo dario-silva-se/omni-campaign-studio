@@ -1,4 +1,4 @@
-﻿import { useTranslation } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 import type {
   AnalyticsChannelLinkedIn,
   AnalyticsChannelYouTube,
@@ -158,7 +158,7 @@ export function ChannelMetricsGrid({ linkedin, youtube, telegram }: Props) {
         >
           <div className="flex-1 h-3/4 bg-tertiary/40 rounded-t-sm" />
           <div className="flex-1 h-4/5 bg-tertiary/40 rounded-t-sm" />
-          <div className="flex-1 h-full bg-tertiary rounded-t-sm shadow-[0_0_8px_#c0c1ff]" />
+          <div className="flex-1 h-full bg-tertiary rounded-t-sm shadow-sm dark:shadow-[0_0_8px_#c0c1ff]" />
           <div className="flex-1 h-5/6 bg-tertiary/40 rounded-t-sm" />
         </div>
       </div>

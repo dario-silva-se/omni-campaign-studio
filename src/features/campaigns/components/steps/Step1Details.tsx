@@ -1,4 +1,4 @@
-﻿import { useState } from 'react'
+import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 import { Icon } from '@/components/ui/Icon'
@@ -175,7 +175,7 @@ export default function Step1Details({ onNext }: Props) {
         <button
           type="button"
           onClick={handleNext}
-          className="font-body-lg text-body-lg font-semibold px-lg py-sm rounded-DEFAULT bg-gradient-to-b from-primary to-primary-container text-on-primary-container shadow-[0_0_15px_rgba(75,142,255,0.3)] hover:shadow-[0_0_20px_rgba(75,142,255,0.5)] transition-all flex items-center gap-xs group"
+          className="font-body-lg text-body-lg font-semibold px-lg py-sm rounded-DEFAULT bg-primary dark:bg-gradient-to-b dark:from-primary dark:to-primary-container text-on-primary dark:text-on-primary-container shadow-md dark:shadow-[0_0_15px_rgba(75,142,255,0.3)] hover:shadow-lg dark:hover:shadow-[0_0_20px_rgba(75,142,255,0.5)] transition-all flex items-center gap-xs group"
         >
           {t('wizard.navigation.next')}
           <Icon name="arrow_forward" className="group-hover:translate-x-1 transition-transform text-[20px]" />
